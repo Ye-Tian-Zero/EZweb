@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>new expression - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/new","wgTitle":"cpp/language/new","wgCurRevisionId":80358,"wgArticleId":700,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/new","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_new skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">new expression</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="expressions.html" title="cpp/language/expressions"> Expressions</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> General </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="value_category.html" title="cpp/language/value category"> value categories</a> (lvalue, rvalue, xvalue)</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="eval_order.html" title="cpp/language/eval order"> order of evaluation</a> (sequence points)</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constant_expression.html" title="cpp/language/constant expression"> constant expressions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="expressions.html#Unevaluated_expressions" title="cpp/language/expressions"> unevaluated expressions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="expressions.html#Primary_expressions" title="cpp/language/expressions"> primary expressions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lambda.html" title="cpp/language/lambda">lambda-expression</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Literals </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="integer_literal.html" title="cpp/language/integer literal">integer literals</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="floating_literal.html" title="cpp/language/floating literal">floating-point literals</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bool_literal.html" title="cpp/language/bool literal">boolean literals</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="character_literal.html" title="cpp/language/character literal">character literals</a> including <a href="escape.html" title="cpp/language/escape">escape sequences</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string_literal.html" title="cpp/language/string literal">string literals</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nullptr.html" title="cpp/language/nullptr">null pointer literal</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="user_literal.html" title="cpp/language/user literal">user-defined literal</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Operators </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_assignment.html" title="cpp/language/operator assignment"> Assignment operators</a>: 
+<code>a=b</code>, <code>a+=b</code>, <code>a-=b</code>, <code>a*=b</code>, <code>a/=b</code>, <code>a%=b</code>, <code>a&amp;=b</code>, <code>a|=b</code>, <code>a^=b</code>, <code>a&lt;&lt;=b</code>, <code>a&gt;&gt;=</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_incdec.html" title="cpp/language/operator incdec"> Increment and decrement</a>: <code>++a</code>, <code>--a</code>, <code>a++</code>, <code>a--</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_arithmetic.html" title="cpp/language/operator arithmetic"> Arithmetic operators</a>:
+<code>+a</code>, <code>-a</code>, <code>a+b</code>, <code>a-b</code>, <code>a*b</code>, <code>a/b</code>, <code>a%b</code>, <code>~a</code>, <code>a&amp;b</code>, <code>a|b</code>, <code>a^b</code>, <code>a&lt;&lt;b</code>, <code>a&gt;&gt;b</code> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_logical.html" title="cpp/language/operator logical"> Logical operators</a>: <code>a||b</code>, <code>a&amp;&amp;b</code>, <code>!a</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_comparison.html" title="cpp/language/operator comparison"> Comparison operators</a>: <code>a==b</code>, <code>a!=b</code>, <code>a&lt;b</code>, <code>a&gt;b</code>, <code>a&lt;=b</code>, <code>a&gt;=b</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_member_access.html" title="cpp/language/operator member access"> Member access operators</a>: <code>a[b]</code>, <code>*a</code>, <code>&amp;a</code>, <code>a-&gt;b</code>, <code>a.b</code>, <code>a-&gt;*b</code>, <code>a.*b</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_other.html" title="cpp/language/operator other"> Other operators</a>: <code>a(...)</code>, <code>a,b</code>, <code>(T)a</code>, <code>a?b:c</code> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_alternative.html" title="cpp/language/operator alternative">Alternative representations of operators</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_precedence.html" title="cpp/language/operator precedence">Precedence and associativity</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fold.html" title="cpp/language/fold">Fold expression</a><span class="t-mark-rev t-since-cxx17">(C++17)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">new-expression</strong>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="delete.html" title="cpp/language/delete">delete-expression</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="throw.html" title="cpp/language/throw">throw-expression</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="alignof.html" title="cpp/language/alignof">alignof</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sizeof.html" title="cpp/language/sizeof">sizeof</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sizeof....html" title="cpp/language/sizeof...">sizeof...</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="typeid.html" title="cpp/language/typeid">typeid</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept.html" title="cpp/language/noexcept">noexcept</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operators.html" title="cpp/language/operators">Operator overloading</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Conversions </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="implicit_cast.html" title="cpp/language/implicit cast">Implicit conversions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="const_cast.html" title="cpp/language/const cast">const_cast</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static_cast.html" title="cpp/language/static cast">static_cast</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="reinterpret_cast.html" title="cpp/language/reinterpret cast">reinterpret_cast</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="dynamic_cast.html" title="cpp/language/dynamic cast">dynamic_cast</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit_cast.html" title="cpp/language/explicit cast">Explicit conversions</a> <code>(T)a</code>, <code>T(a)</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cast_operator.html" title="cpp/language/cast operator">User-defined conversion</a>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Creates and initializes objects with dynamic <a href="storage_duration.html" title="cpp/language/storage duration">storage duration</a>, that is, objects whose lifetime is not limited by the scope in which they were created.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="new.html#Syntax"><span class="tocnumber">1</span> <span class="toctext">Syntax</span></a></li>
+<li class="toclevel-1 tocsection-2">
+<a href="new.html#Explanation"><span class="tocnumber">2</span> <span class="toctext">Explanation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="new.html#Allocation"><span class="tocnumber">2.1</span> <span class="toctext">Allocation</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="new.html#Construction"><span class="tocnumber">2.2</span> <span class="toctext">Construction</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="new.html#Memory_leaks"><span class="tocnumber">3</span> <span class="toctext">Memory leaks</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="new.html#Keywords"><span class="tocnumber">4</span> <span class="toctext">Keywords</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span>
+</h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>::</b></code><span class="t-mark">(optional)</span> <code><b>new</b></code> <code><b>(</b></code><span class="t-spar">placement_params</span><code><b>)</b></code><span class="t-mark">(optional)</span> <code><b>(</b></code> <span class="t-spar">type</span> <code><b>)</b></code> <span class="t-spar">initializer</span><span class="t-mark">(optional)</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>::</b></code><span class="t-mark">(optional)</span> <code><b>new</b></code> <code><b>(</b></code><span class="t-spar">placement_params</span><code><b>)</b></code><span class="t-mark">(optional)</span> <span class="t-spar">type</span> <span class="t-spar">initializer</span><span class="t-mark">(optional)</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">1)</span> Attempts to create an object of type, denoted by the <a href="incomplete_type.html#Type_naming" title="cpp/language/type">type-id</a> <code>type</code>, which may be array type<span class="t-rev-inl t-since-cxx11"><span>, and may include the type specifier <code>auto</code></span> <span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span><span class="t-rev-inl t-since-cxx17"><span>or the placeholder type <code>decltype(auto)</code></span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span>
+</div>
+<div class="t-li1">
+<span class="t-li">2)</span> Same, but <code>type</code> cannot include parentheses:
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">new <span class="kw4">int</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">[</span><span class="nu0">10</span><span class="br0">]</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// parser error: parsed as (new int) (*[10]) ()</span>
+new <span class="br0">(</span><span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">[</span><span class="nu0">10</span><span class="br0">]</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: allocates an array of 10 pointers to functions</span></pre></div></div>
+<p>In addition, unparenthesized <span class="t-spar">type</span> is greedy: it will include every token that can be a part of a declarator:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">new <span class="kw4">int</span> <span class="sy2">+</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// OK: parsed as (new int) + 1, increments a pointer returned by new int</span>
+new <span class="kw4">int</span> <span class="sy2">*</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// Error: parsed as (new int*) (1)</span></pre></div></div>
+</div>
+<p>Note: If <code>auto</code> is used in <code>type</code>, then <code>initializer</code> is not optional: it is required to deduce the type to use in place of <code>auto</code>:
+<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">auto</span> p <span class="sy1">=</span> new <span class="kw4">auto</span><span class="br0">(</span><span class="st0">'c'</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// creates a single object of type char. p is a char*</span></span></span>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+<p>The <code>new</code> expression attempts to allocate storage and then attempts to construct and initialize either a single unnamed object, or an unnamed array of objects in the allocated storage. The new-expression returns a prvalue pointer to the constructed object or, if an array of objects was constructed, a pointer to the initial element of the array.
+</p>
+<p>If <code>type</code> is an array type, all dimensions other than the first must be specified as positive <span class="t-rev-inl t-until-cxx14"><span><a href="constant_expression.html" title="cpp/language/constant expression">integral constant expression</a></span> <span><span class="t-mark-rev t-until-cxx14">(until C++14)</span></span></span><span class="t-rev-inl t-since-cxx14"><span><a href="constant_expression.html" title="cpp/language/constant expression">converted constant expression</a> of type <span class="t-lc">std::size_t</span></span> <span><span class="t-mark-rev t-since-cxx14">(since C++14)</span></span></span>, but the first dimension may be any expression convertible to <span class="t-lc">std::size_t</span>. This is the only way to directly create an array with size defined at runtime, such arrays are often referred to as <i>dynamic arrays</i>:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">42</span><span class="sy4">;</span>
+<span class="kw4">double</span> a<span class="br0">[</span>n<span class="br0">]</span><span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// Error</span>
+<span class="kw4">auto</span> p1 <span class="sy1">=</span> new <span class="kw4">double</span><span class="br0">[</span>n<span class="br0">]</span><span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// OK</span>
+<span class="kw4">auto</span> p2 <span class="sy1">=</span> new <span class="kw4">double</span><span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="br0">[</span>n<span class="br0">]</span><span class="sy4">;</span> <span class="co1">// Error</span></pre></div></div>
+<p>In the following cases the expression specifying the first dimension is erroneous:
+</p>
+<ul>
+<li> the expression is of non-class type and its value before conversion to <span class="t-lc">std::size_t</span> is negative
+</li>
+<li> the expression is of class type and its value after user-defined conversion function and before the <a href="implicit_cast.html" title="cpp/language/implicit cast">second standard conversion</a> is negative
+</li>
+<li> the value of the expression is larger than some implementation-defined limit
+</li>
+<li> the value is smaller than the number of array elements provided in <a href="aggregate_initialization.html" title="cpp/language/aggregate initialization">the brace-enclosed initializer</a> (including the terminating <code>'\0'</code> on a <a href="string_literal.html" title="cpp/language/string literal">string literal</a>)
+</li>
+</ul>
+<p>If the value in the first dimension is erroneous for any of these reasons, 
+</p>
+<ul>
+<li> if, after conversion to <span class="t-lc">std::size_t</span>, the first dimension is a <a href="constant_expression.html" title="cpp/language/constant expression">core constant expression</a>, the program is ill-formed (a compile-time error is issued).
+</li>
+<li> Otherwise, the new expression does not call the allocation function, and instead throws an exception of type <span class="t-lc">std::bad_array_new_length</span> or derived from it <span class="t-mark-rev t-since-cxx11">(since C++11)</span>.
+</li>
+</ul>
+<p>The first dimension of zero is acceptable, and the allocation function is called.
+</p>
+<p>Note: <span class="t-lc">std::vector</span> offers similar functionality for one-dimensional dynamic arrays.
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Allocation">edit</a>]</span> <span class="mw-headline" id="Allocation">Allocation</span>
+</h4>
+<p>The new-expression allocates storage by calling the appropriate <a href="../memory/new/operator_new.html" title="cpp/memory/new/operator new"> allocation function</a>. If <code>type</code> is a non-array type, the name of the function is <code>operator new</code>. If <code>type</code> is an array type, the name of the function is <code>operator new[]</code>. 
+</p>
+<p>As described in <a href="../memory/new/operator_new.html" title="cpp/memory/new/operator new"> allocation function</a>, the C++ program may provide global and class-specific replacements for these functions. If the new-expression begins with the optional <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy4">::</span></span></span> operator, as in <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy4">::</span><span class="me2">new</span> T</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy4">::</span><span class="me2">new</span> T<span class="br0">[</span>n<span class="br0">]</span></span></span>, class-specific replacements will be ignored (the function is <a href="lookup.html" title="cpp/language/lookup">looked up</a> in global <a href="scope.html" title="cpp/language/scope">scope</a>). Otherwise, if <code>T</code> is a class type, it is looked up in the scope of <code>T</code> first.
+</p>
+<p>When calling the allocation function, the new-expression passes the number of bytes requested as the first argument, of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a></span></span>, which is exactly <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof<span class="br0">(</span>T<span class="br0">)</span></span></span> for non-array <code>T</code>.
+</p>
+<p>Array allocation may supply unspecified overhead, which may vary from one call to new to the next. The pointer returned by the new-expression will be offset by that value from the pointer returned by the allocation function. Many implementations use the array overhead to store the number of objects in the array which is used by <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/new/operator_delete.html"><span class="kw585">operator delete</span></a><span class="br0">[</span><span class="br0">]</span></span></span> to call the correct number of destructors. In addition, if the new-expression is used to allocate an array of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span> or an array <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span>, it may request additional memory from the allocation function if necessary to guarantee correct alignment of objects of all types no larger than the requested array size, if one is later placed into the allocated array. 
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14">
+<td>
+<p>New expressions are allowed to elide or combine allocations made through replaceable allocation functions. In case of elision, the storage may be provided by the compiler without making the call to an allocation function (this also permits optimizing out unused new-expression). In case of combining, the allocation made by a new-expression E1 may be extended to provide additional storage for another new-expression E2 if all of the following is true:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> The lifetime of the object allocated by E1 strictly contains the lifetime of the object allocated by E2,</div>
+<div class="t-li1">
+<span class="t-li">2)</span> E1 and E2 would invoke the same replaceable global allocation function</div>
+<div class="t-li1">
+<span class="t-li">3)</span> For a throwing allocation function, exceptions in E1 and E2 would be first caught in the same handler.
+</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td>
+</tr>
+</table>
+<p>If <code>placement_params</code> are provided, they are passed to the allocation function as additional arguments:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">new T<span class="sy4">;</span>      <span class="co1">//  calls operator new( sizeof(T) )</span>
+new T<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="sy4">;</span>   <span class="co1">//  calls operator new[]( sizeof(T)*5 + overhead)</span>
+new<span class="br0">(</span><span class="nu0">2</span>,f<span class="br0">)</span> T<span class="sy4">;</span> <span class="co1">//  calls operator new( sizeof(T), 2, f)</span></pre></div></div>
+<p>Such allocation functions are known as "placement new", after the standard allocation function <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span> <a href="../memory/new/operator_new.html"><span class="kw583">operator new</span></a><span class="br0">(</span><a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a>, <span class="kw4">void</span><span class="sy2">*</span><span class="br0">)</span></span></span>, which simply returns its second argument unchanged. This is used to construct objects in allocated storage:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">char</span><span class="sy2">*</span> ptr <span class="sy1">=</span> new <span class="kw4">char</span><span class="br0">[</span>sizeof<span class="br0">(</span>T<span class="br0">)</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// allocate memory</span>
+T<span class="sy2">*</span> tptr <span class="sy1">=</span> new<span class="br0">(</span>ptr<span class="br0">)</span> T<span class="sy4">;</span> <span class="co1">// construct in allocated storage ("place")</span>
+tptr<span class="sy2">-</span><span class="sy1">&gt;</span>~T<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// destruct</span>
+delete<span class="br0">[</span><span class="br0">]</span> ptr<span class="sy4">;</span> <span class="co1">// deallocate</span></pre></div></div>
+<p>Note: this functionality is encapsulated by the member functions of the <a href="../concept/Allocator.html" title="cpp/concept/Allocator"><code>Allocator</code></a> classes.
+</p>
+<p>If the allocation function return a null pointer, which is possible if the non-throwing overload was selected, e.g. with <span class="t-c"><span class="mw-geshi cpp source-cpp">new<span class="br0">(</span><a href="../memory/new/nothrow.html"><span class="kw594">std::<span class="me2">nothrow</span></span></a><span class="br0">)</span> T<span class="sy4">;</span></span></span>, then the new-expression returns immediately, it does not attempt to initialize an object or to call a deallocation function. <span class="t-rev-inl t-since-cxx17"><span>If the standard placement allocation function returns a null pointer, which is possible if the user passes a null pointer as the argument, the behavior is undefined. </span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span>
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Construction">edit</a>]</span> <span class="mw-headline" id="Construction">Construction</span>
+</h4>
+<p>The object created by a new expression is initialized according to the following rules:
+</p>
+<ul><li> For non-array <code>type</code>, the single object is constructed in the acquired memory area.
+</li></ul>
+<dl><dd>
+<ul>
+<li> If <span class="t-spar">initializer</span> is absent, the object is <a href="default_initialization.html" title="cpp/language/default initialization">default-initialized</a>.
+</li>
+<li> If <span class="t-spar">initializer</span> is a parenthesized list of arguments, the object is <a href="direct_initialization.html" title="cpp/language/direct initialization">direct-initialized</a>.
+</li>
+</ul>
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<dl><dd>
+<ul><li> If <span class="t-spar">initializer</span> is a brace-enclosed list of arguments, the object is <a href="list_initialization.html" title="cpp/language/list initialization">list-initialized</a>.
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<ul><li> If <span class="t-spar">type</span> is an array type, an array of objects is initialized.
+</li></ul>
+<dl><dd>
+<ul>
+<li> If <span class="t-spar">initializer</span> is absent, each element is <a href="default_initialization.html" title="cpp/language/default initialization">default-initialized</a>
+</li>
+<li> If <span class="t-spar">initializer</span> is an empty pair of parentheses, each element is <a href="value_initialization.html" title="cpp/language/value initialization">value-initialized</a>.
+</li>
+</ul>
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<dl><dd>
+<ul><li> If <span class="t-spar">initializer</span> is a brace-enclosed list of arguments, the elements of the array are <a href="aggregate_initialization.html" title="cpp/language/aggregate initialization">aggregate-initialized</a>.
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<p>If initialization terminates by throwing an exception (e.g. from the constructor), if new-expression allocated any storage, it calls the appropriate <a href="../memory/new/operator_delete.html" title="cpp/memory/new/operator delete">deallocation function</a>: <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/new/operator_delete.html"><span class="kw585">operator delete</span></a></span></span> for non-array <code>type</code>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../memory/new/operator_delete.html"><span class="kw585">operator delete</span></a><span class="br0">[</span><span class="br0">]</span></span></span> for array <code>type</code>. The deallocation function is looked up in global scope if the new expression used the <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy4">::</span><span class="me2">new</span></span></span> syntax, otherwise it is looked up in the scope of <code>T</code> first, if <code>T</code> is a class type. If no deallocation function is found, memory is not deallocated. The value obtained earlier from the allocation function is passed as the first argument to the deallocation function, and <code>placement_params</code>, if any, are passed as the additional arguments. 
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Memory leaks">edit</a>]</span> <span class="mw-headline" id="Memory_leaks">Memory leaks</span>
+</h3>
+<p>The objects created by new expressions (objects with dynamic storage duration) persist until the pointer returned by the new expression is used in a matching <a href="delete.html" title="cpp/language/delete">delete-expression</a>. If the original value of pointer is lost, the object becomes unreachable and cannot be deallocated: a <i>memory leak</i> occurs.
+</p>
+<p>This may happen if the pointer is assigned to:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span><span class="sy2">*</span> p <span class="sy1">=</span> new <span class="kw4">int</span><span class="br0">(</span><span class="nu0">7</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// dynamically allocated int with value 7</span>
+p <span class="sy1">=</span> <a href="../types/NULL.html"><span class="kw103">NULL</span></a><span class="sy4">;</span> <span class="co1">// memory leak</span></pre></div></div>
+<p>or if the pointer goes out of scope:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span><span class="sy2">*</span> p <span class="sy1">=</span> new <span class="kw4">int</span><span class="br0">(</span><span class="nu0">7</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span> <span class="co1">// memory leak</span></pre></div></div>
+<p>or due to exception
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="kw4">int</span><span class="sy2">*</span> p <span class="sy1">=</span> new <span class="kw4">int</span><span class="br0">(</span><span class="nu0">7</span><span class="br0">)</span><span class="sy4">;</span>
+   g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>      <span class="co1">// may throw</span>
+   delete p<span class="sy4">;</span> <span class="co1">// OK if no exception</span>
+<span class="br0">}</span> <span class="co1">// memory leak if g() throws</span></pre></div></div>
+<p>To simplify management of dynamically-allocated objects, the result of a new-expression is often stored in a <i><a href="../memory.html#Smart_pointers" title="cpp/memory">smart pointer</a></i>: <span class="t-rev-inl t-until-cxx17"><span><span class="t-lc">std::auto_ptr</span> </span> <span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span><span class="t-rev-inl t-since-cxx11"><span><span class="t-lc">std::unique_ptr</span>, or <span class="t-lc">std::shared_ptr</span></span> <span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span>. These pointers guarantee that the delete expression is executed in the situations shown above.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Keywords">edit</a>]</span> <span class="mw-headline" id="Keywords">Keywords</span>
+</h3>
+<p><a href="../keyword/new.html" title="cpp/keyword/new"><tt>new</tt></a>
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2386/1000000
+Preprocessor generated node count: 5913/1000000
+Post‐expand include size: 60438/2097152 bytes
+Template argument size: 10940/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:700-0!*!0!!en!*!* and timestamp 20150807150522 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/new&amp;oldid=80358</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.081 secs. -->
+	</body>
+<!-- Cached 20150807150915 -->
+</html>

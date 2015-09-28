@@ -1,0 +1,780 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>std::tuple::tuple - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/utility/tuple/tuple","wgTitle":"cpp/utility/tuple/tuple","wgCurRevisionId":79544,"wgArticleId":2675,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/utility/tuple/tuple","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_utility_tuple_tuple skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">
+<span style="font-size:0.7em; line-height:130%">std::tuple::</span>tuple</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../utility.html" title="cpp/utility">utility</a>‎ | <a href="../tuple.html" title="cpp/utility/tuple">tuple</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../utility.html" title="cpp/utility"> Utilities library</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../../types.html" title="cpp/types"> Type support</a> (basic types, RTTI, type traits) </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../memory.html" title="cpp/memory"> Dynamic memory management</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../error.html" title="cpp/error"> Error handling</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../program.html" title="cpp/utility/program"> Program utilities</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../variadic.html" title="cpp/utility/variadic"> Variadic functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../chrono.html" title="cpp/chrono"> Date and time</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../functional.html" title="cpp/utility/functional"> Function objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../initializer_list.html" title="cpp/utility/initializer list"><span class="t-lines"><span>initializer_list</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../bitset.html" title="cpp/utility/bitset"><span class="t-lines"><span>bitset</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../hash.html" title="cpp/utility/hash"><span class="t-lines"><span>hash</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Relational operators</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../rel_ops/operator_cmp.html" title="cpp/utility/rel ops/operator cmp"><span class="t-lines"><span>rel_ops::operator!=</span><span>rel_ops::operator&gt;</span><span>rel_ops::operator&lt;=</span><span>rel_ops::operator&gt;=</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Pairs and tuples</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../pair.html" title="cpp/utility/pair"><span class="t-lines"><span>pair</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../tuple.html" title="cpp/utility/tuple"><span class="t-lines"><span>tuple</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../piecewise_construct_t.html" title="cpp/utility/piecewise construct t"><span class="t-lines"><span>piecewise_construct_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../piecewise_construct.html" title="cpp/utility/piecewise construct"><span class="t-lines"><span>piecewise_construct</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../integer_sequence.html" title="cpp/utility/integer sequence"><span class="t-lines"><span>integer_sequence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Swap, forward and move</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/swap.html" title="cpp/algorithm/swap"><span class="t-lines"><span>swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../exchange.html" title="cpp/utility/exchange"><span class="t-lines"><span>exchange</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../forward.html" title="cpp/utility/forward"><span class="t-lines"><span>forward</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../move.html" title="cpp/utility/move"><span class="t-lines"><span>move</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../move_if_noexcept.html" title="cpp/utility/move if noexcept"><span class="t-lines"><span>move_if_noexcept</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../declval.html" title="cpp/utility/declval"><span class="t-lines"><span>declval</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../tuple.html" title="cpp/utility/tuple"><tt>std::tuple</tt></a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Member functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>tuple::tuple</span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="operator%3D.html" title="cpp/utility/tuple/operator="><span class="t-lines"><span>tuple::operator=</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap.html" title="cpp/utility/tuple/swap"><span class="t-lines"><span>tuple::swap</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Non-member functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="make_tuple.html" title="cpp/utility/tuple/make tuple"><span class="t-lines"><span>make_tuple</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="tie.html" title="cpp/utility/tuple/tie"><span class="t-lines"><span>tie</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="forward_as_tuple.html" title="cpp/utility/tuple/forward as tuple"><span class="t-lines"><span>forward_as_tuple</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="tuple_cat.html" title="cpp/utility/tuple/tuple cat"><span class="t-lines"><span>tuple_cat</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="operator_cmp.html" title="cpp/utility/tuple/operator cmp"><span class="t-lines"><span>operator==</span><span>operator!=</span><span>operator&lt;</span><span>operator&lt;=</span><span>operator&gt;</span><span>operator&gt;=</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="swap2.html" title="cpp/utility/tuple/swap2"><span class="t-lines"><span>std::swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="get.html" title="cpp/utility/tuple/get"><span class="t-lines"><span>get</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Helper classes</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="tuple_size.html" title="cpp/utility/tuple/tuple size"><span class="t-lines"><span>tuple_size</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="tuple_element.html" title="cpp/utility/tuple/tuple element"><span class="t-lines"><span>tuple_element</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="uses_allocator.html" title="cpp/utility/tuple/uses allocator"><span class="t-lines"><span>uses_allocator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ignore.html" title="cpp/utility/tuple/ignore"><span class="t-lines"><span>ignore</span></span></a></div></div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="t-dcl-begin">
+<tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/tuple.html" title="cpp/header/tuple">&lt;tuple&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span> tuple<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (1) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+</tbody>
+<tbody class="t-dcl-rev">
+<tr class="t-dcl t-since-cxx11 t-until-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> tuple<span class="br0">(</span> <span class="kw4">const</span> Types<span class="sy3">&amp;</span>... <span class="me1">args</span> <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (2) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><span class="t-mark-rev t-until-cxx14">(until C++14)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> <span class="kw4">constexpr</span> tuple<span class="br0">(</span> <span class="kw4">const</span> Types<span class="sy3">&amp;</span>... <span class="me1">args</span> <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (2) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+</tbody>
+<tbody>
+</tbody>
+<tbody class="t-dcl-rev">
+<tr class="t-dcl t-since-cxx11 t-until-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span>... <span class="me1">UTypes</span> <span class="sy1">&gt;</span><br>
+<span class="kw1">explicit</span> tuple<span class="br0">(</span> UTypes<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span> <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (3) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><span class="t-mark-rev t-until-cxx14">(until C++14)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span>... <span class="me1">UTypes</span> <span class="sy1">&gt;</span><br>
+<span class="kw1">explicit</span> <span class="kw4">constexpr</span> tuple<span class="br0">(</span> UTypes<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span> <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (3) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+</tbody>
+<tbody>
+</tbody>
+<tbody class="t-dcl-rev">
+<tr class="t-dcl t-since-cxx11 t-until-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span>... <span class="me1">UTypes</span> <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <span class="kw4">const</span> tuple<span class="sy1">&lt;</span>UTypes...<span class="sy1">&gt;</span><span class="sy3">&amp;</span> other <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (4) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><span class="t-mark-rev t-until-cxx14">(until C++14)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span>... <span class="me1">UTypes</span> <span class="sy1">&gt;</span><br>
+<span class="kw4">constexpr</span> tuple<span class="br0">(</span> <span class="kw4">const</span> tuple<span class="sy1">&lt;</span>UTypes...<span class="sy1">&gt;</span><span class="sy3">&amp;</span> other <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (4) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+</tbody>
+<tbody>
+</tbody>
+<tbody class="t-dcl-rev">
+<tr class="t-dcl t-since-cxx11 t-until-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span>... <span class="me1">UTypes</span><span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> tuple<span class="sy1">&lt;</span>UTypes...<span class="sy1">&gt;</span><span class="sy3">&amp;&amp;</span> other <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (5) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><span class="t-mark-rev t-until-cxx14">(until C++14)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span>... <span class="me1">UTypes</span><span class="sy1">&gt;</span><br>
+<span class="kw4">constexpr</span> tuple<span class="br0">(</span> tuple<span class="sy1">&lt;</span>UTypes...<span class="sy1">&gt;</span><span class="sy3">&amp;&amp;</span> other <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (5) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+</tbody>
+<tbody>
+</tbody>
+<tbody class="t-dcl-rev">
+<tr class="t-dcl t-since-cxx11 t-until-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> U1, <span class="kw1">class</span> U2 <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <span class="kw4">const</span> pair<span class="sy1">&lt;</span>U1,U2<span class="sy1">&gt;</span><span class="sy3">&amp;</span> p <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (6) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><span class="t-mark-rev t-until-cxx14">(until C++14)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> U1, <span class="kw1">class</span> U2 <span class="sy1">&gt;</span><br>
+<span class="kw4">constexpr</span> tuple<span class="br0">(</span> <span class="kw4">const</span> pair<span class="sy1">&lt;</span>U1,U2<span class="sy1">&gt;</span><span class="sy3">&amp;</span> p <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (6) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+</tbody>
+<tbody>
+</tbody>
+<tbody class="t-dcl-rev">
+<tr class="t-dcl t-since-cxx11 t-until-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> U1, <span class="kw1">class</span> U2 <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> pair<span class="sy1">&lt;</span>U1,U2<span class="sy1">&gt;</span><span class="sy3">&amp;&amp;</span> p <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (7) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> <br><span class="t-mark-rev t-until-cxx14">(until C++14)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> U1, <span class="kw1">class</span> U2 <span class="sy1">&gt;</span><br>
+<span class="kw4">constexpr</span> tuple<span class="br0">(</span> pair<span class="sy1">&lt;</span>U1,U2<span class="sy1">&gt;</span><span class="sy3">&amp;&amp;</span> p <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (7) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+</tbody>
+<tbody>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp">tuple<span class="br0">(</span> <span class="kw4">const</span> tuple<span class="sy3">&amp;</span> other <span class="br0">)</span> <span class="sy1">=</span> <span class="kw1">default</span><span class="sy4">;</span></span></div>
+</td>
+<td> (8) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp">tuple<span class="br0">(</span> tuple<span class="sy3">&amp;&amp;</span> other <span class="br0">)</span> <span class="sy1">=</span> <span class="kw1">default</span><span class="sy4">;</span></span></div>
+</td>
+<td> (9) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <a href="../../memory/allocator_arg_t.html"><span class="kw571">std::<span class="me2">allocator_arg_t</span></span></a>, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> a <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (10) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <a href="../../memory/allocator_arg_t.html"><span class="kw571">std::<span class="me2">allocator_arg_t</span></span></a>, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> a, <span class="kw4">const</span> Types<span class="sy3">&amp;</span>... <span class="me1">args</span> <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (11) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc, <span class="kw1">class</span>... <span class="me1">UTypes</span> <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <a href="../../memory/allocator_arg_t.html"><span class="kw571">std::<span class="me2">allocator_arg_t</span></span></a>, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> a, UTypes<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span> <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (12) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Alloc, <span class="kw1">class</span>... <span class="me1">UTypes</span><span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <a href="../../memory/allocator_arg_t.html"><span class="kw571">std::<span class="me2">allocator_arg_t</span></span></a>, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> a, <span class="kw4">const</span> tuple<span class="sy1">&lt;</span>UTypes...<span class="sy1">&gt;</span><span class="sy3">&amp;</span> other <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (13) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc, <span class="kw1">class</span>... <span class="me1">UTypes</span> <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <a href="../../memory/allocator_arg_t.html"><span class="kw571">std::<span class="me2">allocator_arg_t</span></span></a>, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> a, tuple<span class="sy1">&lt;</span>UTypes...<span class="sy1">&gt;</span><span class="sy3">&amp;&amp;</span> other <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (14) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc, <span class="kw1">class</span> U1, <span class="kw1">class</span> U2 <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <a href="../../memory/allocator_arg_t.html"><span class="kw571">std::<span class="me2">allocator_arg_t</span></span></a>, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> a, <span class="kw4">const</span> pair<span class="sy1">&lt;</span>U1, U2<span class="sy1">&gt;</span><span class="sy3">&amp;</span> p <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (15) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc, <span class="kw1">class</span> U1, <span class="kw1">class</span> U2 <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <a href="../../memory/allocator_arg_t.html"><span class="kw571">std::<span class="me2">allocator_arg_t</span></span></a>, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> a, pair<span class="sy1">&lt;</span>U1, U2<span class="sy1">&gt;</span><span class="sy3">&amp;&amp;</span> p <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (16) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <a href="../../memory/allocator_arg_t.html"><span class="kw571">std::<span class="me2">allocator_arg_t</span></span></a>, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> a, <span class="kw4">const</span> tuple<span class="sy3">&amp;</span> other <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (17) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> Alloc <span class="sy1">&gt;</span><br>
+tuple<span class="br0">(</span> <a href="../../memory/allocator_arg_t.html"><span class="kw571">std::<span class="me2">allocator_arg_t</span></span></a>, <span class="kw4">const</span> Alloc<span class="sy3">&amp;</span> a, tuple<span class="sy3">&amp;&amp;</span> other <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (18) </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Constructs a new tuple. 
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> Default constructor. <a href="../../language/value_initialization.html" title="cpp/language/value initialization">Value-initializes</a> all elements.</div>
+<div class="t-li1">
+<span class="t-li"></span> Requires that <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_default_constructible.html"><span class="kw476">std::<span class="me2">is_default_constructible</span></span></a><span class="sy1">&lt;</span>Ti<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all <code>i</code>
+</div>
+<div class="t-li1">
+<span class="t-li">2)</span> Direct constructor. Initializes each element of the tuple with the corresponding parameter.</div>
+<div class="t-li1">
+<span class="t-li"></span> This constructor does not participate in overload resolution unless <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof...<span class="br0">(</span>Types<span class="br0">)</span> <span class="sy1">&gt;=</span> <span class="nu0">1</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_copy_constructible.html"><span class="kw479">std::<span class="me2">is_copy_constructible</span></span></a><span class="sy1">&lt;</span>Ti<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all <code>i</code>.</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17">
+<td>
+<div class="t-li1">
+<span class="t-li"></span> This constructor is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span></span></span> if and only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_convertible.html"><span class="kw503">std::<span class="me2">is_convertible</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> Ti<span class="sy3">&amp;</span>, Ti<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> for at least one <code>i</code>.
+</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">3)</span> Converting constructor. Initializes each element of the tuple with the corresponding value in <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw918">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Utypes<span class="sy1">&gt;</span><span class="br0">(</span>args<span class="br0">)</span></span></span>.</div>
+<div class="t-li1">
+<span class="t-li"></span> Requires that <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof...<span class="br0">(</span>Types<span class="br0">)</span> <span class="sy1">==</span> sizeof...<span class="br0">(</span>UTypes<span class="br0">)</span>.</span></span>
+</div>
+<div class="t-li1">
+<span class="t-li"></span> This constructor shall not participate in overload resolution unless <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof...<span class="br0">(</span>Types<span class="br0">)</span> <span class="sy1">&gt;=</span> <span class="nu0">1</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_constructible.html"><span class="kw473">std::<span class="me2">is_constructible</span></span></a><span class="sy1">&lt;</span>Ti, Ui<span class="sy3">&amp;&amp;</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all <code>i</code>.</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17">
+<td>
+<div class="t-li1">
+<span class="t-li"></span> The constructor is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span></span></span> if and only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_convertible.html"><span class="kw503">std::<span class="me2">is_convertible</span></span></a><span class="sy1">&lt;</span>Ui<span class="sy3">&amp;&amp;</span>, Ti<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> for at least one <span class="t-c"><span class="mw-geshi cpp source-cpp">i</span></span>.
+</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">4)</span> Converting copy-constructor. For all <code>i</code> in <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof...<span class="br0">(</span>UTypes<span class="br0">)</span></span></span>, initializes ith element of the tuple with <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="get.html"><span class="kw914">std::<span class="me2">get</span></span></a><span class="sy1">&lt;</span>i<span class="sy1">&gt;</span><span class="br0">(</span>other<span class="br0">)</span></span></span>.</div>
+<div class="t-li1">
+<span class="t-li"></span> Requires that <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof...<span class="br0">(</span>Types<span class="br0">)</span> <span class="sy1">==</span> sizeof...<span class="br0">(</span>UTypes<span class="br0">)</span></span></span>
+</div>
+<div class="t-li1">
+<span class="t-li"></span> Does not participate in overload resolution unless <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_constructible.html"><span class="kw473">std::<span class="me2">is_constructible</span></span></a><span class="sy1">&lt;</span>Ti, <span class="kw4">const</span> Ui<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all <code>i</code>.</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17">
+<td>
+<div class="t-li1">
+<span class="t-li"></span> The constructor is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span></span></span> if and only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_convertible.html"><span class="kw503">std::<span class="me2">is_convertible</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> Ui<span class="sy3">&amp;</span>, Ti<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> for at least one <code>i</code>.
+</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">5)</span> Converting move-constructor. For all <code>i</code> in <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof...<span class="br0">(</span>UTypes<span class="br0">)</span></span></span>, initializes ith element of the tuple with <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw918">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Ui<span class="sy1">&gt;</span><span class="br0">(</span><a href="get.html"><span class="kw914">std::<span class="me2">get</span></span></a><span class="sy1">&lt;</span>i<span class="sy1">&gt;</span><span class="br0">(</span>other<span class="br0">)</span><span class="br0">)</span></span></span>.</div>
+<div class="t-li1">
+<span class="t-li"></span> Requires that <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof...<span class="br0">(</span>Types<span class="br0">)</span> <span class="sy1">==</span> sizeof...<span class="br0">(</span>UTypes<span class="br0">)</span></span></span>
+</div>
+<div class="t-li1">
+<span class="t-li"></span> Does not participate in overload resolution unless <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_constructible.html"><span class="kw473">std::<span class="me2">is_constructible</span></span></a><span class="sy1">&lt;</span>Ti, Ui<span class="sy3">&amp;&amp;</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all <code>i</code>.</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17">
+<td>
+<div class="t-li1">
+<span class="t-li"></span> The constructor is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span></span></span> if and only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_convertible.html"><span class="kw503">std::<span class="me2">is_convertible</span></span></a><span class="sy1">&lt;</span>Ui<span class="sy3">&amp;&amp;</span>, Ti<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> for at least one <code>i</code>.
+</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">6)</span> Pair copy constructor. Constructs a 2-element tuple with the first element constructed from <code>p.first</code> and the second element from <code>p.second</code>
+</div>
+<div class="t-li1">
+<span class="t-li"></span> Requires that <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof...<span class="br0">(</span>Types<span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">2</span></span></span>
+</div>
+<div class="t-li1">
+<span class="t-li"></span> Does not participate in overload resolution unless <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_constructible.html"><span class="kw473">std::<span class="me2">is_constructible</span></span></a><span class="sy1">&lt;</span>T0,<span class="kw4">const</span> U1<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_constructible.html"><span class="kw473">std::<span class="me2">is_constructible</span></span></a><span class="sy1">&lt;</span>T1, <span class="kw4">const</span> U2<span class="sy3">&amp;</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> are both <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>
+</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17">
+<td>
+<div class="t-li1">
+<span class="t-li"></span> The constructor is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span></span></span> if and only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_convertible.html"><span class="kw503">std::<span class="me2">is_convertible</span></span></a><span class="sy1">&lt;</span><span class="kw4">const</span> U1<span class="sy3">&amp;</span>, T0<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">convertible</span><span class="sy1">&lt;</span><span class="kw4">const</span> U2<span class="sy3">&amp;</span>, T1<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>
+</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">7)</span> Pair move constructor. Constructs a 2-element tuple with the first element constructed from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw918">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>U1<span class="sy1">&gt;</span><span class="br0">(</span>p.<span class="me1">first</span><span class="br0">)</span></span></span> and the second element from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw918">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>U2<span class="sy1">&gt;</span><span class="br0">(</span>p.<span class="me1">second</span><span class="br0">)</span></span></span>
+</div>
+<div class="t-li1">
+<span class="t-li"></span> Requires that <span class="t-c"><span class="mw-geshi cpp source-cpp">sizeof...<span class="br0">(</span>Types<span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">2</span></span></span>
+</div>
+<div class="t-li1">
+<span class="t-li"></span> Does not participate in overload resolution unless <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_constructible.html"><span class="kw473">std::<span class="me2">is_constructible</span></span></a><span class="sy1">&lt;</span>T0, U1<span class="sy3">&amp;&amp;</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_constructible.html"><span class="kw473">std::<span class="me2">is_constructible</span></span></a><span class="sy1">&lt;</span>T1, U2<span class="sy3">&amp;&amp;</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> are both <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>
+</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17">
+<td>
+<div class="t-li1">
+<span class="t-li"></span> The constructor is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span></span></span> if and only if <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_convertible.html"><span class="kw503">std::<span class="me2">is_convertible</span></span></a><span class="sy1">&lt;</span>U1<span class="sy3">&amp;&amp;</span>, T0<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">convertible</span><span class="sy1">&lt;</span>U2<span class="sy3">&amp;&amp;</span>, T1<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>
+</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">8)</span> Implicitly-defined copy constructor. Initializes each element of the tuple with the corresponding element of <code>other</code>.</div>
+<div class="t-li1">
+<span class="t-li"></span> This constructor is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> if every operation it performs is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span>. For the empty tuple <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;&gt;</span></span></span>, it is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span>.</div>
+<div class="t-li1">
+<span class="t-li"></span> Requires that <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_copy_constructible.html"><span class="kw479">std::<span class="me2">is_copy_constructible</span></span></a><span class="sy1">&lt;</span>Ti<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all <code>i</code>.</div>
+<div class="t-li1">
+<span class="t-li">9)</span> Implicitly-defined move constructor. Initializes each ith element of the tuple with <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../forward.html"><span class="kw918">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>Ui<span class="sy1">&gt;</span><span class="br0">(</span><a href="get.html"><span class="kw914">std::<span class="me2">get</span></span></a><span class="sy1">&lt;</span>i<span class="sy1">&gt;</span><span class="br0">(</span>other<span class="br0">)</span><span class="br0">)</span></span></span>.</div>
+<div class="t-li1">
+<span class="t-li"></span> This constructor is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span> if every operation it performs is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span>. For the empty tuple <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;&gt;</span></span></span>, it is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">constexpr</span></span></span>.</div>
+<div class="t-li1">
+<span class="t-li"></span> Requires that <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../types/is_move_constructible.html"><span class="kw482">std::<span class="me2">is_move_constructible</span></span></a><span class="sy1">&lt;</span>Ti<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all <code>i</code>.</div>
+<div class="t-li1">
+<span class="t-li">10-18)</span> Identical to <span class="t-v">(1-9)</span> except each element is created by <i>uses-allocator construction</i>, that is, the Allocator object <code>a</code> is passed as an additional argument to the constructor of each element for which <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../../memory/uses_allocator.html"><span class="kw573">std::<span class="me2">uses_allocator</span></span></a><span class="sy1">&lt;</span>Ui, Alloc<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">value</span></span></span> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>.</div>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="tuple.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="tuple.html#Notes"><span class="tocnumber">2</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="tuple.html#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="tuple.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  args
+</td>
+<td> -
+</td>
+<td>  values used to initialize each element of the tuple
+</td>
+</tr>
+<tr class="t-par">
+<td>  other
+</td>
+<td> -
+</td>
+<td>  a tuple of values used to initialize each element of the tupe
+</td>
+</tr>
+<tr class="t-par">
+<td>  p
+</td>
+<td> -
+</td>
+<td>  pair of values used to initialize both elements of this 2-tuple
+</td>
+</tr>
+<tr class="t-par">
+<td>  a
+</td>
+<td> -
+</td>
+<td>  allocator to use in uses-allocator construction
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span>
+</h3>
+<p>Conditionally-explicit constructors in C++17 make it possible to construct a tuple in copy-initialization context using list-initialization syntax:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">int</span><span class="sy1">&gt;</span> foo_tuple<span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span>
+  <span class="kw1">return</span> <span class="br0">{</span><span class="nu0">1</span>, <span class="sy2">-</span><span class="nu0">1</span><span class="br0">}</span><span class="sy4">;</span>  <span class="co1">// Error until C++17</span>
+  <span class="kw1">return</span> <a href="make_tuple.html"><span class="kw912">std::<span class="me2">make_tuple</span></span></a><span class="br0">(</span><span class="nu0">1</span>, <span class="sy2">-</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Always works</span>
+<span class="br0">}</span></pre></div></div>
+<p>Note that if some element of the list is not implicitly convertible to the corresponding element of the target tuple, the constructors become explicit
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">using</span> <span class="kw1">namespace</span> std<span class="sy4">::</span><span class="me2">chrono</span><span class="sy4">;</span>
+<span class="kw4">void</span> launch_rocket_at<span class="br0">(</span><a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;</span>hours, minutes, seconds<span class="sy1">&gt;</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+launch_rocket_at<span class="br0">(</span><span class="br0">{</span>hours<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span>, minutes<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>, seconds<span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK</span>
+launch_rocket_at<span class="br0">(</span><span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Error: int is not implicitly convertible to duration</span>
+launch_rocket_at<span class="br0">(</span><a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;</span>hours, minutes, seconds<span class="sy1">&gt;</span><span class="br0">{</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;vector&gt;</span>
+<span class="co2">#include &lt;tuple&gt;</span>
+<span class="co2">#include &lt;memory&gt;</span>
+ 
+<span class="co1">// helper function to print a tuple of any size</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Tuple, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> N<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> TuplePrinter <span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">void</span> print<span class="br0">(</span><span class="kw4">const</span> Tuple<span class="sy3">&amp;</span> t<span class="br0">)</span> 
+    <span class="br0">{</span>
+        TuplePrinter<span class="sy1">&lt;</span>Tuple, N<span class="sy2">-</span><span class="nu0">1</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">print</span><span class="br0">(</span>t<span class="br0">)</span><span class="sy4">;</span>
+        <a href="../../io/cout.html"><span class="kw1451">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">", "</span> <span class="sy1">&lt;&lt;</span> <a href="get.html"><span class="kw914">std::<span class="me2">get</span></span></a><span class="sy1">&lt;</span>N<span class="sy2">-</span><span class="nu0">1</span><span class="sy1">&gt;</span><span class="br0">(</span>t<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Tuple<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> TuplePrinter<span class="sy1">&lt;</span>Tuple, <span class="nu0">1</span><span class="sy1">&gt;</span><span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">void</span> print<span class="br0">(</span><span class="kw4">const</span> Tuple<span class="sy3">&amp;</span> t<span class="br0">)</span> 
+    <span class="br0">{</span>
+        <a href="../../io/cout.html"><span class="kw1451">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <a href="get.html"><span class="kw914">std::<span class="me2">get</span></span></a><span class="sy1">&lt;</span><span class="nu0">0</span><span class="sy1">&gt;</span><span class="br0">(</span>t<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+<span class="kw4">void</span> print<span class="br0">(</span><span class="kw4">const</span> <a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;</span>Args...<span class="sy1">&gt;</span><span class="sy3">&amp;</span> t<span class="br0">)</span> 
+<span class="br0">{</span>
+    <a href="../../io/cout.html"><span class="kw1451">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"("</span><span class="sy4">;</span>
+    TuplePrinter<span class="sy1">&lt;</span>decltype<span class="br0">(</span>t<span class="br0">)</span>, sizeof...<span class="br0">(</span>Args<span class="br0">)</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">print</span><span class="br0">(</span>t<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1451">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">")<span class="es1">\n</span>"</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="co1">// end helper function</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <a href="../../string/basic_string.html"><span class="kw1047">std::<span class="me2">string</span></span></a>, <span class="kw4">double</span><span class="sy1">&gt;</span> t1<span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1451">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Value-initialized: "</span><span class="sy4">;</span> print<span class="br0">(</span>t1<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <a href="../../string/basic_string.html"><span class="kw1047">std::<span class="me2">string</span></span></a>, <span class="kw4">double</span><span class="sy1">&gt;</span> t2<span class="br0">(</span><span class="nu0">42</span>, <span class="st0">"Test"</span>, <span class="sy2">-</span><span class="nu16">3.14</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1451">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Initialized with values: "</span><span class="sy4">;</span> print<span class="br0">(</span>t2<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span>, <a href="../../string/basic_string.html"><span class="kw1047">std::<span class="me2">string</span></span></a>, <span class="kw4">int</span><span class="sy1">&gt;</span> t3<span class="br0">(</span>t2<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1451">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Implicitly converted: "</span><span class="sy4">;</span> print<span class="br0">(</span>t3<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">double</span><span class="sy1">&gt;</span> t4<span class="br0">(</span><a href="../pair/make_pair.html"><span class="kw905">std::<span class="me2">make_pair</span></span></a><span class="br0">(</span><span class="nu0">42</span>, <span class="nu16">3.14</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../../io/cout.html"><span class="kw1451">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Constructed from a pair"</span><span class="sy4">;</span> print<span class="br0">(</span>t4<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// given Allocator my_alloc with a single-argument constructor my_alloc(int)</span>
+    <span class="co1">// use my_alloc(1) to allocate 10 ints in a vector</span>
+    <a href="../../container/vector.html"><span class="kw1069">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, my_alloc<span class="sy1">&gt;</span> v<span class="br0">(</span><span class="nu0">10</span>, <span class="nu0">1</span>, my_alloc<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// use my_alloc(2) to allocate 10 ints in a vector in a tuple</span>
+    <a href="../tuple.html"><span class="kw906">std::<span class="me2">tuple</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, <a href="../../container/vector.html"><span class="kw1069">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span>, my_alloc<span class="sy1">&gt;</span>, <span class="kw4">double</span><span class="sy1">&gt;</span> t5<span class="br0">(</span><a href="../../memory/allocator_arg.html"><span class="kw572">std::<span class="me2">allocator_arg</span></span></a>,
+                                                           my_alloc<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span>, <span class="nu0">42</span>, v,  <span class="sy2">-</span><span class="nu16">3.14</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Value-initialized: (0, , 0)
+Initialized with values: (42, Test, -3.14)
+Implicitly converted: (*, Test, -3)
+Constructed from a pair(42, 3.14)</pre></div></div> 
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="make_tuple.html" title="cpp/utility/tuple/make tuple"> <span class="t-lines"><span>make_tuple</span></span></a></div></div>
+</td>
+<td>   creates a <code>tuple</code> object of the type defined by the argument types <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="tie.html" title="cpp/utility/tuple/tie"> <span class="t-lines"><span>tie</span></span></a></div></div>
+</td>
+<td>   creates a <code>tuple</code> of lvalue references or unpacks a tuple into individual objects <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="forward_as_tuple.html" title="cpp/utility/tuple/forward as tuple"> <span class="t-lines"><span>forward_as_tuple</span></span></a></div></div>
+</td>
+<td>   creates a <code>tuple</code> of rvalue references <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 7481/1000000
+Preprocessor generated node count: 11317/1000000
+Post‐expand include size: 116700/2097152 bytes
+Template argument size: 30642/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2675-0!*!0!!en!*!* and timestamp 20150709074941 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/utility/tuple/tuple&amp;oldid=79544</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.082 secs. -->
+	</body>
+<!-- Cached 20150709082853 -->
+</html>

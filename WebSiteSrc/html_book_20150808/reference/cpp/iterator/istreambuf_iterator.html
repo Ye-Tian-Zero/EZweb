@@ -1,0 +1,606 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>std::istreambuf_iterator - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/iterator/istreambuf_iterator","wgTitle":"cpp/iterator/istreambuf iterator","wgCurRevisionId":78514,"wgArticleId":4856,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/iterator/istreambuf_iterator","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_iterator_istreambuf_iterator skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">
+<span style="font-size:0.7em; line-height:130%">std::</span>istreambuf_iterator</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../iterator.html" title="cpp/iterator">iterator</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../iterator.html" title="cpp/iterator"> Iterator library</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Iterator primitives</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator_traits.html" title="cpp/iterator/iterator traits"><span class="t-lines"><span>iterator_traits</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator_tags.html" title="cpp/iterator/iterator tags"><span class="t-lines"><span>input_iterator_tag</span><span>output_iterator_tag</span><span>forward_iterator_tag</span><span>bidirectional_iterator_tag</span><span>random_access_iterator_tag</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator.html" title="cpp/iterator/iterator"><span class="t-lines"><span>iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Iterator adaptors</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="reverse_iterator.html" title="cpp/iterator/reverse iterator"><span class="t-lines"><span>reverse_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="move_iterator.html" title="cpp/iterator/move iterator"><span class="t-lines"><span>move_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="back_insert_iterator.html" title="cpp/iterator/back insert iterator"><span class="t-lines"><span>back_insert_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="front_insert_iterator.html" title="cpp/iterator/front insert iterator"><span class="t-lines"><span>front_insert_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="insert_iterator.html" title="cpp/iterator/insert iterator"><span class="t-lines"><span>insert_iterator</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="make_reverse_iterator.html" title="cpp/iterator/make reverse iterator"><span class="t-lines"><span>make_reverse_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="make_move_iterator.html" title="cpp/iterator/make move iterator"><span class="t-lines"><span>make_move_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="back_inserter.html" title="cpp/iterator/back inserter"><span class="t-lines"><span>back_inserter</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="front_inserter.html" title="cpp/iterator/front inserter"><span class="t-lines"><span>front_inserter</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="inserter.html" title="cpp/iterator/inserter"><span class="t-lines"><span>inserter</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Stream iterators</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="istream_iterator.html" title="cpp/iterator/istream iterator"><span class="t-lines"><span>istream_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ostream_iterator.html" title="cpp/iterator/ostream iterator"><span class="t-lines"><span>ostream_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>istreambuf_iterator</span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ostreambuf_iterator.html" title="cpp/iterator/ostreambuf iterator"><span class="t-lines"><span>ostreambuf_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Iterator operations</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="advance.html" title="cpp/iterator/advance"><span class="t-lines"><span>advance</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="distance.html" title="cpp/iterator/distance"><span class="t-lines"><span>distance</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="prev.html" title="cpp/iterator/prev"><span class="t-lines"><span>prev</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="next.html" title="cpp/iterator/next"><span class="t-lines"><span>next</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Range access</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="begin.html" title="cpp/iterator/begin"><span class="t-lines"><span>begin</span><span>cbegin</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="end.html" title="cpp/iterator/end"><span class="t-lines"><span>end</span><span>cend</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="rbegin.html" title="cpp/iterator/rbegin"><span class="t-lines"><span>rbegin</span><span>crbegin</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="rend.html" title="cpp/iterator/rend"><span class="t-lines"><span>rend</span><span>crend</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Container access</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="size.html" title="cpp/iterator/size"><span class="t-lines"><span>size</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="empty.html" title="cpp/iterator/empty"><span class="t-lines"><span>empty</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="data.html" title="cpp/iterator/data"><span class="t-lines"><span>data</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"><tt>std::istreambuf_iterator</tt></strong><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Member functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="istreambuf_iterator/istreambuf_iterator.html" title="cpp/iterator/istreambuf iterator/istreambuf iterator"><span class="t-lines"><span>istreambuf_iterator::istreambuf_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="istreambuf_iterator/operator%2A.html" title="cpp/iterator/istreambuf iterator/operator*"><span class="t-lines"><span>istreambuf_iterator::operator*</span><span>istreambuf_iterator::operator-&gt;</span></span></a></div>
+<div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="istreambuf_iterator/operator_arith.html" title="cpp/iterator/istreambuf iterator/operator arith"><span class="t-lines"><span>istreambuf_iterator::operator++</span><span>istreambuf_iterator::operator++(int)</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="istreambuf_iterator/equal.html" title="cpp/iterator/istreambuf iterator/equal"><span class="t-lines"><span>istreambuf_iterator::equal</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Non-member functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="istreambuf_iterator/operator_cmp.html" title="cpp/iterator/istreambuf iterator/operator cmp"><span class="t-lines"><span>operator==</span><span>operator!=</span></span></a></div></div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="t-dcl-begin">
+<tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/iterator.html" title="cpp/header/iterator">&lt;iterator&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td></td>
+<p></p>
+</tr>
+</tbody>
+<tbody class="t-dcl-rev">
+
+<tr class="t-dcl t-until-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> CharT, <span class="kw1">class</span> Traits <span class="sy1">=</span> <a href="../string/char_traits.html"><span class="kw1061">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <span class="sy1">&gt;</span><br>
+<p><span class="kw1">class</span> istreambuf_iterator <span class="sy4">:</span> <span class="kw1">public</span> <a href="iterator.html"><span class="kw536">std::<span class="me2">iterator</span></span></a><span class="sy1">&lt;</span> <a href="iterator_tags.html"><span class="kw531">std::<span class="me2">input_iterator_tag</span></span></a>,<br>
+                                                  CharT,<br>
+                                                  <span class="kw1">typename</span> Traits<span class="sy4">::</span><span class="me2">off_type</span>,<br>
+                                                  <span class="coMULTI">/* unspecified, usually CharT* */</span>,<br>
+</p>
+                                                  CharT <span class="sy1">&gt;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-until-cxx17">(until C++17)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> CharT, <span class="kw1">class</span> Traits <span class="sy1">=</span> <a href="../string/char_traits.html"><span class="kw1061">std::<span class="me2">char_traits</span></span></a><span class="sy1">&lt;</span>CharT<span class="sy1">&gt;</span> <span class="sy1">&gt;</span><br>
+<span class="kw1">class</span> istreambuf_iterator<span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span> </td>
+</tr>
+</tbody>
+<tbody>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><code>std::istreambuf_iterator</code> is a single-pass input iterator that reads successive characters from the <span class="t-lc"><a href="../io/basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span> object for which it was constructed. The actual read operation is performed when the iterator is incremented, not when it is dereferenced. The first character may be read when the iterator is constructed or when the first dereferencing is done. Otherwise, dereferencing only returns a copy of the most recently read character.
+</p>
+<p>The default-constructed <code>std::istreambuf_iterator</code> is known as the <i>end-of-stream</i> iterator. When a valid <code>std::istreambuf_iterator</code> reaches the end of the underlying stream, it becomes equal to the end-of-stream iterator. Dereferencing or incrementing it further invokes undefined behavior.
+</p>
+<p><code>std::istreambuf_iterator</code> has a trivial copy constructor, a constexpr default constructor, and a trivial destructor.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="istreambuf_iterator.html#Member_types"><span class="tocnumber">1</span> <span class="toctext">Member types</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="istreambuf_iterator.html#Member_functions"><span class="tocnumber">2</span> <span class="toctext">Member functions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="istreambuf_iterator.html#Non-member_functions"><span class="tocnumber">3</span> <span class="toctext">Non-member functions</span></a></li>
+<li class="toclevel-1"><a href="istreambuf_iterator.html#Member_types_2"><span class="tocnumber">4</span> <span class="toctext">Member types</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="istreambuf_iterator.html#Example"><span class="tocnumber">5</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="istreambuf_iterator.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Member types">edit</a>]</span> <span class="mw-headline" id="Member_types">Member types</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-hitem">
+<td>  Member type
+</td>
+<td>  Definition
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>char_type</code>
+</td>
+<td>  <code>CharT</code>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>traits_type</code>
+</td>
+<td>  <code>Traits</code>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>int_type</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">typename</span> traits<span class="sy4">::</span><span class="me2">int_type</span></span></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>streambuf_type</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../io/basic_streambuf.html"><span class="kw1355">std::<span class="me2">basic_streambuf</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>istream_type</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../io/basic_istream.html"><span class="kw1401">std::<span class="me2">basic_istream</span></span></a><span class="sy1">&lt;</span>CharT, Traits<span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+
+</table>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: the proxy member type </td>
+</tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><a href="istreambuf_iterator/istreambuf_iterator.html" title="cpp/iterator/istreambuf iterator/istreambuf iterator"> <span class="t-lines"><span>(constructor)</span></span></a></div></div>
+</td>
+<td>  constructs a new <code>istreambuf_iterator</code> <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div">
+<div>(destructor)</div>
+<div><span class="t-lines"><span><span class="t-mark">(implicitly declared)</span></span></span></div>
+</div>
+</td>
+<td>  destructs an <code>istreambuf_iterator</code> <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="istreambuf_iterator/operator%2A.html" title="cpp/iterator/istreambuf iterator/operator*"> <span class="t-lines"><span>operator*</span><span>operator-&gt;</span></span></a></div>
+<div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span></div>
+</div>
+</td>
+<td>   obtains a copy of the current character<br>accesses a member of the current character, if <code>CharT</code> has members  <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="istreambuf_iterator/operator_arith.html" title="cpp/iterator/istreambuf iterator/operator arith"> <span class="t-lines"><span>operator++</span><span>operator++<span class="t-dsc-small">(int)</span></span></span></a></div></div>
+</td>
+<td>   advances the iterator  <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="istreambuf_iterator/equal.html" title="cpp/iterator/istreambuf iterator/equal"> <span class="t-lines"><span>equal</span></span></a></div></div>
+</td>
+<td>   tests if both <code>istreambuf_iterator</code>s are end-of-stream or if both are valid <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Non-member functions">edit</a>]</span> <span class="mw-headline" id="Non-member_functions">Non-member functions</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="istreambuf_iterator/operator_cmp.html" title="cpp/iterator/istreambuf iterator/operator cmp"> <span class="t-lines"><span>operator==</span><span>operator!=</span></span></a></div></div>
+</td>
+<td>   compares two <code>istreambuf_iterator</code>s  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Template:cpp/iterator/iterator/inherit">edit</a>]</span> <span class="mw-headline" id="Member_types_2">Member types</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-hitem">
+<td>  Member type
+</td>
+<td>  Definition
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>value_type</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">CharT</span></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>difference_type</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">Traits<span class="sy4">::</span><span class="me2">off_type</span></span></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>pointer</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="coMULTI">/* unspecified, usually CharT* */</span></span></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>reference</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp">CharT</span></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>iterator_category</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="iterator_tags.html"><span class="kw531">std::<span class="me2">input_iterator_tag</span></span></a></span></span>
+</td>
+</tr>
+
+</table>
+<p>Note: before C++17, these member types are required to be obtained by inheriting from <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="iterator.html"><span class="kw536">std::<span class="me2">iterator</span></span></a><span class="sy1">&lt;</span><a href="iterator_tags.html"><span class="kw531">std::<span class="me2">input_iterator_tag</span></span></a>,CharT,Traits<span class="sy4">::</span><span class="me2">off_type</span>,<span class="coMULTI">/* unspecified, usually CharT* */</span>,CharT<span class="sy1">&gt;</span></span></span>.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;vector&gt;</span>
+<span class="co2">#include &lt;sstream&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;iterator&gt;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="co1">// typical use case: an input stream represented as a pair of iterators</span>
+    <a href="../io/basic_istringstream.html"><span class="kw1423">std::<span class="me2">istringstream</span></span></a> in<span class="br0">(</span><span class="st0">"Hello, world"</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../container/vector.html"><span class="kw1064">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> v<span class="br0">(</span> <span class="br0">(</span>std<span class="sy4">::</span><span class="me2">istreambuf_iterator</span><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">(</span>in<span class="br0">)</span><span class="br0">)</span>,
+                          std<span class="sy4">::</span><span class="me2">istreambuf_iterator</span><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">)</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"v has "</span> <span class="sy1">&lt;&lt;</span> v.<span class="me1">size</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">" bytes. "</span><span class="sy4">;</span>
+    v.<span class="me1">push_back</span><span class="br0">(</span><span class="st0">'<span class="es5">\0</span>'</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"it holds <span class="es1">\"</span>"</span> <span class="sy1">&lt;&lt;</span> <span class="sy3">&amp;</span>v<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"<span class="es1">\"</span><span class="es1">\n</span>"</span><span class="sy4">;</span>
+ 
+ 
+    <span class="co1">// demonstration of the single-pass nature</span>
+    <a href="../io/basic_istringstream.html"><span class="kw1423">std::<span class="me2">istringstream</span></span></a> s<span class="br0">(</span><span class="st0">"abc"</span><span class="br0">)</span><span class="sy4">;</span>
+    std<span class="sy4">::</span><span class="me2">istreambuf_iterator</span><span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span> i1<span class="br0">(</span>s<span class="br0">)</span>, i2<span class="br0">(</span>s<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"i1 returns "</span> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>i1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">"i2 returns "</span> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>i2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="sy2">++</span>i1<span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"after incrementing i1, but not i2<span class="es1">\n</span>"</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">"i1 returns "</span> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>i1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">"i2 returns "</span> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>i2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="sy2">++</span>i2<span class="sy4">;</span> <span class="co1">// this makes the apparent value of *i2 to jump from 'a' to 'c'</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"after incrementing i2, but not i1<span class="es1">\n</span>"</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">"i1 returns "</span> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>i1 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>
+              <span class="sy1">&lt;&lt;</span> <span class="st0">"i2 returns "</span> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>i2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">v has 12 bytes. it holds "Hello, world"
+i1 returns a
+i2 returns a
+after incrementing i1, but not i2
+i1 returns b
+i2 returns a
+after incrementing i2, but not i1
+i1 returns b
+i2 returns c</pre></div></div> 
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="ostreambuf_iterator.html" title="cpp/iterator/ostreambuf iterator"> <span class="t-lines"><span>ostreambuf_iterator</span></span></a></div></div>
+</td>
+<td>   output iterator that writes to <span class="t-lc"><a href="../io/basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span> <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="istream_iterator.html" title="cpp/iterator/istream iterator"> <span class="t-lines"><span>istream_iterator</span></span></a></div></div>
+</td>
+<td>   input iterator that reads from <span class="t-lc"><a href="../io/basic_istream.html" title="cpp/io/basic istream">std::basic_istream</a></span> <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 4887/1000000
+Preprocessor generated node count: 12781/1000000
+Post‐expand include size: 135399/2097152 bytes
+Template argument size: 31760/2097152 bytes
+Highest expansion depth: 22/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4856-0!*!0!!en!*!* and timestamp 20150524131707 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/iterator/istreambuf_iterator&amp;oldid=78514</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.086 secs. -->
+	</body>
+<!-- Cached 20150524194243 -->
+</html>

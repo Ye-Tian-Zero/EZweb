@@ -1,0 +1,804 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Template parameters and template arguments - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/template_parameters","wgTitle":"cpp/language/template parameters","wgCurRevisionId":77806,"wgArticleId":13162,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/template_parameters","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_template_parameters skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Template parameters and template arguments</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="templates.html" title="cpp/language/templates"> Templates</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> parameters and arguments</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html" title="cpp/language/class template"> class templates</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function_template.html" title="cpp/language/function template"> function templates</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template"> class member templates</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="variable_template.html" title="cpp/language/variable template"> variable templates</a><span class="t-mark-rev t-since-cxx14">(C++14)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_argument_deduction.html" title="cpp/language/template argument deduction"> template argument deduction</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_specialization.html" title="cpp/language/template specialization"> explicit (full) specialization</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="partial_specialization.html" title="cpp/language/partial specialization"> partial specialization</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="dependent_name.html" title="cpp/language/dependent name"> dependent names</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="parameter_pack.html" title="cpp/language/parameter pack"> parameter packs</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="sizeof....html" title="cpp/language/sizeof..."><span class="t-lines"><span>sizeof...</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fold.html" title="cpp/language/fold"> fold-expressions</a><span class="t-mark-rev t-since-cxx17">(C++17)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sfinae.html" title="cpp/language/sfinae"> SFINAE</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concepts.html" title="cpp/language/constraints"> Constraints and concepts</a><span class="t-mark-rev t-since-concepts-ts t-mark-ts">(concepts TS)</span> </td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Every <a href="templates.html" title="cpp/language/templates">template</a> is parametrized by one or more template parameters, indicated in the <span class="t-spar">parameter-list</span> of the template declaration syntax:
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>template</b></code> <code><b>&lt;</b></code> <span class="t-spar">parameter-list</span> <code><b>&gt;</b></code> <span class="t-spar">declaration</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<p>Each parameter in <span class="t-spar">parameter-list</span> may be one of 
+</p>
+<ul>
+<li> non-type template parameter
+</li>
+<li> type template parameter
+</li>
+<li> template template parameter
+</li>
+</ul>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="template_parameters.html#Non-type_template_parameter"><span class="tocnumber">1</span> <span class="toctext">Non-type template parameter</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="template_parameters.html#Type_template_parameter"><span class="tocnumber">2</span> <span class="toctext">Type template parameter</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="template_parameters.html#Template_template_parameter"><span class="tocnumber">3</span> <span class="toctext">Template template parameter</span></a></li>
+<li class="toclevel-1 tocsection-4">
+<a href="template_parameters.html#Template_arguments"><span class="tocnumber">4</span> <span class="toctext">Template arguments</span></a>
+<ul>
+<li class="toclevel-2 tocsection-5"><a href="template_parameters.html#Template_non-type_arguments"><span class="tocnumber">4.1</span> <span class="toctext">Template non-type arguments</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="template_parameters.html#Template_type_arguments"><span class="tocnumber">4.2</span> <span class="toctext">Template type arguments</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="template_parameters.html#Template_template_arguments"><span class="tocnumber">4.3</span> <span class="toctext">Template template arguments</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="template_parameters.html#Default_template_arguments"><span class="tocnumber">4.4</span> <span class="toctext">Default template arguments</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-9">
+<a href="template_parameters.html#Examples"><span class="tocnumber">5</span> <span class="toctext">Examples</span></a>
+<ul>
+<li class="toclevel-2 tocsection-10"><a href="template_parameters.html#Non-type_template_parameters"><span class="tocnumber">5.1</span> <span class="toctext">Non-type template parameters</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Non-type template parameter">edit</a>]</span> <span class="mw-headline" id="Non-type_template_parameter">Non-type template parameter</span>
+</h4>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">type</span> <span class="t-spar">name</span><span class="t-mark">(optional)</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">type</span> <span class="t-spar">name</span><span class="t-mark">(optional)</span> <code><b>= </b></code> <span class="t-spar">default</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">type</span> <code><b>...</b></code> <span class="t-spar">name</span><span class="t-mark">(optional)</span>
+</td>
+<td> (3)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">1)</span> A non-type template parameter with an optional name</div>
+<div class="t-li1">
+<span class="t-li">2)</span> A non-type template parameter with an optional name and a default value</div>
+<div class="t-li1">
+<span class="t-li">3)</span> A non-type template <a href="parameter_pack.html" title="cpp/language/parameter pack">parameter pack</a> with an optional name</div>
+<p><span class="t-spar">type</span> is one of the following types (optionally cv-qualified, the qualifiers are ignored)
+</p>
+<ul>
+<li> <a href="incomplete_type.html" title="cpp/language/type">integral type</a>
+</li>
+<li> <a href="enum.html" title="cpp/language/enum">enumeration</a>
+</li>
+<li> <a href="pointer.html" title="cpp/language/pointer">pointer</a> to object or to function
+</li>
+<li> <a href="reference.html#Lvalue_references" title="cpp/language/reference">lvalue reference</a> to object or to function
+</li>
+<li> <a href="pointer.html#Pointers_to_data_members" title="cpp/language/pointer">pointer to member</a> object or to member function
+</li>
+<li> <span class="t-lc"><a href="../types/nullptr_t.html" title="cpp/types/nullptr t">std::nullptr_t</a></span> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</li>
+</ul>
+<p>Array and function types may be written in a template declaration, but they are automatically replaced by pointer to data and pointer to function as appropriate.
+</p>
+<p>When the name of a non-type template parameter is used in an expression within the body of the class template, it is an unmodifiable prvalue unless its type was an lvalue reference type.
+</p>
+<p>A template parameter of the form <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> Foo</span></span> is not an unnamed non-type template parameter of type <code>Foo</code>, even if otherwise <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> Foo</span></span> is an <a href="elaborated_type_specifier.html" title="cpp/language/elaborated type specifier">elaborated type specifier</a> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> Foo x<span class="sy4">;</span></span></span> declares <code>x</code> to be of type <code>Foo</code>.
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Type template parameter">edit</a>]</span> <span class="mw-headline" id="Type_template_parameter">Type template parameter</span>
+</h4>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>typename</b></code> <span class="t-spar">name</span><span class="t-mark">(optional)</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>class</b></code> <span class="t-spar">name</span><span class="t-mark">(optional)</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>typename|class</b></code> <span class="t-spar">name</span><span class="t-mark">(optional)</span> <code><b>= </b></code> <span class="t-spar">default</span>
+</td>
+<td> (3)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>typename|class</b></code> <code><b>...</b></code> <span class="t-spar">name</span><span class="t-mark">(optional)</span>
+</td>
+<td> (4)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">1)</span> A type template parameter with an optional name</div>
+<div class="t-li1">
+<span class="t-li">2)</span> Exactly the same as 1)</div>
+<div class="t-li1">
+<span class="t-li">3)</span> A type template parameter with an optional name and a default</div>
+<div class="t-li1">
+<span class="t-li">4)</span> A type template <a href="parameter_pack.html" title="cpp/language/parameter pack">parameter pack</a> with an optional name</div>
+<p>In the body of the template declaration, the name of a type parameter is a typedef-name which aliases the type supplied when the template is instantiated.
+</p>
+<p>There is no difference between the keywords <code><b>class</b></code> and <code><b>typename</b></code> in a type template parameter declaration.
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Template template parameter">edit</a>]</span> <span class="mw-headline" id="Template_template_parameter">Template template parameter</span>
+</h4>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>template</b></code> <code><b>&lt;</b></code> <span class="t-spar">parameter-list</span> <code><b>&gt;</b></code> <code><b>typename<span class="t-mark-rev t-since-cxx17">(C++17)</span>|class</b></code> <span class="t-spar">name</span><span class="t-mark">(optional)</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>template</b></code> <code><b>&lt;</b></code> <span class="t-spar">parameter-list</span> <code><b>&gt;</b></code> <code><b>typename<span class="t-mark-rev t-since-cxx17">(C++17)</span>|class</b></code> <span class="t-spar">name</span><span class="t-mark">(optional)</span> <code><b>=</b></code> <span class="t-spar">default</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>template</b></code> <code><b>&lt;</b></code> <span class="t-spar">parameter-list</span> <code><b>&gt;</b></code> <code><b>typename<span class="t-mark-rev t-since-cxx17">(C++17)</span>|class</b></code> <code><b>...</b></code> <span class="t-spar">name</span><span class="t-mark">(optional)</span>
+</td>
+<td> (3)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">1)</span> A template template parameter with an optional name</div>
+<div class="t-li1">
+<span class="t-li">2)</span> A template template parameter with an optional name and a default</div>
+<div class="t-li1">
+<span class="t-li">3)</span> A template template <a href="parameter_pack.html" title="cpp/language/parameter pack">parameter pack</a> with an optional name</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx17">
+<td>
+<p>Unlike type template parameter declaration, template template parameter declaration can only use the keyword <code><b>class</b></code> and not <code><b>typename</b></code>.
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx17">(until C++17)</span></td>
+</tr>
+</table>
+<p>In the body of the template declaration, the name of this parameter is a template-name (and needs arguments to be instantiated)
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> myarray <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// two type template parameters and one template template parameter:</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> K, <span class="kw1">class</span> V, <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span><span class="sy1">&gt;</span> <span class="kw1">class</span> C <span class="sy1">=</span> myarray<span class="sy1">&gt;</span>
+<span class="kw1">class</span> Map <span class="br0">{</span>
+  C<span class="sy1">&lt;</span>K<span class="sy1">&gt;</span> key<span class="sy4">;</span>
+  C<span class="sy1">&lt;</span>V<span class="sy1">&gt;</span> value<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Template arguments">edit</a>]</span> <span class="mw-headline" id="Template_arguments">Template arguments</span>
+</h3>
+<p>In order for a template to be instantiated, every template parameter (type, non-type, or template) must be replaced by a corresponding template argument. For <a href="class_template.html" title="cpp/language/class template">class templates</a>, the arguments are either explicitly provided or defaulted. For <a href="function_template.html" title="cpp/language/function template">function templates</a>, the arguments are explicitly provided, defaulted, or <a href="template_argument_deduction.html" title="cpp/language/template argument deduction">deduced from context</a>.
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Template non-type arguments">edit</a>]</span> <span class="mw-headline" id="Template_non-type_arguments">Template non-type arguments</span>
+</h4>
+<p>The following limitations apply when instantiating templates that have non-type template parameters:
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx17">
+<td>
+<ul>
+<li> For integral and arithmetic types, the template argument provided during instantiation must be a <a href="constant_expression.html" title="cpp/language/constant expression">converted constant expression</a> of the template parameter's type (so certain implicit conversion applies).
+</li>
+<li> For pointers to objects, the template arguments have to designate the address of an object with static <a href="storage_duration.html" title="cpp/language/storage duration">storage duration</a> and a <a href="storage_duration.html#Linkage" title="cpp/language/storage duration">linkage</a> (either internal or external), or a constant expression that evaluates to the appropriate null pointer or <span class="t-lc"><a href="../types/nullptr_t.html" title="cpp/types/nullptr t">std::nullptr_t</a></span> value.
+</li>
+<li> For pointers to functions, the valid arguments are pointers to functions with linkage (or constant expressions that evaluate to null pointer values).
+</li>
+<li> For lvalue reference parameters, the argument provided at instantiation cannot be a temporary, an unnamed lvalue, or a named lvalue with no linkage (in other words, the argument must have linkage).
+</li>
+<li> For pointers to members, the argument has to be a pointer to member expressed as <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span>Class<span class="sy4">::</span><span class="me2">Member</span></span></span> or a constant expression that evaluates to null pointer or <span class="t-lc"><a href="../types/nullptr_t.html" title="cpp/types/nullptr t">std::nullptr_t</a></span> value.
+</li>
+</ul>
+<p>In particular, this implies that string literals, addresses of array elements, and addresses of non-static members cannot be used as template arguments to instantiate templates whose corresponding non-type template parameters are pointers to objects.
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx17">(until C++17)</span></td>
+</tr>
+<tr class="t-rev t-since-cxx17">
+<td>
+<p>The template argument that can be used with a non-type template parameter can be any  <a href="constant_expression.html" title="cpp/language/constant expression">converted constant expression</a> of the type of the template parameter.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">const</span> <span class="kw4">int</span><span class="sy2">*</span> pci<span class="sy1">&gt;</span> <span class="kw1">struct</span> X <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> ai<span class="br0">[</span><span class="nu0">10</span><span class="br0">]</span><span class="sy4">;</span>
+X<span class="sy1">&lt;</span>ai<span class="sy1">&gt;</span> xi<span class="sy4">;</span>  <span class="co1">// OK: array to pointer conversion and qualification conversions</span>
+ 
+<span class="kw1">struct</span> Y <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">const</span> Y<span class="sy3">&amp;</span> b<span class="sy1">&gt;</span> <span class="kw1">struct</span> Z <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+Y y<span class="sy4">;</span>
+Z<span class="sy1">&lt;</span>y<span class="sy1">&gt;</span> z<span class="sy4">;</span>  <span class="co1">// OK: no conversion, extra cv-qualification is okay</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">int</span> <span class="br0">(</span><span class="sy3">&amp;</span>pa<span class="br0">)</span><span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="sy1">&gt;</span> <span class="kw1">struct</span> W <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> b<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="sy4">;</span>
+W<span class="sy1">&lt;</span>b<span class="sy1">&gt;</span> w<span class="sy4">;</span> <span class="co1">// OK: no conversion</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">char</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">void</span> <span class="br0">(</span><span class="sy2">*</span>pf<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy1">&gt;</span> <span class="kw1">struct</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+A<span class="sy1">&lt;</span><span class="sy3">&amp;</span>f<span class="sy1">&gt;</span> a<span class="sy4">;</span> <span class="co1">// OK: overload resolution selects f(int)</span></pre></div></div>
+<p>The only exceptions are that non-type template parameters of <i>reference</i> and <i>pointer</i> type cannot refer to/be the address of
+</p>
+<ul>
+<li> a subobject (including non-static class member, base subobject, or array element)
+</li>
+<li> a temporary object (including one created during <a href="reference_initialization.html" title="cpp/language/reference initialization">reference initialization</a>)
+</li>
+<li> a <a href="string_literal.html" title="cpp/language/string literal">string literal</a>
+</li>
+<li> the result of <a href="typeid.html" title="cpp/language/typeid">typeid</a>
+</li>
+<li> or the predefined variable <span class="t-c"><span class="mw-geshi cpp source-cpp">__func__</span></span>.
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T, <span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span> p<span class="sy1">&gt;</span> <span class="kw1">class</span> X <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+X<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="st0">"Studebaker"</span><span class="sy1">&gt;</span> x1<span class="sy4">;</span> <span class="co1">// Error: string literal as template-argument</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy2">*</span> p<span class="sy1">&gt;</span> <span class="kw1">class</span> X <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> a<span class="br0">[</span><span class="nu0">10</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw1">struct</span> S <span class="br0">{</span> <span class="kw4">int</span> m<span class="sy4">;</span> <span class="kw4">static</span> <span class="kw4">int</span> s<span class="sy4">;</span> <span class="br0">}</span> s<span class="sy4">;</span>
+X<span class="sy1">&lt;</span><span class="sy3">&amp;</span>a<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="sy1">&gt;</span> x3<span class="sy4">;</span>  <span class="co1">// error: address of array element</span>
+X<span class="sy1">&lt;</span><span class="sy3">&amp;</span>s.<span class="me1">m</span><span class="sy1">&gt;</span> x4<span class="sy4">;</span>   <span class="co1">// error: address of non-static member</span>
+X<span class="sy1">&lt;</span><span class="sy3">&amp;</span>s.<span class="me1">s</span><span class="sy1">&gt;</span> x5<span class="sy4">;</span>   <span class="co1">// OK: address of static member</span>
+X<span class="sy1">&lt;</span><span class="sy3">&amp;</span>S<span class="sy4">::</span><span class="me2">s</span><span class="sy1">&gt;</span> x6<span class="sy4">;</span>  <span class="co1">// also OK: address of static member</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> CRI<span class="sy1">&gt;</span> <span class="kw1">struct</span> B <span class="br0">{</span> <span class="sy2">/</span>∗ ... ∗<span class="sy2">/</span> <span class="br0">}</span><span class="sy4">;</span>
+B<span class="sy1">&lt;</span><span class="nu0">1</span><span class="sy1">&gt;</span> b2<span class="sy4">;</span>     <span class="co1">// error: temporary would be required for template argument</span>
+<span class="kw4">int</span> c <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+B<span class="sy1">&lt;</span>c<span class="sy1">&gt;</span> b1<span class="sy4">;</span>     <span class="co1">// OK</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+</tr>
+</table>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Template type arguments">edit</a>]</span> <span class="mw-headline" id="Template_type_arguments">Template type arguments</span>
+</h4>
+<p>A template argument for a type template parameter must be a <a href="incomplete_type.html#Type_naming" title="cpp/language/type">type-id</a>, which may name an incomplete type:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> X <span class="br0">{</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// class template</span>
+ 
+<span class="kw1">struct</span> A<span class="sy4">;</span> <span class="co1">// incomplete type</span>
+<span class="kw1">typedef</span> <span class="kw1">struct</span> <span class="br0">{</span><span class="br0">}</span> B<span class="sy4">;</span> <span class="co1">// type alias to an unnamed type</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+   X<span class="sy1">&lt;</span>A<span class="sy1">&gt;</span> x1<span class="sy4">;</span> <span class="co1">// OK, 'A' names a type</span>
+   X<span class="sy1">&lt;</span>A<span class="sy2">*</span><span class="sy1">&gt;</span> x2<span class="sy4">;</span> <span class="co1">// OK, 'A*' names a type</span>
+   X<span class="sy1">&lt;</span>B<span class="sy1">&gt;</span> x3<span class="sy4">;</span> <span class="co1">// OK, 'B' names a type</span>
+<span class="br0">}</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Template template arguments">edit</a>]</span> <span class="mw-headline" id="Template_template_arguments">Template template arguments</span>
+</h4>
+<p>A template argument for a template template parameter must be an <a href="name.html#In_expressions" title="cpp/language/identifiers">id-expression</a> which names a class template or a template alias.
+</p>
+<p>When the argument is a class template, only the primary template is considered when matching the parameter. The partial specializations, if any, are only considered when a specialization based on this template template parameter happens to be instantiated.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> A <span class="br0">{</span> <span class="co1">// primary template</span>
+    <span class="kw4">int</span> x<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> A<span class="sy1">&lt;</span>T<span class="sy2">*</span><span class="sy1">&gt;</span> <span class="br0">{</span> <span class="co1">// partial specialization</span>
+    <span class="kw4">long</span> x<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// class template with a template template parameter V</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span><span class="sy1">&gt;</span> <span class="kw1">class</span> V<span class="sy1">&gt;</span> <span class="kw1">class</span> C <span class="br0">{</span>
+    V<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> y<span class="sy4">;</span> <span class="co1">// uses the primary template</span>
+    V<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy2">*</span><span class="sy1">&gt;</span> z<span class="sy4">;</span> <span class="co1">// uses the partial specialization</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+C<span class="sy1">&lt;</span>A<span class="sy1">&gt;</span> c<span class="sy4">;</span> <span class="co1">// c.y.x has type int, c.z.x has type long</span></pre></div></div>
+<p>To match a template template argument <code>A</code> to a template template parameter <code>P</code>, each of the template parameters of <code>A</code> must match corresponding template parameters of <code>P</code>. If <code>P</code>'s parameter list includes a <a href="parameter_pack.html" title="cpp/language/parameter pack">parameter pack</a>, zero or more template parameters (or parameter packs) from <code>A</code>'s template parameter list are matched by it.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> eval<span class="sy4">;</span> <span class="co1">// primary template </span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span>, <span class="kw1">class</span>...<span class="sy1">&gt;</span> <span class="kw1">class</span> TT, <span class="kw1">class</span> T1, <span class="kw1">class</span>... <span class="me1">Rest</span><span class="sy1">&gt;</span>
+<span class="kw1">struct</span> eval<span class="sy1">&lt;</span>TT<span class="sy1">&lt;</span>T1, Rest...<span class="sy1">&gt;&gt;</span> <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// partial specialization of eval</span>
+ 
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T1<span class="sy1">&gt;</span> <span class="kw1">struct</span> A<span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T1, <span class="kw1">class</span> T2<span class="sy1">&gt;</span> <span class="kw1">struct</span> B<span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw4">int</span> N<span class="sy1">&gt;</span> <span class="kw1">struct</span> C<span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T1, <span class="kw4">int</span> N<span class="sy1">&gt;</span> <span class="kw1">struct</span> D<span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T1, <span class="kw1">class</span> T2, <span class="kw4">int</span> N <span class="sy1">=</span> <span class="nu0">17</span><span class="sy1">&gt;</span> <span class="kw1">struct</span> E<span class="sy4">;</span>
+ 
+eval<span class="sy1">&lt;</span>A<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;&gt;</span> eA<span class="sy4">;</span> <span class="co1">// OK: matches partial specialization of eval</span>
+eval<span class="sy1">&lt;</span>B<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">float</span><span class="sy1">&gt;&gt;</span> eB<span class="sy4">;</span> <span class="co1">// OK: matches partial specialization of eval</span>
+eval<span class="sy1">&lt;</span>C<span class="sy1">&lt;</span><span class="nu0">17</span><span class="sy1">&gt;&gt;</span> eC<span class="sy4">;</span> <span class="co1">// error: C does not match TT in partial specialization because</span>
+                <span class="co1">// TT's first parameter is a type template parameter,</span>
+                <span class="co1">// while 17 does not name a type</span>
+eval<span class="sy1">&lt;</span>D<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="nu0">17</span><span class="sy1">&gt;&gt;</span> eD<span class="sy4">;</span> <span class="co1">// error: D does not match TT in partial specialization</span>
+                     <span class="co1">// because TT's second parameter is a type parameter pack,</span>
+                     <span class="co1">// while 17 does not name a type</span>
+eval<span class="sy1">&lt;</span>E<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">float</span><span class="sy1">&gt;&gt;</span> eE<span class="sy4">;</span> <span class="co1">// error: E does not match TT in partial specialization</span>
+                        <span class="co1">// because E's third (default) parameter is a non-type</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Default template arguments">edit</a>]</span> <span class="mw-headline" id="Default_template_arguments">Default template arguments</span>
+</h4>
+<p>Default template arguments are specified in the parameter lists after the <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">=</span></span></span> sign. Defaults can be specified for any kind of template parameter (type, non-type, or template), but not to parameter packs.
+</p>
+<p>If the default is specified for a template parameter of a primary class template, each subsequent template parameter must have a default argument, except the very last one may be a template parameter pack. In a function template, a parameter pack may be followed by more type parameters only if they have defaults or can be deduced from the function arguments.
+</p>
+<p>Default parameters are not allowed
+</p>
+<ul>
+<li> in the out-of-class definition of a <a href="member_template.html" title="cpp/language/member template">member template</a> (they have to be provided in the declaration inside the class body)
+</li>
+<li> in <a href="friend.html#Template_friends" title="cpp/language/friend">friend class template</a> declarations
+</li>
+</ul>
+<p>On a friend function template declaration, default template arguments are allowed only if the declaration is a definition, and no other declarations of this function appear in this translation unit.
+</p>
+<p>Default template arguments that appear in the declarations and the definition are merged similarly to default function arguments:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T1, <span class="kw1">class</span> T2 <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span> <span class="kw1">class</span> A<span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T1 <span class="sy1">=</span> <span class="kw4">int</span>, <span class="kw1">class</span> T2<span class="sy1">&gt;</span> <span class="kw1">class</span> A<span class="sy4">;</span>
+<span class="co1">// the above is the same as the following:</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T1 <span class="sy1">=</span> <span class="kw4">int</span>, <span class="kw1">class</span> T2 <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span> <span class="kw1">class</span> A<span class="sy4">;</span></pre></div></div>
+<p>But the same parameter cannot be given default arguments twice in the same scope
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span> <span class="kw1">class</span> X<span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span> <span class="kw1">class</span> X <span class="br0">{</span> <span class="coMULTI">/* ... */</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// error</span></pre></div></div>
+<p>The template parameter lists of template template parameters can have their own default arguments, which are only in effect where the template template parameter itself is in scope:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// class template, with a type template parameter with a default</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T <span class="sy1">=</span> <span class="kw4">float</span><span class="sy1">&gt;</span> <span class="kw1">struct</span> B <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// template template parameter T has a parameter list, which </span>
+<span class="co1">// consists of one type template parameter with a default</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> <span class="sy1">=</span> <span class="kw4">float</span><span class="sy1">&gt;</span> <span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> A <span class="br0">{</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="co1">// out-of-body member function template definitions</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> TT<span class="sy1">&gt;</span> <span class="kw1">class</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> A<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    T<span class="sy1">&lt;&gt;</span> t<span class="sy4">;</span> <span class="co1">// error - TT has no default in scope</span>
+<span class="br0">}</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> TT <span class="sy1">=</span> <span class="kw4">char</span><span class="sy1">&gt;</span> <span class="kw1">class</span> T<span class="sy1">&gt;</span>
+<span class="kw4">void</span> A<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">g</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    T<span class="sy1">&lt;&gt;</span> t<span class="sy4">;</span> <span class="co1">// OK, t is T&lt;char&gt;</span>
+<span class="br0">}</span></pre></div></div>
+<p><a href="access.html" title="cpp/language/access">Member access</a> for the names used in a default template parameter is checked at the declaration, not at the point of use:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> B <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> C <span class="br0">{</span>
+ <span class="kw1">protected</span><span class="sy4">:</span>
+    <span class="kw1">typedef</span> T TT<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> U, <span class="kw1">class</span> V <span class="sy1">=</span> <span class="kw1">typename</span> U<span class="sy4">::</span><span class="me2">TT</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> D <span class="sy4">:</span> <span class="kw1">public</span> U <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+D<span class="sy1">&lt;</span>C<span class="sy1">&lt;</span>B<span class="sy1">&gt;&gt;</span><span class="sy2">*</span> d<span class="sy4">;</span> <span class="co1">// access error, C::TT is protected</span></pre></div></div>
+<p><br>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Examples">edit</a>]</span> <span class="mw-headline" id="Examples">Examples</span>
+</h3>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Non-type template parameters">edit</a>]</span> <span class="mw-headline" id="Non-type_template_parameters">Non-type template parameters</span>
+</h4>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+ 
+<span class="co1">// simple non-type template parameter</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">int</span> N<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">int</span> a<span class="br0">[</span>N<span class="br0">]</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy2">*</span><span class="sy1">&gt;</span>
+<span class="kw1">struct</span> S2 <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// complicated non-type example</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span>
+    <span class="kw4">char</span> c, <span class="co1">// integral type</span>
+    <span class="kw4">int</span> <span class="br0">(</span><span class="sy3">&amp;</span>ra<span class="br0">)</span><span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span>, <span class="co1">// lvalue reference to object (of array type)</span>
+    <span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>pf<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span>, <span class="co1">// pointer to function</span>
+    <span class="kw4">int</span> <span class="br0">(</span>S<span class="sy1">&lt;</span><span class="nu0">10</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="sy2">*</span>a<span class="br0">)</span><span class="br0">[</span><span class="nu0">10</span><span class="br0">]</span> <span class="co1">// pointer to member object (of type int[10])</span>
+<span class="sy1">&gt;</span> <span class="kw1">struct</span> Complicated <span class="br0">{</span>
+    <span class="co1">// calls the function selected at compile time</span>
+    <span class="co1">// and stores the result in the array selected at compile time</span>
+    <span class="kw4">void</span> foo<span class="br0">(</span><span class="kw4">char</span> base<span class="br0">)</span> <span class="br0">{</span>
+        ra<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> <span class="sy1">=</span> pf<span class="br0">(</span>c <span class="sy2">-</span> base<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">//  S2&lt;"fail"&gt; s2; // Error: string literal cannot be used</span>
+<span class="kw4">char</span> okay<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="st0">"okay"</span><span class="sy4">;</span> <span class="co1">// static object with linkage</span>
+<span class="co1">// S2&lt; &amp;okay[0] &gt; s2; // Error: array element has no linkage</span>
+S2<span class="sy1">&lt;</span>okay<span class="sy1">&gt;</span> s2<span class="sy4">;</span> <span class="co1">// works</span>
+ 
+<span class="kw4">int</span> a<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> n<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> n<span class="sy4">;</span><span class="br0">}</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    S<span class="sy1">&lt;</span><span class="nu0">10</span><span class="sy1">&gt;</span> s<span class="sy4">;</span> <span class="co1">// s.a is an array of 10 int</span>
+    s.<span class="me1">a</span><span class="br0">[</span><span class="nu0">9</span><span class="br0">]</span> <span class="sy1">=</span> <span class="nu0">4</span><span class="sy4">;</span>
+ 
+    Complicated<span class="sy1">&lt;</span><span class="st0">'2'</span>, a, f, <span class="sy3">&amp;</span>S<span class="sy1">&lt;</span><span class="nu0">10</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">a</span><span class="sy1">&gt;</span> c<span class="sy4">;</span>
+    c.<span class="me1">foo</span><span class="br0">(</span><span class="st0">'0'</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">a</span><span class="br0">[</span><span class="nu0">9</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> a<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">42</pre></div></div> 
+</div>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: more examples </td>
+</tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2522/1000000
+Preprocessor generated node count: 9302/1000000
+Post‐expand include size: 47211/2097152 bytes
+Template argument size: 19233/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13162-0!*!0!!en!*!* and timestamp 20150409195710 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/template_parameters&amp;oldid=77806</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.097 secs. -->
+	</body>
+<!-- Cached 20150409195903 -->
+</html>

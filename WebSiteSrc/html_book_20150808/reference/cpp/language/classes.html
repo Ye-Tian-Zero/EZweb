@@ -1,0 +1,326 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Classes - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/classes","wgTitle":"cpp/language/classes","wgCurRevisionId":77034,"wgArticleId":9899,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/classes","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_classes skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Classes</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"> Classes</strong><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> General </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> overview</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class/struct types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union types</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Members </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html" title="cpp/language/data members">data members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static.html" title="cpp/language/static">static members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="this.html" title="cpp/language/this">the <code>this</code> pointer</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nested_classes.html" title="cpp/language/nested classes" class="mw-redirect">nested classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template">member templates</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bit_field.html" title="cpp/language/bit field">bit fields</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration">using-declarations</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_functions.html" title="cpp/language/member functions">member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="access.html" title="cpp/language/access">member access specifiers</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constructor.html" title="cpp/language/initializer list">constructors and member initializer lists</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html#Member_initialization" title="cpp/language/data members">in-class <i>brace-or-equal</i> initializer</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="friend.html" title="cpp/language/friend"><code>friend</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"><code>explicit</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="converting_constructor.html" title="cpp/language/converting constructor">converting constructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Special member functions </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_constructor.html" title="cpp/language/default constructor">default constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_constructor.html" title="cpp/language/copy constructor">copy constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_constructor.html" title="cpp/language/move constructor">move constructor</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_operator.html" title="cpp/language/as operator">copy assignment operator</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_operator.html" title="cpp/language/move operator">move assignment operator</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="destructor.html" title="cpp/language/destructor">destructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Inheritance </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="derived_class.html" title="cpp/language/derived class">base and derived classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual">virtual member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="override.html" title="cpp/language/override">override</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="final.html" title="cpp/language/final">final</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="abstract_class.html" title="cpp/language/abstract class">pure virtual functions and abstract classes</a>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>A class is a user-defined type.
+</p>
+<p>A class type is defined by class-specifier, which appears in <span class="t-spar">decl-specifier-seq</span> of the <a href="declarations.html" title="cpp/language/declarations">declaration</a> syntax. The class specifier has the following syntax:
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">class-key</span> <span class="t-spar">attr</span> <span class="t-spar">class-head-name</span> <span class="t-spar">base-clause</span> <code><b>{ </b></code> <span class="t-spar">member-specification</span> <code><b>} </b></code>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">class-key</span>
+</td>
+<td> -
+</td>
+<td>  one of <a href="../keyword/class.html" title="cpp/keyword/class">class</a>, <a href="../keyword/struct.html" title="cpp/keyword/struct">struct</a>, <a href="../keyword/union.html" title="cpp/keyword/union">union</a>
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">attr</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td>  optional sequence of any number of <a href="attributes.html" title="cpp/language/attributes">attributes</a>
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">class-head-name</span>
+</td>
+<td> -
+</td>
+<td>  the name of the class that's being defined. Optionally prepended by <span class="t-spar">nested-name-specifier</span> (sequence of names and scope-resolution operators, ending with scope-resolution operator), optionally followed by keyword <a href="../keyword/final.html" title="cpp/keyword/final">final</a>. The name may be omitted, in which case the class is unnamed (note that unnamed class cannot be final)
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">base-clause</span>
+</td>
+<td> -
+</td>
+<td>  optional list of one or more parent classes and the model of inheritance used for each (see <a href="derived_class.html" title="cpp/language/derived class">derived class</a>)
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">member-specification</span>
+</td>
+<td> -
+</td>
+<td>  list of access specifiers, member object and member function declarations and definitions (see <a href="class.html" title="cpp/language/class">class definition</a>)
+</td>
+</tr>
+</table>
+<p>The class keys <code>struct</code> and <code>class</code> are indistinguishable in C++, except that the default <a href="access.html" title="cpp/language/access">access mode</a> and default <a href="derived_class.html" title="cpp/language/derived class">inheritance mode</a> are <code>public</code> if class declaration uses the <code>struct</code> class-key and <code>private</code> if the class declaration uses the <code>class</code> class-key. Both <code>class</code> and <code>struct</code> can be used in a <a href="class.html" title="cpp/language/class">class definition</a>.
+</p>
+<p>The use of the class key <code>union</code> results in a <a href="union.html" title="cpp/language/union">union definition</a>, which defines a class that holds only one of its data members at a time.
+</p>
+<p>A class can have the following kinds of members
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> <a href="data_members.html" title="cpp/language/data members">data members</a>
+</div>
+<div class="t-li2">
+<span class="t-li">a)</span> non-static data members, including <a href="bit_field.html" title="cpp/language/bit field">bit fields</a>.</div>
+<div class="t-li2">
+<span class="t-li">b)</span> <a href="static.html" title="cpp/language/static">static</a> data members</div>
+<div class="t-li1">
+<span class="t-li">2)</span> member functions</div>
+<div class="t-li2">
+<span class="t-li">a)</span> <a href="member_functions.html" title="cpp/language/member functions">non-static member functions</a>
+</div>
+<div class="t-li2">
+<span class="t-li">b)</span> <a href="static.html" title="cpp/language/static">static</a> member functions</div>
+<div class="t-li1">
+<span class="t-li">3)</span> nested types</div>
+<div class="t-li2">
+<span class="t-li">a)</span> <a href="nested_classes.html" title="cpp/language/nested classes" class="mw-redirect">nested classes</a> and <a href="enum.html" title="cpp/language/enum">enumerations</a> defined within the class definition</div>
+<div class="t-li2">
+<span class="t-li">b)</span> aliases of existing types, defined with <a href="typedef.html" title="cpp/language/typedef">typedef</a> or <a href="type_alias.html" title="cpp/language/type alias">type alias</a> declarations</div>
+<div class="t-li2">
+<span class="t-li">c)</span> the name of the class within its own definition acts as a public member type alias of itself for the purpose of <a href="unqualified_lookup.html#Injected_class_name" title="cpp/language/unqualified lookup">lookup</a> (except when used to name a <a href="constructor.html" title="cpp/language/constructor" class="mw-redirect">constructor</a>): this is known as <i>injected-class-name</i>
+</div>
+<div class="t-li1">
+<span class="t-li">4)</span> <a href="enum.html" title="cpp/language/enum">enumerators</a> from all unscoped enumerations defined within the class</div>
+<div class="t-li1">
+<span class="t-li">5)</span> <a href="member_template.html" title="cpp/language/member template">member templates</a> (<span class="t-rev-inl t-since-cxx14"><span>variable templates, </span> <span><span class="t-mark-rev t-since-cxx14">(since C++14)</span></span></span>class templates or function templates) may appear in the body of any non-local class/struct/union.</div>
+<p>All members are defined at once in the class definition, they cannot be added to an already-defined class (unlike the members of namespaces)
+</p>
+<p>A member of a class <code>T</code> cannot use <code>T</code> as its name if the member is a static data member, a member function, a member type, a member template, an enumerator of an unscoped enumeration, a member of a member anonymous union. However, a non-static data member may use the name <code>T</code> as long as there are no user-declared constructors.
+</p>
+<p>A class with at least one declared or inherited <a href="virtual.html" title="cpp/language/virtual">virtual</a> member function is <i>polymorphic</i>. Objects of this type are <a href="objects.html#Polymorphic_objects" title="cpp/language/object">polymorphic objects</a> and have runtime type information stored as part of the object representation, which may be queried with <a href="dynamic_cast.html" title="cpp/language/dynamic cast">dynamic_cast</a> and <a href="typeid.html" title="cpp/language/typeid">typeid</a>. Virtual member functions participate in dynamic binding.
+</p>
+<p>A class with at least one declared or inherited pure virtual member function is an <a href="abstract_class.html" title="cpp/language/abstract class">abstract class</a>. Objects of this type cannot be created.
+</p>
+<p>A class with a <a href="constexpr.html" title="cpp/language/constexpr">constexpr</a> constructor is a <a href="../concept/LiteralType.html" title="cpp/concept/LiteralType"><code>LiteralType</code></a>: objects of this type can be manipulated by <a href="constexpr.html" title="cpp/language/constexpr">constexpr</a> functions at compile time.
+</p>
+<p>Some member functions are special: under certain circumstances they are defined by the compiler even if not defined by the user. They are:
+</p>
+<ul>
+<li> <a href="default_constructor.html" title="cpp/language/default constructor">Default constructor</a>
+</li>
+<li> <a href="copy_constructor.html" title="cpp/language/copy constructor">Copy constructor</a>
+</li>
+<li> <a href="move_constructor.html" title="cpp/language/move constructor">Move constructor</a> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</li>
+<li> <a href="as_operator.html" title="cpp/language/as operator">Copy assignment operator</a>
+</li>
+<li> <a href="move_operator.html" title="cpp/language/move operator">Move assignment operator</a> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</li>
+<li> <a href="destructor.html" title="cpp/language/destructor">Destructor</a>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1342/1000000
+Preprocessor generated node count: 3906/1000000
+Post‐expand include size: 40309/2097152 bytes
+Template argument size: 6669/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9899-0!*!0!*!*!*!* and timestamp 20150313152820 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/classes&amp;oldid=77034</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.076 secs. -->
+	</body>
+<!-- Cached 20150313180012 -->
+</html>

@@ -1,0 +1,521 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Move constructors - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/move_constructor","wgTitle":"cpp/language/move constructor","wgCurRevisionId":78222,"wgArticleId":8540,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/move_constructor","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_move_constructor skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Move constructors</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="classes.html" title="cpp/language/classes"> Classes</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> General </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="classes.html" title="cpp/language/classes"> overview</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class/struct types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union types</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Members </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html" title="cpp/language/data members">data members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static.html" title="cpp/language/static">static members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="this.html" title="cpp/language/this">the <code>this</code> pointer</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nested_classes.html" title="cpp/language/nested classes" class="mw-redirect">nested classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template">member templates</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bit_field.html" title="cpp/language/bit field">bit fields</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration">using-declarations</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_functions.html" title="cpp/language/member functions">member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="access.html" title="cpp/language/access">member access specifiers</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constructor.html" title="cpp/language/initializer list">constructors and member initializer lists</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html#Member_initialization" title="cpp/language/data members">in-class <i>brace-or-equal</i> initializer</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="friend.html" title="cpp/language/friend"><code>friend</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"><code>explicit</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="converting_constructor.html" title="cpp/language/converting constructor">converting constructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Special member functions </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_constructor.html" title="cpp/language/default constructor">default constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_constructor.html" title="cpp/language/copy constructor">copy constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">move constructor</strong><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_operator.html" title="cpp/language/as operator">copy assignment operator</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_operator.html" title="cpp/language/move operator">move assignment operator</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="destructor.html" title="cpp/language/destructor">destructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Inheritance </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="derived_class.html" title="cpp/language/derived class">base and derived classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual">virtual member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="override.html" title="cpp/language/override">override</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="final.html" title="cpp/language/final">final</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="abstract_class.html" title="cpp/language/abstract class">pure virtual functions and abstract classes</a>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>A move constructor of class <code>T</code> is a non-template constructor whose first parameter is <span class="t-c"><span class="mw-geshi cpp source-cpp">T<span class="sy3">&amp;&amp;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> T<span class="sy3">&amp;&amp;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">volatile</span> T<span class="sy3">&amp;&amp;</span></span></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <span class="kw4">volatile</span> T<span class="sy3">&amp;&amp;</span></span></span>, and either there are no other parameters, or the rest of the parameters all have default values. A type with a public move constructor is <a href="../concept/MoveConstructible.html" title="cpp/concept/MoveConstructible"><code>MoveConstructible</code></a>.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="move_constructor.html#Syntax"><span class="tocnumber">1</span> <span class="toctext">Syntax</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="move_constructor.html#Explanation"><span class="tocnumber">2</span> <span class="toctext">Explanation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="move_constructor.html#Implicitly-declared_move_constructor"><span class="tocnumber">3</span> <span class="toctext">Implicitly-declared move constructor</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="move_constructor.html#Deleted_implicitly-declared_move_constructor"><span class="tocnumber">4</span> <span class="toctext">Deleted implicitly-declared move constructor</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="move_constructor.html#Trivial_move_constructor"><span class="tocnumber">5</span> <span class="toctext">Trivial move constructor</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="move_constructor.html#Implicitly-defined_move_constructor"><span class="tocnumber">6</span> <span class="toctext">Implicitly-defined move constructor</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="move_constructor.html#Notes"><span class="tocnumber">7</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="move_constructor.html#Example"><span class="tocnumber">8</span> <span class="toctext">Example</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span>
+</h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">class_name</span> ( <span class="t-spar">class_name</span> <code>&amp;&amp;</code> )
+</td>
+<td> (1)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+</tr>
+
+ 
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">class_name</span> ( <span class="t-spar">class_name</span> <code>&amp;&amp;</code> ) = <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">default</span><span class="sy4">;</span></span></span>
+</td>
+<td> (2)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">class_name</span> ( <span class="t-spar">class_name</span> <code>&amp;&amp;</code> ) = <span class="t-c"><span class="mw-geshi cpp source-cpp">delete<span class="sy4">;</span></span></span>
+</td>
+<td> (3)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+<ol>
+<li> Typical declaration of a move constructor
+</li>
+<li> Forcing a move constructor to be generated by the compiler
+</li>
+<li> Avoiding implicit move constructor
+</li>
+</ol>
+<p>The move constructor is called whenever an object is initialized from <a href="value_category.html#xvalue" title="cpp/language/value category">xvalue</a> of the same type, which includes 
+</p>
+<ul>
+<li> initialization, <span class="t-c"><span class="mw-geshi cpp source-cpp">T a <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw915">std::<span class="me2">move</span></span></a><span class="br0">(</span>b<span class="br0">)</span><span class="sy4">;</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">T a<span class="br0">(</span><a href="../utility/move.html"><span class="kw915">std::<span class="me2">move</span></span></a><span class="br0">(</span>b<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span></span></span>, where b is of type <code>T</code>
+</li>
+<li> function argument passing: <span class="t-c"><span class="mw-geshi cpp source-cpp">f<span class="br0">(</span><a href="../utility/move.html"><span class="kw915">std::<span class="me2">move</span></span></a><span class="br0">(</span>a<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span></span></span>, where <code>a</code> is of type <code>T</code> and <code>f</code> is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> f<span class="br0">(</span>T t<span class="br0">)</span></span></span>
+</li>
+<li> function return: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">return</span> a<span class="sy4">;</span></span></span> inside a function such as <span class="t-c"><span class="mw-geshi cpp source-cpp">T f<span class="br0">(</span><span class="br0">)</span></span></span>, where <code>a</code> is of type <code>T</code> which has a move constructor.
+</li>
+</ul>
+<p>Move constructors typically "steal" the resources held by the argument (e.g. pointers to dynamically-allocated objects, file descriptors, TCP sockets, I/O streams, running threads, etc), rather than make copies of them, and leave the argument in some valid but otherwise indeterminate state. For example, moving from a <span class="t-lc"><a href="../string/basic_string.html" title="cpp/string/basic string">std::string</a></span> or from a <span class="t-lc"><a href="../container/vector.html" title="cpp/container/vector">std::vector</a></span> may result in the argument being left empty. However, this behaviour should not be relied upon.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Implicitly-declared move constructor">edit</a>]</span> <span class="mw-headline" id="Implicitly-declared_move_constructor">Implicitly-declared move constructor</span>
+</h3>
+<p>If no user-defined move constructors are provided for a class type (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span></span></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">union</span></span></span>), and all of the following is true:
+</p>
+<ul>
+<li> there are no user-declared copy constructors
+</li>
+<li> there are no user-declared copy assignment operators
+</li>
+<li> there are no user-declared move assignment operators
+</li>
+<li> there are no user-declared destructors
+</li>
+<li> <span class="t-mark-rev t-until-cxx14">(until C++14)</span> the implicitly-declared move constructor is not defined as <i>deleted</i> due to conditions detailed in the next section
+</li>
+</ul>
+<p>then the compiler will declare a move constructor as a non-<a href="explicit.html" title="cpp/language/explicit">explicit</a> <code>inline public</code> member of its class with the signature <code>T::T(T&amp;&amp;)</code>. 
+</p>
+<p>A class can have multiple move constructors, e.g. both <span class="t-c"><span class="mw-geshi cpp source-cpp">T<span class="sy4">::</span><span class="me2">T</span><span class="br0">(</span><span class="kw4">const</span> T<span class="sy3">&amp;&amp;</span><span class="br0">)</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">T<span class="sy4">::</span><span class="me2">T</span><span class="br0">(</span>T<span class="sy3">&amp;&amp;</span><span class="br0">)</span></span></span>. If some user-defined move constructors are present, the user may still force the generation of the implicitly declared move constructor with the keyword <code>default</code>.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Deleted implicitly-declared move constructor">edit</a>]</span> <span class="mw-headline" id="Deleted_implicitly-declared_move_constructor">Deleted implicitly-declared move constructor</span>
+</h3>
+<p>The implicitly-declared or defaulted move constructor for class <code>T</code> is defined as <i>deleted</i> in any of the following is true:
+</p>
+<ul>
+<li> <code>T</code> has non-static data members that cannot be moved (have deleted, inaccessible, or ambiguous move constructors)
+</li>
+<li> <code>T</code> has direct or virtual base class that cannot be moved (has deleted, inaccessible, or ambiguous move constructors)
+</li>
+<li> <code>T</code> has direct or virtual base class with a deleted or inaccessible destructor
+</li>
+<li> <code>T</code> is a union and has a variant member with non-trivial copy constructor
+</li>
+<li> <span class="t-mark-rev t-until-cxx14">(until C++14)</span><code>T</code> has a non-static data member or a direct or virtual base without a move constructor that is not trivially copyable.
+</li>
+</ul>
+<p><span class="t-mark-rev t-since-cxx14">(since C++14)</span>The deleted implicitly-declared move constructor is ignored by <a href="overload_resolution.html" title="cpp/language/overload resolution">overload resolution</a> (otherwise it would prevent copy-initialization from rvalue)
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Trivial move constructor">edit</a>]</span> <span class="mw-headline" id="Trivial_move_constructor">Trivial move constructor</span>
+</h3>
+<p>The move constructor for class <code>T</code> is trivial if all of the following is true:
+</p>
+<ul>
+<li> It is not user-provided (meaning, it is implicitly-defined or defaulted), and if it is defaulted, its signature is the same as implicitly-defined
+</li>
+<li> <code>T</code> has no virtual member functions
+</li>
+<li> <code>T</code> has no virtual base classes
+</li>
+<li> The move constructor selected for every direct base of <code>T</code> is trivial
+</li>
+<li> The move constructor selected for every non-static class type (or array of class type) member of <code>T</code> is trivial
+</li>
+</ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14">
+<td>
+<ul><li> <code>T</code> has no non-static data members of <a href="cv.html" title="cpp/language/cv">volatile</a>-qualified type
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td>
+</tr>
+</table>
+<p>A trivial move constructor is a constructor that performs the same action as the trivial copy constructor, that is, makes a copy of the object representation as if by <span class="t-lc"><a href="../string/byte/memmove.html" title="cpp/string/byte/memmove">std::memmove</a></span>. All data types compatible with the C language (POD types) are trivially movable.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Implicitly-defined move constructor">edit</a>]</span> <span class="mw-headline" id="Implicitly-defined_move_constructor">Implicitly-defined move constructor</span>
+</h3>
+<p>If the implicitly-declared move constructor is neither deleted nor trivial, it is defined (that is, a function body is generated and compiled) by the compiler if <a href="definition.html#ODR-use" title="cpp/language/definition">odr-used</a>. For <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">union</span></span></span> types, the implicitly-defined move constructor copies the object representation (as by <span class="t-lc"><a href="../string/byte/memmove.html" title="cpp/string/byte/memmove">std::memmove</a></span>). For non-union class types (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span></span></span>), the move constructor performs full member-wise move of the object's bases and non-static members, in their initialization order, using direct initialization with an <a href="value_category.html#xvalue" title="cpp/language/value category">xvalue</a> argument.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span>
+</h3>
+<p>To make strong exception guarantee possible, user-defined move constructors should not throw exceptions. In fact, standard containers typically rely on <span class="t-lc"><a href="../utility/move_if_noexcept.html" title="cpp/utility/move if noexcept">std::move_if_noexcept</a></span> to choose between move and copy when container elements need to be relocated.
+</p>
+<p>If both copy and move constructors are provided, overload resolution selects the move constructor if the argument is an <i>rvalue</i> (either <i>prvalue</i> such as a nameless temporary or <i>xvalue</i> such as the result of <span class="t-lc"><a href="../utility/move.html" title="cpp/utility/move">std::move</a></span>), and selects the copy constructor if the argument is <i>lvalue</i> (named object or a function/operator returning lvalue reference). If only the copy constructor is provided, all argument categories select it (as long as it takes reference to const, since rvalues can bind to const references), which makes copying the fallback for moving, when moving is unavailable.
+</p>
+<p>In many situations, move constructors are optimized out even if they would produce observable side-effects, see <a href="copy_elision.html" title="cpp/language/copy elision">copy elision</a>
+</p>
+<p>A constructor is called a 'move constructor' when it takes an rvalue reference as a parameter. It is not obligated to move anything, the class is not required to have a resource to be moved and a 'move constructor' may not be able to move a resource as in the allowable (but maybe not sensible) case where the parameter is a const rvalue reference (const T&amp;&amp;).
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;iomanip&gt;</span>
+ 
+<span class="kw1">struct</span> A <span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> s<span class="sy4">;</span>
+    A<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> s<span class="br0">(</span><span class="st0">"test"</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+    A<span class="br0">(</span><span class="kw4">const</span> A<span class="sy3">&amp;</span> o<span class="br0">)</span> <span class="sy4">:</span> s<span class="br0">(</span>o.<span class="me1">s</span><span class="br0">)</span> <span class="br0">{</span> <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"move failed!<span class="es1">\n</span>"</span><span class="sy4">;</span><span class="br0">}</span>
+    A<span class="br0">(</span>A<span class="sy3">&amp;&amp;</span> o<span class="br0">)</span> <span class="kw1">noexcept</span> <span class="sy4">:</span> s<span class="br0">(</span><a href="../utility/move.html"><span class="kw915">std::<span class="me2">move</span></span></a><span class="br0">(</span>o.<span class="me1">s</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+A f<span class="br0">(</span>A a<span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">return</span> a<span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">struct</span> B <span class="sy4">:</span> A <span class="br0">{</span>
+     <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> s2<span class="sy4">;</span> 
+     <span class="kw4">int</span> n<span class="sy4">;</span>
+     <span class="co1">// implicit move contructor B::(B&amp;&amp;)</span>
+     <span class="co1">// calls A's move constructor</span>
+     <span class="co1">// calls s2's move constructor</span>
+     <span class="co1">// and makes a bitwise copy of n</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">struct</span> C <span class="sy4">:</span> B <span class="br0">{</span>
+    ~C<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// destructor prevents implicit move ctor C::(C&amp;&amp;)</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">struct</span> D <span class="sy4">:</span> B <span class="br0">{</span>
+    D<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+    ~D<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// destructor would prevent implicit move ctor D::(D&amp;&amp;)</span>
+    D<span class="br0">(</span>D<span class="sy3">&amp;&amp;</span><span class="br0">)</span> <span class="sy1">=</span> <span class="kw1">default</span><span class="sy4">;</span> <span class="co1">// force a move ctor anyway</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Trying to move A<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    A a1 <span class="sy1">=</span> f<span class="br0">(</span>A<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// move-construct from rvalue temporary</span>
+    A a2 <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw915">std::<span class="me2">move</span></span></a><span class="br0">(</span>a1<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// move-construct from xvalue</span>
+ 
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Trying to move B<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    B b1<span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Before move, b1.s = "</span> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/quoted.html"><span class="kw1490">std::<span class="me2">quoted</span></span></a><span class="br0">(</span>b1.<span class="me1">s</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    B b2 <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw915">std::<span class="me2">move</span></span></a><span class="br0">(</span>b1<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// calls implicit move ctor</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"After move, b1.s = "</span> <span class="sy1">&lt;&lt;</span> <a href="../io/manip/quoted.html"><span class="kw1490">std::<span class="me2">quoted</span></span></a><span class="br0">(</span>b1.<span class="me1">s</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"<span class="es1">\n</span>"</span><span class="sy4">;</span>
+ 
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Trying to move C<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    C c1<span class="sy4">;</span>
+    C c2 <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw915">std::<span class="me2">move</span></span></a><span class="br0">(</span>c1<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// calls the copy constructor</span>
+ 
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Trying to move D<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    D d1<span class="sy4">;</span>
+    D d2 <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw915">std::<span class="me2">move</span></span></a><span class="br0">(</span>d1<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Trying to move A
+Trying to move B
+Before move, b1.s = "test"
+After move, b1.s = ""
+Trying to move C
+move failed!
+Trying to move D</pre></div></div> 
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1606/1000000
+Preprocessor generated node count: 4244/1000000
+Post‐expand include size: 41579/2097152 bytes
+Template argument size: 9593/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:8540-0!*!0!!en!*!* and timestamp 20150511163054 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/move_constructor&amp;oldid=78222</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.089 secs. -->
+	</body>
+<!-- Cached 20150511164141 -->
+</html>

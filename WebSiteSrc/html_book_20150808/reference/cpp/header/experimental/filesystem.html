@@ -1,0 +1,768 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Standard library header &lt;experimental/filesystem&gt; - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/header/experimental/filesystem","wgTitle":"cpp/header/experimental/filesystem","wgCurRevisionId":78619,"wgArticleId":14058,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/header/experimental/filesystem","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_header_experimental_filesystem skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">
+<span style="font-size:0.7em; line-height:130%">Standard library header</span> &lt;experimental/filesystem&gt;</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../header.html" title="cpp/header">header</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../header.html" title="cpp/header"> Standard Library header files </a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Language Support</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../cstddef.html" title="cpp/header/cstddef"><tt>&lt;cstddef&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../limits.html" title="cpp/header/limits"><tt>&lt;limits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../climits.html" title="cpp/header/climits"><tt>&lt;climits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cfloat.html" title="cpp/header/cfloat"><tt>&lt;cfloat&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstdint.html" title="cpp/header/cstdint"><tt>&lt;cstdint&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../new.html" title="cpp/header/new"><tt>&lt;new&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../typeinfo.html" title="cpp/header/typeinfo"><tt>&lt;typeinfo&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../exception.html" title="cpp/header/exception"><tt>&lt;exception&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ciso646.html" title="cpp/header/ciso646"><tt>&lt;ciso646&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../initializer_list.html" title="cpp/header/initializer list"><tt>&lt;initializer_list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../csignal.html" title="cpp/header/csignal"><tt>&lt;csignal&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../csetjmp.html" title="cpp/header/csetjmp"><tt>&lt;csetjmp&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstdalign.html" title="cpp/header/cstdalign"><tt>&lt;cstdalign&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstdarg.html" title="cpp/header/cstdarg"><tt>&lt;cstdarg&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstdbool.html" title="cpp/header/cstdbool"><tt>&lt;cstdbool&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Diagnostics</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../stdexcept.html" title="cpp/header/stdexcept"><tt>&lt;stdexcept&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cassert.html" title="cpp/header/cassert"><tt>&lt;cassert&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../cerrno.html" title="cpp/header/cerrno"><tt>&lt;cerrno&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../system_error.html" title="cpp/header/system error"><tt>&lt;system_error&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> General utilities</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/header/utility"><tt>&lt;utility&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../tuple.html" title="cpp/header/tuple"><tt>&lt;tuple&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../bitset.html" title="cpp/header/bitset"><tt>&lt;bitset&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../memory.html" title="cpp/header/memory"><tt>&lt;memory&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../functional.html" title="cpp/header/functional"><tt>&lt;functional&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../type_traits.html" title="cpp/header/type traits"><tt>&lt;type_traits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ratio.html" title="cpp/header/ratio"><tt>&lt;ratio&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../chrono.html" title="cpp/header/chrono"><tt>&lt;chrono&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../scoped_allocator.html" title="cpp/header/scoped allocator"><tt>&lt;scoped_allocator&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../typeindex.html" title="cpp/header/typeindex"><tt>&lt;typeindex&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Strings</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/header/string"><tt>&lt;string&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cctype.html" title="cpp/header/cctype"><tt>&lt;cctype&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cwctype.html" title="cpp/header/cwctype"><tt>&lt;cwctype&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../cwchar.html" title="cpp/header/cwchar"><tt>&lt;cwchar&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cuchar.html" title="cpp/header/cuchar"><tt>&lt;cuchar&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Localization</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+</table></div>
+</div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Containers</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../array.html" title="cpp/header/array"><tt>&lt;array&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../deque.html" title="cpp/header/deque"><tt>&lt;deque&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../forward_list.html" title="cpp/header/forward list"><tt>&lt;forward_list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../list.html" title="cpp/header/list"><tt>&lt;list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../vector.html" title="cpp/header/vector"><tt>&lt;vector&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../map.html" title="cpp/header/map"><tt>&lt;map&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../set.html" title="cpp/header/set"><tt>&lt;set&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../unordered_map.html" title="cpp/header/unordered map"><tt>&lt;unordered_map&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../unordered_set.html" title="cpp/header/unordered set"><tt>&lt;unordered_set&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../queue.html" title="cpp/header/queue"><tt>&lt;queue&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../stack.html" title="cpp/header/stack"><tt>&lt;stack&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Iterators</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/header/iterator"><tt>&lt;iterator&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Algorithms</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/header/algorithm"><tt>&lt;algorithm&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Numerics</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../cfenv.html" title="cpp/header/cfenv"><tt>&lt;cfenv&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../complex.html" title="cpp/header/complex"><tt>&lt;complex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../random.html" title="cpp/header/random"><tt>&lt;random&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../valarray.html" title="cpp/header/valarray"><tt>&lt;valarray&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/header/numeric"><tt>&lt;numeric&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cmath.html" title="cpp/header/cmath"><tt>&lt;cmath&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ctgmath.html" title="cpp/header/ctgmath"><tt>&lt;ctgmath&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Input/Output</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../iosfwd.html" title="cpp/header/iosfwd"><tt>&lt;iosfwd&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iostream.html" title="cpp/header/iostream"><tt>&lt;iostream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ios.html" title="cpp/header/ios"><tt>&lt;ios&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../streambuf.html" title="cpp/header/streambuf"><tt>&lt;streambuf&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../istream.html" title="cpp/header/istream"><tt>&lt;istream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../ostream.html" title="cpp/header/ostream"><tt>&lt;ostream&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../iomanip.html" title="cpp/header/iomanip"><tt>&lt;iomanip&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../sstream.html" title="cpp/header/sstream"><tt>&lt;sstream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../fstream.html" title="cpp/header/fstream"><tt>&lt;fstream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cstdio.html" title="cpp/header/cstdio"><tt>&lt;cstdio&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../cinttypes.html" title="cpp/header/cinttypes"><tt>&lt;cinttypes&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Regular expressions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/header/regex"><tt>&lt;regex&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Thread support</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/header/thread"><tt>&lt;thread&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../mutex.html" title="cpp/header/mutex"><tt>&lt;mutex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/header/atomic"><tt>&lt;atomic&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../shared_mutex.html" title="cpp/header/shared mutex"><tt>&lt;shared_mutex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../condition_variable.html" title="cpp/header/condition variable"><tt>&lt;condition_variable&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../future.html" title="cpp/header/future"><tt>&lt;future&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>This header is part of the <a href="../../experimental/fs.html" title="cpp/experimental/fs">filesystem</a> library.
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in inline namespace <code>std::experimental::filesystem::v1</code> </div>
+</td>
+</tr>
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Classes">Classes</span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/path.html" title="cpp/experimental/fs/path"> <span class="t-lines"><span>path</span></span></a></div></div>
+</td>
+<td>   represents a path  <br> <span class="t-mark">(class)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/filesystem_error.html" title="cpp/experimental/fs/filesystem error"> <span class="t-lines"><span>filesystem_error</span></span></a></div></div>
+</td>
+<td>   an exception thrown on file system errors <br> <span class="t-mark">(class)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/directory_entry.html" title="cpp/experimental/fs/directory entry"> <span class="t-lines"><span>directory_entry</span></span></a></div></div>
+</td>
+<td>   a directory entry <br> <span class="t-mark">(class)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/directory_iterator.html" title="cpp/experimental/fs/directory iterator"> <span class="t-lines"><span>directory_iterator</span></span></a></div></div>
+</td>
+<td>   an iterator to the contents of the directory <br> <span class="t-mark">(class)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/recursive_directory_iterator.html" title="cpp/experimental/fs/recursive directory iterator"> <span class="t-lines"><span>recursive_directory_iterator</span></span></a></div></div>
+</td>
+<td>   an iterator to the contents of a directory and its subdirectories <br> <span class="t-mark">(class)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/file_status.html" title="cpp/experimental/fs/file status"> <span class="t-lines"><span>file_status</span></span></a></div></div>
+</td>
+<td>   represents file type and permissions <br> <span class="t-mark">(class)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/space_info.html" title="cpp/experimental/fs/space info"> <span class="t-lines"><span>space_info</span></span></a></div></div>
+</td>
+<td>   information about free and available space on the filesystem <br> <span class="t-mark">(class)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/file_type.html" title="cpp/experimental/fs/file type"> <span class="t-lines"><span>file_type</span></span></a></div></div>
+</td>
+<td>   the type of a file <br> <span class="t-mark">(enum)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/perms.html" title="cpp/experimental/fs/perms"> <span class="t-lines"><span>perms</span></span></a></div></div>
+</td>
+<td>   identifies file system permissions <br> <span class="t-mark">(enum)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/copy_options.html" title="cpp/experimental/fs/copy options"> <span class="t-lines"><span>copy_options</span></span></a></div></div>
+</td>
+<td>   specifies semantics of copy operations <br> <span class="t-mark">(enum)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/directory_options.html" title="cpp/experimental/fs/directory options"> <span class="t-lines"><span>directory_options</span></span></a></div></div>
+</td>
+<td>   options for iterating directory contents <br> <span class="t-mark">(enum)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/file_time_type.html" title="cpp/experimental/fs/file time type"> <span class="t-lines"><span>file_time_type</span></span></a></div></div>
+</td>
+<td>   represents file time values <br> <span class="t-mark">(typedef)</span> 
+</td>
+</tr>
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Functions">Functions</span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/path/swap2.html" title="cpp/experimental/fs/path/swap2"> <span class="t-lines"><span>swap<span class="t-dsc-small">(std::experimental::filesystem::path)</span></span></span></a></div></div>
+</td>
+<td>   swaps two paths <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+<a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="Template:cpp/experimental/fs/path/dsc hash value (page does not exist)">Template:cpp/experimental/fs/path/dsc hash value</a>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/path/operator_cmp.html" title="cpp/experimental/fs/path/operator cmp"> <span class="t-lines"><span>operator==</span><span>operator!=</span><span>operator&lt;</span><span>operator&lt;=</span><span>operator&gt;</span><span>operator&gt;=</span></span></a></div></div>
+</td>
+<td>   lexicographically compares two paths <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/path/operator_slash.html" title="cpp/experimental/fs/path/operator slash"> <span class="t-lines"><span>operator/</span></span></a></div></div>
+</td>
+<td>   concatenates two paths with a directory separator <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/path/operator_ltltgtgt.html" title="cpp/experimental/fs/path/operator ltltgtgt"> <span class="t-lines"><span>operator&lt;&lt;</span><span>operator&gt;&gt;</span></span></a></div></div>
+</td>
+<td>   performs stream input and output on a path <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/path/u8path.html" title="cpp/experimental/fs/path/u8path"> <span class="t-lines"><span>u8path</span></span></a></div></div>
+</td>
+<td>   creates a <code>path</code> from a UTF-8 encoded source <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/directory_iterator/begin.html" title="cpp/experimental/fs/directory iterator/begin"> <span class="t-lines"><span>filesystem::begin<span class="t-dsc-small">(filesystem::directory_iterator)</span></span><span>filesystem::end<span class="t-dsc-small">(filesystem::directory_iterator)</span></span></span></a></div></div>
+</td>
+<td>   range-based for loop support <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/recursive_directory_iterator/begin.html" title="cpp/experimental/fs/recursive directory iterator/begin"> <span class="t-lines"><span>filesystem::begin<span class="t-dsc-small">(filesystem::recursive_directory_iterator)</span></span><span>filesystem::end<span class="t-dsc-small">(filesystem::recursive_directory_iterator)</span></span></span></a></div></div>
+</td>
+<td>   range-based for loop support <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/absolute.html" title="cpp/experimental/fs/absolute"> <span class="t-lines"><span>absolute</span><span>system_complete</span></span></a></div></div>
+</td>
+<td>  composes an absolute path<br>converts a path to an absolute path replicating OS-specific behavior <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/canonical.html" title="cpp/experimental/fs/canonical"> <span class="t-lines"><span>canonical</span></span></a></div></div>
+</td>
+<td>   composes a canonical path <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/copy.html" title="cpp/experimental/fs/copy"> <span class="t-lines"><span>copy</span></span></a></div></div>
+</td>
+<td>   copies files or directories <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/copy_file.html" title="cpp/experimental/fs/copy file"> <span class="t-lines"><span>copy_file</span></span></a></div></div>
+</td>
+<td>   copies file contents <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/copy_symlink.html" title="cpp/experimental/fs/copy symlink"> <span class="t-lines"><span>copy_symlink</span></span></a></div></div>
+</td>
+<td>   copies a symbolic link <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/create_directory.html" title="cpp/experimental/fs/create directory"> <span class="t-lines"><span>create_directory</span><span>create_directories</span></span></a></div></div>
+</td>
+<td>   creates new directory <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/create_hard_link.html" title="cpp/experimental/fs/create hard link"> <span class="t-lines"><span>create_hard_link</span></span></a></div></div>
+</td>
+<td>   creates a hard link <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/create_symlink.html" title="cpp/experimental/fs/create symlink"> <span class="t-lines"><span>create_symlink</span><span>create_directory_symlink</span></span></a></div></div>
+</td>
+<td>   creates a symbolic link <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/current_path.html" title="cpp/experimental/fs/current path"> <span class="t-lines"><span>current_path</span></span></a></div></div>
+</td>
+<td>   return current working directory <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/exists.html" title="cpp/experimental/fs/exists"> <span class="t-lines"><span>exists</span></span></a></div></div>
+</td>
+<td>   checks whether path refers to existing file system object  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/equivalent.html" title="cpp/experimental/fs/equivalent"> <span class="t-lines"><span>equivalent</span></span></a></div></div>
+</td>
+<td>   checks whether two paths refer to the same file system object <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/file_size.html" title="cpp/experimental/fs/file size"> <span class="t-lines"><span>file_size</span></span></a></div></div>
+</td>
+<td>   returns the size of a file <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/hard_link_count.html" title="cpp/experimental/fs/hard link count"> <span class="t-lines"><span>hard_link_count</span></span></a></div></div>
+</td>
+<td>   returns the number of hard links referring to the specific file <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/last_write_time.html" title="cpp/experimental/fs/last write time"> <span class="t-lines"><span>last_write_time</span></span></a></div></div>
+</td>
+<td>   gets or sets the time of the last data modification  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/permissions.html" title="cpp/experimental/fs/permissions"> <span class="t-lines"><span>permissions</span></span></a></div></div>
+</td>
+<td>   modifies file access permissions <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/read_symlink.html" title="cpp/experimental/fs/read symlink"> <span class="t-lines"><span>read_symlink</span></span></a></div></div>
+</td>
+<td>   obtains the target of a symbolic link <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/remove.html" title="cpp/experimental/fs/remove"> <span class="t-lines"><span>remove</span><span>remove_all</span></span></a></div></div>
+</td>
+<td>   removes a file or empty directory<br>removes a file or directory and all its contents, recursively <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/rename.html" title="cpp/experimental/fs/rename"> <span class="t-lines"><span>rename</span></span></a></div></div>
+</td>
+<td>   moves or renames a file or directory <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/resize_file.html" title="cpp/experimental/fs/resize file"> <span class="t-lines"><span>resize_file</span></span></a></div></div>
+</td>
+<td>   changes the size of a regular file by truncation or zero-fill <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/space.html" title="cpp/experimental/fs/space"> <span class="t-lines"><span>space</span></span></a></div></div>
+</td>
+<td>   determines available free space on the file system <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/status.html" title="cpp/experimental/fs/status"> <span class="t-lines"><span>status</span><span>symlink_status</span></span></a></div></div>
+</td>
+<td>  determines file attributes<br>determines file attributes, checking the symlink target <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/temp_directory_path.html" title="cpp/experimental/fs/temp directory path"> <span class="t-lines"><span>temp_directory_path</span></span></a></div></div>
+</td>
+<td>   returns a directory suitable for temporary files <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="File_types">  File types </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/is_block_file.html" title="cpp/experimental/fs/is block file"> <span class="t-lines"><span>is_block_file</span></span></a></div></div>
+</td>
+<td>   checks whether the given path refers to block device <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/is_character_file.html" title="cpp/experimental/fs/is character file"> <span class="t-lines"><span>is_character_file</span></span></a></div></div>
+</td>
+<td>   checks whether the given path refers to a character device <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/is_directory.html" title="cpp/experimental/fs/is directory"> <span class="t-lines"><span>is_directory</span></span></a></div></div>
+</td>
+<td>   checks whether the given path refers to a directory <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/is_empty.html" title="cpp/experimental/fs/is empty"> <span class="t-lines"><span>is_empty</span></span></a></div></div>
+</td>
+<td>   checks whether the given path refers to an empty file or directory <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/is_fifo.html" title="cpp/experimental/fs/is fifo"> <span class="t-lines"><span>is_fifo</span></span></a></div></div>
+</td>
+<td>   checks whether the given path refers to a named pipe <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/is_other.html" title="cpp/experimental/fs/is other"> <span class="t-lines"><span>is_other</span></span></a></div></div>
+</td>
+<td>   checks whether the argument refers to an <i>other</i> file <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/is_regular_file.html" title="cpp/experimental/fs/is regular file"> <span class="t-lines"><span>is_regular_file</span></span></a></div></div>
+</td>
+<td>   checks whether the argument refers to a regular file <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/is_socket.html" title="cpp/experimental/fs/is socket"> <span class="t-lines"><span>is_socket</span></span></a></div></div>
+</td>
+<td>   checks whether the argument refers to a named IPC socket <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/is_symlink.html" title="cpp/experimental/fs/is symlink"> <span class="t-lines"><span>is_symlink</span></span></a></div></div>
+</td>
+<td>   checks whether the argument refers to a symbolic link <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../../experimental/fs/status_known.html" title="cpp/experimental/fs/status known"> <span class="t-lines"><span>status_known</span></span></a></div></div>
+</td>
+<td>   checks whether file status is known <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 9432/1000000
+Preprocessor generated node count: 7298/1000000
+Post‐expand include size: 308155/2097152 bytes
+Template argument size: 54927/2097152 bytes
+Highest expansion depth: 22/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:14058-0!*!0!!*!*!* and timestamp 20150530041420 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/header/experimental/filesystem&amp;oldid=78619</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.069 secs. -->
+	</body>
+<!-- Cached 20150530054227 -->
+</html>

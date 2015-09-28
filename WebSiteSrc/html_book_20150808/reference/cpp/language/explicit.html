@@ -1,0 +1,345 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>explicit specifier - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/explicit","wgTitle":"cpp/language/explicit","wgCurRevisionId":78135,"wgArticleId":5075,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/explicit","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_explicit skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">explicit specifier</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="classes.html" title="cpp/language/classes"> Classes</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> General </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="classes.html" title="cpp/language/classes"> overview</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class/struct types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union types</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Members </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html" title="cpp/language/data members">data members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static.html" title="cpp/language/static">static members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="this.html" title="cpp/language/this">the <code>this</code> pointer</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nested_classes.html" title="cpp/language/nested classes" class="mw-redirect">nested classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template">member templates</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bit_field.html" title="cpp/language/bit field">bit fields</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration">using-declarations</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_functions.html" title="cpp/language/member functions">member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="access.html" title="cpp/language/access">member access specifiers</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constructor.html" title="cpp/language/initializer list">constructors and member initializer lists</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html#Member_initialization" title="cpp/language/data members">in-class <i>brace-or-equal</i> initializer</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="friend.html" title="cpp/language/friend"><code>friend</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"><code>explicit</code> specifier</strong>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="converting_constructor.html" title="cpp/language/converting constructor">converting constructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Special member functions </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_constructor.html" title="cpp/language/default constructor">default constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_constructor.html" title="cpp/language/copy constructor">copy constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_constructor.html" title="cpp/language/move constructor">move constructor</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_operator.html" title="cpp/language/as operator">copy assignment operator</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_operator.html" title="cpp/language/move operator">move assignment operator</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="destructor.html" title="cpp/language/destructor">destructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Inheritance </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="derived_class.html" title="cpp/language/derived class">base and derived classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual">virtual member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="override.html" title="cpp/language/override">override</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="final.html" title="cpp/language/final">final</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="abstract_class.html" title="cpp/language/abstract class">pure virtual functions and abstract classes</a>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Specifies constructors <span class="t-rev-inl t-since-cxx11"><span> and conversion operators</span> <span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span> that don't allow <a href="implicit_cast.html" title="cpp/language/implicit cast">implicit conversions</a> or <a href="copy_initialization.html" title="cpp/language/copy initialization">copy-initialization</a>.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span>
+</h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span></span></span> <span class="t-spar">class_name</span> ( <span class="t-spar">params</span> )
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span> operator</span></span> <span class="t-spar">type</span> ( ) <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">1)</span> specifies that this constructor is only considered for <a href="direct_initialization.html" title="cpp/language/direct initialization">direct initialization</a> (including <a href="explicit_cast.html" title="cpp/language/explicit cast">explicit conversions</a>)</div>
+<div class="t-li1">
+<span class="t-li">2)</span> specifies that this <a href="cast_operator.html" title="cpp/language/cast operator">user-defined conversion function</a> is only considered for <a href="direct_initialization.html" title="cpp/language/direct initialization">direct initialization</a> (including <a href="explicit_cast.html" title="cpp/language/explicit cast">explicit conversions</a>)</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span>
+</h3>
+<p>A constructor <span class="t-rev-inl t-until-cxx11"><span>with a single non-default parameter</span> <span><span class="t-mark-rev t-until-cxx11">(until C++11)</span></span></span> that is declared without the function specifier <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">explicit</span></span></span> is called a <a href="converting_constructor.html" title="cpp/language/converting constructor">converting constructor</a>.
+</p>
+<p>An explicit <a href="default_constructor.html" title="cpp/language/default constructor">default constructor</a> can be used to perform both <a href="default_initialization.html" title="cpp/language/default initialization">default initialization</a> and <a href="value_initialization.html" title="cpp/language/value initialization">value initialization</a>: the use of <code>explicit</code> with a default constructor has no effect unless it has default arguments that would allow it to be used in copy-initialization context.
+</p>
+<p>Both constructors (other than <a href="copy_constructor.html" title="cpp/language/copy constructor">copy</a>/<a href="move_constructor.html" title="cpp/language/move constructor">move</a>) and user-defined conversion functions may be function templates; the meaning of <code>explicit</code> doesn't change.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A
+<span class="br0">{</span>
+    A<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// converting constructor</span>
+    A<span class="br0">(</span><span class="kw4">int</span>, <span class="kw4">int</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// converting constructor (C++11)</span>
+    operator <span class="kw4">int</span><span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">struct</span> B
+<span class="br0">{</span>
+    <span class="kw1">explicit</span> B<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+    <span class="kw1">explicit</span> B<span class="br0">(</span><span class="kw4">int</span>, <span class="kw4">int</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+    <span class="kw1">explicit</span> operator <span class="kw4">int</span><span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    A a1 <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// OK: copy-initialization selects A::A(int)</span>
+    A a2<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: direct-initialization selects A::A(int)</span>
+    A a3 <span class="br0">{</span><span class="nu0">4</span>,<span class="nu0">5</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// OK: direct-list-initialization selects A::A(int, int)</span>
+    A a4 <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">4</span>,<span class="nu0">5</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// OK: copy-list-initialization selects A::A(int, int)</span>
+    <span class="kw4">int</span> na1 <span class="sy1">=</span> a1<span class="sy4">;</span> <span class="co1">// OK: copy-initialization selects A::operator int()</span>
+    <span class="kw4">int</span> na2 <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">(</span>a1<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: static_cast performs direct-initialization</span>
+    A a5 <span class="sy1">=</span> <span class="br0">(</span>A<span class="br0">)</span><span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// OK: explicit cast performs static_cast</span>
+ 
+<span class="co1">//  B b1 = 1; // Error: copy-initialization does not consider B::B(int)</span>
+    B b2<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: direct-initialization selects B::B(int)</span>
+    B b3 <span class="br0">{</span><span class="nu0">4</span>,<span class="nu0">5</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// OK: direct-list-initialization selects B::B(int, int)</span>
+<span class="co1">//  B b4 = {4,5}; // Error: copy-list-initialization does not consider B::B(int,int)</span>
+<span class="co1">//  int nb1 = b2; // Error: copy-initialization does not consider B::operator int()</span>
+    <span class="kw4">int</span> nb2 <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">(</span>b2<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: static_cast performs direct-initialization</span>
+    B b5 <span class="sy1">=</span> <span class="br0">(</span>B<span class="br0">)</span><span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// OK: explicit cast performs static_cast</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 969/1000000
+Preprocessor generated node count: 3109/1000000
+Post‐expand include size: 37965/2097152 bytes
+Template argument size: 8569/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:5075-0!*!0!!*!*!* and timestamp 20150504142521 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/explicit&amp;oldid=78135</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.082 secs. -->
+	</body>
+<!-- Cached 20150504145142 -->
+</html>

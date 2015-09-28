@@ -1,0 +1,568 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Scope - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/scope","wgTitle":"cpp/language/scope","wgCurRevisionId":78341,"wgArticleId":13085,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/scope","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_scope skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Scope</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="basic_concepts.html" title="cpp/language/basic concepts"> Basic Concepts</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> language keywords</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="translation_phases.html" title="cpp/language/translation phases"> phases of translation</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> comments </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> the main() function</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> names and identifiers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="incomplete_type.html" title="cpp/language/type"> types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> fundamental types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="objects.html" title="cpp/language/object"> objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> scope</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lifetime.html" title="cpp/language/lifetime"> object lifetime</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> storage duration and linkage</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="definition.html" title="cpp/language/definition"> definitions and ODR</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup">qualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup">unqualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory_model.html" title="cpp/language/memory model"> memory model</a> </td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Each <a href="name.html" title="cpp/language/name" class="mw-redirect">name</a> that appears in a C++ program is only valid in some possibly discontiguous
+portion of the source code called its <i>scope</i>.
+</p>
+<p>Within a scope, <a href="lookup.html" title="cpp/language/lookup">unqualified name lookup</a> can be used to associate the name with its declaration.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="scope.html#Block_scope"><span class="tocnumber">1</span> <span class="toctext">Block scope</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="scope.html#Function_prototype_scope"><span class="tocnumber">2</span> <span class="toctext">Function prototype scope</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="scope.html#Function_scope"><span class="tocnumber">3</span> <span class="toctext">Function scope</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="scope.html#Namespace_scope"><span class="tocnumber">4</span> <span class="toctext">Namespace scope</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="scope.html#Class_scope"><span class="tocnumber">5</span> <span class="toctext">Class scope</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="scope.html#Enumeration_scope"><span class="tocnumber">6</span> <span class="toctext">Enumeration scope</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="scope.html#Template_parameter_scope"><span class="tocnumber">7</span> <span class="toctext">Template parameter scope</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="scope.html#Point_of_declaration"><span class="tocnumber">8</span> <span class="toctext">Point of declaration</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="scope.html#References"><span class="tocnumber">9</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="scope.html#See_also"><span class="tocnumber">10</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Block scope">edit</a>]</span> <span class="mw-headline" id="Block_scope">Block scope</span>
+</h3>
+<p>The potential scope of a variable introduced by a declaration in a <a href="statements.html#Compound_statement" title="cpp/language/statements">block (compound statement)</a> begins at the point of declaration and ends at the end of the block. Actual scope is the same as potential scope unless there is a nested block with a declaration that introduces identical name (in which case, the entire potential scope of the nested declaration is excluded from the scope of the outer declaration)
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="co1">// scope of the first 'a' begins</span>
+    <span class="sy2">++</span>a<span class="sy4">;</span> <span class="co1">// the name 'a' is in scope and refers to the first 'a'</span>
+    <span class="br0">{</span>
+        <span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// scope of the second 'a' begins</span>
+                   <span class="co1">// scope of the first 'a' is interrupted</span>
+        a <span class="sy1">=</span> <span class="nu0">42</span><span class="sy4">;</span>    <span class="co1">// 'a' is in scope and refers to the second 'a'                 </span>
+    <span class="br0">}</span> <span class="co1">// block ends, scope of the second 'a' ends</span>
+      <span class="co1">//             scope of the first 'a' resumes</span>
+<span class="br0">}</span> <span class="co1">// block ends, scope of the first 'a' ends</span>
+<span class="kw4">int</span> b <span class="sy1">=</span> a<span class="sy4">;</span> <span class="co1">// Error: name 'a' is not in scope</span></pre></div></div>
+<p>The potential scope of a function parameter (including parameters of a lambda expression) begins at the point of declaration and ends at the end of the last exception handler of the <a href="function-try-block.html" title="cpp/language/function-try-block">function-try-block</a>, or at the end of the function body if a function try block was not used.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">2</span><span class="br0">)</span>  <span class="co1">// scope of 'n' begins</span>
+<span class="kw1">try</span> <span class="co1">// function try block</span>
+<span class="br0">{</span>         <span class="co1">// the body of the function begins</span>
+   <span class="sy2">++</span>n<span class="sy4">;</span>   <span class="co1">// 'n' is in scope and refers to the function parameter</span>
+   <span class="br0">{</span>
+      <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// scope of the local variable 'n' begins</span>
+                 <span class="co1">// scope of function parameter 'n' interrupted </span>
+      <span class="sy2">++</span>n<span class="sy4">;</span> <span class="co1">// 'n' refers to the local variable in this block</span>
+    <span class="br0">}</span>            <span class="co1">// scope of the local variable 'n' ends</span>
+                 <span class="co1">// scope of function parameter 'n' resumes</span>
+<span class="br0">}</span> <span class="kw1">catch</span><span class="br0">(</span>...<span class="br0">)</span> <span class="br0">{</span>
+   <span class="sy2">++</span>n<span class="sy4">;</span> <span class="co1">// n is in scope and refers to the function parameter</span>
+   <span class="kw1">throw</span><span class="sy4">;</span>
+<span class="br0">}</span> <span class="co1">// last exception handler ends, scope of function parameter 'n' ends</span>
+<span class="kw4">int</span> a <span class="sy1">=</span> n<span class="sy4">;</span> <span class="co1">// Error: name 'n' is not in scope</span></pre></div></div>
+<p>The potential scope of a name declared in an exception handler begins at the point of declaration and ends when the exception handler ends, and is not in scope in another exception handler or in the enclosing block.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">try</span> <span class="br0">{</span>   
+    f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span> <span class="kw1">catch</span><span class="br0">(</span><span class="kw4">const</span> <a href="../error/runtime_error/runtime_error.html"><span class="kw617">std::<span class="me2">runtime_error</span></span></a><span class="sy3">&amp;</span> re<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// scope of re begins</span>
+    <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// scope of n begins</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> re.<span class="me1">what</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// re is in scope</span>
+<span class="br0">}</span> <span class="co1">// scope of re ends, scope of n ends</span>
+ <span class="kw1">catch</span><span class="br0">(</span><a href="../error/exception.html"><span class="kw611">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span> e<span class="br0">)</span> <span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> re.<span class="me1">what</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// error: re is not in scope</span>
+    <span class="sy2">++</span>n<span class="sy4">;</span> <span class="co1">// error: n is not in scope</span>
+<span class="br0">}</span></pre></div></div>
+<p>The potential scope of a name declared in the <i>init-statement</i> of the <a href="for.html" title="cpp/language/for">for loop</a>, in the <i>condition</i> of a <a href="for.html" title="cpp/language/for">for loop</a>, in the <i>range_declaration</i> of a <a href="range-for.html" title="cpp/language/range-for">range for loop</a>, in the <i>condition</i> of the <a href="if.html" title="cpp/language/if">if statement</a>, <a href="while.html" title="cpp/language/while">while loop</a>, or <a href="switch.html" title="cpp/language/switch">switch statement</a> begins at the point of declaration and ends at the end of the controlled statement.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1">Base<span class="sy2">*</span> bp <span class="sy1">=</span> new Derived<span class="sy4">;</span>
+<span class="kw1">if</span><span class="br0">(</span>Derived<span class="sy2">*</span> dp <span class="sy1">=</span> <span class="kw1">dynamic_cast</span><span class="sy1">&lt;</span>Derived<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span>bp<span class="br0">)</span><span class="br0">)</span>
+<span class="br0">{</span>
+    dp<span class="sy2">-</span><span class="sy1">&gt;</span>f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// dp is in scope</span>
+<span class="br0">}</span> <span class="co1">// scope of dp ends</span>
+ 
+<span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="co1">// scope of n begins</span>
+    n <span class="sy1">&lt;</span> <span class="nu0">10</span><span class="sy4">;</span>    <span class="co1">// n is in scope</span>
+    <span class="sy2">++</span>n<span class="br0">)</span>       <span class="co1">// n is in scope</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span> <span class="co1">// n is in scope</span>
+<span class="br0">}</span> <span class="co1">// scope of n ends</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Function prototype scope">edit</a>]</span> <span class="mw-headline" id="Function_prototype_scope">Function prototype scope</span>
+</h3>
+<p>The scope of a name introduced in the parameter list of a function declaration that is not a definition ends at the end of the function declarator. If there are multiple or nested declarators in the declaration, the scope ends at the end of the nearest enclosing function declarator.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">const</span> <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">3</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> f1<span class="br0">(</span><span class="kw4">int</span> n,     <span class="co1">// scope of global 'n' interrupted,</span>
+                  <span class="co1">// scope of the parameter 'n' begins</span>
+       <span class="kw4">int</span> y <span class="sy1">=</span> n<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// error: default argument references a parameter</span>
+ 
+<span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span><span class="sy2">*</span>f2<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span> n<span class="br0">)</span><span class="br0">)</span><span class="br0">[</span>n<span class="br0">]</span><span class="sy4">;</span> <span class="co1">// OK: the scope of the function parameter 'n'</span>
+                        <span class="co1">// ends at the end of its function declarator</span>
+                        <span class="co1">// in the array declarator, global n is in scope</span>
+<span class="co1">// (this declares a pointer to function returning a pointer to an array of 3 int</span>
+ 
+<span class="co1">// by contrast</span>
+<span class="kw4">auto</span> <span class="br0">(</span><span class="sy2">*</span>f3<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span> n<span class="br0">)</span><span class="sy2">-</span><span class="sy1">&gt;</span><span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">[</span>n<span class="br0">]</span><span class="sy4">;</span> <span class="co1">// error: parameter 'n' as array bound</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Function scope">edit</a>]</span> <span class="mw-headline" id="Function_scope">Function scope</span>
+</h3>
+<p>A <a href="statements.html#Labels" title="cpp/language/statements">label (and only a label)</a> declared inside a function is in scope everywhere in that function, in all nested blocks, before and after its own declaration.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+   <span class="br0">{</span>   
+       <span class="kw1">goto</span> label<span class="sy4">;</span> <span class="co1">// label in scope even though declared later</span>
+label<span class="sy4">:;</span>
+   <span class="br0">}</span>
+   <span class="kw1">goto</span> label<span class="sy4">;</span> <span class="co1">// label ignores block scope</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">goto</span> label<span class="sy4">;</span> <span class="co1">// error: label not in scope in g()</span>
+<span class="br0">}</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Namespace scope">edit</a>]</span> <span class="mw-headline" id="Namespace_scope">Namespace scope</span>
+</h3>
+<p>The potential scope of any entity declared in a <a href="namespace.html" title="cpp/language/namespace">namespace</a> begins at the declaration and consists of the concatenation of all namespace definitions for the same namespace name that follow, plus, for any <a href="namespace.html" title="cpp/language/namespace">using-directive</a> that introduced this name or its entire namespace into another scope, the rest of that scope.
+</p>
+<p>The top-level scope of a translation unit ("file scope" or "global scope") is also a namespace and is properly called "global namespace scope". The potential scope of any entity declared in the global namespace scope begins at the declaration and continues to the end of the translation unit. 
+</p>
+<p>The scope of an entity declared in an unnamed namespace or in an inline namespace includes the enclosing namespace;
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">namespace</span> N <span class="br0">{</span> <span class="co1">// scope of N begins (as a member of global namespace)</span>
+    <span class="kw4">int</span> i<span class="sy4">;</span> <span class="co1">// scope of i begins</span>
+    <span class="kw4">int</span> g<span class="br0">(</span><span class="kw4">int</span> a<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> a<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// scope of g begins</span>
+    <span class="kw4">int</span> j<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// scope of j begins</span>
+    <span class="kw4">void</span> q<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// scope of q begins</span>
+    <span class="kw1">namespace</span> <span class="br0">{</span>
+        <span class="kw4">int</span> x<span class="sy4">;</span> <span class="co1">// scope of x begins</span>
+    <span class="br0">}</span> <span class="co1">// scope of x does not end</span>
+    <span class="kw1">inline</span> <span class="kw1">namespace</span> inl <span class="br0">{</span> <span class="co1">// scope of inl begins</span>
+      <span class="kw4">int</span> y<span class="sy4">;</span> <span class="co1">// scope of y begins</span>
+    <span class="br0">}</span> <span class="co1">// scope of y does not end</span>
+<span class="br0">}</span> <span class="co1">// scope of i,g,j,q,inl,x,y interrupted</span>
+ 
+<span class="kw1">namespace</span> <span class="br0">{</span>
+    <span class="kw4">int</span> l<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// scope of l begins</span>
+<span class="br0">}</span> <span class="co1">// scope of l does not end (it's a member of unnamed namespace)</span>
+ 
+<span class="kw1">namespace</span> N <span class="br0">{</span> <span class="co1">// scope of i,g,j,q,inl,x,y continues</span>
+    <span class="kw4">int</span> g<span class="br0">(</span><span class="kw4">char</span> a<span class="br0">)</span> <span class="br0">{</span>  <span class="co1">// overloads N::g(int)</span>
+        <span class="kw1">return</span> l<span class="sy2">+</span>a<span class="sy4">;</span>  <span class="co1">// l from unnamed namespace is in scope</span>
+    <span class="br0">}</span>
+    <span class="kw4">int</span> i<span class="sy4">;</span> <span class="co1">// error: duplicate definition (i is already in scope)</span>
+    <span class="kw4">int</span> j<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: repeat function declaration is allowed</span>
+    <span class="kw4">int</span> j<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="co1">// OK: definition of the earlier-declared N::j()</span>
+        <span class="kw1">return</span> g<span class="br0">(</span>i<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// calls N::g(int)</span>
+    <span class="br0">}</span>
+    <span class="kw4">int</span> q<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// error: q is already in scope with different return type</span>
+<span class="br0">}</span> <span class="co1">// scope of i,g,j,q,inl,x,y interrupted</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw1">using</span> <span class="kw1">namespace</span> N<span class="sy4">;</span> <span class="co1">// scope of i,g,j,q,inl,x,y resumes</span>
+    i <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// N::i is in scope</span>
+    x <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// N::(anonymous)::x is in scope</span>
+    y <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// N::inl::y is in scope</span>
+    inl<span class="sy4">::</span><span class="me2">y</span> <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// N::inl is also in scope</span>
+<span class="br0">}</span> <span class="co1">// scope of i,g,j,q,inl,x,y interrupted</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class scope">edit</a>]</span> <span class="mw-headline" id="Class_scope">Class scope</span>
+</h3>
+<p>The potential scope of a name declared in a <a href="class.html" title="cpp/language/class">class</a> begins at the point of declaration and includes the rest of the class body and all function bodies (even if defined outside the class definition or before the declaration of the name), default arguments, exception specifications, in-class brace-or-equal initializers, and all these things in nested classes, recursively.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> X <span class="br0">{</span>
+    <span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> a <span class="sy1">=</span> n<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// X::n is in scope inside default parameter</span>
+         <span class="kw1">return</span> a<span class="sy2">*</span>n<span class="sy4">;</span>   <span class="co1">// X::n is in scope inside function body</span>
+    <span class="br0">}</span>
+    <span class="kw4">int</span> g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">int</span> i <span class="sy1">=</span> n<span class="sy2">*</span><span class="nu0">2</span><span class="sy4">;</span>   <span class="co1">// X::n is in scope inside initializer</span>
+ 
+<span class="co1">//  int x[n];      // Error: n is not in scope in class body</span>
+    <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw4">int</span> x<span class="br0">[</span>n<span class="br0">]</span><span class="sy4">;</span>      <span class="co1">// OK: n is now in scope in class body</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> X<span class="sy4">::</span><span class="me2">g</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> n<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// X::n is in scope in out-of-class member function body</span></pre></div></div>
+<p>If a name is used in a class body before it is declared, and another declaration for that name is in scope, the program is <a href="ub.html" title="cpp/language/ub">ill-formed, no diagnostic required</a>.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">typedef</span> <span class="kw4">int</span> c<span class="sy4">;</span> <span class="co1">// ::c</span>
+<span class="kw2">enum</span> <span class="br0">{</span> i <span class="sy1">=</span> <span class="nu0">1</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// ::i</span>
+<span class="kw1">class</span> X <span class="br0">{</span>
+    <span class="kw4">char</span> v<span class="br0">[</span>i<span class="br0">]</span><span class="sy4">;</span> <span class="co1">// Error: at this point, i refers to ::i</span>
+               <span class="co1">// but there is also X::i</span>
+    <span class="kw4">int</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+         <span class="kw1">return</span> sizeof<span class="br0">(</span>c<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: X::c, not ::c is in scope inside a member function</span>
+    <span class="br0">}</span>
+    <span class="kw4">char</span> c<span class="sy4">;</span> <span class="co1">// X::c</span>
+    <span class="kw2">enum</span> <span class="br0">{</span> i <span class="sy1">=</span> <span class="nu0">2</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// X::i</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">typedef</span> <span class="kw4">char</span><span class="sy2">*</span> T<span class="sy4">;</span>
+<span class="kw1">struct</span> Y <span class="br0">{</span>
+    T a<span class="sy4">;</span> <span class="co1">// error: at this point, T refers to ::T</span>
+         <span class="co1">// but there is also Y::T</span>
+    <span class="kw1">typedef</span> <span class="kw4">long</span> T<span class="sy4">;</span>
+    T b<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>Names of any class members can only be used in four contexts:
+</p>
+<ul>
+<li> in its own class scope or in the class scope of a derived class
+</li>
+<li> after the <code><b>.</b></code> operator applied to an expression of the type of its class or a class derived from it
+</li>
+<li> after the <code><b>-&gt;</b></code> operator applied to an expression of the type of pointer to its class or pointers to a class derived from it
+</li>
+<li> after the <code><b>::</b></code> operator applied to the name of its class or the name of a class derived from it
+</li>
+</ul>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Enumeration scope">edit</a>]</span> <span class="mw-headline" id="Enumeration_scope">Enumeration scope</span>
+</h3>
+<p>The name of an enumerator introduced in a <a href="enum.html" title="cpp/language/enum">scoped enumeration</a> begins at the point of declaration and ends at the end of the enum specifier (in contrast, unscoped enumerators are in scope after the end of the enum specifier)
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> e1_t <span class="br0">{</span> <span class="co1">// unscoped enumeration</span>
+  A,
+  B <span class="sy1">=</span> A<span class="sy2">*</span><span class="nu0">2</span>
+<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// scope of A and B does not end</span>
+ 
+<span class="kw2">enum</span> <span class="kw1">class</span> e2_t <span class="br0">{</span> <span class="co1">// scoped enumeration</span>
+    SA,
+    SB <span class="sy1">=</span> SA<span class="sy2">*</span><span class="nu0">2</span> <span class="co1">// SA is in scope</span>
+<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// scope of SA and SB ends</span>
+ 
+e1_t e1 <span class="sy1">=</span> B<span class="sy4">;</span> <span class="co1">// OK, B is in scope</span>
+<span class="co1">// e2_t e2 = SB; // Error: SB is not in scope</span>
+e2_t e2 <span class="sy1">=</span> e2_t<span class="sy4">::</span><span class="me2">SB</span><span class="sy4">;</span> <span class="co1">// OK</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Template parameter scope">edit</a>]</span> <span class="mw-headline" id="Template_parameter_scope">Template parameter scope</span>
+</h3>
+<p>The potential scope of a template parameter name begins immediately at the point of declaration and continues to the end of the smallest template declaration in which it was introduced.  In particular, a template parameter can be used in the declarations of subsequent template parameters and in the specifications of base classes, but can't be used in the declarations of the preceding template parameters.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">typename</span> T, <span class="co1">// scope of T begins</span>
+          T<span class="sy2">*</span> p,       <span class="co1">// T can be used for a non-type parameter</span>
+          <span class="kw1">class</span> U <span class="sy1">=</span> T <span class="co1">// T can be used for a default type</span>
+        <span class="sy1">&gt;</span>
+<span class="kw1">class</span> X <span class="sy4">:</span> <span class="kw1">public</span> Array<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> <span class="co1">// T can be used in base class name</span>
+<span class="br0">{</span>
+   <span class="co1">// T can be used inside the body as well</span>
+<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// scopes of T and U end, scope of X continues</span></pre></div></div>
+<p>The potential scope of the name of the parameter of a template template parameter is the smallest template parameter list in which that name appears
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">template</span><span class="sy1">&lt;</span> <span class="co1">// template template parameter</span>
+                    <span class="kw1">typename</span> Y,     <span class="co1">// scope of Y begins</span>
+                    <span class="kw1">typename</span> G <span class="sy1">=</span> Y <span class="co1">// Y is in scope</span>
+                  <span class="sy1">&gt;</span> <span class="co1">// scopes of Y and G end</span>
+          <span class="kw1">class</span> T,
+<span class="co1">//          typename U = Y // Error: Y is not in scope</span>
+          <span class="kw1">typename</span> U
+        <span class="sy1">&gt;</span>
+<span class="kw1">class</span> X
+<span class="br0">{</span>
+<span class="br0">}</span><span class="sy4">;</span> <span class="co1">// scopes of T and U end</span></pre></div></div>
+<p>Similar to other nested scopes, the name of a template parameter hides the same name from the outer scope for the duration of its own:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">typedef</span> <span class="kw4">int</span> N<span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span> N X, <span class="co1">// non-type parameter of type int</span>
+          <span class="kw1">typename</span> N, <span class="co1">// scope of this N begins, scope of ::N interrupted</span>
+          <span class="kw1">template</span><span class="sy1">&lt;</span>N Y<span class="sy1">&gt;</span> <span class="kw1">class</span> T <span class="co1">// N here is the template parameter, not int</span>
+         <span class="sy1">&gt;</span> <span class="kw1">struct</span> A<span class="sy4">;</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Point of declaration">edit</a>]</span> <span class="mw-headline" id="Point_of_declaration">Point of declaration</span>
+</h3>
+<p>Scope begins at the <i>point of declaration</i>, which is located as follows:
+</p>
+<p>For variables and other names introduced by simple declarations, the point of declaration is immediately after that name's <a href="declarations.html#Declarators" title="cpp/language/declarations">declarator</a> and before its initializer, if any:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">unsigned</span> <span class="kw4">char</span> x <span class="sy1">=</span> <span class="nu0">32</span><span class="sy4">;</span> <span class="co1">// scope of the first 'x' begins</span>
+<span class="br0">{</span>
+    <span class="kw4">unsigned</span> <span class="kw4">char</span> x <span class="sy1">=</span> x<span class="sy4">;</span> <span class="co1">// scope of the second 'x' begins before the initializer (= x)</span>
+                         <span class="co1">// this does not initialize the second 'x' with the value 32, </span>
+                         <span class="co1">// this initializes the second 'x' with its own, indeterminate, value</span>
+<span class="br0">}</span>
+<a href="../utility/functional/function.html"><span class="kw896">std::<span class="me2">function</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy1">&gt;</span> f <span class="sy1">=</span> <span class="br0">[</span><span class="sy3">&amp;</span><span class="br0">]</span><span class="br0">(</span><span class="kw4">int</span> n<span class="br0">)</span><span class="br0">{</span><span class="kw1">return</span> n<span class="sy1">&gt;</span><span class="nu0">1</span> <span class="sy4">?</span> n<span class="sy2">*</span>f<span class="br0">(</span>n<span class="sy2">-</span><span class="nu0">1</span><span class="br0">)</span> <span class="sy4">:</span> n<span class="sy4">;</span><span class="br0">}</span><span class="sy4">;</span>
+           <span class="co1">// the name of the function 'f' is in scope within the lambda, and can</span>
+           <span class="co1">// be correctly captured by reference, giving a recursive function</span></pre></div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">const</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// scope of the first 'x' begins</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> x<span class="br0">[</span>x<span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// scope of the second x begins before the initializer (= {})</span>
+                   <span class="co1">// but after the declarator (x[x]). Within the declarator, the outer</span>
+                   <span class="co1">// 'x' is still in scope. This declares an array of 2 int.</span>
+<span class="br0">}</span></pre></div></div>
+<p>The point of declaration of a class or template is immediately after the identifier that names the class (or the template-id that names the template) appears in its <a href="classes.html" title="cpp/language/classes">class-head</a>, and is already in scope in the list of the base classes:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// the name 'S' is in scope immediately after it appears, </span>
+<span class="co1">// so it can be used in the list of base classes</span>
+<span class="kw1">struct</span> S<span class="sy4">:</span> <a href="../memory/enable_shared_from_this.html"><span class="kw592">std::<span class="me2">enable_shared_from_this</span></span></a><span class="sy1">&lt;</span>S<span class="sy1">&gt;</span> 
+<span class="br0">{</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>The point of declaration of an enumeration is immediately after the identifier that names it appears in the <a href="enum.html" title="cpp/language/enum">enum specifier</a> or opaque enum declaration, whichever is used first:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> E <span class="sy4">:</span> <span class="kw4">int</span> <span class="br0">{</span> <span class="co1">// E is already in scope</span>
+    A <span class="sy1">=</span> sizeof<span class="br0">(</span>E<span class="br0">)</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>The point of declaration of a <a href="type_alias.html" title="cpp/language/type alias">type alias or alias template</a> is immediately after the type-id to which the alias refers:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">using</span> T <span class="sy1">=</span> <span class="kw4">int</span><span class="sy4">;</span> <span class="co1">// point of declaration of T is at the semicolon</span>
+<span class="kw1">using</span> T <span class="sy1">=</span> T<span class="sy4">;</span>   <span class="co1">// same as T = int</span></pre></div></div>
+<p>The point of declaration of an enumerator is immediately after its definition (not before the initializer as it is for variables):
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">const</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">12</span><span class="sy4">;</span>
+<span class="br0">{</span>
+    <span class="kw2">enum</span> <span class="br0">{</span> x <span class="sy1">=</span> x <span class="sy2">+</span> <span class="nu0">1</span>, <span class="co1">// point of declaration is at the comma, x is initialized to 13</span>
+           y <span class="sy1">=</span> x <span class="sy2">+</span> <span class="nu0">1</span>  <span class="co1">// the enumerator x is now in scope, y is initialized to 14</span>
+         <span class="br0">}</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>The point of declaration for an <span class="t-spar">injected-class-name</span> is immediately following the opening brace of its class (or class template) definition
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: injected-class-name needs to be defined somewhere and linked here </td>
+</tr></table>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> Array
+<span class="co1">// : std::enable_shared_from_this&lt;Array&gt; // Error: the injected class name is not in scope</span>
+   <span class="sy4">:</span> <a href="../memory/enable_shared_from_this.html"><span class="kw592">std::<span class="me2">enable_shared_from_this</span></span></a><span class="sy1">&lt;</span> Array<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> <span class="sy1">&gt;</span> <span class="co1">//OK: the template-name Array is in scope</span>
+<span class="br0">{</span> <span class="co1">// the injected class name Array is now in scope as if a public member name</span>
+    Array<span class="sy2">*</span> p<span class="sy4">;</span> <span class="co1">// pointer to Array&lt;T&gt;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: remainder of [basic.scope.pdecl] </td>
+</tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span>
+</h3>
+<div class="t-ref-std-c++11">
+<ul><li> C++11 standard (ISO/IEC 14882:2011): 
+</li></ul>
+<dl><dd>
+<ul><li> 3.3 Scope [basic.scope]
+</li></ul>
+</dd></dl>
+</div>
+<div class="t-ref-std-c++98">
+<ul><li> C++98 standard (ISO/IEC 14882:1998): 
+</li></ul>
+<dl><dd>
+<ul><li> 3.3 Declarative regions and scopes [basic.scope]
+</li></ul>
+</dd></dl>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see">
+<span><a href="../../c/language/scope.html" title="c/language/scope">C documentation</a></span> for <span class="t-dsc-see-tt"><span>Scope</span></span>
+</div>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1619/1000000
+Preprocessor generated node count: 6332/1000000
+Post‐expand include size: 29995/2097152 bytes
+Template argument size: 11618/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13085-0!*!0!!en!*!* and timestamp 20150517191816 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/scope&amp;oldid=78341</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.079 secs. -->
+	</body>
+<!-- Cached 20150517192601 -->
+</html>

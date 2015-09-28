@@ -1,0 +1,1184 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Standard library header &lt;cmath&gt; - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/header/cmath","wgTitle":"cpp/header/cmath","wgCurRevisionId":71827,"wgArticleId":9752,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/header/cmath","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_header_cmath skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">
+<span style="font-size:0.7em; line-height:130%">Standard library header</span> &lt;cmath&gt;</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../header.html" title="cpp/header">header</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../header.html" title="cpp/header"> Standard Library header files </a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Language Support</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cstddef.html" title="cpp/header/cstddef"><tt>&lt;cstddef&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="limits.html" title="cpp/header/limits"><tt>&lt;limits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="climits.html" title="cpp/header/climits"><tt>&lt;climits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cfloat.html" title="cpp/header/cfloat"><tt>&lt;cfloat&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdint.html" title="cpp/header/cstdint"><tt>&lt;cstdint&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="new.html" title="cpp/header/new"><tt>&lt;new&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="typeinfo.html" title="cpp/header/typeinfo"><tt>&lt;typeinfo&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="exception.html" title="cpp/header/exception"><tt>&lt;exception&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ciso646.html" title="cpp/header/ciso646"><tt>&lt;ciso646&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="initializer_list.html" title="cpp/header/initializer list"><tt>&lt;initializer_list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="csignal.html" title="cpp/header/csignal"><tt>&lt;csignal&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="csetjmp.html" title="cpp/header/csetjmp"><tt>&lt;csetjmp&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdalign.html" title="cpp/header/cstdalign"><tt>&lt;cstdalign&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdarg.html" title="cpp/header/cstdarg"><tt>&lt;cstdarg&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdbool.html" title="cpp/header/cstdbool"><tt>&lt;cstdbool&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Diagnostics</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="stdexcept.html" title="cpp/header/stdexcept"><tt>&lt;stdexcept&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cassert.html" title="cpp/header/cassert"><tt>&lt;cassert&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cerrno.html" title="cpp/header/cerrno"><tt>&lt;cerrno&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="system_error.html" title="cpp/header/system error"><tt>&lt;system_error&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> General utilities</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/header/utility"><tt>&lt;utility&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="tuple.html" title="cpp/header/tuple"><tt>&lt;tuple&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bitset.html" title="cpp/header/bitset"><tt>&lt;bitset&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory.html" title="cpp/header/memory"><tt>&lt;memory&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="functional.html" title="cpp/header/functional"><tt>&lt;functional&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="type_traits.html" title="cpp/header/type traits"><tt>&lt;type_traits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ratio.html" title="cpp/header/ratio"><tt>&lt;ratio&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="chrono.html" title="cpp/header/chrono"><tt>&lt;chrono&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scoped_allocator.html" title="cpp/header/scoped allocator"><tt>&lt;scoped_allocator&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="typeindex.html" title="cpp/header/typeindex"><tt>&lt;typeindex&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Strings</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/header/string"><tt>&lt;string&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cctype.html" title="cpp/header/cctype"><tt>&lt;cctype&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cwctype.html" title="cpp/header/cwctype"><tt>&lt;cwctype&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cwchar.html" title="cpp/header/cwchar"><tt>&lt;cwchar&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cuchar.html" title="cpp/header/cuchar"><tt>&lt;cuchar&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Localization</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+</table></div>
+</div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Containers</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="array.html" title="cpp/header/array"><tt>&lt;array&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="deque.html" title="cpp/header/deque"><tt>&lt;deque&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="forward_list.html" title="cpp/header/forward list"><tt>&lt;forward_list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="list.html" title="cpp/header/list"><tt>&lt;list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="vector.html" title="cpp/header/vector"><tt>&lt;vector&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="map.html" title="cpp/header/map"><tt>&lt;map&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="set.html" title="cpp/header/set"><tt>&lt;set&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unordered_map.html" title="cpp/header/unordered map"><tt>&lt;unordered_map&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unordered_set.html" title="cpp/header/unordered set"><tt>&lt;unordered_set&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="queue.html" title="cpp/header/queue"><tt>&lt;queue&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="stack.html" title="cpp/header/stack"><tt>&lt;stack&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Iterators</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/header/iterator"><tt>&lt;iterator&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Algorithms</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/header/algorithm"><tt>&lt;algorithm&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Numerics</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cfenv.html" title="cpp/header/cfenv"><tt>&lt;cfenv&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="complex.html" title="cpp/header/complex"><tt>&lt;complex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="random.html" title="cpp/header/random"><tt>&lt;random&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="valarray.html" title="cpp/header/valarray"><tt>&lt;valarray&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/header/numeric"><tt>&lt;numeric&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"><tt>&lt;cmath&gt;</tt></strong>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ctgmath.html" title="cpp/header/ctgmath"><tt>&lt;ctgmath&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Input/Output</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="iosfwd.html" title="cpp/header/iosfwd"><tt>&lt;iosfwd&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iostream.html" title="cpp/header/iostream"><tt>&lt;iostream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ios.html" title="cpp/header/ios"><tt>&lt;ios&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="streambuf.html" title="cpp/header/streambuf"><tt>&lt;streambuf&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="istream.html" title="cpp/header/istream"><tt>&lt;istream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ostream.html" title="cpp/header/ostream"><tt>&lt;ostream&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="iomanip.html" title="cpp/header/iomanip"><tt>&lt;iomanip&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sstream.html" title="cpp/header/sstream"><tt>&lt;sstream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fstream.html" title="cpp/header/fstream"><tt>&lt;fstream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdio.html" title="cpp/header/cstdio"><tt>&lt;cstdio&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cinttypes.html" title="cpp/header/cinttypes"><tt>&lt;cinttypes&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Regular expressions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/header/regex"><tt>&lt;regex&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Thread support</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/header/thread"><tt>&lt;thread&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="mutex.html" title="cpp/header/mutex"><tt>&lt;mutex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/header/atomic"><tt>&lt;atomic&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="shared_mutex.html" title="cpp/header/shared mutex"><tt>&lt;shared_mutex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="condition_variable.html" title="cpp/header/condition variable"><tt>&lt;condition_variable&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="future.html" title="cpp/header/future"><tt>&lt;future&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>This header was originally in the C standard library as <code><b>&lt;math.h&gt;</b></code>.
+</p>
+<p>This header is part of the <a href="../numeric.html" title="cpp/numeric">numeric</a> library.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1">
+<a href="cmath.html#Macro_constants"><span class="tocnumber">1</span> <span class="toctext">Macro constants</span></a>
+<ul>
+<li class="toclevel-2"><a href="cmath.html#Classification"><span class="tocnumber">1.1</span> <span class="toctext">Classification</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-2"><a href="cmath.html#Types"><span class="tocnumber">2</span> <span class="toctext">Types</span></a></li>
+<li class="toclevel-1 tocsection-3">
+<a href="cmath.html#Functions"><span class="tocnumber">3</span> <span class="toctext">Functions</span></a>
+<ul>
+<li class="toclevel-2"><a href="cmath.html#Basic_operations"><span class="tocnumber">3.1</span> <span class="toctext">Basic operations</span></a></li>
+<li class="toclevel-2"><a href="cmath.html#Exponential_functions"><span class="tocnumber">3.2</span> <span class="toctext">Exponential functions</span></a></li>
+<li class="toclevel-2"><a href="cmath.html#Power_functions"><span class="tocnumber">3.3</span> <span class="toctext">Power functions</span></a></li>
+<li class="toclevel-2"><a href="cmath.html#Trigonometric_functions"><span class="tocnumber">3.4</span> <span class="toctext">Trigonometric functions</span></a></li>
+<li class="toclevel-2"><a href="cmath.html#Hyperbolic_functions"><span class="tocnumber">3.5</span> <span class="toctext">Hyperbolic functions</span></a></li>
+<li class="toclevel-2"><a href="cmath.html#Error_and_gamma_functions"><span class="tocnumber">3.6</span> <span class="toctext">Error and gamma functions</span></a></li>
+<li class="toclevel-2"><a href="cmath.html#Nearest_integer_floating_point_operations"><span class="tocnumber">3.7</span> <span class="toctext">Nearest integer floating point operations</span></a></li>
+<li class="toclevel-2"><a href="cmath.html#Floating_point_manipulation_functions"><span class="tocnumber">3.8</span> <span class="toctext">Floating point manipulation functions</span></a></li>
+<li class="toclevel-2"><a href="cmath.html#Classification_and_comparison"><span class="tocnumber">3.9</span> <span class="toctext">Classification and comparison</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Macro constants">edit</a>]</span> <span class="mw-headline" id="Macro_constants">Macro constants</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/HUGE_VAL.html" title="cpp/numeric/math/HUGE VAL"> <span class="t-lines"><span>HUGE_VALF</span><span>HUGE_VAL</span><span>HUGE_VALL</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   indicates the overflow value for <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span> respectively   <br> <span class="t-mark">(macro constant)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/INFINITY.html" title="cpp/numeric/math/INFINITY"> <span class="t-lines"><span>INFINITY</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   evaluates to positive infinity or the value guaranteed to overflow a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span> <br> <span class="t-mark">(macro constant)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/NAN.2.html" title="cpp/numeric/math/NAN"> <span class="t-lines"><span>NAN</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   evaluates to a quiet NaN of type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>  <br> <span class="t-mark">(macro constant)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/math_errhandling.html" title="cpp/numeric/math/math errhandling"> <span class="t-lines"><span>math_errhandling</span><span>MATH_ERRNO</span><span>MATH_ERREXCEPT</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   defines the error handling mechanism used by the common mathematical functions  <br> <span class="t-mark">(macro constant)</span> 
+</td>
+</tr>
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Classification">  Classification </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/FP_categories.html" title="cpp/numeric/math/FP categories"> <span class="t-lines"><span>FP_NORMAL</span><span>FP_SUBNORMAL</span><span>FP_ZERO</span><span>FP_INFINITE</span><span>FP_NAN</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   indicates a floating-point category  <br> <span class="t-mark">(macro constant)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Types">edit</a>]</span> <span class="mw-headline" id="Types">Types</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div>float_t</div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   most efficient floating-point type at least as wide as <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>  <br> <span class="t-mark">(typedef)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div>double_t</div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   most efficient floating-point type at least as wide as <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>  <br> <span class="t-mark">(typedef)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Functions">edit</a>]</span> <span class="mw-headline" id="Functions">Functions</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Basic_operations">  Basic operations </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/fabs.html" title="cpp/numeric/math/fabs"> <span class="t-lines"><span>abs<span class="t-dsc-small">(float)</span> </span><span> fabs</span></span></a></div></div>
+</td>
+<td>   absolute value of a floating point value (<span class="texhtml" style="white-space: nowrap;">|x|</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/fmod.html" title="cpp/numeric/math/fmod"> <span class="t-lines"><span>fmod</span></span></a></div></div>
+</td>
+<td>   remainder of the floating point division operation <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/remainder.html" title="cpp/numeric/math/remainder"> <span class="t-lines"><span>remainder</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   signed remainder of the division operation  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/remquo.html" title="cpp/numeric/math/remquo"> <span class="t-lines"><span>remquo</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   signed remainder as well as the three last bits of the division operation  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/fma.html" title="cpp/numeric/math/fma"> <span class="t-lines"><span>fma</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   fused multiply-add operation  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/fmax.html" title="cpp/numeric/math/fmax"> <span class="t-lines"><span>fmax</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   larger of two floating point values  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/fmin.html" title="cpp/numeric/math/fmin"> <span class="t-lines"><span>fmin</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   smaller of two floating point values  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/fdim.html" title="cpp/numeric/math/fdim"> <span class="t-lines"><span>fdim</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   positive difference of two floating point values (<span class="texhtml" style="white-space: nowrap;">max(0, x-y)</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/nan.html" title="cpp/numeric/math/nan"> <span class="t-lines"><span>nan</span><span>nanf</span><span>nanl</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   not-a-number (NaN)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Exponential_functions">  Exponential functions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/exp.html" title="cpp/numeric/math/exp"> <span class="t-lines"><span>exp</span></span></a></div></div>
+</td>
+<td>   returns <i>e</i> raised to the given power (<span class="texhtml" style="white-space: nowrap;">e<sup>x</sup></span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/exp2.html" title="cpp/numeric/math/exp2"> <span class="t-lines"><span>exp2</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   returns <i>2</i> raised to the given power (<span class="texhtml" style="white-space: nowrap;">2<sup>x</sup></span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/expm1.html" title="cpp/numeric/math/expm1"> <span class="t-lines"><span>expm1</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   returns <i>e</i> raised to the given power, minus one (<span class="texhtml" style="white-space: nowrap;">e<sup>x</sup>-1</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/log.html" title="cpp/numeric/math/log"> <span class="t-lines"><span>log</span></span></a></div></div>
+</td>
+<td>   computes natural (base <i>e</i>) logarithm (to base <i>e</i>) (<span class="texhtml" style="white-space: nowrap;">ln(x)</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/log10.html" title="cpp/numeric/math/log10"> <span class="t-lines"><span>log10</span></span></a></div></div>
+</td>
+<td>   computes common (base <i>10</i>) logarithm (<span class="texhtml" style="white-space: nowrap;">log<sub>10</sub>(x)</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/log2.html" title="cpp/numeric/math/log2"> <span class="t-lines"><span>log2</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   base 2 logarithm of the given number (<span class="texhtml" style="white-space: nowrap;">log<sub>2</sub>(x)</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/log1p.html" title="cpp/numeric/math/log1p"> <span class="t-lines"><span>log1p</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>    natural logarithm (to base <i>e</i>) of 1 plus the given number (<span class="texhtml" style="white-space: nowrap;">ln(1+x)</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Power_functions">  Power functions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/pow.html" title="cpp/numeric/math/pow"> <span class="t-lines"><span>pow</span></span></a></div></div>
+</td>
+<td>   raises a number to the given power (<span class="texhtml" style="white-space: nowrap;">x<sup>y</sup></span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/sqrt.html" title="cpp/numeric/math/sqrt"> <span class="t-lines"><span>sqrt</span></span></a></div></div>
+</td>
+<td>   computes square root (<span class="texhtml" style="white-space: nowrap;"><span class="t-mrad"><span>√</span><span>x</span></span></span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/cbrt.html" title="cpp/numeric/math/cbrt"> <span class="t-lines"><span>cbrt</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   computes cubic root  (<span class="texhtml" style="white-space: nowrap;"><span class="t-mrad"><span>3</span><span>√</span><span>x</span></span></span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/hypot.html" title="cpp/numeric/math/hypot"> <span class="t-lines"><span>hypot</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   computes square root of the sum of the squares of two given numbers (<span class="texhtml" style="white-space: nowrap;"><span class="t-mrad"><span>√</span><span>x<span class="t-su">2<br></span>+y<span class="t-su">2<br></span></span></span></span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Trigonometric_functions">  Trigonometric functions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/sin.html" title="cpp/numeric/math/sin"> <span class="t-lines"><span>sin</span></span></a></div></div>
+</td>
+<td>   computes sine (<span class="texhtml" style="white-space: nowrap;">sin(x)</span>) <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/cos.html" title="cpp/numeric/math/cos"> <span class="t-lines"><span>cos</span></span></a></div></div>
+</td>
+<td>  computes cosine (<span class="texhtml" style="white-space: nowrap;">cos(x)</span>) <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/tan.html" title="cpp/numeric/math/tan"> <span class="t-lines"><span>tan</span></span></a></div></div>
+</td>
+<td>   computes tangent (<span class="texhtml" style="white-space: nowrap;">tan(x)</span>) <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/asin.html" title="cpp/numeric/math/asin"> <span class="t-lines"><span>asin</span></span></a></div></div>
+</td>
+<td>   computes arc sine (<span class="texhtml" style="white-space: nowrap;">arcsin(x)</span>) <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/acos.html" title="cpp/numeric/math/acos"> <span class="t-lines"><span>acos</span></span></a></div></div>
+</td>
+<td>  computes arc cosine (<span class="texhtml" style="white-space: nowrap;">arccos(x)</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/atan.html" title="cpp/numeric/math/atan"> <span class="t-lines"><span>atan</span></span></a></div></div>
+</td>
+<td>  computes arc tangent (<span class="texhtml" style="white-space: nowrap;">arctan(x)</span>) <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/atan2.html" title="cpp/numeric/math/atan2"> <span class="t-lines"><span>atan2</span></span></a></div></div>
+</td>
+<td>  arc tangent, using signs to determine quadrants  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Hyperbolic_functions">  Hyperbolic functions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/sinh.html" title="cpp/numeric/math/sinh"> <span class="t-lines"><span>sinh</span></span></a></div></div>
+</td>
+<td>   computes hyperbolic sine (<span class="texhtml" style="white-space: nowrap;">sh(x)</span>) <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/cosh.html" title="cpp/numeric/math/cosh"> <span class="t-lines"><span>cosh</span></span></a></div></div>
+</td>
+<td>  computes hyperbolic cosine (<span class="texhtml" style="white-space: nowrap;">ch(x)</span>) <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/tanh.html" title="cpp/numeric/math/tanh"> <span class="t-lines"><span>tanh</span></span></a></div></div>
+</td>
+<td>  hyperbolic tangent  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/asinh.html" title="cpp/numeric/math/asinh"> <span class="t-lines"><span>asinh</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>  computes the inverse hyperbolic sine (<span class="texhtml" style="white-space: nowrap;">arsinh(x)</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/acosh.html" title="cpp/numeric/math/acosh"> <span class="t-lines"><span>acosh</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>  computes the inverse hyperbolic cosine (<span class="texhtml" style="white-space: nowrap;">arcosh(x)</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/atanh.html" title="cpp/numeric/math/atanh"> <span class="t-lines"><span>atanh</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>  computes the inverse hyperbolic tangent (<span class="texhtml" style="white-space: nowrap;">artanh(x)</span>)  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Error_and_gamma_functions">  Error and gamma functions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/erf.html" title="cpp/numeric/math/erf"> <span class="t-lines"><span>erf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   error function  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/erfc.html" title="cpp/numeric/math/erfc"> <span class="t-lines"><span>erfc</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   complementary error function  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/tgamma.html" title="cpp/numeric/math/tgamma"> <span class="t-lines"><span>tgamma</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   gamma function  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/lgamma.html" title="cpp/numeric/math/lgamma"> <span class="t-lines"><span>lgamma</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   natural logarithm of the gamma function  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Nearest_integer_floating_point_operations">  Nearest integer floating point operations </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/ceil.html" title="cpp/numeric/math/ceil"> <span class="t-lines"><span>ceil</span></span></a></div></div>
+</td>
+<td>   nearest integer not less than the given value  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/floor.html" title="cpp/numeric/math/floor"> <span class="t-lines"><span>floor</span></span></a></div></div>
+</td>
+<td>   nearest integer not greater than the given value  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/trunc.html" title="cpp/numeric/math/trunc"> <span class="t-lines"><span>trunc</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   nearest integer not greater in magnitude than the given value  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/round.html" title="cpp/numeric/math/round"> <span class="t-lines"><span>round</span><span>lround</span><span>llround</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   nearest integer, rounding away from zero in halfway cases  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/nearbyint.html" title="cpp/numeric/math/nearbyint"> <span class="t-lines"><span>nearbyint</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   nearest integer using current rounding mode  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/rint.html" title="cpp/numeric/math/rint"> <span class="t-lines"><span>rint</span><span>lrint</span><span>llrint</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   nearest integer using current rounding mode with <br> exception if the result differs  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Floating_point_manipulation_functions">  Floating point manipulation functions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/frexp.html" title="cpp/numeric/math/frexp"> <span class="t-lines"><span>frexp</span></span></a></div></div>
+</td>
+<td>  decomposes a number into significand and a power of <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">2</span></span></span>  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/ldexp.html" title="cpp/numeric/math/ldexp"> <span class="t-lines"><span>ldexp</span></span></a></div></div>
+</td>
+<td>   multiplies a number by <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">2</span></span></span> raised to a power <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../numeric/math/modf.html" title="cpp/numeric/math/modf"> <span class="t-lines"><span>modf</span></span></a></div></div>
+</td>
+<td>  decomposes a number into integer and fractional parts  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/scalbn.html" title="cpp/numeric/math/scalbn"> <span class="t-lines"><span>scalbn</span><span>scalbln</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   multiplies a number by <span class="t-lc"><a href="../types/climits.1.html" title="cpp/types/climits">FLT_RADIX</a></span> raised to a power  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/ilogb.html" title="cpp/numeric/math/ilogb"> <span class="t-lines"><span>ilogb</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   extracts exponent of the number  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/logb.html" title="cpp/numeric/math/logb"> <span class="t-lines"><span>logb</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   extracts exponent of the number  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/nextafter.html" title="cpp/numeric/math/nextafter"> <span class="t-lines"><span>nextafter</span><span>nexttoward</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   next representable floating point value towards the given value  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/copysign.html" title="cpp/numeric/math/copysign"> <span class="t-lines"><span>copysign</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   copies the sign of a floating point value  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Classification_and_comparison">  Classification and comparison </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/fpclassify.html" title="cpp/numeric/math/fpclassify"> <span class="t-lines"><span>fpclassify</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   categorizes the given floating point value  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/isfinite.html" title="cpp/numeric/math/isfinite"> <span class="t-lines"><span>isfinite</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the given number has finite value  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/isinf.html" title="cpp/numeric/math/isinf"> <span class="t-lines"><span>isinf</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the given number is infinite  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/isnan.html" title="cpp/numeric/math/isnan"> <span class="t-lines"><span>isnan</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the given number is NaN <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/isnormal.html" title="cpp/numeric/math/isnormal"> <span class="t-lines"><span>isnormal</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the given number is normal  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/signbit.html" title="cpp/numeric/math/signbit"> <span class="t-lines"><span>signbit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the given number is negative  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/isgreater.html" title="cpp/numeric/math/isgreater"> <span class="t-lines"><span>isgreater</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the first floating-point argument is greater than the second <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/isgreaterequal.html" title="cpp/numeric/math/isgreaterequal"> <span class="t-lines"><span>isgreaterequal</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the first floating-point argument is greater or equal than the second <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/isless.html" title="cpp/numeric/math/isless"> <span class="t-lines"><span>isless</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the first floating-point argument is less than the second <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/islessequal.html" title="cpp/numeric/math/islessequal"> <span class="t-lines"><span>islessequal</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the first floating-point argument is less or equal than the second <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/islessgreater.html" title="cpp/numeric/math/islessgreater"> <span class="t-lines"><span>islessgreater</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the first floating-point argument is less or greater than the second <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/math/isunordered.html" title="cpp/numeric/math/isunordered"> <span class="t-lines"><span>isunordered</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if two floating-point values are unordered <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 12680/1000000
+Preprocessor generated node count: 9416/1000000
+Post‐expand include size: 450570/2097152 bytes
+Template argument size: 86696/2097152 bytes
+Highest expansion depth: 22/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9752-0!*!0!!en!*!* and timestamp 20150406193634 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/header/cmath&amp;oldid=71827</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 3.172 secs. -->
+	</body>
+<!-- Cached 20150406193634 -->
+</html>

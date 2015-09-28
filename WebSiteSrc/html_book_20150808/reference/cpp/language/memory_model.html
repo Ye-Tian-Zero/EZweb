@@ -1,0 +1,294 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Memory model - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/memory_model","wgTitle":"cpp/language/memory model","wgCurRevisionId":78340,"wgArticleId":13490,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/memory_model","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_memory_model skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Memory model</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="basic_concepts.html" title="cpp/language/basic concepts"> Basic Concepts</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> language keywords</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="translation_phases.html" title="cpp/language/translation phases"> phases of translation</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> comments </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> the main() function</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> names and identifiers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="incomplete_type.html" title="cpp/language/type"> types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> fundamental types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="objects.html" title="cpp/language/object"> objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scope.html" title="cpp/language/scope"> scope</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lifetime.html" title="cpp/language/lifetime"> object lifetime</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> storage duration and linkage</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="definition.html" title="cpp/language/definition"> definitions and ODR</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup">qualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup">unqualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> memory model</strong> </td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Defines the semantics of computer memory storage for the purpose of the C++ abstract machine.
+</p>
+<p>The memory available to a C++ program is one or more contiguous sequences of <i>bytes</i>. Each byte in memory has a unique <i>address'.</i>
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="memory_model.html#Byte"><span class="tocnumber">1</span> <span class="toctext">Byte</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="memory_model.html#Memory_location"><span class="tocnumber">2</span> <span class="toctext">Memory location</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="memory_model.html#Threads_and_data_races"><span class="tocnumber">3</span> <span class="toctext">Threads and data races</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="memory_model.html#Memory_order"><span class="tocnumber">4</span> <span class="toctext">Memory order</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="memory_model.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Byte">edit</a>]</span> <span class="mw-headline" id="Byte">Byte</span>
+</h3>
+<p>A <i>byte</i> is the smallest addressable unit of memory. It is defined as a contiguous sequence of bits, large enough to hold <span class="t-rev-inl t-since-cxx14"><span>the value of any <code>UTF-8</code> code unit (256 distinct values) and of </span> <span><span class="t-mark-rev t-since-cxx14">(since C++14)</span></span></span>any member of the <i>basic execution character set</i> (<a href="translation_phases.html" title="cpp/language/translation phases">the 96 characters</a> that are required to be single-byte). Similar to C, C++ supports bytes of sizes 8 bits and greater.
+</p>
+<p>The <a href="types.html" title="cpp/language/types">types</a> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span>, and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></span> use one byte for both storage and <a href="objects.html" title="cpp/language/object">value representation</a>. The number of bits in a byte is accessible as <span class="t-lc"><a href="../types/climits.1.html" title="cpp/types/climits">CHAR_BIT</a></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../types/numeric_limits.1.html"><span class="kw344">std::<span class="me2">numeric_limits</span></span></a><span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">digits</span></span></span>.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Memory location">edit</a>]</span> <span class="mw-headline" id="Memory_location">Memory location</span>
+</h3>
+<p>A <i>memory location</i> is 
+</p>
+<ul>
+<li> an object of <a href="incomplete_type.html" title="cpp/language/type">scalar type</a> (arithmetic type, pointer type, enumeration type, or std::nullptr_t)
+</li>
+<li> or the largest contiguous sequence of <a href="bit_field.html" title="cpp/language/bit field">bit fields</a> of non-zero length
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">char</span> a<span class="sy4">;</span>     <span class="co1">// memory location #1</span>
+    <span class="kw4">int</span> b <span class="sy4">:</span> <span class="nu0">5</span><span class="sy4">;</span>  <span class="co1">// memory location #2</span>
+    <span class="kw4">int</span> c <span class="sy4">:</span> <span class="nu0">11</span>, <span class="co1">// memory location #2 (continued)</span>
+          <span class="sy4">:</span> <span class="nu0">0</span>,
+        d <span class="sy4">:</span> <span class="nu0">8</span><span class="sy4">;</span>  <span class="co1">// memory location #3</span>
+    <span class="kw1">struct</span> <span class="br0">{</span>
+        <span class="kw4">int</span> ee <span class="sy4">:</span> <span class="nu0">8</span><span class="sy4">;</span> <span class="co1">// memory location #4</span>
+    <span class="br0">}</span> e<span class="sy4">;</span>
+<span class="br0">}</span> obj<span class="sy4">;</span> <span class="co1">// The object 'obj' consists of 4 separate memory locations</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Threads and data races">edit</a>]</span> <span class="mw-headline" id="Threads_and_data_races">Threads and data races</span>
+</h3>
+<p>A thread of execution is a flow of control within a program that begins with the invocation of a top-level function by <span class="t-lc"><a href="../thread/thread/thread.html" title="cpp/thread/thread/thread">std::thread::thread</a></span>, <span class="t-lc"><a href="../thread/async.html" title="cpp/thread/async">std::async</a></span>, or other means.
+</p>
+<p>Any thread can potentially access any object in the program (objects with automatic and thread-local <a href="storage_duration.html" title="cpp/language/storage duration">storage duration</a> may still be accessed by another thread through a pointer or by reference).
+</p>
+<p>Different threads of execution are always allowed to access (read and modify) different <i>memory locations</i> concurrently, with no interference and no synchronization requirements.
+</p>
+<p>When an <a href="eval_order.html" title="cpp/language/eval order">evaluation</a> of an expression writes to a memory location and another evaluation reads or modifies the same memory location, the expressions are said to <i>conflict</i>. A program that has two conflicting evaluations has a <i>data race</i> unless either
+</p>
+<ul>
+<li> both conflicting evaluations are atomic operations (see <span class="t-lc"><a href="../atomic/atomic.html" title="cpp/atomic/atomic">std::atomic</a></span>)
+</li>
+<li> one of the conflicting evaluations <i>happens-before</i> another (see <span class="t-lc"><a href="../atomic/memory_order.html" title="cpp/atomic/memory order">std::memory_order</a></span>)
+</li>
+</ul>
+<p>If a data race occurs, the behavior of the program is undefined.
+</p>
+(in particular, release of a <span class="t-lc"><a href="../thread/mutex.html" title="cpp/thread/mutex">std::mutex</a></span> is <i>synchronized-with</i>, and therefore, <i>happens-before</i> acquisition of the same mutex by another thread, which makes it possible to use mutex locks to guard against data races) <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: small example or two </td>
+</tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Memory order">edit</a>]</span> <span class="mw-headline" id="Memory_order">Memory order</span>
+</h3>
+<p>When a thread reads a value from a memory location, it may see the initial value, the value written in the same thread, or the value written in another thread. See <span class="t-lc"><a href="../atomic/memory_order.html" title="cpp/atomic/memory order">std::memory_order</a></span> for details on the order in which writes made from threads become visible to other threads.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see">
+<span><a href="../../c/language/memory_model.html" title="c/language/memory model">C documentation</a></span> for <span class="t-dsc-see-tt"><span>Memory model</span></span>
+</div>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1006/1000000
+Preprocessor generated node count: 5858/1000000
+Post‐expand include size: 27103/2097152 bytes
+Template argument size: 3397/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13490-0!*!0!!en!*!* and timestamp 20150517191553 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/memory_model&amp;oldid=78340</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.077 secs. -->
+	</body>
+<!-- Cached 20150518025135 -->
+</html>

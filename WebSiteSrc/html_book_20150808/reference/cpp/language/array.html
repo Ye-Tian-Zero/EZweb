@@ -1,0 +1,489 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Array declaration - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/array","wgTitle":"cpp/language/array","wgCurRevisionId":80311,"wgArticleId":9956,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/array","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_array skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Array declaration</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="declarations.html" title="cpp/language/declarations"> Declarations</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Overview </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> declaration syntax</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html#Specifiers" title="cpp/language/declarations"> decl-specifier-seq</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html#Declarators" title="cpp/language/declarations"> declarator</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Specifiers </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="typedef.html" title="cpp/language/typedef"><span class="t-lines"><span>typedef</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="inline.html" title="cpp/language/inline"> inline function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual"> virtual function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"> explicit function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="friend.html" title="cpp/language/friend"><span class="t-lines"><span>friend</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="constexpr.html" title="cpp/language/constexpr"><span class="t-lines"><span>constexpr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> storage class specifiers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="enum.html" title="cpp/language/enum"> enum </a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="decltype.html" title="cpp/language/decltype"><span class="t-lines"><span>decltype</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="auto.html" title="cpp/language/auto"><span class="t-lines"><span>auto</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="alignas.html" title="cpp/language/alignas"><span class="t-lines"><span>alignas</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="cv.html" title="cpp/language/cv"><span class="t-lines"><span>const/volatile</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="elaborated_type_specifier.html" title="cpp/language/elaborated type specifier"> elaborated type specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="attributes.html" title="cpp/language/attributes"> attributes </a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Declarators </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="reference.html" title="cpp/language/reference"> reference </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="pointer.html" title="cpp/language/pointer"> pointer </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> array </strong> </td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Block declarations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> simple-declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="type_alias.html" title="cpp/language/type alias"> alias declaration</a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace_alias.html" title="cpp/language/namespace alias"> namespace alias definition </a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration"> using-declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace.html#Using-directives" title="cpp/language/namespace"> using-directive</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static_assert.html" title="cpp/language/static assert"> static_assert declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="asm.html" title="cpp/language/asm"> asm-definition</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="enum.html" title="cpp/language/enum"> opaque enum declaration</a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Other declarations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace.html" title="cpp/language/namespace"> namespace definition</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html" title="cpp/language/function"> function declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html" title="cpp/language/class template"> class template declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function_template.html" title="cpp/language/function template"> function template declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html#Explicit_instantiation" title="cpp/language/class template"> explicit template instantiation</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_specialization.html" title="cpp/language/template specialization"> explicit template specialization</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language_linkage.html" title="cpp/language/language linkage"> linkage specification</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> attribute declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> empty declaration</a> </td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Declares an object of array type.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1">
+<a href="array.html#Syntax"><span class="tocnumber">1</span> <span class="toctext">Syntax</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="array.html#Assignment"><span class="tocnumber">1.1</span> <span class="toctext">Assignment</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="array.html#Array_to_pointer_decay"><span class="tocnumber">1.2</span> <span class="toctext">Array to pointer decay</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="array.html#Multidimensional_arrays"><span class="tocnumber">1.3</span> <span class="toctext">Multidimensional arrays</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="array.html#Arrays_of_unknown_bound"><span class="tocnumber">1.4</span> <span class="toctext">Arrays of unknown bound</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="array.html#Array_rvalues"><span class="tocnumber">1.5</span> <span class="toctext">Array rvalues</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span>
+</h3>
+<p>An array declaration is any simple declaration whose <a href="declarations.html" title="cpp/language/declarations">declarator</a> has the form
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">noptr-declarator</span> <code><b>[</b></code> <span class="t-spar">constexpr</span><span class="t-mark">(optional)</span> <code><b>]</b></code> <span class="t-spar">attr</span><span class="t-mark">(optional)</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">noptr-declarator</span>
+</td>
+<td> -
+</td>
+<td>  any valid <span class="t-spar">declarator</span>, but if it begins with *, &amp;, or &amp;&amp;, it has to be surrounded by parentheses.
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">attr</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td>  optional list of <a href="attributes.html" title="cpp/language/attributes">attributes</a>
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">constexpr</span>
+</td>
+<td> -
+</td>
+<td>  <span class="t-rev-inl t-until-cxx14"><span>an <a href="constant_expression.html" title="cpp/language/constant expression">integral constant expression</a></span> <span><span class="t-mark-rev t-until-cxx14">(until C++14)</span></span></span><span class="t-rev-inl t-since-cxx14"><span>a <a href="constant_expression.html" title="cpp/language/constant expression">converted constant expression</a> of type <span class="t-lc">std::size_t</span></span> <span><span class="t-mark-rev t-since-cxx14">(since C++14)</span></span></span>, which evaluates to a value greater than zero
+</td>
+</tr>
+</table>
+<p>A declaration of the form <span class="t-c"><span class="mw-geshi cpp source-cpp">T a<span class="br0">[</span>N<span class="br0">]</span><span class="sy4">;</span></span></span>, declares <code>a</code> as an array object that consists of <code>N</code> contiguously allocated objects of type <code>T</code>. The elements of an array are numbered <code>0...N-1</code>, and may be accessed with the <a href="operator_member_access.html" title="cpp/language/operator member access">member access operator []</a>, as in <span class="t-c"><span class="mw-geshi cpp source-cpp">a<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> ... <span class="me1">a</span><span class="br0">[</span>N<span class="sy2">-</span><span class="nu0">1</span><span class="br0">]</span></span></span>.
+</p>
+<p>Arrays can be constructed from any <a href="types.html" title="cpp/language/types">fundamental type</a> (except <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span>), <a href="pointer.html" title="cpp/language/pointer">pointers</a>, <a href="pointer.html" title="cpp/language/pointer">pointers to members</a>, <a href="classes.html" title="cpp/language/classes">classes</a>, <a href="enum.html" title="cpp/language/enum">enumerations</a>, or from other arrays (in which case the array is said to be multi-dimensional). There are no arrays of references, arrays of functions, or arrays of abstract class types.
+</p>
+<p>Applying <a href="cv.html" title="cpp/language/cv">cv-qualifiers</a> to an array type (through typedef or template type manipulation) applies the qualifiers to the element type, but any array type whose elements are of cv-qualified type is considered to have the same cv-qualification.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// arr1 and arr2 have the same const-qualified type "array of 5 const char"</span>
+<span class="kw1">typedef</span> <span class="kw4">const</span> <span class="kw4">char</span> CC<span class="sy4">;</span>
+CC arr1<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> 
+<span class="kw1">typedef</span> <span class="kw4">char</span> CA<span class="br0">[</span><span class="nu0">5</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="kw4">const</span> CA arr2 <span class="sy1">=</span> <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>When used with <a href="new.html" title="cpp/language/new">new[]-expression</a>, the size of an array may be zero; such array has no elements:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span><span class="sy2">*</span> p <span class="sy1">=</span> new <span class="kw4">int</span><span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// accessing p[0] or *p is undefined</span>
+delete<span class="br0">[</span><span class="br0">]</span> p<span class="sy4">;</span> <span class="co1">// cleanup still required</span></pre></div></div> 
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Assignment">edit</a>]</span> <span class="mw-headline" id="Assignment">Assignment</span>
+</h4>
+<p>Objects of array type cannot be modified as a whole: even though they are <a href="value_category.html" title="cpp/language/value category">lvalues</a> (e.g. an address of array can be taken), they cannot appear on the left hand side of an assignment operator:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> a<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span><span class="br0">}</span>, b<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">4</span>,<span class="nu0">5</span>,<span class="nu0">6</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>p<span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> <span class="sy3">&amp;</span>a<span class="sy4">;</span> <span class="co1">// okay, address of a can be taken</span>
+a <span class="sy1">=</span> b<span class="sy4">;</span>            <span class="co1">// error, a is an array</span>
+<span class="kw1">struct</span> <span class="br0">{</span> <span class="kw4">int</span> c<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span> <span class="br0">}</span> s1, s2 <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">3</span>,<span class="nu0">4</span>,<span class="nu0">5</span><span class="br0">}</span><span class="sy4">;</span>
+s1 <span class="sy1">=</span> s2<span class="sy4">;</span> <span class="co1">// okay: implicity-defined copy assignment operator</span>
+         <span class="co1">// can assign data members of array type</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Array to pointer decay">edit</a>]</span> <span class="mw-headline" id="Array_to_pointer_decay">Array to pointer decay</span>
+</h4>
+<p>There is an <a href="implicit_cast.html" title="cpp/language/implicit cast">implicit conversion</a> from lvalues and rvalues of array type to rvalues of pointer type: it constructs a pointer to the first element of an array. This conversion is used whenever arrays appear in context where arrays are not expected, but pointers are:
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;numeric&gt;</span>
+<span class="co2">#include &lt;iterator&gt;</span>
+ 
+<span class="kw4">void</span> g<span class="br0">(</span><span class="kw4">int</span> <span class="br0">(</span><span class="sy3">&amp;</span>a<span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1585">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> a<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="sy2">*</span> p<span class="br0">)</span> <span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1585">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>p <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> a<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span><span class="br0">}</span><span class="sy4">;</span>
+    <span class="kw4">int</span><span class="sy2">*</span> p <span class="sy1">=</span> a<span class="sy4">;</span>
+ 
+    <a href="../io/cout.html"><span class="kw1585">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> sizeof a <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span>  <span class="co1">// prints size of array</span>
+              <span class="sy1">&lt;&lt;</span> sizeof p <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints size of a pointer</span>
+ 
+    <span class="co1">// where arrays are acceptable, but pointers aren't, only arrays may be used</span>
+    g<span class="br0">(</span>a<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: function takes an array by reference</span>
+<span class="co1">//  g(p); // Error</span>
+ 
+    <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> n<span class="sy4">:</span> a<span class="br0">)</span>              <span class="co1">// OK: arrays can be used in range for loops</span>
+        <a href="../io/cout.html"><span class="kw1585">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> n <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span> <span class="co1">// prints elements of the array</span>
+<span class="co1">//    for(int n: p)            // Error</span>
+<span class="co1">//        std::cout &lt;&lt; n &lt;&lt; ' '; </span>
+ 
+    <a href="../algorithm/iota.html"><span class="kw1491">std::<span class="me2">iota</span></span></a><span class="br0">(</span><a href="../iterator/begin.html"><span class="kw581">std::<span class="me2">begin</span></span></a><span class="br0">(</span>a<span class="br0">)</span>, <a href="../iterator/end.html"><span class="kw582">std::<span class="me2">end</span></span></a><span class="br0">(</span>a<span class="br0">)</span>, <span class="nu0">7</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: begin/end take arrays</span>
+<span class="co1">//  std::iota(std::begin(p), std::end(p), 7); // Error</span>
+ 
+    <span class="co1">// where pointers are acceptable, but arrays aren't, both may be used:</span>
+    f<span class="br0">(</span>a<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: function takes a pointer</span>
+    f<span class="br0">(</span>p<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK: function takes a pointer</span>
+ 
+    <a href="../io/cout.html"><span class="kw1585">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>a <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="co1">// prints the first element</span>
+              <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span>p <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="co1">// same</span>
+              <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span><span class="br0">(</span>a<span class="sy2">+</span><span class="nu0">1</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> a<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span> <span class="co1">// prints the second</span>
+              <span class="sy1">&lt;&lt;</span> <span class="sy2">*</span><span class="br0">(</span>p<span class="sy2">+</span><span class="nu0">1</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span> <span class="sy1">&lt;&lt;</span> p<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Multidimensional arrays">edit</a>]</span> <span class="mw-headline" id="Multidimensional_arrays">Multidimensional arrays</span>
+</h4>
+<p>When the element type of an array is another array, it is said that the array is multidimensional:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// array of 2 arrays of 3 ints each</span>
+<span class="kw4">int</span> a<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="br0">{</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span><span class="br0">}</span>,  <span class="co1">// can be viewed as a 2x3 matrix</span>
+               <span class="br0">{</span><span class="nu0">4</span>,<span class="nu0">5</span>,<span class="nu0">6</span><span class="br0">}</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// with row-major layout</span></pre></div></div>
+<p>Note that when array-to-pointer conversion is applied, a multidimensional array is converted to a pointer to its first element, e.g., pointer to the first row:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> a<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// 2x3 matrix</span>
+<span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>p1<span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> a<span class="sy4">;</span> <span class="co1">// pointer to the first 3-element row</span>
+<span class="kw4">int</span> b<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// 3x3x3 cube</span>
+<span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span>p2<span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy1">=</span> a<span class="sy4">;</span> <span class="co1">// pointer to the first 3x3 plane</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Arrays of unknown bound">edit</a>]</span> <span class="mw-headline" id="Arrays_of_unknown_bound">Arrays of unknown bound</span>
+</h4>
+<p>If <span class="t-spar">constexpr</span> is omitted in the declaration of an array, the type declared is "array of unknown bound of T", which is a kind of <a href="incomplete_type.html" title="cpp/language/incomplete type" class="mw-redirect">incomplete type</a>, except when used in a declaration with an <a href="aggregate_initialization.html" title="cpp/language/aggregate initialization">aggregate initializer</a>:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">extern</span> <span class="kw4">int</span> x<span class="br0">[</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// the type of x is "array of unknown bound of int"</span>
+<span class="kw4">int</span> a<span class="br0">[</span><span class="br0">]</span> <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// the type of a is "array of 3 int"</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Array rvalues">edit</a>]</span> <span class="mw-headline" id="Array_rvalues">Array rvalues</span>
+</h4>
+<p>An array rvalue expression may be formed by accessing an array member of a class rvalue or by using an identity template to construct an array temporary directly:
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;type_traits&gt;</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span> <span class="br0">(</span><span class="sy3">&amp;&amp;</span>x<span class="br0">)</span><span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1585">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> sizeof x <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">struct</span> X <span class="br0">{</span>
+    <span class="kw4">int</span> i<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span>
+<span class="br0">}</span> x<span class="sy4">;</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span> <span class="kw1">using</span> identity <span class="sy1">=</span> T<span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1585">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> sizeof X<span class="br0">(</span><span class="br0">)</span>.<span class="me1">i</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// size of the array</span>
+    f<span class="br0">(</span>X<span class="br0">(</span><span class="br0">)</span>.<span class="me1">i</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK, binds to rvalue</span>
+<span class="co1">//  f(x.i);   // Error: cannot bind to lvalue</span>
+ 
+    f<span class="br0">(</span>identity<span class="sy1">&lt;</span><span class="kw4">int</span><span class="br0">[</span><span class="br0">]</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy1">&gt;</span><span class="br0">{</span><span class="br0">{</span><span class="nu0">1</span>,<span class="nu0">2</span>,<span class="nu0">3</span><span class="br0">}</span>,<span class="br0">{</span><span class="nu0">4</span>,<span class="nu0">5</span>,<span class="nu0">6</span><span class="br0">}</span><span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK, binds to rvalue</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">24
+24
+24</pre></div></div> 
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1830/1000000
+Preprocessor generated node count: 5035/1000000
+Post‐expand include size: 58003/2097152 bytes
+Template argument size: 14197/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9956-0!*!0!!en!*!* and timestamp 20150804140133 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/array&amp;oldid=80311</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.079 secs. -->
+	</body>
+<!-- Cached 20150804143644 -->
+</html>

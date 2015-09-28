@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Non-static member functions - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/member_functions","wgTitle":"cpp/language/member functions","wgCurRevisionId":78241,"wgArticleId":12757,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/member_functions","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_member_functions skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Non-static member functions</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="classes.html" title="cpp/language/classes"> Classes</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> General </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="classes.html" title="cpp/language/classes"> overview</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class/struct types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union types</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Members </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html" title="cpp/language/data members">data members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static.html" title="cpp/language/static">static members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="this.html" title="cpp/language/this">the <code>this</code> pointer</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nested_classes.html" title="cpp/language/nested classes" class="mw-redirect">nested classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template">member templates</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bit_field.html" title="cpp/language/bit field">bit fields</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration">using-declarations</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">member functions</strong>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="access.html" title="cpp/language/access">member access specifiers</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constructor.html" title="cpp/language/initializer list">constructors and member initializer lists</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html#Member_initialization" title="cpp/language/data members">in-class <i>brace-or-equal</i> initializer</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="friend.html" title="cpp/language/friend"><code>friend</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"><code>explicit</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="converting_constructor.html" title="cpp/language/converting constructor">converting constructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Special member functions </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_constructor.html" title="cpp/language/default constructor">default constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_constructor.html" title="cpp/language/copy constructor">copy constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_constructor.html" title="cpp/language/move constructor">move constructor</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_operator.html" title="cpp/language/as operator">copy assignment operator</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_operator.html" title="cpp/language/move operator">move assignment operator</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="destructor.html" title="cpp/language/destructor">destructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Inheritance </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="derived_class.html" title="cpp/language/derived class">base and derived classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual">virtual member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="override.html" title="cpp/language/override">override</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="final.html" title="cpp/language/final">final</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="abstract_class.html" title="cpp/language/abstract class">pure virtual functions and abstract classes</a>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>A non-static member function is a function that is declared in a <a href="class.html" title="cpp/language/class">member specification</a> of a class without a <a href="static.html" title="cpp/language/static">static</a> or <a href="friend.html" title="cpp/language/friend">friend</a> specifier.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> S <span class="br0">{</span>
+    <span class="kw4">int</span> mf1<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// non-static member function declaration</span>
+    <span class="kw4">void</span> mf2<span class="br0">(</span><span class="br0">)</span> <span class="kw4">volatile</span>, mf3<span class="br0">(</span><span class="br0">)</span> <span class="sy3">&amp;&amp;</span><span class="sy4">;</span> <span class="co1">// can be cv-qualified and reference-qualifie</span>
+    <span class="kw4">int</span> mf4<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="br0">{</span> <span class="kw1">return</span> data<span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// can be defined inline</span>
+    <span class="kw1">virtual</span> <span class="kw4">void</span> mf5<span class="br0">(</span><span class="br0">)</span> final<span class="sy4">;</span> <span class="co1">// can be virtual, can use final/override</span>
+    S<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> data<span class="br0">(</span><span class="nu0">12</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// constructors are member functions too</span>
+    <span class="kw4">int</span> data<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> S<span class="sy4">::</span><span class="me2">mf1</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="nu0">7</span><span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// if not defined inline, has to be defined at namespace</span></pre></div></div>
+<p>Any <a href="function.html" title="cpp/language/function">function declarations</a> are allowed, with additional syntax elements that are only available for non-static member functions: <a href="final.html" title="cpp/language/final">final</a> and <a href="override.html" title="cpp/language/override">override</a> specifiers, <a href="abstract_class.html" title="cpp/language/abstract class">pure-specifiers</a>, cv-qualifiers, ref-qualifiers, and <a href="constructor.html" title="cpp/language/initializer list">member initialization lists</a>.
+</p>
+<p>A non-static member function of class X may be called
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> For an object of type X using the class member access operator</div>
+<div class="t-li1">
+<span class="t-li">2)</span> For an object of a class <a href="derived_class.html" title="cpp/language/derived class">derived</a> from X</div>
+<div class="t-li1">
+<span class="t-li">3)</span> Directly from within the body of a member function of X</div>
+<div class="t-li1">
+<span class="t-li">4)</span> Directly from within the body of a member function of a class derived from X</div>
+<p>Calling a member function of class X on an object of any other type invokes undefined behavior.
+</p>
+<p>Within the body of a non-static member function of X, any <a href="expressions.html" title="cpp/language/expressions">id-expression</a> E (e.g. an identifier) that resolves to a non-type non-static member of X or of a base class of X, is transformed to a member access expression <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span><span class="sy2">*</span>this<span class="br0">)</span>.<span class="me1">E</span></span></span> (unless it's already a part of a member access expression). This does not occur in template definition context, so a name may have to be prefixed with <span class="t-c"><span class="mw-geshi cpp source-cpp">this<span class="sy2">-</span><span class="sy1">&gt;</span></span></span> explicitly to become <a href="dependent_name.html" title="cpp/language/dependent name">dependent</a>.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">int</span> n<span class="sy4">;</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> S<span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// transformed to (*this).n = 1;</span>
+<span class="br0">}</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    S s1, s2<span class="sy4">;</span>
+    s1.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// changes s1.n</span>
+<span class="br0">}</span></pre></div></div>
+<p>Within the body of a non-static member function of X, any unqualified-id that resolves to a static member, an enumerator or a nested type of X or of a base class of X, is transformed to the corresponding qualified-id.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">int</span> n<span class="sy4">;</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> S<span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// transformed to S::n = 1;</span>
+<span class="br0">}</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    S s1, s2<span class="sy4">;</span>
+    s1.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// changes S::n</span>
+<span class="br0">}</span></pre></div></div>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="member_functions.html#const-.2C_volatile-.2C_and_ref-qualified_member_functions"><span class="tocnumber">1</span> <span class="toctext">const-, volatile-, and ref-qualified member functions</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="member_functions.html#Virtual_and_pure_virtual_functions"><span class="tocnumber">2</span> <span class="toctext">Virtual and pure virtual functions</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="member_functions.html#Special_member_functions"><span class="tocnumber">3</span> <span class="toctext">Special member functions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="member_functions.html#Example"><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="member_functions.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: const-, volatile-, and ref-qualified member functions">edit</a>]</span> <span class="mw-headline" id="const-.2C_volatile-.2C_and_ref-qualified_member_functions">const-, volatile-, and ref-qualified member functions</span>
+</h3>
+<p>A non-static member function can be declared with a const, volatile, or const volatile qualifier (this qualifier appears after the name of the function in <a href="function.html" title="cpp/language/function">function declaration</a>). Differently cv-qualified functions have different types and so may overload each other.
+</p>
+<p>In the body of a cv-qualified function, the <a href="this.html" title="cpp/language/this">this</a> pointer is cv-qualified, e.g. in a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span> member function, only other const member functions may be called normally. (A non-const member function may still be called if <a href="const_cast.html" title="cpp/language/const cast">const_cast</a> is applied or through an access path that does not involve <a href="this.html" title="cpp/language/this">this</a>.)
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;vector&gt;</span>
+<span class="kw1">struct</span> Array <span class="br0">{</span>
+    <a href="../container/vector.html"><span class="kw1064">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> data<span class="sy4">;</span>
+    Array<span class="br0">(</span><span class="kw4">int</span> sz<span class="br0">)</span> <span class="sy4">:</span> data<span class="br0">(</span>sz<span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+    <span class="co1">// const member function</span>
+    <span class="kw4">int</span> operator<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span><span class="kw4">int</span> idx<span class="br0">)</span> <span class="kw4">const</span> <span class="br0">{</span>
+                          <span class="co1">// this has type const Array*</span>
+        <span class="kw1">return</span> data<span class="br0">[</span>idx<span class="br0">]</span><span class="sy4">;</span> <span class="co1">// transformed to (*this).data[idx];</span>
+    <span class="br0">}</span>
+    <span class="co1">// non-const member function</span>
+    <span class="kw4">int</span><span class="sy3">&amp;</span> operator<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span><span class="kw4">int</span> idx<span class="br0">)</span> <span class="br0">{</span>
+                          <span class="co1">// this has type Array*</span>
+        <span class="kw1">return</span> data<span class="br0">[</span>idx<span class="br0">]</span><span class="sy4">;</span> <span class="co1">// transformed to (*this).data[idx]</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    Array a<span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+    a<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// OK: the type of a[1] is int&amp;</span>
+    <span class="kw4">const</span> Array ca<span class="br0">(</span><span class="nu0">10</span><span class="br0">)</span><span class="sy4">;</span>
+    ca<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// Error: the type of ca[1] is int</span>
+<span class="br0">}</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<p>A non-static member function can be declared with either an lvalue ref-qualifier (the character <code>&amp;</code> after the function name) or rvalue ref-qualifier (the character <code>&amp;&amp;</code> after the function name. During <a href="overload_resolution.html" title="cpp/language/overload resolution">overload resolution</a>, non-static cv-qualified member function of class X is treated as a function that takes an implicit parameter of type lvalue reference to cv-qualified X if it has no ref-qualifiers or if it has the lvalue ref-qualifier. Otherwise (if it has rvalue ref-qualifier), it is treated as a function taking an implicit parameter of type rvalue reference to cv-qualified X.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="sy3">&amp;</span> <span class="br0">{</span> <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"lvalue<span class="es1">\n</span>"</span><span class="sy4">;</span> <span class="br0">}</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="sy3">&amp;&amp;</span><span class="br0">{</span> <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"rvalue<span class="es1">\n</span>"</span><span class="sy4">;</span> <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+    S s<span class="sy4">;</span>
+    s.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>            <span class="co1">// prints "lvalue"</span>
+    <a href="../utility/move.html"><span class="kw915">std::<span class="me2">move</span></span></a><span class="br0">(</span>s<span class="br0">)</span>.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// prints "rvalue"</span>
+    S<span class="br0">(</span><span class="br0">)</span>.<span class="me1">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>          <span class="co1">// prints "rvalue"</span>
+<span class="br0">}</span></pre></div></div>
+<p>Note: unlike cv-qualification, ref-qualification does not change the properties of the <a href="this.html" title="cpp/language/this">this</a> pointer: within a rvalue ref-qualified function, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span>this</span></span> remains an lvalue expression.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Virtual and pure virtual functions">edit</a>]</span> <span class="mw-headline" id="Virtual_and_pure_virtual_functions">Virtual and pure virtual functions</span>
+</h3>
+<p>A non-static member function may be declared <i>virtual</i> or <i>pure virtual</i>. See <a href="virtual.html" title="cpp/language/virtual">virtual functions</a> and <a href="abstract_class.html" title="cpp/language/abstract class">abstract classes</a> for details.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Special member functions">edit</a>]</span> <span class="mw-headline" id="Special_member_functions">Special member functions</span>
+</h3>
+<p><a href="constructor.html" title="cpp/language/constructor" class="mw-redirect">constructors</a> and <a href="destructor.html" title="cpp/language/destructor">destructors</a> are non-public member functions that use a special syntax for their declarations (see their pages for details).
+</p>
+<p>Some member functions are <i>special</i>: under certain circumstances they are defined by the compiler even if not defined by the user. They are:
+</p>
+<ul>
+<li> <a href="default_constructor.html" title="cpp/language/default constructor">Default constructor</a>
+</li>
+<li> <a href="copy_constructor.html" title="cpp/language/copy constructor">Copy constructor</a>
+</li>
+<li> <a href="move_constructor.html" title="cpp/language/move constructor">Move constructor</a> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</li>
+<li> <a href="as_operator.html" title="cpp/language/as operator">Copy assignment operator</a>
+</li>
+<li> <a href="move_operator.html" title="cpp/language/move operator">Move assignment operator</a> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</li>
+<li> <a href="destructor.html" title="cpp/language/destructor">Destructor</a>
+</li>
+</ul>
+<p>Special member functions are the only functions that can be <i>defaulted</i>, that is, defined using <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">=</span> <span class="kw1">default</span></span></span> instead of the function body (see their pages for details)
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;utility&gt;</span>
+<span class="co2">#include &lt;exception&gt;</span>
+ 
+<span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">int</span> data<span class="sy4">;</span>
+ 
+    <span class="co1">// simple converting constructor (declaration)</span>
+    S<span class="br0">(</span><span class="kw4">int</span> val<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// simple explicit constructor (declaration)</span>
+    <span class="kw1">explicit</span> S<span class="br0">(</span><a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> str<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// const member function (definition)</span>
+    <span class="kw1">virtual</span> <span class="kw4">int</span> getData<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="br0">{</span> <span class="kw1">return</span> data<span class="sy4">;</span> <span class="br0">}</span>
+ 
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// definition of the constructor</span>
+S<span class="sy4">::</span><span class="me2">S</span><span class="br0">(</span><span class="kw4">int</span> val<span class="br0">)</span> <span class="sy4">:</span> data<span class="br0">(</span>val<span class="br0">)</span> <span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"ctor1 called, data = "</span> <span class="sy1">&lt;&lt;</span> data <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// this constructor has a catch clause</span>
+S<span class="sy4">::</span><span class="me2">S</span><span class="br0">(</span><a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> str<span class="br0">)</span> <span class="kw1">try</span> <span class="sy4">:</span> data<span class="br0">(</span><a href="../string/basic_string/stol.html"><span class="kw1051">std::<span class="me2">stoi</span></span></a><span class="br0">(</span>str<span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"ctor2 called, data = "</span> <span class="sy1">&lt;&lt;</span> data <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span> <span class="kw1">catch</span><span class="br0">(</span><span class="kw4">const</span> <a href="../error/exception.html"><span class="kw611">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span><span class="br0">)</span> <span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"ctor2 failed, string was '"</span> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">"'<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    <span class="kw1">throw</span><span class="sy4">;</span> <span class="co1">// ctor's catch clause should always rethrow</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">struct</span> D <span class="sy4">:</span> S <span class="br0">{</span>
+    <span class="kw4">int</span> data2<span class="sy4">;</span>
+    <span class="co1">// constructor with a default argument</span>
+    D<span class="br0">(</span><span class="kw4">int</span> v1, <span class="kw4">int</span> v2 <span class="sy1">=</span> <span class="nu0">11</span><span class="br0">)</span> <span class="sy4">:</span> S<span class="br0">(</span>v1<span class="br0">)</span>, data2<span class="br0">(</span>v2<span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+ 
+    <span class="co1">// virtual member function</span>
+    <span class="kw4">int</span> getData<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> override <span class="br0">{</span> <span class="kw1">return</span> data<span class="sy2">*</span>data2<span class="sy4">;</span> <span class="br0">}</span>
+ 
+    <span class="co1">// lvalue-only assignment operator</span>
+    D<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span>D other<span class="br0">)</span> <span class="sy3">&amp;</span> <span class="br0">{</span>
+        <a href="../algorithm/swap.html"><span class="kw1298">std::<span class="me2">swap</span></span></a><span class="br0">(</span>other.<span class="me1">data</span>, data<span class="br0">)</span><span class="sy4">;</span>
+        <a href="../algorithm/swap.html"><span class="kw1298">std::<span class="me2">swap</span></span></a><span class="br0">(</span>other.<span class="me1">data2</span>, data2<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw1">return</span> <span class="sy2">*</span>this<span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    D d1 <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+    S s2<span class="br0">(</span><span class="st0">"2"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">try</span> <span class="br0">{</span>
+         S s3<span class="br0">(</span><span class="st0">"not a number"</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span> <span class="kw1">catch</span><span class="br0">(</span><span class="kw4">const</span> <a href="../error/exception.html"><span class="kw611">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s2.<span class="me1">getData</span><span class="br0">(</span><span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+ 
+   D d2<span class="br0">(</span><span class="nu0">3</span>, <span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>
+   d2 <span class="sy1">=</span> d1<span class="sy4">;</span> <span class="co1">// OK: assignment to lvalue</span>
+<span class="co1">//   D(5) = d1; // ERROR: no suitable overload of operator=</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">ctor1 called, data = 1
+ctor2 called, data = 2
+ctor2 failed, string was 'not a number'
+2
+ctor1 called, data = 3</pre></div></div> 
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<ul>
+<li>
+<a href="classes.html" title="cpp/language/classes">classes</a>
+</li>
+<li>
+<a href="data_members.html" title="cpp/language/data members">data members</a>
+</li>
+<li>
+<a href="static.html" title="cpp/language/static">static data members</a>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1310/1000000
+Preprocessor generated node count: 3447/1000000
+Post‐expand include size: 39108/2097152 bytes
+Template argument size: 11733/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:12757-0!*!0!!en!*!* and timestamp 20150511210556 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/member_functions&amp;oldid=78241</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.077 secs. -->
+	</body>
+<!-- Cached 20150511211938 -->
+</html>

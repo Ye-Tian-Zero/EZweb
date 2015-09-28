@@ -1,0 +1,422 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Definitions and ODR - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/definition","wgTitle":"cpp/language/definition","wgCurRevisionId":79600,"wgArticleId":13180,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/definition","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_definition skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Definitions and ODR</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="basic_concepts.html" title="cpp/language/basic concepts"> Basic Concepts</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> language keywords</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="translation_phases.html" title="cpp/language/translation phases"> phases of translation</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> comments </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> the main() function</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> names and identifiers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="incomplete_type.html" title="cpp/language/type"> types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> fundamental types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="objects.html" title="cpp/language/object"> objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scope.html" title="cpp/language/scope"> scope</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lifetime.html" title="cpp/language/lifetime"> object lifetime</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> storage duration and linkage</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> definitions and ODR</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup">qualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup">unqualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory_model.html" title="cpp/language/memory model"> memory model</a> </td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p><i>Definitions</i> are <a href="declarations.html" title="cpp/language/declarations">declarations</a> that fully define the entity introduced by the declaration. Every declaration is a definition, except for the following:
+</p>
+<ul><li> Any declaration with an <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span></span></span> <a href="storage_duration.html" title="cpp/language/storage duration">storage class specifier</a> or with a <a href="language_linkage.html" title="cpp/language/language linkage">language linkage</a> specifier (such as <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <span class="st0">"C"</span></span></span>) without an initializer
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">extern</span> <span class="kw4">const</span> <span class="kw4">int</span> a<span class="sy4">;</span> <span class="co1">// declares, but doesn't define a</span>
+<span class="kw4">extern</span> <span class="kw4">const</span> <span class="kw4">int</span> b <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// defines b</span></pre></div></div>
+<ul><li> A function declaration without a function body
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// declares, but doesn't define f</span></pre></div></div>
+<ul><li> A parameter declaration in a function declaration that isn't a definition
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// declares, but doesn't define f and x</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span> <span class="br0">{</span> <span class="co1">// defines f and x</span>
+     <span class="kw1">return</span> x<span class="sy2">+</span>a<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<ul><li> Declaration of a <a href="static.html" title="cpp/language/static">static data member</a> inside a class definition
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>    <span class="co1">// defines S</span>
+    <span class="kw4">int</span> n<span class="sy4">;</span>        <span class="co1">// defines S::n</span>
+    <span class="kw4">static</span> <span class="kw4">int</span> i<span class="sy4">;</span> <span class="co1">// declares, but doesn't define S::i</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> S<span class="sy4">::</span><span class="me2">i</span><span class="sy4">;</span> <span class="co1">// defines S::i</span></pre></div></div>
+<ul><li> Declaration of a class name (by <a href="class.html#Forward_declaration" title="cpp/language/class">forward declaration</a> or by the use of the elaborated type specifier in another declaration)
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S<span class="sy4">;</span> <span class="co1">// declares, but doesn't define S</span>
+<span class="kw1">class</span> Y f<span class="br0">(</span><span class="kw1">class</span> T p<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// declares, but doesn't define Y and T (and also f and p)</span></pre></div></div>
+<ul><li> Declaration of a <a href="template_parameters.html" title="cpp/language/template parameters">template parameter</a>
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span> <span class="co1">// declares, but doesn't define T</span></pre></div></div>
+<ul><li> An <a href="template_specialization.html" title="cpp/language/template specialization">explicit specialization</a> whose declaration is not a definition.
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> A<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy4">;</span> <span class="co1">// declares, but doesn't define A&lt;int&gt;</span></pre></div></div>
+<ul><li> A <a href="typedef.html" title="cpp/language/typedef">typedef</a> declaration
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">typedef</span> S S2<span class="sy4">;</span> <span class="co1">// declares, but doesn't define S2 (S may be incomplete)</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<ul><li> An <a href="type_alias.html" title="cpp/language/type alias">alias-declaration</a>
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">using</span> S2 <span class="sy1">=</span> S<span class="sy4">;</span> <span class="co1">// declares, but doesn't define S2 (S may be incomplete)</span></pre></div></div>
+<ul><li> An <a href="enum.html" title="cpp/language/enum">opaque declaration</a> of an enumeration
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> Color <span class="sy4">:</span> <span class="kw4">int</span><span class="sy4">;</span> <span class="co1">// declares, but doesn't define Color</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<ul><li> A <a href="using_declaration.html" title="cpp/language/using declaration">using-declaration</a>
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">using</span> N<span class="sy4">::</span><span class="me2">d</span><span class="sy4">;</span> <span class="co1">// declares, but doesn't define d</span></pre></div></div>
+<ul><li> A <a href="namespace.html#Using-directives" title="cpp/language/namespace">using-directive</a> (does not define any entities)
+</li></ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<ul>
+<li> A <a href="static_assert.html" title="cpp/language/static assert">static_assert</a> declaration (does not define any entities)
+</li>
+<li> An <a href="declarations.html" title="cpp/language/declarations">attribute declaration</a> (does not define any entities)
+</li>
+<li> An <a href="class_template.html#Class_template_instantiation" title="cpp/language/class template">explicit instantiation declaration</a> (an "extern template")
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">extern</span> <span class="kw1">template</span> f<span class="sy1">&lt;</span><span class="kw4">int</span>, <span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span> <span class="co1">// declares, but doesn't define f&lt;int, char&gt;</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<ul><li> An <a href="declarations.html" title="cpp/language/declarations">empty declaration</a> (does not define any entities)
+</li></ul>
+<p>An <a href="asm.html" title="cpp/language/asm">asm declaration</a> does not define any entities, but it is classified as a definition.
+</p>
+<p>Where necessary, the compiler may implicitly define the <a href="default_constructor.html" title="cpp/language/default constructor">default constructor</a>, <a href="copy_constructor.html" title="cpp/language/copy constructor">copy constructor</a>, <a href="move_constructor.html" title="cpp/language/move constructor">move constructor</a>, <a href="as_operator.html" title="cpp/language/as operator">copy assignment operator</a>, <a href="move_operator.html" title="cpp/language/move operator">move assignment operator</a>, and the <a href="destructor.html" title="cpp/language/destructor">destructor</a>.
+</p>
+<p>If the definition of any object results in an object of <a href="incomplete_type.html" title="cpp/language/incomplete type" class="mw-redirect">incomplete type</a>, the program is ill-formed.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: One Definition Rule">edit</a>]</span> <span class="mw-headline" id="One_Definition_Rule">One Definition Rule</span>
+</h3>
+<p>Only one definition of any variable, function, class type, enumeration type, or template is allowed in any one translation unit (some of these may have multiple declarations, but only one definition is allowed).
+</p>
+<p>One and only one definition of every non-<a href="inline.html" title="cpp/language/inline">inline</a> function or variable that is <i>odr-used</i> (see below) is required to appear in the entire program (including any standard and user-defined libraries). The compiler is not required to diagnose this violation, but the behavior of the program that violates it is undefined.
+</p>
+<p>For an inline function, a definition is required in every translation unit where it is <i>odr-used</i>.
+</p>
+<p>One and only one definition of a class is required to appear in any translation unit where the class is used in a way that requires it to be <a href="incomplete_type.html" title="cpp/language/incomplete type" class="mw-redirect">complete</a>.
+</p>
+<p>There can be more than one definition in a program, as long as each definition appears in a different translation unit, of each of the following: class type, enumeration type, inline function with external linkage, class template, non-static function template, static data member of a class template, member function of a class template, partial template specialization, as long as all of the following is true:
+</p>
+<ul>
+<li> each definition consists of the same sequence of tokens (typically, appears in the same header file)
+</li>
+<li> name lookup from within each definition finds the same entities (after overload-resolution), except that constants with internal or no linkage may refer to different objects as long as they are not ODR-used and have the same values in every definition.
+</li>
+<li> overloaded operators, including conversion, allocation, and deallocation functions refer to the same function from each definition (unless referring to one defined within the definition)
+</li>
+<li> the language linkage is the same (e.g. the include file isn't inside an extern "C" block)
+</li>
+<li> the three rules above apply to every default argument used in each definition
+</li>
+<li> if the definition is for a class with an implicitly-declared constructor, every translation unit where it is odr-used must call the same constructor for the base and members
+</li>
+<li> if the definition is for a template, then all these requirements apply to both names at the point of definition and dependent names at the point of instantiation
+</li>
+</ul>
+<p>If all these requirements are satisfied, the program behaves as if there is only one definition in the entire program. Otherwise, the behavior is undefined. 
+</p>
+<p>Note: in C, there is no program-wide ODR for types, and even extern declarations of the same variable in different translation units may have different types <a href="../../c/language/compatible_type.html#Compatible_types" title="c/language/type">as long as they are compatible</a>. In C++, the source-code tokens used in declarations of the same type must be the same as described above: if one .cpp file defines <code>struct S { int x; };</code> and the other .cpp file defines <code>struct S { int y; };</code>, the behavior of the program that links them together is undefined. This is usually resolved with <a href="namespace.html" title="cpp/language/namespace">unnamed namespaces</a>.
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: ODR-use">edit</a>]</span> <span class="mw-headline" id="ODR-use">ODR-use</span>
+</h4>
+<p>Informally, an object is odr-used if its address is taken, or a reference is bound to it, and a function is odr-used if a function call to it is made or its address is taken. If an object or a function is odr-used, its definition must exist somewhere in the program; a violation of that is a link-time error.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="co1">// static data member</span>
+    <span class="co1">// a definition outside of class is required if it is odr-used</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> f<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> r<span class="br0">)</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> n <span class="sy1">=</span> b <span class="sy4">?</span> <span class="br0">(</span><span class="nu0">1</span>, S<span class="sy4">::</span><span class="me2">x</span><span class="br0">)</span> <span class="co1">// S::x is not odr-used here</span>
+          <span class="sy4">:</span> f<span class="br0">(</span>S<span class="sy4">::</span><span class="me2">x</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// S::x is odr-used here: a definition is required</span></pre></div></div>
+<p>Formally,
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> a variable <code>x</code> in a <i>potentially-evaluated</i> expression <code>ex</code> is odr-used unless both of the following are true:
+<dl><dd>
+<ul><li> applying lvalue-to-rvalue conversion to <code>x</code> yields a constant expression that doesn't invoke non-trivial functions
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span> <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> S<span class="sy4">::</span><span class="me2">x</span><span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// does not odr-use S::x</span></pre></div></div>
+<dl><dd>
+<ul><li> either <code>x</code> is not an object (that is, <code>x</code> is a reference) or, if <code>x</code> is an object, it is one of the <i>potential results</i> of a larger expression <code>e</code>, where that larger expression is either a <a href="expressions.html#Discarded-value_expressions" title="cpp/language/expressions">discarded-value expression</a> or an lvalue-to-rvalue conversion
+</li></ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span> <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="sy3">&amp;</span>S<span class="sy4">::</span><span class="me2">x</span><span class="sy4">;</span> <span class="br0">}</span> <span class="co1">// discarded-value expression does not odr-use S::x</span></pre></div></div>
+</div>
+<div class="t-li1">
+<span class="t-li">2)</span> <a href="this.html" title="cpp/language/this">this</a> is odr-used if it appears as a <i>potentially-evaluated</i> expression (including the implicit this in a non-static member function call expression)</div>
+<p>In the definitions above, <i>potentially-evaluated</i> means the expression is not an <a href="expressions.html#Unevaluated_expressions" title="cpp/language/expressions">unevaluated operand</a> (or its subexpression), such as the operand of <a href="sizeof.html" title="cpp/language/sizeof">sizeof</a> and <i>a set of potential results</i> of an expression <code>e</code> is a (possibly empty) set of id-expressions that appear within <code>e</code>, combined as follows:
+</p>
+<ul><li> If <code>e</code> is an <a href="expressions.html" title="cpp/language/expressions">id-expression</a>, the expression <code>e</code> is its only potential result
+</li></ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17">
+<td>
+<ul><li> If <code>e</code> is an array subscript expression (<span class="t-c"><span class="mw-geshi cpp source-cpp">e1<span class="br0">[</span>e2<span class="br0">]</span></span></span>) and the operand (<code>e1</code>) is array, that array is included in the set</li></ul>
+</td>
+
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+</tr>
+</table>
+<ul>
+<li> If <code>e</code> is a class member access expression (<span class="t-c"><span class="mw-geshi cpp source-cpp">e1.<span class="me1">e2</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">e1<span class="sy2">-</span><span class="sy1">&gt;</span>e2</span></span>), the potential results of the object expression e1 is included in the set.
+</li>
+<li> If <code>e</code> is a pointer-to-member access expression (<span class="t-c"><span class="mw-geshi cpp source-cpp">e1.<span class="sy2">*</span>e2</span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">e1<span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span>e2</span></span>) whose second operand is a constant expression, the potential results of the object expression e1 are included in the set
+</li>
+<li> If <code>e</code> is an expression in parentheses (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>e1<span class="br0">)</span></span></span>), the potential results of <code>e1</code> are included in the set
+</li>
+<li> If <code>e</code> is a glvalue conditional expression (<span class="t-c"><span class="mw-geshi cpp source-cpp">e1<span class="sy4">?</span>e2<span class="sy4">:</span>e3</span></span>, where e2 and e3 are glvalues), the union of the potential results of <code>e2</code> and <code>e3</code> are both included in the set.
+</li>
+<li> If <code>e</code> is a comma expression (<span class="t-c"><span class="mw-geshi cpp source-cpp">e1,e2</span></span>), the potential results of <code>e2</code> are in the set of potential results
+</li>
+<li> Otherwise, the set is empty.
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> S <span class="br0">{</span>
+  <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> a <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+  <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> b <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">bool</span> x<span class="br0">)</span> <span class="br0">{</span>
+  <span class="kw1">return</span> x <span class="sy4">?</span> S<span class="sy4">::</span><span class="me2">a</span> <span class="sy4">:</span> S<span class="sy4">::</span><span class="me2">b</span><span class="sy4">;</span>
+  <span class="co1">// x is a part of the subexpression "x" (to the left of ?),</span>
+  <span class="co1">// which applies lvalue-to-rvalue conversion, therefore x is not odr-used</span>
+  <span class="co1">// S::a and S::b are lvalues, and carry over as "potential results" to the result</span>
+  <span class="co1">// of the glvalue conditional</span>
+  <span class="co1">// That result is then subject to lvalue-to-rvalue conversion requested</span>
+  <span class="co1">// to copy-initialize the return value, therefore S::a and S::b are not odr-used</span>
+<span class="br0">}</span></pre></div></div>
+<div class="t-li1">
+<span class="t-li">4)</span> Functions are ODR-used if
+<ul>
+<li> A function whose name appears as a potentially-evaluated expression (including named function, overloaded operator, <a href="cast_operator.html" title="cpp/language/cast operator">user-defined conversion</a>, user-defined placement forms of operator new, non-default initialization)  is odr-used if it is selected by overload resolution, except when it is an unqualified pure virtual member function <span class="t-rev-inl t-since-cxx17"><span>or a pointer-to-member to a pure virtual function</span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span>.
+</li>
+<li> <a href="virtual.html" title="cpp/language/virtual">virtual member function</a> is odr-used if it is not a pure virtual member function (addresses of virtual member functions are required to construct the vtable)
+</li>
+<li> An <a href="../memory/new/operator_new.html" title="cpp/memory/new/operator new">allocation</a> or deallocation function for a class is odr-used by a <a href="new.html" title="cpp/language/new">new expression</a> appearing in a potentially-evaluated expression
+</li>
+<li> A deallocation function for a class is odr-used by a <a href="delete.html" title="cpp/language/delete">delete expression</a> appearing in a potentially-evaluated expression
+</li>
+<li> A non-placement allocation or deallocation function for a class is odr-used by the definition of a constructor of that class.
+</li>
+<li> A non-placement deallocation function for a class is odr-used by the definition of the destructor of that class, or by being selected by the lookup at the point of definition of a virtual destructor
+</li>
+<li> An assignment operator in a class <code>T</code> that is a member or base of another class <code>U</code> is odr-used by an implicitly-defined copy-assignment or move-assignment functions of <code>U</code>.
+</li>
+<li> A constructor (including default constructors) for a class is odr-used by the <a href="initialization.html" title="cpp/language/initialization">initialization</a> that selects it.
+</li>
+<li> A destructor for a class is odr-used if it is potentially invoked</li>
+</ul>
+</div>
+
+<p>In all cases, a constructor selected to copy or move an object is odr-used even if <a href="copy_elision.html" title="cpp/language/copy elision">copy elision</a> takes place.
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: list of all situations where odr-use makes a differences </td>
+</tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1925/1000000
+Preprocessor generated node count: 7207/1000000
+Post‐expand include size: 33321/2097152 bytes
+Template argument size: 7676/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13180-0!*!0!!*!*!* and timestamp 20150713124535 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/definition&amp;oldid=79600</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.077 secs. -->
+	</body>
+<!-- Cached 20150713125131 -->
+</html>

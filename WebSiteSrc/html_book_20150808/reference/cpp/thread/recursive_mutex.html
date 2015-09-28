@@ -1,0 +1,511 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>std::recursive_mutex - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/thread/recursive_mutex","wgTitle":"cpp/thread/recursive mutex","wgCurRevisionId":79717,"wgArticleId":2301,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/thread/recursive_mutex","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_thread_recursive_mutex skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">
+<span style="font-size:0.7em; line-height:130%">std::</span>recursive_mutex</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../thread.html" title="cpp/thread">thread</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../thread.html" title="cpp/thread"> Thread support library</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Threads</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="thread.html" title="cpp/thread/thread"><span class="t-lines"><span>thread</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> <code>this_thread</code> namespace</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="get_id.html" title="cpp/thread/get id"><span class="t-lines"><span>get_id</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="yield.html" title="cpp/thread/yield"><span class="t-lines"><span>yield</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="sleep_for.html" title="cpp/thread/sleep for"><span class="t-lines"><span>sleep_for</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="sleep_until.html" title="cpp/thread/sleep until"><span class="t-lines"><span>sleep_until</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Mutual exclusion</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="mutex.html" title="cpp/thread/mutex"><span class="t-lines"><span>mutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><strong class="selflink"><span class="t-lines"><span>recursive_mutex</span></span></strong></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="shared_mutex.html" title="cpp/thread/shared mutex"><span class="t-lines"><span>shared_mutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="timed_mutex.html" title="cpp/thread/timed mutex"><span class="t-lines"><span>timed_mutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="recursive_timed_mutex.html" title="cpp/thread/recursive timed mutex"><span class="t-lines"><span>recursive_timed_mutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="shared_timed_mutex.html" title="cpp/thread/shared timed mutex"><span class="t-lines"><span>shared_timed_mutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Generic lock management</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="lock_guard.html" title="cpp/thread/lock guard"><span class="t-lines"><span>lock_guard</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="unique_lock.html" title="cpp/thread/unique lock"><span class="t-lines"><span>unique_lock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="shared_lock.html" title="cpp/thread/shared lock"><span class="t-lines"><span>shared_lock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="lock_tag_t.html" title="cpp/thread/lock tag t"><span class="t-lines"><span>defer_lock_t</span><span>try_to_lock_t</span><span>adopt_lock_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="lock.html" title="cpp/thread/lock"><span class="t-lines"><span>lock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="try_lock.html" title="cpp/thread/try lock"><span class="t-lines"><span>try_lock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="lock_tag.html" title="cpp/thread/lock tag"><span class="t-lines"><span>defer_lock</span><span>try_to_lock</span><span>adopt_lock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="once_flag.html" title="cpp/thread/once flag"><span class="t-lines"><span>once_flag</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="call_once.html" title="cpp/thread/call once"><span class="t-lines"><span>call_once</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Condition variables</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="condition_variable.html" title="cpp/thread/condition variable"><span class="t-lines"><span>condition_variable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="condition_variable_any.html" title="cpp/thread/condition variable any"><span class="t-lines"><span>condition_variable_any</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="notify_all_at_thread_exit.html" title="cpp/thread/notify all at thread exit"><span class="t-lines"><span>notify_all_at_thread_exit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="cv_status.html" title="cpp/thread/cv status"><span class="t-lines"><span>cv_status</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Futures</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="promise.html" title="cpp/thread/promise"><span class="t-lines"><span>promise</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="future.html" title="cpp/thread/future"><span class="t-lines"><span>future</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="shared_future.html" title="cpp/thread/shared future"><span class="t-lines"><span>shared_future</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="packaged_task.html" title="cpp/thread/packaged task"><span class="t-lines"><span>packaged_task</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="async.html" title="cpp/thread/async"><span class="t-lines"><span>async</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="launch.html" title="cpp/thread/launch"><span class="t-lines"><span>launch</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="future_status.html" title="cpp/thread/future status"><span class="t-lines"><span>future_status</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="future_error.html" title="cpp/thread/future error"><span class="t-lines"><span>future_error</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="future_category.html" title="cpp/thread/future category"><span class="t-lines"><span>future_category</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="future_errc.html" title="cpp/thread/future errc"><span class="t-lines"><span>future_errc</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"><tt>std::recursive_mutex</tt></strong><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Member functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="recursive_mutex/recursive_mutex.html" title="cpp/thread/recursive mutex/recursive mutex"><span class="t-lines"><span>recursive_mutex::recursive_mutex</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Locking</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="recursive_mutex/lock.html" title="cpp/thread/recursive mutex/lock"><span class="t-lines"><span>recursive_mutex::lock</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="recursive_mutex/try_lock.html" title="cpp/thread/recursive mutex/try lock"><span class="t-lines"><span>recursive_mutex::try_lock</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="recursive_mutex/unlock.html" title="cpp/thread/recursive mutex/unlock"><span class="t-lines"><span>recursive_mutex::unlock</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Native handle</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="recursive_mutex/native_handle.html" title="cpp/thread/recursive mutex/native handle"><span class="t-lines"><span>recursive_mutex::native_handle</span></span></a></div></div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/mutex.html" title="cpp/header/mutex">&lt;mutex&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span> recursive_mutex<span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>The <code>recursive_mutex</code> class is a synchronization primitive that can be used to protect shared data from being simultaneously accessed by multiple threads.
+</p>
+<p><code>recursive_mutex</code> offers exclusive, recursive ownership semantics:
+</p>
+<ul>
+<li> A calling thread <i>owns</i> a <code>recursive_mutex</code> for a period of time that starts when it successfully calls either <a href="recursive_mutex/lock.html" title="cpp/thread/recursive mutex/lock"><code>lock</code></a> or <a href="mutex/try_lock.html" title="cpp/thread/mutex/try lock"><code>try_lock</code></a>.  During this period, the thread may make additional calls to <a href="recursive_mutex/lock.html" title="cpp/thread/recursive mutex/lock"><code>lock</code></a> or <a href="recursive_mutex/try_lock.html" title="cpp/thread/recursive mutex/try lock"><code>try_lock</code></a>.  The period of ownership ends when the thread makes a matching number of calls to <a href="recursive_mutex/unlock.html" title="cpp/thread/recursive mutex/unlock"><code>unlock</code></a>.
+</li>
+<li> When a thread owns a <code>recursive_mutex</code>, all other threads will block (for calls to <a href="recursive_mutex/lock.html" title="cpp/thread/recursive mutex/lock"><code>lock</code></a>) or receive a <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span> return value (for <a href="recursive_mutex/try_lock.html" title="cpp/thread/recursive mutex/try lock"><code>try_lock</code></a>) if they attempt to claim ownership of the <code>recursive_mutex</code>.
+</li>
+<li> The maximum number of times that a <code>recursive_mutex</code> may be locked is unspecified, but after that number is reached, calls to <a href="recursive_mutex/lock.html" title="cpp/thread/recursive mutex/lock"><code>lock</code></a> will throw <span class="t-lc"><a href="../error/system_error.html" title="cpp/error/system error">std::system_error</a></span> and calls to <a href="mutex/try_lock.html" title="cpp/thread/mutex/try lock"><code>try_lock</code></a> will return <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>.
+</li>
+</ul>
+<p>The behavior of a program is undefined if a <code>recursive_mutex</code> is destroyed while still owned by some thread.  The <code>recursive_mutex</code> class satisfies all requirements of <a href="../concept/Mutex.html" title="cpp/concept/Mutex"><code>Mutex</code></a> and <a href="../concept/StandardLayoutType.html" title="cpp/concept/StandardLayoutType"><code>StandardLayoutType</code></a>.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="recursive_mutex.html#Member_types"><span class="tocnumber">1</span> <span class="toctext">Member types</span></a></li>
+<li class="toclevel-1 tocsection-2">
+<a href="recursive_mutex.html#Member_functions"><span class="tocnumber">2</span> <span class="toctext">Member functions</span></a>
+<ul>
+<li class="toclevel-2"><a href="recursive_mutex.html#Locking"><span class="tocnumber">2.1</span> <span class="toctext">Locking</span></a></li>
+<li class="toclevel-2"><a href="recursive_mutex.html#Native_handle"><span class="tocnumber">2.2</span> <span class="toctext">Native handle</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Member types">edit</a>]</span> <span class="mw-headline" id="Member_types">Member types</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-hitem">
+<td>  Member type
+</td>
+<td>  Definition
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>native_handle_type</code>
+</td>
+<td>  <i>implementation-defined</i>
+</td>
+</tr>
+
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><a href="recursive_mutex/recursive_mutex.html" title="cpp/thread/recursive mutex/recursive mutex"> <span class="t-lines"><span>(constructor)</span></span></a></div></div>
+</td>
+<td>  constructs the mutex <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div t-dsc-member-nobold-div"><div><a href="recursive_mutex/%7Erecursive_mutex.html" title="cpp/thread/recursive mutex/~recursive mutex"> <span class="t-lines"><span>(destructor)</span></span></a></div></div>
+</td>
+<td>  destroys the mutex <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div>operator=</div>
+<div><span class="t-lines"><span><span class="t-cmark">[deleted]</span></span></span></div>
+</div>
+</td>
+<td>   not copy-assignable <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Locking">  Locking </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="recursive_mutex/lock.html" title="cpp/thread/recursive mutex/lock"> <span class="t-lines"><span>lock</span></span></a></div></div>
+</td>
+<td>   locks the mutex, blocks if the mutex is not available <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="recursive_mutex/try_lock.html" title="cpp/thread/recursive mutex/try lock"> <span class="t-lines"><span>try_lock</span></span></a></div></div>
+</td>
+<td>   tries to lock the mutex, returns if the mutex is not available <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="recursive_mutex/unlock.html" title="cpp/thread/recursive mutex/unlock"> <span class="t-lines"><span>unlock</span></span></a></div></div>
+</td>
+<td>   unlocks the mutex <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Native_handle">  Native handle </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="recursive_mutex/native_handle.html" title="cpp/thread/recursive mutex/native handle"> <span class="t-lines"><span>native_handle</span></span></a></div></div>
+</td>
+<td>   returns the underlying implementation-defined thread handle <br> <span class="t-mark">(public member function)</span> 
+</td>
+</tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 4857/1000000
+Preprocessor generated node count: 9030/1000000
+Post‐expand include size: 149881/2097152 bytes
+Template argument size: 27096/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2301-0!*!0!!en!*!* and timestamp 20150724203116 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/thread/recursive_mutex&amp;oldid=79717</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.113 secs. -->
+	</body>
+<!-- Cached 20150724203122 -->
+</html>

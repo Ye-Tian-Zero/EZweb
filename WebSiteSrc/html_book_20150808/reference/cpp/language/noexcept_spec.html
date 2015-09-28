@@ -1,0 +1,416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>noexcept specifier  (since C++11) - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/noexcept_spec","wgTitle":"cpp/language/noexcept spec","wgCurRevisionId":74086,"wgArticleId":2458,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/noexcept_spec","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_noexcept_spec skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">noexcept specifier  <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="exceptions.html" title="cpp/language/exceptions"> Exceptions</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="throw.html" title="cpp/language/throw"> throw-expression</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function-try-block.html" title="cpp/language/function-try-block"> function-try-block</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="try_catch.html" title="cpp/language/try catch"> try/catch block</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> noexcept specifier</strong><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept.html" title="cpp/language/noexcept"> noexcept operator</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="except_spec.html" title="cpp/language/except spec"> exception-specification</a><span class="t-mark">(deprecated)</span>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Specifies whether a function will throw exceptions or not.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="noexcept_spec.html#Syntax"><span class="tocnumber">1</span> <span class="toctext">Syntax</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="noexcept_spec.html#Explanation"><span class="tocnumber">2</span> <span class="toctext">Explanation</span></a></li>
+<li class="toclevel-1 tocsection-3">
+<a href="noexcept_spec.html#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="noexcept_spec.html#Deprecates"><span class="tocnumber">3.1</span> <span class="toctext">Deprecates</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5"><a href="noexcept_spec.html#Keywords"><span class="tocnumber">4</span> <span class="toctext">Keywords</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="noexcept_spec.html#Example"><span class="tocnumber">5</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="noexcept_spec.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span>
+</h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>noexcept</b></code>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>noexcept(</b></code><span class="t-spar">expression</span><code><b>)</b></code>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">1)</span> Same as <code><b>noexcept</b></code> <code><b>(</b></code> <code><b>true</b></code> <code><b>)</b></code>
+</div>
+<div class="t-li1">
+<span class="t-li">2)</span> If <span class="t-spar">expression</span> evaluates to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>, the function is declared to not throw any exceptions.
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">expression</span>
+</td>
+<td> -
+</td>
+<td>  <a href="constant_expression.html" title="cpp/language/constant expression">constant expression</a>, <a href="implicit_cast.html" title="cpp/language/implicit cast">contextually convertible</a> to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>
+</td>
+</tr>
+</table>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+<p>The noexcept-specification (just like <a href="except_spec.html" title="cpp/language/except spec">dynamic exception specification</a>) can appear as a part of a <a href="function.html" title="cpp/language/function">function declarator</a> when declaring functions, pointer to functions, references to functions, or pointers to member function type, and also when declaring a parameter or a return type of a function that happens to be a pointer or reference to function. It cannot appear in a <a href="typedef.html" title="cpp/language/typedef">typedef</a> or <a href="type_alias.html" title="cpp/language/type alias">type alias</a> declaration.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span> <span class="co1">// the function f() does not throw</span>
+<span class="kw4">void</span> <span class="br0">(</span><span class="sy2">*</span>fp<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="br0">(</span><span class="kw2">false</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// fp points to a function that may throw</span>
+<span class="kw4">void</span> g<span class="br0">(</span><span class="kw4">void</span> pfa<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// g takes a pointer to function that doesn't throw</span>
+<span class="co1">// typedef int (*pf)() noexcept; // error</span></pre></div></div>
+<p>The noexcept-specification is not a part of the function type. However, if any declaration of a function has a noexcept specification that isn't <code>noexcept(false)</code>, other declarations of the same function have to have the same noexcept-specification. Similar restrictions apply to overriders of a <a href="virtual.html" title="cpp/language/virtual">virtual function</a> and to initialization and assignment of pointers to functions (target entity has to have identical or more permissive exception specification).
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// error, incompatible exception specifications</span>
+<span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="br0">(</span><span class="kw2">false</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// ok</span></pre></div></div>
+<p>If a search for a matching <a href="try_catch.html" title="cpp/language/try catch">exception handler</a> leaves a function marked <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span></span></span>, <span class="t-lc"><a href="../error/terminate.html" title="cpp/error/terminate">std::terminate</a></span> is called immediately.
+</p>
+<p><a href="using_declaration.html" title="cpp/language/using declaration">Inheriting constructors</a> and the implicitly-declared <a href="default_constructor.html" title="cpp/language/default constructor">default constructors</a>, <a href="copy_constructor.html" title="cpp/language/copy constructor">copy constructors</a>, <a href="move_constructor.html" title="cpp/language/move constructor">move constructors</a>, <a href="destructor.html" title="cpp/language/destructor">destructors</a>, <a href="as_operator.html" title="cpp/language/as operator">copy-assignment</a> operators, <a href="move_operator.html" title="cpp/language/move operator">move-assignment</a> operators are all <code>noexcept(true)</code> by default, unless they are required to call a function that is <code>noexcept(false)</code>, in which case these functions are <code>noexcept(false)</code>.
+</p>
+<p>Any user-defined <a href="destructor.html" title="cpp/language/destructor">destructor</a> is <code>noexcept(true)</code> by default, unless the declaration specifies otherwise, or the destructor of any base or member is <code>noexcept(false)</code>.
+</p>
+<p>Any <a href="../memory/new/operator_delete.html" title="cpp/memory/new/operator delete">deallocation function</a> is <code>noexcept(true)</code> by default, unless the declaration specifies otherwise.
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14">
+<td>
+<p>A noexcept-specification of a function is considered to be <i>needed</i> in the following contexts
+</p>
+<ul>
+<li> in an expression, where the function is selected by overload resolution
+</li>
+<li> the function is <a href="definition.html#ODR-use" title="cpp/language/definition">odr-used</a>
+</li>
+<li> the function would be odr-used but appears in an unevaluated operand
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> T f<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="br0">(</span>sizeof<span class="br0">(</span>T<span class="br0">)</span> <span class="sy1">&lt;</span> <span class="nu0">4</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    decltype<span class="br0">(</span>f<span class="sy1">&lt;</span><span class="kw4">void</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="sy2">*</span>p<span class="sy4">;</span> <span class="co1">// f unevaluated, but noexcept-spec is needed</span>
+<span class="br0">}</span></pre></div></div>
+<ul>
+<li> the specification is needed to compare to another function declaration (e.g. on an virtual function overrider or on an explicit specialization of a function template)
+</li>
+<li> in a function definition
+</li>
+<li> the specification is needed because a defaulted special member function needs to check it in order to decide its own exception specification (this takes place only when the specification of the defaulted special member function is, itself, needed).
+</li>
+</ul>
+<p>The exception specification of a function template specialization is not instantiated along with the function declaration; it is instantiated only when <i>needed</i> (as defined above).
+</p>
+<p>The exception-specification of an implicitly-declared special member function is also evaluated as needed (in particular, implicit declaration of a member function of a derived class does not require the exception-specification of a base member function to be instantiated)
+</p>
+<p>When the noexcept-specification of a function template specialization is <i>needed</i>, but hasn't yet been instantiated, the dependent names are looked up and any templates used in the <span class="t-spar">expression</span> are instantiated as if for the declaration of the specialization.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span>
+</h3>
+<p>One of the uses of the constant <span class="t-spar">expression</span> is (along with the <a href="noexcept.html" title="cpp/language/noexcept"><code>noexcept</code> operator</a>) to define function templates that declare <code><b>noexcept</b></code> for some types but not others.
+</p>
+<p>Note that a <code><b>noexcept</b></code> specification on a function is not a compile-time check; it is merely a method for a programmer to inform the compiler whether or not a function should throw exceptions.  The compiler can use this information to enable certain optimizations on non-throwing functions as well as enable the <a href="noexcept.html" title="cpp/language/noexcept"><code>noexcept</code> operator</a>, which can check at compile time if a particular expression is declared to throw any exceptions. For example, containers such as <span class="t-lc"><a href="../container/vector.html" title="cpp/container/vector">std::vector</a></span> will move their elements if the elements' move constructor is <code><b>noexcept</b></code>, and copy otherwise (unless the copy constructor is not accessible, but a potentially throwing move constructor is, in which case the strong exception guarantee is waived).
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Deprecates">edit</a>]</span> <span class="mw-headline" id="Deprecates">Deprecates</span>
+</h4>
+<p><code><b>noexcept</b></code> is an improved version of <a href="except_spec.html" title="cpp/language/except spec"><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">throw</span><span class="br0">(</span><span class="br0">)</span></span></span></a>, which is deprecated in C++11.  Unlike <a href="except_spec.html" title="cpp/language/except spec"><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">throw</span><span class="br0">(</span><span class="br0">)</span></span></span></a>, <code><b>noexcept</b></code> will not call <span class="t-lc"><a href="../error/unexpected.html" title="cpp/error/unexpected">std::unexpected</a></span> and may or may not unwind the stack, which potentially allows the compiler to implement <code><b>noexcept</b></code> without the runtime overhead of <a href="except_spec.html" title="cpp/language/except spec"><span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">throw</span><span class="br0">(</span><span class="br0">)</span></span></span></a>. 
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Keywords">edit</a>]</span> <span class="mw-headline" id="Keywords">Keywords</span>
+</h3>
+<p><a href="../keyword/noexcept.html" title="cpp/keyword/noexcept"><tt>noexcept</tt></a>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// whether foo is declared noexcept depends on if the expression</span>
+<span class="co1">// T() will throw any exceptions</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span>
+  <span class="kw4">void</span> foo<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="br0">(</span><span class="kw1">noexcept</span><span class="br0">(</span>T<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+ 
+<span class="kw4">void</span> bar<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+<span class="kw4">void</span> baz<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span> <span class="br0">{</span> <span class="kw1">throw</span> <span class="nu0">42</span><span class="sy4">;</span> <span class="br0">}</span>  <span class="co1">// noexcept is the same as noexcept(true)</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> 
+<span class="br0">{</span>
+    foo<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// noexcept(noexcept(int())) =&gt; noexcept(true), so this is fine</span>
+ 
+    bar<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// fine</span>
+    baz<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// compiles, but at runtime this calls std::terminate</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <a href="noexcept.html" title="cpp/language/noexcept"> noexcept operator </a>
+</td>
+<td>  determines if an expression throws any exceptions <span class="t-mark-rev t-since-cxx11">(since C++11)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <a href="except_spec.html" title="cpp/language/except spec"> exception specification </a>
+</td>
+<td>  specifies what exceptions are thrown by a function <span class="t-mark">(deprecated)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <a href="throw.html" title="cpp/language/throw"> throw expression </a>
+</td>
+<td>  signals an error and transfers control to error handler
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/move_if_noexcept.html" title="cpp/utility/move if noexcept"> <span class="t-lines"><span>move_if_noexcept</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   obtains an rvalue reference if the move constructor does not throw  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1513/1000000
+Preprocessor generated node count: 4731/1000000
+Post‐expand include size: 38591/2097152 bytes
+Template argument size: 9162/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2458-0!*!0!!en!*!* and timestamp 20150313153729 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/noexcept_spec&amp;oldid=74086</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 3.048 secs. -->
+	</body>
+<!-- Cached 20150313153729 -->
+</html>

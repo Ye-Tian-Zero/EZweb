@@ -1,0 +1,515 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Value categories - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/value_category","wgTitle":"cpp/language/value category","wgCurRevisionId":78270,"wgArticleId":4706,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/value_category","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_value_category skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Value categories</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="expressions.html" title="cpp/language/expressions"> Expressions</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> General </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> value categories</strong> (lvalue, rvalue, xvalue)</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="eval_order.html" title="cpp/language/eval order"> order of evaluation</a> (sequence points)</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constant_expression.html" title="cpp/language/constant expression"> constant expressions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="expressions.html#Unevaluated_expressions" title="cpp/language/expressions"> unevaluated expressions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="expressions.html#Primary_expressions" title="cpp/language/expressions"> primary expressions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lambda.html" title="cpp/language/lambda">lambda-expression</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Literals </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="integer_literal.html" title="cpp/language/integer literal">integer literals</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="floating_literal.html" title="cpp/language/floating literal">floating-point literals</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bool_literal.html" title="cpp/language/bool literal">boolean literals</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="character_literal.html" title="cpp/language/character literal">character literals</a> including <a href="escape.html" title="cpp/language/escape">escape sequences</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string_literal.html" title="cpp/language/string literal">string literals</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nullptr.html" title="cpp/language/nullptr">null pointer literal</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="user_literal.html" title="cpp/language/user literal">user-defined literal</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Operators </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_assignment.html" title="cpp/language/operator assignment"> Assignment operators</a>: 
+<code>a=b</code>, <code>a+=b</code>, <code>a-=b</code>, <code>a*=b</code>, <code>a/=b</code>, <code>a%=b</code>, <code>a&amp;=b</code>, <code>a|=b</code>, <code>a^=b</code>, <code>a&lt;&lt;=b</code>, <code>a&gt;&gt;=</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_incdec.html" title="cpp/language/operator incdec"> Increment and decrement</a>: <code>++a</code>, <code>--a</code>, <code>a++</code>, <code>a--</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_arithmetic.html" title="cpp/language/operator arithmetic"> Arithmetic operators</a>:
+<code>+a</code>, <code>-a</code>, <code>a+b</code>, <code>a-b</code>, <code>a*b</code>, <code>a/b</code>, <code>a%b</code>, <code>~a</code>, <code>a&amp;b</code>, <code>a|b</code>, <code>a^b</code>, <code>a&lt;&lt;b</code>, <code>a&gt;&gt;b</code> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_logical.html" title="cpp/language/operator logical"> Logical operators</a>: <code>a||b</code>, <code>a&amp;&amp;b</code>, <code>!a</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_comparison.html" title="cpp/language/operator comparison"> Comparison operators</a>: <code>a==b</code>, <code>a!=b</code>, <code>a&lt;b</code>, <code>a&gt;b</code>, <code>a&lt;=b</code>, <code>a&gt;=b</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_member_access.html" title="cpp/language/operator member access"> Member access operators</a>: <code>a[b]</code>, <code>*a</code>, <code>&amp;a</code>, <code>a-&gt;b</code>, <code>a.b</code>, <code>a-&gt;*b</code>, <code>a.*b</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_other.html" title="cpp/language/operator other"> Other operators</a>: <code>a(...)</code>, <code>a,b</code>, <code>(T)a</code>, <code>a?b:c</code> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_alternative.html" title="cpp/language/operator alternative">Alternative representations of operators</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_precedence.html" title="cpp/language/operator precedence">Precedence and associativity</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fold.html" title="cpp/language/fold">Fold expression</a><span class="t-mark-rev t-since-cxx17">(C++17)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="new.html" title="cpp/language/new">new-expression</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="delete.html" title="cpp/language/delete">delete-expression</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="throw.html" title="cpp/language/throw">throw-expression</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="alignof.html" title="cpp/language/alignof">alignof</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sizeof.html" title="cpp/language/sizeof">sizeof</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sizeof....html" title="cpp/language/sizeof...">sizeof...</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="typeid.html" title="cpp/language/typeid">typeid</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept.html" title="cpp/language/noexcept">noexcept</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operators.html" title="cpp/language/operators">Operator overloading</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Conversions </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="implicit_cast.html" title="cpp/language/implicit cast">Implicit conversions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="const_cast.html" title="cpp/language/const cast">const_cast</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static_cast.html" title="cpp/language/static cast">static_cast</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="reinterpret_cast.html" title="cpp/language/reinterpret cast">reinterpret_cast</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="dynamic_cast.html" title="cpp/language/dynamic cast">dynamic_cast</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit_cast.html" title="cpp/language/explicit cast">Explicit conversions</a> <code>(T)a</code>, <code>T(a)</code>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cast_operator.html" title="cpp/language/cast operator">User-defined conversion</a>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Each C++ <a href="expressions.html" title="cpp/language/expressions">expression</a> (an operator with its arguments, a literal, a variable name, etc) is characterized by two independent properties: a <i>type</i> and a <i>value category</i>. Each expression has some non-reference type, and each expression belongs to exactly one of the three primary value categories.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1">
+<a href="value_category.html#Primary_categories"><span class="tocnumber">1</span> <span class="toctext">Primary categories</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="value_category.html#lvalue"><span class="tocnumber">1.1</span> <span class="toctext">lvalue</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="value_category.html#rvalue_.28until_C.2B.2B11.29_.2F_prvalue_.28since_C.2B.2B11.29"><span class="tocnumber">1.2</span> <span class="toctext">rvalue <span>(until C++11)</span> / prvalue <span>(since C++11)</span></span></a></li>
+<li class="toclevel-2"><a href="value_category.html#xvalue"><span class="tocnumber">1.3</span> <span class="toctext">xvalue</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5">
+<a href="value_category.html#Mixed_categories"><span class="tocnumber">2</span> <span class="toctext">Mixed categories</span></a>
+<ul>
+<li class="toclevel-2 tocsection-6"><a href="value_category.html#glvalue"><span class="tocnumber">2.1</span> <span class="toctext">glvalue</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="value_category.html#rvalue"><span class="tocnumber">2.2</span> <span class="toctext">rvalue</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-8">
+<a href="value_category.html#Special_categories"><span class="tocnumber">3</span> <span class="toctext">Special categories</span></a>
+<ul>
+<li class="toclevel-2 tocsection-9"><a href="value_category.html#Pending_member_function_call"><span class="tocnumber">3.1</span> <span class="toctext">Pending member function call</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="value_category.html#Void_expressions"><span class="tocnumber">3.2</span> <span class="toctext">Void expressions</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="value_category.html#Bit_fields"><span class="tocnumber">3.3</span> <span class="toctext">Bit fields</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-12">
+<a href="value_category.html#footnotes"><span class="tocnumber">4</span> <span class="toctext">footnotes</span></a>
+<ul>
+<li class="toclevel-2 tocsection-13"><a href="value_category.html#See_also"><span class="tocnumber">4.1</span> <span class="toctext">See also</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h2>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Primary categories">edit</a>]</span> <span class="mw-headline" id="Primary_categories">Primary categories</span>
+</h2>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: lvalue">edit</a>]</span> <span class="mw-headline" id="lvalue">lvalue</span>
+</h3>
+<p>An <i>lvalue</i> is an expression that identifies a non-temporary object or a non-member function.
+</p>
+<p>The following expressions are lvalues:
+</p>
+<ul>
+<li> The name of a variable or function in scope, regardless of type, such as <code>std::cin</code> or <code>std::endl</code>. Even if the variable's type is rvalue reference, the expression consisting of its name is an lvalue expression.
+</li>
+<li> Function call or overloaded operator expression if the function's or overloaded operator's return type is an lvalue reference, such as <code>std::getline(std::cin, str)</code> or <code>std::cout &lt;&lt; 1</code> or <code>str1 = str2</code> or <code>++iter</code>
+</li>
+<li> Built-in <a href="operator_incdec.html#Built-in_prefix_operators" title="cpp/language/operator incdec">pre-increment and pre-decrement</a>, <a href="operator_member_access.html#Built-in_indirection_operator" title="cpp/language/operator member access">dereference</a>, <a href="operator_assignment.html" title="cpp/language/operator assignment">assignment and compound assignment</a>, <a href="operator_member_access.html#Built-in_subscript_operator" title="cpp/language/operator member access">subscript</a> (except on an array xvalue), <a href="operator_member_access.html#Built-in_member_access_operators" title="cpp/language/operator member access">member access</a> (except for non-static non-reference members of xvalues, member enumerators, and non-static member functions), <a href="operator_member_access.html#Built-in_pointer-to-member_access_operators" title="cpp/language/operator member access">member access through pointer to data member</a> if the left-hand operand is lvalue, <a href="operator_other.html#Built-in_comma_operator" title="cpp/language/operator other">comma operator</a> if the right-hand operand is lvalue, <a href="operator_other.html#Conditional_operator" title="cpp/language/operator other">ternary conditional</a> if the second and third operands are lvalues.
+</li>
+<li> Cast expression to lvalue reference type.
+</li>
+<li> String literal
+</li>
+</ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<ul>
+<li> Function call expression if the function's return type is rvalue reference to function type (rare)
+</li>
+<li> Cast expression to rvalue reference to function.
+</li>
+</ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<p>Properties:
+</p>
+<ul>
+<li> Same as glvalue (below)
+</li>
+<li> Address of an lvalue may be taken: <code>&amp;++i</code><sup id="cite_ref-1" class="reference"><a href="value_category.html#cite_note-1">[1]</a></sup> and <code>&amp;std::endl</code> are valid expressions. 
+</li>
+<li> A modifiable lvalue may be used as the left-hand operand of the built-in assignment operator.
+</li>
+<li> An lvalue may be used to <a href="reference_initialization.html" title="cpp/language/reference initialization">initialize an lvalue reference</a>; this associates a new name with the object identified by the expression.
+</li>
+</ul>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: rvalue (until C++11) / prvalue (since C++11)">edit</a>]</span> <span class="mw-headline" id="rvalue_.28until_C.2B.2B11.29_.2F_prvalue_.28since_C.2B.2B11.29">rvalue <span class="t-mark-rev t-until-cxx11">(until C++11)</span> / prvalue <span class="t-mark-rev t-since-cxx11">(since C++11)</span></span>
+</h3>
+<p>A <i>prvalue</i> ("pure" rvalue) is an expression that identifies a temporary object (or a subobject thereof) or is a value not associated with any object.
+</p>
+<p>The following expressions are prvalues:
+</p>
+<ul>
+<li> <a href="expressions.html#Literals" title="cpp/language/expressions">Literal</a> (except <a href="string_literal.html" title="cpp/language/string literal">string literal</a>), such as <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">42</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp">nullptr</span></span>.
+</li>
+<li> Function call or overloaded operator expression if the function's or the overloaded operator's return type is not a reference, such as <code>str.substr(1, 2)</code> or <code>str1 + str2</code>
+</li>
+<li> Built-in <a href="operator_incdec.html#Built-in_postfix_operators" title="cpp/language/operator incdec">post-increment and post-decrement </a>, <a href="operator_arithmetic.html" title="cpp/language/operator arithmetic">arithmetic</a> and <a href="operator_logical.html" title="cpp/language/operator logical">logical</a> operators, <a href="operator_comparison.html" title="cpp/language/operator comparison">comparison</a> operators, <a href="operator_member_access.html#Built-in_address-of_operator" title="cpp/language/operator member access">address-of operator</a>, <a href="operator_member_access.html#Built-in_member_access_operators" title="cpp/language/operator member access">member access</a> for a member enumerator, a non-static member function, or a non-static non-reference data member of an rvalue, <a href="operator_member_access.html#Built-in_pointer-to-member_access_operators" title="cpp/language/operator member access">member access through pointer</a> to a data member of rvalue or to a non-static member function, <a href="operator_other.html#Built-in_comma_operator" title="cpp/language/operator other">comma operator</a> where the right-hand operand is rvalue, <a href="operator_other.html#Conditional_operator" title="cpp/language/operator other">ternary conditional</a> where either second or third operands aren't lvalues.
+</li>
+<li> Cast expression to any type other than reference type.
+</li>
+</ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<ul><li> Lambda expressions, such as <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">[</span><span class="br0">]</span><span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span><span class="br0">{</span><span class="kw1">return</span> x<span class="sy2">*</span>x<span class="sy4">;</span><span class="br0">}</span></span></span>
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<p>Properties:
+</p>
+<ul>
+<li> Same as rvalue (below)
+</li>
+<li> a prvalue cannot be <a href="objects.html#Polymorphic_objects" title="cpp/language/object">polymorphic</a>: the <a href="incomplete_type.html#Dynamic_type" title="cpp/language/type">dynamic type</a> of the object it identifies is always the type of the expression.
+</li>
+<li> a non-class prvalue cannot be <a href="cv.html" title="cpp/language/cv">cv-qualified</a>.
+</li>
+<li> a prvalue cannot have <a href="incomplete_type.html#Incomplete_type" title="cpp/language/type">incomplete type</a> (except for type void, see below, or when used in <a href="decltype.html" title="cpp/language/decltype">decltype specifier</a>)
+</li>
+</ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<h3> <span class="mw-headline" id="xvalue">xvalue</span>
+</h3>
+<p>An <i>xvalue</i> is an expression that identifies an "eXpiring" object, that is, the object that may be moved from. The object identified by an xvalue expression may be a nameless temporary, it may be a named object in scope, or any other kind of object, but if used as a function argument, xvalue will always bind to the rvalue reference overload if available.
+</p>
+<p>Only the following expressions are xvalues:
+</p>
+<ul>
+<li> A function call or overloaded operator expression if the function's or the overloaded operator's return type is an rvalue reference to object type, such as <code>std::move(val)</code> 
+</li>
+<li> A cast expression to an rvalue reference to object type, such as <code>static_cast&lt;T&amp;&amp;&gt;(val)</code> or <code>(T&amp;&amp;)val</code>
+</li>
+<li> a non-static class member access expression, in which the object expression is an xvalue
+</li>
+<li> A pointer-to-member expression in which the first operand is an xvalue and the second operand is a pointer to data member.
+</li>
+</ul>
+<p>Properties:
+</p>
+<ul>
+<li> Same as rvalue (below)
+</li>
+<li> Same as glvalue (below)
+</li>
+</ul>
+<p>Like prvalues, xvalues bind to rvalue references, but unlike prvalues, an xvalue may be <a href="objects.html#Polymorphic_objects" title="cpp/language/object">polymorphic</a>, and a non-class xvalue may be <a href="cv.html" title="cpp/language/cv">cv-qualified</a>.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<h2>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Mixed categories">edit</a>]</span> <span class="mw-headline" id="Mixed_categories">Mixed categories</span>
+</h2>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: glvalue">edit</a>]</span> <span class="mw-headline" id="glvalue">glvalue</span>
+</h3>
+<p>A glvalue ("generalized" lvalue) is an expression that is either an lvalue or an xvalue.
+</p>
+<p>Properties (note: these apply to pre-C++11 lvalues as well)
+</p>
+<ul>
+<li> A glvalue may be implicitly converted to prvalue with lvalue-to-rvalue, array-to-pointer, or function-to-pointer <a href="implicit_cast.html" title="cpp/language/implicit cast">implicit conversion</a>.
+</li>
+<li> A glvalue may be <a href="objects.html#Polymorphic_objects" title="cpp/language/object">polymorphic</a>: the <a href="incomplete_type.html#Dynamic_type" title="cpp/language/type">dynamic type</a> of the object it identifies is not necessarily the static type of the expression.
+</li>
+<li> A glvalue can have <a href="incomplete_type.html#Incomplete_type" title="cpp/language/type">incomplete type</a>, where permitted by the expression
+</li>
+</ul>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: rvalue">edit</a>]</span> <span class="mw-headline" id="rvalue">rvalue</span>
+</h3>
+<p>An rvalue is an expression that is either a prvalue or an xvalue.
+</p>
+<p>Properties (note, these apply to both xvalues and prvalues, which means they apply to the pre-C++11 rvalues as well)
+</p>
+<ul>
+<li> Address of an rvalue may not be taken: <code>&amp;int()</code>, <code>&amp;i++</code><sup id="cite_ref-2" class="reference"><a href="value_category.html#cite_note-2">[2]</a></sup>, <code>&amp;42</code>, and <code>&amp;std::move(val)</code> are invalid.
+</li>
+<li> Rvalues can't be used as the left-hand operand of the built-in assignment or compound assignment operator.
+</li>
+<li> An rvalue may be used to <a href="reference_initialization.html" title="cpp/language/reference initialization">initialize a const lvalue reference</a>, in which case the lifetime of the object identified by the rvalue is extended until the scope of the reference ends.
+</li>
+</ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<ul>
+<li> An rvalue may be used to <a href="reference_initialization.html" title="cpp/language/reference initialization">initialize an rvalue reference</a>, in which case the lifetime of the object identified by the rvalue is extended until the scope of the reference ends.
+</li>
+<li> When used as a function argument and when <a href="overload_resolution.html" title="cpp/language/overload resolution">two overloads</a> of the function are available, one taking rvalue reference parameter and the other taking lvalue reference to const parameter, rvalues bind to the rvalue reference overload (thus, if both copy and move constructors are available, rvalue arguments invoke the <a href="move_constructor.html" title="cpp/language/move constructor">move constructor</a>, and likewise with copy and move assignment operators).
+</li>
+</ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<h2>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Special categories">edit</a>]</span> <span class="mw-headline" id="Special_categories">Special categories</span>
+</h2>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Pending member function call">edit</a>]</span> <span class="mw-headline" id="Pending_member_function_call">Pending member function call</span>
+</h3>
+<p>The expressions <span class="t-c"><span class="mw-geshi cpp source-cpp">obj.<span class="me1">func</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">ptr<span class="sy2">-</span><span class="sy1">&gt;</span>func</span></span>, where <code>func</code> is a <a href="member_functions.html" title="cpp/language/member functions">non-static member function</a>, and the expressions <span class="t-c"><span class="mw-geshi cpp source-cpp">obj.<span class="sy2">*</span>mfp</span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">ptr<span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span>mfp</span></span> where <code>mfp</code> is a <a href="pointer.html#Pointers_to_member_functions" title="cpp/language/pointer">pointer to member function</a>, are classified as prvalue expressions, but they cannot be used to initialize references, as function arguments, or for any purpose at all, except as the left-hand argument of a function call expression, e.g. <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="br0">(</span>pobj<span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span>ptr<span class="br0">)</span><span class="br0">(</span>args<span class="br0">)</span></span></span>.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Void expressions">edit</a>]</span> <span class="mw-headline" id="Void_expressions">Void expressions</span>
+</h3>
+<p>Function call expressions returning <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span>, cast expressions to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span>, and <a href="throw.html" title="cpp/language/throw">throw-expressions</a> are classified as prvalue expressions, but they cannot be used to initialize references or as function arguments. They can be used in some contexts (e.g. on a line of its own, as the left argument of the comma operator, etc) and in the <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">return</span></span></span> statement in a function returning <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span>. In addition, throw-expressions may be used as the second and the third operands of the <a href="operator_other.html" title="cpp/language/operator other">conditional operator ?:</a> (other void prvalues can only be used if appearing as both 2nd and 3rd operands).
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Bit fields">edit</a>]</span> <span class="mw-headline" id="Bit_fields">Bit fields</span>
+</h3>
+<p>An expression that designates a <a href="bit_field.html" title="cpp/language/bit field">bit field</a> (e.g. <code>s.x</code> where s is an object of type <code>struct S { int x:3; };</code>) is an lvalue expression (or xvalue if <code>s</code> is one): it may be used on the left hand side of the assignment operator, but its address cannot be taken and a non-const lvalue reference cannot be bound to it. A const lvalue reference can be initialized from a bit-field lvalue, but a temporary copy of the bit-field will be made: it won't bind to the bit field directly.
+</p>
+<h2>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: footnotes">edit</a>]</span> <span class="mw-headline" id="footnotes">footnotes</span>
+</h2>
+<ol class="references">
+<li id="cite_note-1">
+<span class="mw-cite-backlink"><a href="value_category.html#cite_ref-1">↑</a></span> <span class="reference-text">Assuming <code>i</code> has built-in type or the pre-increment operator is <a href="operators.html" title="cpp/language/operators">overloaded</a> to return by lvalue reference</span>
+</li>
+<li id="cite_note-2">
+<span class="mw-cite-backlink"><a href="value_category.html#cite_ref-2">↑</a></span> <span class="reference-text">Assuming <code>i</code> has built-in type or the postincrement operator is not <a href="operators.html" title="cpp/language/operators">overloaded</a> to return by lvalue reference</span>
+</li>
+</ol>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see">
+<span><a href="../../c/language/value_category.html" title="c/language/value category">C documentation</a></span> for <span class="t-dsc-see-tt"><span>value categories</span></span>
+</div>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2192/1000000
+Preprocessor generated node count: 5441/1000000
+Post‐expand include size: 59350/2097152 bytes
+Template argument size: 11508/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:4706-0!*!0!!en!*!* and timestamp 20150521090336 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/value_category&amp;oldid=78270</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.596 secs. -->
+	</body>
+<!-- Cached 20150521090336 -->
+</html>

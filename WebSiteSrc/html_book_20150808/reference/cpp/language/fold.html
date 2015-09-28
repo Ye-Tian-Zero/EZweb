@@ -1,0 +1,412 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>fold expression - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/fold","wgTitle":"cpp/language/fold","wgCurRevisionId":76816,"wgArticleId":13849,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/fold","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_fold skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">fold expression</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="templates.html" title="cpp/language/templates"> Templates</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="template_parameters.html" title="cpp/language/template parameters"> parameters and arguments</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html" title="cpp/language/class template"> class templates</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function_template.html" title="cpp/language/function template"> function templates</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template"> class member templates</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="variable_template.html" title="cpp/language/variable template"> variable templates</a><span class="t-mark-rev t-since-cxx14">(C++14)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_argument_deduction.html" title="cpp/language/template argument deduction"> template argument deduction</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_specialization.html" title="cpp/language/template specialization"> explicit (full) specialization</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="partial_specialization.html" title="cpp/language/partial specialization"> partial specialization</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="dependent_name.html" title="cpp/language/dependent name"> dependent names</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="parameter_pack.html" title="cpp/language/parameter pack"> parameter packs</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="sizeof....html" title="cpp/language/sizeof..."><span class="t-lines"><span>sizeof...</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> fold-expressions</strong><span class="t-mark-rev t-since-cxx17">(C++17)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sfinae.html" title="cpp/language/sfinae"> SFINAE</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concepts.html" title="cpp/language/constraints"> Constraints and concepts</a><span class="t-mark-rev t-since-concepts-ts t-mark-ts">(concepts TS)</span> </td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Reduces (<a href="http%3A//en.wikipedia.com/wiki/Fold_%28higher-order_function%29" class="extiw" title="enwiki:Fold (higher-order function)">folds</a>) a <a href="parameter_pack.html" title="cpp/language/parameter pack">parameter pack</a> over a binary operator.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span>
+</h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>(</b></code> <span class="t-spar">pack</span> <span class="t-spar">op</span> <code><b>...</b></code> <code><b>)</b></code>
+</td>
+<td> (1)
+</td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>(</b></code> <code><b>...</b></code> <span class="t-spar">op</span> <span class="t-spar">pack</span> <code><b>)</b></code>
+</td>
+<td> (2)
+</td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>(</b></code> <span class="t-spar">pack</span> <span class="t-spar">op</span> <code><b>...</b></code> <span class="t-spar">op</span> <span class="t-spar">init</span> <code><b>)</b></code>
+</td>
+<td> (3)
+</td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>(</b></code> <span class="t-spar">init</span> <span class="t-spar">op</span> <code><b>...</b></code> <span class="t-spar">op</span> <span class="t-spar">pack</span> <code><b>)</b></code>
+</td>
+<td> (4)
+</td>
+<td> <span class="t-mark-rev t-since-cxx17">(since C++17)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">1)</span> unary right fold</div>
+<div class="t-li1">
+<span class="t-li">2)</span> unary left fold</div>
+<div class="t-li1">
+<span class="t-li">3)</span> binary right fold</div>
+<div class="t-li1">
+<span class="t-li">4)</span> binary left fold</div>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">op</span>
+</td>
+<td> -
+</td>
+<td>  any of the following 32 <i>binary</i> operators: <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">+</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">-</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">/</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">^</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">|</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&gt;</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;&lt;</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&gt;&gt;</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">+</span><span class="sy1">=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">-</span><span class="sy1">=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span><span class="sy1">=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">/</span><span class="sy1">=</span></span></span>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">%</span><span class="sy1">=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">^</span><span class="sy1">=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span><span class="sy1">=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">|</span><span class="sy1">=</span></span></span>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;&lt;=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&gt;&gt;=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">==</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">!</span><span class="sy1">=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&lt;=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy1">&gt;=</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;&amp;</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">||</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp">,</span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp">.<span class="sy2">*</span></span></span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span></span></span>. In a binary fold, both <span class="t-spar">op</span>s must be the same. <a href="operator_precedence.html" title="cpp/language/operator precedence">Precedence</a> of this operator relative to either <span class="t-spar">pack</span> or <span class="t-spar">init</span> expressions is the highest (equivalent to unary operators)
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">pack</span>
+</td>
+<td> -
+</td>
+<td>  any expression that contains an unexpanded <a href="parameter_pack.html" title="cpp/language/parameter pack">parameter pack</a>
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">init</span>
+</td>
+<td> -
+</td>
+<td>  any expression that does not contain an unexpanded <a href="parameter_pack.html" title="cpp/language/parameter pack">parameter pack</a>
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+<p>The instantiation of a <i>fold expression</i> expands the expression <code>e</code> as follows:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> Unary right fold <span class="texhtml" style="white-space: nowrap;">(E op ...)</span> becomes <span class="texhtml" style="white-space: nowrap;">E<span class="t-su t-su-b"><br>1</span> op (... op (E<span class="t-su"><br></span> op E<span class="t-su t-su-b"><br>N</span>))</span>
+</div>
+<div class="t-li1">
+<span class="t-li">2)</span> Unary left fold <span class="texhtml" style="white-space: nowrap;">(... op E)</span> becomes <span class="texhtml" style="white-space: nowrap;">((E<span class="t-su t-su-b"><br>1</span> op E<span class="t-su t-su-b"><br>2</span>) op ...) op E<span class="t-su t-su-b"><br>N</span></span>
+</div>
+<div class="t-li1">
+<span class="t-li">3)</span> Binary right fold <span class="texhtml" style="white-space: nowrap;">(E op ... op I)</span> becomes <span class="texhtml" style="white-space: nowrap;">E<span class="t-su t-su-b"><br>1</span> op (... op (E<span class="t-su t-su-b"><br>N−1</span> op (E<span class="t-su t-su-b"><br>N</span> op I)))</span>
+</div>
+<div class="t-li1">
+<span class="t-li">4)</span> Binary left fold <span class="texhtml" style="white-space: nowrap;">(I op ... op E)</span> becomes <span class="texhtml" style="white-space: nowrap;">(((I op E<span class="t-su t-su-b"><br>1</span>) op E<span class="t-su t-su-b"><br>2</span>) op ...) op E<span class="t-su t-su-b"><br>N</span></span>
+</div>
+<p>(where <span class="texhtml" style="white-space: nowrap;">N</span> is the number of elements in the pack expansion)
+</p>
+<p>For example, 
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+<span class="kw4">bool</span> all<span class="br0">(</span>Args... <span class="me1">args</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="br0">(</span>... <span class="sy3">&amp;&amp;</span> args<span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>
+ 
+<span class="kw4">bool</span> b <span class="sy1">=</span> all<span class="br0">(</span><span class="kw2">true</span>, <span class="kw2">true</span>, <span class="kw2">true</span>, <span class="kw2">false</span><span class="br0">)</span><span class="sy4">;</span>
+ <span class="co1">// within all(), the unary left fold expands as</span>
+ <span class="co1">//  return ((true &amp;&amp; true) &amp;&amp; true) &amp;&amp; false;</span>
+ <span class="co1">// b is false</span></pre></div></div>
+<p>When a unary fold is used with a pack expansion of length zero, only the following operators are allowed:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> Multiplication (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">*</span></span></span>). The value for the empty pack is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">1</span></span></span>
+</div>
+<div class="t-li1">
+<span class="t-li">2)</span> Addition (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">+</span></span></span>). The value for the empty pack is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span><span class="br0">(</span><span class="br0">)</span></span></span> (zero)</div>
+<div class="t-li1">
+<span class="t-li">3)</span> Bitwise AND (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;</span></span></span>). The value for the empty pack is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">-</span><span class="nu0">1</span></span></span> (bitwise all ones)</div>
+<div class="t-li1">
+<span class="t-li">4)</span> Bitwise OR (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">|</span></span></span>). The value for the empty pack is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span><span class="br0">(</span><span class="br0">)</span></span></span> (zero)</div>
+<div class="t-li1">
+<span class="t-li">5)</span> Logical AND (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;&amp;</span></span></span>). The value for the empty pack is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span>
+</div>
+<div class="t-li1">
+<span class="t-li">6)</span> Logical OR (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">||</span></span></span>). The value for the empty pack is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">false</span></span></span>
+</div>
+<div class="t-li1">
+<span class="t-li">7)</span> The comma operator (<span class="t-c"><span class="mw-geshi cpp source-cpp">,</span></span>). The value for the empty pack is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="br0">(</span><span class="br0">)</span></span></span>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> ...<span class="me1">Args</span><span class="sy1">&gt;</span>
+<span class="kw4">void</span> printer<span class="br0">(</span>Args<span class="sy3">&amp;&amp;</span>... <span class="me1">args</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="br0">(</span><a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> ... <span class="sy1">&lt;&lt;</span> args<span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    printer<span class="br0">(</span><span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span>, <span class="st0">"abc"</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">123abc</pre></div></div> 
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2339/1000000
+Preprocessor generated node count: 5723/1000000
+Post‐expand include size: 41971/2097152 bytes
+Template argument size: 9330/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13849-0!*!0!!*!*!* and timestamp 20150313154614 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/fold&amp;oldid=76816</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 4.548 secs. -->
+	</body>
+<!-- Cached 20150313154615 -->
+</html>

@@ -1,0 +1,17 @@
+#include<iostream>
+using namespace std;
+
+class X{};
+class Y : public virtual X{};
+class Z : public virtual X{};
+
+class A : public Y, public Z{};
+
+int main()
+{
+	cout << "size of X: " << sizeof(X) << endl
+		<< "size of Y: " << sizeof(Y) << endl
+		<< "size of Z: " << sizeof(Z) << endl
+		<< "size of A: " << sizeof(A) << endl;
+	return 0;
+}

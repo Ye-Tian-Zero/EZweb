@@ -1,0 +1,1333 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Standard library header &lt;functional&gt; - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/header/functional","wgTitle":"cpp/header/functional","wgCurRevisionId":57485,"wgArticleId":9770,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/header/functional","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_header_functional skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">
+<span style="font-size:0.7em; line-height:130%">Standard library header</span> &lt;functional&gt;</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../header.html" title="cpp/header">header</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../header.html" title="cpp/header"> Standard Library header files </a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Language Support</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cstddef.html" title="cpp/header/cstddef"><tt>&lt;cstddef&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="limits.html" title="cpp/header/limits"><tt>&lt;limits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="climits.html" title="cpp/header/climits"><tt>&lt;climits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cfloat.html" title="cpp/header/cfloat"><tt>&lt;cfloat&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdint.html" title="cpp/header/cstdint"><tt>&lt;cstdint&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="new.html" title="cpp/header/new"><tt>&lt;new&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="typeinfo.html" title="cpp/header/typeinfo"><tt>&lt;typeinfo&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="exception.html" title="cpp/header/exception"><tt>&lt;exception&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ciso646.html" title="cpp/header/ciso646"><tt>&lt;ciso646&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="initializer_list.html" title="cpp/header/initializer list"><tt>&lt;initializer_list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="csignal.html" title="cpp/header/csignal"><tt>&lt;csignal&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="csetjmp.html" title="cpp/header/csetjmp"><tt>&lt;csetjmp&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdalign.html" title="cpp/header/cstdalign"><tt>&lt;cstdalign&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdarg.html" title="cpp/header/cstdarg"><tt>&lt;cstdarg&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdbool.html" title="cpp/header/cstdbool"><tt>&lt;cstdbool&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Diagnostics</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="stdexcept.html" title="cpp/header/stdexcept"><tt>&lt;stdexcept&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cassert.html" title="cpp/header/cassert"><tt>&lt;cassert&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cerrno.html" title="cpp/header/cerrno"><tt>&lt;cerrno&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="system_error.html" title="cpp/header/system error"><tt>&lt;system_error&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> General utilities</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/header/utility"><tt>&lt;utility&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="tuple.html" title="cpp/header/tuple"><tt>&lt;tuple&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bitset.html" title="cpp/header/bitset"><tt>&lt;bitset&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory.html" title="cpp/header/memory"><tt>&lt;memory&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"><tt>&lt;functional&gt;</tt></strong>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="type_traits.html" title="cpp/header/type traits"><tt>&lt;type_traits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ratio.html" title="cpp/header/ratio"><tt>&lt;ratio&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="chrono.html" title="cpp/header/chrono"><tt>&lt;chrono&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scoped_allocator.html" title="cpp/header/scoped allocator"><tt>&lt;scoped_allocator&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="typeindex.html" title="cpp/header/typeindex"><tt>&lt;typeindex&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Strings</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/header/string"><tt>&lt;string&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cctype.html" title="cpp/header/cctype"><tt>&lt;cctype&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cwctype.html" title="cpp/header/cwctype"><tt>&lt;cwctype&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cwchar.html" title="cpp/header/cwchar"><tt>&lt;cwchar&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cuchar.html" title="cpp/header/cuchar"><tt>&lt;cuchar&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Localization</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+</table></div>
+</div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Containers</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="array.html" title="cpp/header/array"><tt>&lt;array&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="deque.html" title="cpp/header/deque"><tt>&lt;deque&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="forward_list.html" title="cpp/header/forward list"><tt>&lt;forward_list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="list.html" title="cpp/header/list"><tt>&lt;list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="vector.html" title="cpp/header/vector"><tt>&lt;vector&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="map.html" title="cpp/header/map"><tt>&lt;map&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="set.html" title="cpp/header/set"><tt>&lt;set&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unordered_map.html" title="cpp/header/unordered map"><tt>&lt;unordered_map&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unordered_set.html" title="cpp/header/unordered set"><tt>&lt;unordered_set&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="queue.html" title="cpp/header/queue"><tt>&lt;queue&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="stack.html" title="cpp/header/stack"><tt>&lt;stack&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Iterators</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/header/iterator"><tt>&lt;iterator&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Algorithms</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/header/algorithm"><tt>&lt;algorithm&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Numerics</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cfenv.html" title="cpp/header/cfenv"><tt>&lt;cfenv&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="complex.html" title="cpp/header/complex"><tt>&lt;complex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="random.html" title="cpp/header/random"><tt>&lt;random&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="valarray.html" title="cpp/header/valarray"><tt>&lt;valarray&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/header/numeric"><tt>&lt;numeric&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cmath.html" title="cpp/header/cmath"><tt>&lt;cmath&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ctgmath.html" title="cpp/header/ctgmath"><tt>&lt;ctgmath&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Input/Output</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="iosfwd.html" title="cpp/header/iosfwd"><tt>&lt;iosfwd&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iostream.html" title="cpp/header/iostream"><tt>&lt;iostream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ios.html" title="cpp/header/ios"><tt>&lt;ios&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="streambuf.html" title="cpp/header/streambuf"><tt>&lt;streambuf&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="istream.html" title="cpp/header/istream"><tt>&lt;istream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ostream.html" title="cpp/header/ostream"><tt>&lt;ostream&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="iomanip.html" title="cpp/header/iomanip"><tt>&lt;iomanip&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sstream.html" title="cpp/header/sstream"><tt>&lt;sstream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fstream.html" title="cpp/header/fstream"><tt>&lt;fstream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdio.html" title="cpp/header/cstdio"><tt>&lt;cstdio&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cinttypes.html" title="cpp/header/cinttypes"><tt>&lt;cinttypes&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Regular expressions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/header/regex"><tt>&lt;regex&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Thread support</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/header/thread"><tt>&lt;thread&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="mutex.html" title="cpp/header/mutex"><tt>&lt;mutex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/header/atomic"><tt>&lt;atomic&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="shared_mutex.html" title="cpp/header/shared mutex"><tt>&lt;shared_mutex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="condition_variable.html" title="cpp/header/condition variable"><tt>&lt;condition_variable&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="future.html" title="cpp/header/future"><tt>&lt;future&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>This header is part of the <a href="../utility/functional.html" title="cpp/utility/functional">function objects</a> library and provides the standard <a href="../utility/hash.html" title="cpp/utility/hash">hash function</a>.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1">
+<a href="functional.html#Namespaces"><span class="tocnumber">1</span> <span class="toctext">Namespaces</span></a>
+<ul>
+<li class="toclevel-2"><a href="functional.html#Constants"><span class="tocnumber">1.1</span> <span class="toctext">Constants</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-2">
+<a href="functional.html#Classes"><span class="tocnumber">2</span> <span class="toctext">Classes</span></a>
+<ul>
+<li class="toclevel-2"><a href="functional.html#Hashing"><span class="tocnumber">2.1</span> <span class="toctext">Hashing</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-3"><a href="functional.html#Functions"><span class="tocnumber">3</span> <span class="toctext">Functions</span></a></li>
+<li class="toclevel-1 tocsection-4">
+<a href="functional.html#Function_Objects"><span class="tocnumber">4</span> <span class="toctext">Function Objects</span></a>
+<ul>
+<li class="toclevel-2"><a href="functional.html#Arithmetic_operations"><span class="tocnumber">4.1</span> <span class="toctext">Arithmetic operations</span></a></li>
+<li class="toclevel-2"><a href="functional.html#Comparisons"><span class="tocnumber">4.2</span> <span class="toctext">Comparisons</span></a></li>
+<li class="toclevel-2"><a href="functional.html#Logical_operations"><span class="tocnumber">4.3</span> <span class="toctext">Logical operations</span></a></li>
+<li class="toclevel-2"><a href="functional.html#Bitwise_operations"><span class="tocnumber">4.4</span> <span class="toctext">Bitwise operations</span></a></li>
+<li class="toclevel-2"><a href="functional.html#Negators"><span class="tocnumber">4.5</span> <span class="toctext">Negators</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-5">
+<a href="functional.html#Deprecated_in_C.2B.2B11"><span class="tocnumber">5</span> <span class="toctext">Deprecated in C++11</span></a>
+<ul>
+<li class="toclevel-2"><a href="functional.html#Base"><span class="tocnumber">5.1</span> <span class="toctext">Base</span></a></li>
+<li class="toclevel-2"><a href="functional.html#Binders"><span class="tocnumber">5.2</span> <span class="toctext">Binders</span></a></li>
+<li class="toclevel-2"><a href="functional.html#Function_adaptors"><span class="tocnumber">5.3</span> <span class="toctext">Function adaptors</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6">
+<a href="functional.html#Synopsis"><span class="tocnumber">6</span> <span class="toctext">Synopsis</span></a>
+<ul>
+<li class="toclevel-2 tocsection-7"><a href="functional.html#Class_std%3A%3Areference_wrapper"><span class="tocnumber">6.1</span> <span class="toctext">Class <span>std::reference_wrapper</span></span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="functional.html#Class_std%3A%3Ais_bind_expression"><span class="tocnumber">6.2</span> <span class="toctext">Class <span>std::is_bind_expression</span></span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="functional.html#Class_std%3A%3Abad_function_call"><span class="tocnumber">6.3</span> <span class="toctext">Class <span>std::bad_function_call</span></span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="functional.html#Class_std%3A%3Afunction"><span class="tocnumber">6.4</span> <span class="toctext">Class <span>std::function</span></span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-11"><a href="functional.html#See_Also"><span class="tocnumber">7</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Namespaces">edit</a>]</span> <span class="mw-headline" id="Namespaces">Namespaces</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td> <a href="../utility/functional/placeholders.html" title="cpp/utility/functional/placeholders">placeholders</a>
+</td>
+<td>  Defines placeholders for the unbound arguments in a std::bind expression
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Constants"> Constants </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in  namespace <code>std::placeholders</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/placeholders.html" title="cpp/utility/functional/placeholders"> <span class="t-lines"><span>_1, _2, _3, _4, ...</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>  placeholders for the unbound arguments in a <code>std::bind</code> expression  <br> <span class="t-mark">(constant)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Classes">edit</a>]</span> <span class="mw-headline" id="Classes">Classes</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/function.html" title="cpp/utility/functional/function"> <span class="t-lines"><span>function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   wraps callable object of any type with specified function call signature  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/mem_fn.html" title="cpp/utility/functional/mem fn"> <span class="t-lines"><span>mem_fn</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   creates a function object out of a pointer to a member  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/bad_function_call.html" title="cpp/utility/functional/bad function call"> <span class="t-lines"><span>bad_function_call</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   the exception thrown when invoking an empty <span class="t-lc"><a href="../utility/functional/function.html" title="cpp/utility/functional/function">std::function</a></span>  <br> <span class="t-mark">(class)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/is_bind_expression.html" title="cpp/utility/functional/is bind expression"> <span class="t-lines"><span>is_bind_expression</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   indicates that an object is <code>std::bind</code> expression or can be used as one  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/is_placeholder.html" title="cpp/utility/functional/is placeholder"> <span class="t-lines"><span>is_placeholder</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   indicates that an object is a standard placeholder or can be used as one  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/reference_wrapper.html" title="cpp/utility/functional/reference wrapper"> <span class="t-lines"><span>reference_wrapper</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   <a href="../concept/CopyConstructible.html" title="cpp/concept/CopyConstructible"><code>CopyConstructible</code></a> and <a href="../concept/CopyAssignable.html" title="cpp/concept/CopyAssignable"><code>CopyAssignable</code></a> reference wrapper  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Hashing"> Hashing </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/hash.html" title="cpp/utility/hash"> <span class="t-lines"><span>hash</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   hash function object  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<p><span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">signed</span> <span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">char16_t</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">short</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">short</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">long</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">long</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">long</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">float</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">double</span><span class="sy1">&gt;</span><span class="sy4">;</span><br>
+<span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T <span class="sy1">&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span>T<span class="sy2">*</span><span class="sy1">&gt;</span><span class="sy4">;</span></p></span></span>
+
+</td>
+<td>  <span class="t-lc"><a href="../utility/hash.html" title="cpp/utility/hash">std::hash</a></span> specializations for built-in types <br> <span class="t-mark">(class template specialization)</span>
+</td>
+</tr>
+
+
+</table>
+<p><br>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Functions">edit</a>]</span> <span class="mw-headline" id="Functions">Functions</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/bind.html" title="cpp/utility/functional/bind"> <span class="t-lines"><span>bind</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   binds one or more arguments to a function object  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/ref.html" title="cpp/utility/functional/ref"> <span class="t-lines"><span>ref</span><span>cref</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   creates a <span class="t-lc"><a href="../utility/functional/reference_wrapper.html" title="cpp/utility/functional/reference wrapper">std::reference_wrapper</a></span> with a type deduced from its argument  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+</table>
+<p><br>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Function Objects">edit</a>]</span> <span class="mw-headline" id="Function_Objects">Function Objects</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Arithmetic_operations">  Arithmetic operations </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/plus.html" title="cpp/utility/functional/plus"> <span class="t-lines"><span>plus</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy2">+</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/minus.html" title="cpp/utility/functional/minus"> <span class="t-lines"><span>minus</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy2">-</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/multiplies.html" title="cpp/utility/functional/multiplies"> <span class="t-lines"><span>multiplies</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy2">*</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/divides.html" title="cpp/utility/functional/divides"> <span class="t-lines"><span>divides</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy2">/</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/modulus.html" title="cpp/utility/functional/modulus"> <span class="t-lines"><span>modulus</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy2">%</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/negate.html" title="cpp/utility/functional/negate"> <span class="t-lines"><span>negate</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">-</span>x</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Comparisons">  Comparisons  </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/equal_to.html" title="cpp/utility/functional/equal to"> <span class="t-lines"><span>equal_to</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy1">==</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/not_equal_to.html" title="cpp/utility/functional/not equal to"> <span class="t-lines"><span>not_equal_to</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy3">!</span><span class="sy1">=</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/greater.html" title="cpp/utility/functional/greater"> <span class="t-lines"><span>greater</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy1">&gt;</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/less.html" title="cpp/utility/functional/less"> <span class="t-lines"><span>less</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy1">&lt;</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/greater_equal.html" title="cpp/utility/functional/greater equal"> <span class="t-lines"><span>greater_equal</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy1">&gt;=</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/less_equal.html" title="cpp/utility/functional/less equal"> <span class="t-lines"><span>less_equal</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy1">&lt;=</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Logical_operations">  Logical operations  </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/logical_and.html" title="cpp/utility/functional/logical and"> <span class="t-lines"><span>logical_and</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy3">&amp;&amp;</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/logical_or.html" title="cpp/utility/functional/logical or"> <span class="t-lines"><span>logical_or</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy3">||</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/logical_not.html" title="cpp/utility/functional/logical not"> <span class="t-lines"><span>logical_not</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">!</span>x</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Bitwise_operations">  Bitwise operations  </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/bit_and.html" title="cpp/utility/functional/bit and"> <span class="t-lines"><span>bit_and</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy3">&amp;</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/bit_or.html" title="cpp/utility/functional/bit or"> <span class="t-lines"><span>bit_or</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy3">|</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/bit_xor.html" title="cpp/utility/functional/bit xor"> <span class="t-lines"><span>bit_xor</span></span></a></div></div>
+</td>
+<td>   function object implementing <span class="t-c"><span class="mw-geshi cpp source-cpp">x <span class="sy3">^</span> y</span></span>  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Negators">  Negators  </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/unary_negate.html" title="cpp/utility/functional/unary negate"> <span class="t-lines"><span>unary_negate</span></span></a></div></div>
+</td>
+<td>   wrapper function object returning the complement of the unary predicate it holds  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/binary_negate.html" title="cpp/utility/functional/binary negate"> <span class="t-lines"><span>binary_negate</span></span></a></div></div>
+</td>
+<td>   wrapper function object returning the complement of the binary predicate it holds  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/not1.html" title="cpp/utility/functional/not1"> <span class="t-lines"><span>not1</span></span></a></div></div>
+</td>
+<td>   constructs custom <span class="t-lc"><a href="../utility/functional/unary_negate.html" title="cpp/utility/functional/unary negate">std::unary_negate</a></span> object  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../utility/functional/not2.html" title="cpp/utility/functional/not2"> <span class="t-lines"><span>not2</span></span></a></div></div>
+</td>
+<td>   constructs custom <span class="t-lc"><a href="../utility/functional/binary_negate.html" title="cpp/utility/functional/binary negate">std::binary_negate</a></span> object  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Deprecated in C++11">edit</a>]</span> <span class="mw-headline" id="Deprecated_in_C.2B.2B11">Deprecated in C++11</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Base">  Base </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/unary_function.html" title="cpp/utility/functional/unary function"> <span class="t-lines"><span>unary_function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   adaptor-compatible unary function base class  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/binary_function.html" title="cpp/utility/functional/binary function"> <span class="t-lines"><span>binary_function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   adaptor-compatible binary function base class   <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Binders">  Binders </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/binder12.html" title="cpp/utility/functional/binder12"> <span class="t-lines"><span>binder1st</span><span>binder2nd</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   function object holding a binary function and one of its arguments  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/bind12.html" title="cpp/utility/functional/bind12"> <span class="t-lines"><span>bind1st</span><span>bind2nd</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   binds one argument to a binary function  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Function_adaptors">  Function adaptors </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/pointer_to_unary_function.html" title="cpp/utility/functional/pointer to unary function"> <span class="t-lines"><span>pointer_to_unary_function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   adaptor-compatible wrapper for a pointer to unary function  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/pointer_to_binary_function.html" title="cpp/utility/functional/pointer to binary function"> <span class="t-lines"><span>pointer_to_binary_function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   adaptor-compatible wrapper for a pointer to binary function  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/ptr_fun.html" title="cpp/utility/functional/ptr fun"> <span class="t-lines"><span>ptr_fun</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   creates an adaptor-compatible function object wrapper from a pointer to function  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/mem_fun_t.html" title="cpp/utility/functional/mem fun t"> <span class="t-lines"><span>mem_fun_t</span><span>mem_fun1_t</span><span>const_mem_fun_t</span><span>const_mem_fun1_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   wrapper for a pointer to nullary or unary member function, callable with a pointer to object  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/mem_fun.html" title="cpp/utility/functional/mem fun"> <span class="t-lines"><span>mem_fun</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   creates a wrapper from a pointer to member function, callable with a pointer to object <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/mem_fun_ref_t.html" title="cpp/utility/functional/mem fun ref t"> <span class="t-lines"><span>mem_fun_ref_t</span><span>mem_fun1_ref_t</span><span>const_mem_fun_ref_t</span><span>const_mem_fun1_ref_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   wapper for a pointer to nullary or unary member function, callable with a reference to object  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../utility/functional/mem_fun_ref.html" title="cpp/utility/functional/mem fun ref"> <span class="t-lines"><span>mem_fun_ref</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div>
+</td>
+<td>   creates a wrapper from a pointer to member function, callable with a reference to object <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Synopsis">edit</a>]</span> <span class="mw-headline" id="Synopsis">Synopsis</span>
+</h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">namespace</span> std <span class="br0">{</span>
+ 
+    <span class="co1">// base (deprecated):</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Arg, <span class="kw1">class</span> Result<span class="sy1">&gt;</span> <span class="kw1">struct</span> unary_function<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Arg1, <span class="kw1">class</span> Arg2, <span class="kw1">class</span> Result<span class="sy1">&gt;</span> <span class="kw1">struct</span> binary_function<span class="sy4">;</span>
+ 
+    <span class="co1">// reference_wrapper:</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> reference_wrapper<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> reference_wrapper<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> ref<span class="br0">(</span>T<span class="sy3">&amp;</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> reference_wrapper<span class="sy1">&lt;</span><span class="kw4">const</span> T<span class="sy1">&gt;</span> cref<span class="br0">(</span><span class="kw4">const</span> T<span class="sy3">&amp;</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">void</span> ref<span class="br0">(</span><span class="kw4">const</span> T<span class="sy3">&amp;&amp;</span><span class="br0">)</span> <span class="sy1">=</span> delete<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">void</span> cref<span class="br0">(</span><span class="kw4">const</span> T<span class="sy3">&amp;&amp;</span><span class="br0">)</span> <span class="sy1">=</span> delete<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> reference_wrapper<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> ref<span class="br0">(</span>reference_wrapper<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> reference_wrapper<span class="sy1">&lt;</span><span class="kw4">const</span> T<span class="sy1">&gt;</span> cref<span class="br0">(</span>reference_wrapper<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+ 
+    <span class="co1">// arithmetic operations:</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> plus<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> minus<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> multiplies<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> divides<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> modulus<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> negate<span class="sy4">;</span>
+ 
+    <span class="co1">// comparisons:</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> equal_to<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> not_equal_to<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> greater<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> less<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> greater_equal<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> less_equal<span class="sy4">;</span>
+ 
+    <span class="co1">// logical operations:</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> logical_and<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> logical_or<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> logical_not<span class="sy4">;</span>
+ 
+    <span class="co1">// bitwise operations:</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> bit_and<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> bit_or<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> bit_xor<span class="sy4">;</span>
+ 
+    <span class="co1">// negators:</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Predicate<span class="sy1">&gt;</span> <span class="kw1">class</span> unary_negate<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Predicate<span class="sy1">&gt;</span>
+        unary_negate<span class="sy1">&lt;</span>Predicate<span class="sy1">&gt;</span> 
+        not1<span class="br0">(</span><span class="kw4">const</span> Predicate<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Predicate<span class="sy1">&gt;</span>  <span class="kw1">class</span> binary_negate<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Predicate<span class="sy1">&gt;</span>
+        binary_negate<span class="sy1">&lt;</span>Predicate<span class="sy1">&gt;</span>
+        not2<span class="br0">(</span><span class="kw4">const</span> Predicate<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// bind:</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> is_bind_expression<span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> is_placeholder<span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span>  F, <span class="kw1">class</span>... <span class="me1">BoundArgs</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> bind<span class="br0">(</span>F<span class="sy3">&amp;&amp;</span>, BoundArgs<span class="sy3">&amp;&amp;</span>...<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span>  R, <span class="kw1">class</span> F, <span class="kw1">class</span>... <span class="me1">BoundArgs</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> bind<span class="br0">(</span>F<span class="sy3">&amp;&amp;</span>, BoundArgs<span class="sy3">&amp;&amp;</span>...<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw1">namespace</span> placeholders <span class="br0">{</span>
+        <span class="co1">// M is the implementation-defined number of placeholders</span>
+        <span class="kw4">extern</span> <span class="coMULTI">/*unspecified*/</span> _1<span class="sy4">;</span>
+        <span class="kw4">extern</span> <span class="coMULTI">/*unspecified*/</span> _2<span class="sy4">;</span>
+        .
+        .
+        .
+        <span class="kw4">extern</span> <span class="coMULTI">/*unspecified*/</span> _M<span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    <span class="co1">// binders (deprecated):</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Fn<span class="sy1">&gt;</span> <span class="kw1">class</span> binder1st<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Fn, <span class="kw1">class</span> T<span class="sy1">&gt;</span>
+        binder1st<span class="sy1">&lt;</span>Fn<span class="sy1">&gt;</span> bind1st<span class="br0">(</span><span class="kw4">const</span> Fn<span class="sy3">&amp;</span>, <span class="kw4">const</span> T<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Fn<span class="sy1">&gt;</span> <span class="kw1">class</span> binder2nd<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Fn, <span class="kw1">class</span> T<span class="sy1">&gt;</span>
+        binder2nd<span class="sy1">&lt;</span>Fn<span class="sy1">&gt;</span> bind2nd<span class="br0">(</span><span class="kw4">const</span> Fn<span class="sy3">&amp;</span>, <span class="kw4">const</span> T<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// adaptors (deprecated):</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Arg, <span class="kw1">class</span> Result<span class="sy1">&gt;</span> <span class="kw1">class</span> pointer_to_unary_function<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Arg, <span class="kw1">class</span> Result<span class="sy1">&gt;</span>
+        pointer_to_unary_function<span class="sy1">&lt;</span>Arg,Result<span class="sy1">&gt;</span> ptr_fun<span class="br0">(</span>Result <span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Arg<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Arg1, <span class="kw1">class</span> Arg2, <span class="kw1">class</span> Result<span class="sy1">&gt;</span>
+        <span class="kw1">class</span> pointer_to_binary_function<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> Arg1, <span class="kw1">class</span> Arg2, <span class="kw1">class</span> Result<span class="sy1">&gt;</span>
+        pointer_to_binary_function<span class="sy1">&lt;</span>Arg1,Arg2,Result<span class="sy1">&gt;</span>
+        ptr_fun<span class="br0">(</span>Result <span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Arg1,Arg2<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// adaptors (deprecated):</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> mem_fun_t<span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T, <span class="kw1">class</span> A<span class="sy1">&gt;</span> <span class="kw1">class</span> mem_fun1_t<span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T<span class="sy1">&gt;</span>
+        mem_fun_t<span class="sy1">&lt;</span>S,T<span class="sy1">&gt;</span> mem_fun<span class="br0">(</span>S <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T, <span class="kw1">class</span> A<span class="sy1">&gt;</span>
+        mem_fun1_t<span class="sy1">&lt;</span>S,T,A<span class="sy1">&gt;</span> mem_fun<span class="br0">(</span>S <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span>A<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> mem_fun_ref_t<span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T, <span class="kw1">class</span> A<span class="sy1">&gt;</span> <span class="kw1">class</span> mem_fun1_ref_t<span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T<span class="sy1">&gt;</span>
+        mem_fun_ref_t<span class="sy1">&lt;</span>S,T<span class="sy1">&gt;</span> mem_fun_ref<span class="br0">(</span>S <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T, <span class="kw1">class</span> A<span class="sy1">&gt;</span>
+        mem_fun1_ref_t<span class="sy1">&lt;</span>S,T,A<span class="sy1">&gt;</span> mem_fun_ref<span class="br0">(</span>S <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span>A<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> const_mem_fun_t<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T, <span class="kw1">class</span> A<span class="sy1">&gt;</span> <span class="kw1">class</span> const_mem_fun1_t<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T<span class="sy1">&gt;</span>
+        const_mem_fun_t<span class="sy1">&lt;</span>S,T<span class="sy1">&gt;</span> mem_fun<span class="br0">(</span>S <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T, <span class="kw1">class</span> A<span class="sy1">&gt;</span>
+        const_mem_fun1_t<span class="sy1">&lt;</span>S,T,A<span class="sy1">&gt;</span> mem_fun<span class="br0">(</span>S <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span>A<span class="br0">)</span> <span class="kw4">const</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> const_mem_fun_ref_t<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T, <span class="kw1">class</span> A<span class="sy1">&gt;</span> <span class="kw1">class</span> const_mem_fun1_ref_t<span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T<span class="sy1">&gt;</span>
+        const_mem_fun_ref_t<span class="sy1">&lt;</span>S,T<span class="sy1">&gt;</span> mem_fun_ref<span class="br0">(</span>S <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> S, <span class="kw1">class</span> T, <span class="kw1">class</span> A<span class="sy1">&gt;</span>
+        const_mem_fun1_ref_t<span class="sy1">&lt;</span>S,T,A<span class="sy1">&gt;</span> mem_fun_ref<span class="br0">(</span>S <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span>A<span class="br0">)</span> <span class="kw4">const</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// member function adaptors:</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="kw4">const</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="kw4">volatile</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="kw4">const</span> <span class="kw4">volatile</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="kw4">const</span> <span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="kw4">volatile</span> <span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="kw4">const</span> <span class="kw4">volatile</span> <span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="sy3">&amp;&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="kw4">const</span> <span class="sy3">&amp;&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="kw4">volatile</span> <span class="sy3">&amp;&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span> T, <span class="kw1">class</span>... <span class="me1">Args</span><span class="sy1">&gt;</span>
+        <span class="coMULTI">/*unspecified*/</span> mem_fn<span class="br0">(</span>R <span class="br0">(</span>T<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">(</span>Args...<span class="br0">)</span> <span class="kw4">const</span> <span class="kw4">volatile</span> <span class="sy3">&amp;&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// polymorphic function wrappers:</span>
+    <span class="kw1">class</span> bad_function_call<span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span><span class="sy1">&gt;</span> <span class="kw1">class</span> function<span class="sy4">;</span> <span class="co1">// undefined</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span>... <span class="me1">ArgTypes</span><span class="sy1">&gt;</span> <span class="kw1">class</span> function<span class="sy1">&lt;</span>R<span class="br0">(</span>ArgTypes...<span class="br0">)</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span>... <span class="me1">ArgTypes</span><span class="sy1">&gt;</span>
+        <span class="kw4">void</span> swap<span class="br0">(</span>function<span class="sy1">&lt;</span>R<span class="br0">(</span>ArgTypes...<span class="br0">)</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span>, function<span class="sy1">&lt;</span>R<span class="br0">(</span>ArgTypes...<span class="br0">)</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span>... <span class="me1">ArgTypes</span><span class="sy1">&gt;</span>
+        <span class="kw4">bool</span> operator<span class="sy1">==</span><span class="br0">(</span><span class="kw4">const</span> function<span class="sy1">&lt;</span>R<span class="br0">(</span>ArgTypes...<span class="br0">)</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span>, nullptr_t<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span>... <span class="me1">ArgTypes</span><span class="sy1">&gt;</span>
+        <span class="kw4">bool</span> operator<span class="sy1">==</span><span class="br0">(</span>nullptr_t, <span class="kw4">const</span> function<span class="sy1">&lt;</span>R<span class="br0">(</span>ArgTypes...<span class="br0">)</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span>... <span class="me1">ArgTypes</span><span class="sy1">&gt;</span>
+        <span class="kw4">bool</span> operator<span class="sy3">!</span><span class="sy1">=</span><span class="br0">(</span><span class="kw4">const</span> function<span class="sy1">&lt;</span>R<span class="br0">(</span>ArgTypes...<span class="br0">)</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span>, nullptr_t<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span>... <span class="me1">ArgTypes</span><span class="sy1">&gt;</span>
+        <span class="kw4">bool</span> operator<span class="sy3">!</span><span class="sy1">=</span><span class="br0">(</span>nullptr_t, <span class="kw4">const</span> function<span class="sy1">&lt;</span>R<span class="br0">(</span>ArgTypes...<span class="br0">)</span><span class="sy1">&gt;</span><span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// hash function base template:</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> hash<span class="sy4">;</span>
+ 
+    <span class="co1">// Hash function specializations</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">signed</span> <span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">char</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">char16_t</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">char32_t</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">wchar_t</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">short</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">short</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">int</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">long</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">long</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">long</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">float</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span><span class="kw4">long</span> <span class="kw4">double</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> hash<span class="sy1">&lt;</span>T<span class="sy2">*</span><span class="sy1">&gt;</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span></pre></div></div>
+<p><br>
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::reference wrapper">edit</a>]</span> <span class="mw-headline" id="Class_std::reference_wrapper">Class <span class="t-lc"><a href="../utility/functional/reference_wrapper.html" title="cpp/utility/functional/reference wrapper">std::reference_wrapper</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> reference_wrapper <span class="br0">{</span>
+<span class="kw1">public</span> <span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> T type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*Return type of T*/</span>     result_type<span class="sy4">;</span>          <span class="co1">// not always defined</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*Single argument of T*/</span> argument_type<span class="sy4">;</span>        <span class="co1">// not always defined</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*1st argument of T*/</span>    first_argument_type<span class="sy4">;</span>  <span class="co1">// not always defined</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*2nd argument of T*/</span>    second_argument_type<span class="sy4">;</span> <span class="co1">// not always defined</span>
+ 
+    <span class="co1">// construct/copy/destroy</span>
+    reference_wrapper<span class="br0">(</span>T<span class="sy3">&amp;</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    reference_wrapper<span class="br0">(</span>T<span class="sy3">&amp;&amp;</span><span class="br0">)</span> <span class="sy1">=</span> delete<span class="sy4">;</span>
+ 
+    <span class="co1">// do not bind to temporary objects</span>
+    reference_wrapper<span class="br0">(</span><span class="kw4">const</span> reference_wrapper<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> x<span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+ 
+    <span class="co1">// assignment</span>
+    reference_wrapper<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span><span class="kw4">const</span> reference_wrapper<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy3">&amp;</span> x<span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+ 
+    <span class="co1">// access</span>
+    operator T<span class="sy3">&amp;</span> <span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    T<span class="sy3">&amp;</span> get<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+ 
+    <span class="co1">// invocation</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span>... <span class="me1">ArgTypes</span><span class="sy1">&gt;</span>
+        <span class="kw1">typename</span> result_of<span class="sy1">&lt;</span>T<span class="sy3">&amp;</span><span class="br0">(</span>ArgTypes<span class="sy3">&amp;&amp;</span>...<span class="br0">)</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span>
+        operator<span class="br0">(</span><span class="br0">)</span> <span class="br0">(</span>ArgTypes<span class="sy3">&amp;&amp;</span>...<span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::is bind expression">edit</a>]</span> <span class="mw-headline" id="Class_std::is_bind_expression">Class <span class="t-lc"><a href="../utility/functional/is_bind_expression.html" title="cpp/utility/functional/is bind expression">std::is_bind_expression</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> is_bind_expression
+    <span class="sy4">:</span> integral_constant<span class="sy1">&lt;</span><span class="kw4">bool</span>, <span class="coMULTI">/*true</span></pre></div></div>
+<p><br>
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::bad function call">edit</a>]</span> <span class="mw-headline" id="Class_std::bad_function_call">Class <span class="t-lc"><a href="../utility/functional/bad_function_call.html" title="cpp/utility/functional/bad function call">std::bad_function_call</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> bad_function_call <span class="sy4">:</span> <span class="kw1">public</span> <a href="../error/exception.html"><span class="kw611">std::<span class="me2">exception</span></span></a> <span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// constructor:</span>
+    bad_function_call<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::function">edit</a>]</span> <span class="mw-headline" id="Class_std::function">Class <span class="t-lc"><a href="../utility/functional/function.html" title="cpp/utility/functional/function">std::function</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span><span class="sy1">&gt;</span> <span class="kw1">class</span> function<span class="sy4">;</span> <span class="co1">// undefined</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> R, <span class="kw1">class</span>... <span class="me1">ArgTypes</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> function<span class="sy1">&lt;</span>R<span class="br0">(</span>ArgTypes...<span class="br0">)</span><span class="sy1">&gt;</span> <span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw1">typedef</span> R result_type<span class="sy4">;</span>      
+    <span class="kw1">typedef</span> T1 argument_type<span class="sy4">;</span>       <span class="co1">//  iff sizeof...(ArgTypes) == 1 and</span>
+                                    <span class="co1">//  the type in ArgTypes is T1</span>
+    <span class="kw1">typedef</span> T1 first_argument_type<span class="sy4">;</span> <span class="co1">//  iff sizeof...(ArgTypes) == 2 and</span>
+                                    <span class="co1">//  ArgTypes contains T1 and T2</span>
+    <span class="kw1">typedef</span> T2 second_argument_type<span class="sy4">;</span><span class="co1">//  iff sizeof...(ArgTypes) == 2 and</span>
+                                    <span class="co1">//  ArgTypes contains T1 and T2</span>
+ 
+    <span class="co1">// construct/copy/destroy:</span>
+    function<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    function<span class="br0">(</span>nullptr_t<span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    function<span class="br0">(</span><span class="kw4">const</span> function<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    function<span class="br0">(</span>function<span class="sy3">&amp;&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> F<span class="sy1">&gt;</span> function<span class="br0">(</span>F<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> A<span class="sy1">&gt;</span> function<span class="br0">(</span>allocator_arg_t, <span class="kw4">const</span> A<span class="sy3">&amp;</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> A<span class="sy1">&gt;</span> function<span class="br0">(</span>allocator_arg_t, <span class="kw4">const</span> A<span class="sy3">&amp;</span>, nullptr_t<span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> A<span class="sy1">&gt;</span> function<span class="br0">(</span>allocator_arg_t, <span class="kw4">const</span> A<span class="sy3">&amp;</span>, <span class="kw4">const</span> function<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> A<span class="sy1">&gt;</span> function<span class="br0">(</span>allocator_arg_t, <span class="kw4">const</span> A<span class="sy3">&amp;</span>, function<span class="sy3">&amp;&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> F, <span class="kw1">class</span> A<span class="sy1">&gt;</span> function<span class="br0">(</span>allocator_arg_t, <span class="kw4">const</span> A<span class="sy3">&amp;</span>, F<span class="br0">)</span><span class="sy4">;</span>
+ 
+    function<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span><span class="kw4">const</span> function<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    function<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span>function<span class="sy3">&amp;&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    function<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span>nullptr_t<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> F<span class="sy1">&gt;</span> function<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span>F<span class="sy3">&amp;&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> F<span class="sy1">&gt;</span> function<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span>reference_wrapper<span class="sy1">&lt;</span>F<span class="sy1">&gt;</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+ 
+    ~function<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// function modifiers:</span>
+    <span class="kw4">void</span> swap<span class="br0">(</span>function<span class="sy3">&amp;</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> F, <span class="kw1">class</span> A<span class="sy1">&gt;</span> <span class="kw4">void</span> assign<span class="br0">(</span>F<span class="sy3">&amp;&amp;</span>, <span class="kw4">const</span> A<span class="sy3">&amp;</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// function capacity:</span>
+    <span class="kw1">explicit</span> operator <span class="kw4">bool</span><span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+ 
+    <span class="co1">// function invocation:</span>
+    R operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>ArgTypes...<span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+ 
+    <span class="co1">// function target access:</span>
+    <span class="kw4">const</span> <a href="../types/type_info.html"><span class="kw437">std::<span class="me2">type_info</span></span></a><span class="sy3">&amp;</span> target_type<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>       T<span class="sy2">*</span> target<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span> <span class="kw4">const</span> T<span class="sy2">*</span> target<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+ 
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p><br>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See Also">edit</a>]</span> <span class="mw-headline" id="See_Also">See Also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td> <a href="string.html" title="cpp/header/string"><tt>&lt;string&gt;</tt></a>
+</td>
+<td> Specializes <span class="t-lc"><a href="../utility/hash.html" title="cpp/utility/hash">std::hash</a></span> for <span class="t-lc"><a href="../string/basic_string.html" title="cpp/string/basic string">std::string</a></span>, <span class="t-lc"><a href="../string/basic_string.html" title="cpp/string/basic string">std::u16string</a></span>,  <span class="t-lc"><a href="../string/basic_string.html" title="cpp/string/basic string">std::u32string</a></span>,  <span class="t-lc"><a href="../string/basic_string.html" title="cpp/string/basic string">std::wstring</a></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td> <a href="system_error.html" title="cpp/header/system error"><tt>&lt;system_error&gt;</tt></a>
+</td>
+<td> Specializes <span class="t-lc"><a href="../utility/hash.html" title="cpp/utility/hash">std::hash</a></span> for <span class="t-lc"><a href="../error/error_code.html" title="cpp/error/error code">std::error_code</a></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td> <a href="bitset.html" title="cpp/header/bitset"><tt>&lt;bitset&gt;</tt></a>
+</td>
+<td> Specializes <span class="t-lc"><a href="../utility/hash.html" title="cpp/utility/hash">std::hash</a></span> for <span class="t-lc"><a href="../utility/bitset.html" title="cpp/utility/bitset">std::bitset</a></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td> <a href="memory.html" title="cpp/header/memory"><tt>&lt;memory&gt;</tt></a>
+</td>
+<td> Specializes <span class="t-lc"><a href="../utility/hash.html" title="cpp/utility/hash">std::hash</a></span> for <span class="t-lc"><a href="../memory/unique_ptr.html" title="cpp/memory/unique ptr">std::unique_ptr</a></span>, <span class="t-lc"><a href="../memory/shared_ptr.html" title="cpp/memory/shared ptr">std::shared_ptr</a></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td> <a href="typeindex.html" title="cpp/header/typeindex"><tt>&lt;typeindex&gt;</tt></a>
+</td>
+<td> Specializes <span class="t-lc"><a href="../utility/hash.html" title="cpp/utility/hash">std::hash</a></span> for <span class="t-lc"><a href="../types/type_index.html" title="cpp/types/type index">std::type_index</a></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td> <a href="vector.html" title="cpp/header/vector"><tt>&lt;vector&gt;</tt></a>
+</td>
+<td> Specializes <span class="t-lc"><a href="../utility/hash.html" title="cpp/utility/hash">std::hash</a></span> for <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../container/vector.html"><span class="kw1064">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td> <a href="thread.html" title="cpp/header/thread"><tt>&lt;thread&gt;</tt></a>
+</td>
+<td> Specializes <span class="t-lc"><a href="../utility/hash.html" title="cpp/utility/hash">std::hash</a></span> for <span class="t-lc"><a href="../thread/thread/id.1.html" title="cpp/thread/thread/id">std::thread::id</a></span>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 10520/1000000
+Preprocessor generated node count: 9129/1000000
+Post‐expand include size: 332582/2097152 bytes
+Template argument size: 79628/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9770-0!*!0!!en!*!* and timestamp 20150406193113 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/header/functional&amp;oldid=57485</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 5.551 secs. -->
+	</body>
+<!-- Cached 20150406193113 -->
+</html>

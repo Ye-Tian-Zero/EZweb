@@ -1,0 +1,353 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>dynamic exception specification - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/except_spec","wgTitle":"cpp/language/except spec","wgCurRevisionId":79307,"wgArticleId":3413,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/except_spec","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_except_spec skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">dynamic exception specification</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="exceptions.html" title="cpp/language/exceptions"> Exceptions</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="throw.html" title="cpp/language/throw"> throw-expression</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function-try-block.html" title="cpp/language/function-try-block"> function-try-block</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="try_catch.html" title="cpp/language/try catch"> try/catch block</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept_spec.html" title="cpp/language/noexcept spec"> noexcept specifier</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept.html" title="cpp/language/noexcept"> noexcept operator</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> exception-specification</strong><span class="t-mark">(deprecated)</span>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Lists the exceptions that a function might directly or indirectly throw.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="except_spec.html#Syntax"><span class="tocnumber">1</span> <span class="toctext">Syntax</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="except_spec.html#Explanation"><span class="tocnumber">2</span> <span class="toctext">Explanation</span></a></li>
+<li class="toclevel-1"><a href="except_spec.html#Potential_exceptions"><span class="tocnumber">3</span> <span class="toctext">Potential exceptions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="except_spec.html#Example"><span class="tocnumber">4</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="except_spec.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span>
+</h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>throw(</b></code><span class="t-spar">typeid, typeid, ...</span><code><b>)</b></code>
+</td>
+<td class="t-sdsc-nopad">
+</td>
+<td> <span class="t-mark">(deprecated)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+<p>If a function is declared with type <code>T</code> listed in its exception specification, the function may throw exceptions of that type or a type derived from it.
+</p>
+<p><a href="incomplete_type.html" title="cpp/language/incomplete type" class="mw-redirect">Incomplete types</a>, pointers or references to incomplete types other than cv <code>void*</code>, and rvalue reference types are not allowed in the exception specification. Array and function types, if used, are adjusted to corresponding pointer types. <span class="t-rev-inl t-since-cxx11"><span><a href="parameter_pack.html" title="cpp/language/parameter pack">parameter packs</a> are allowed</span> <span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span>.
+</p>
+<p>If the function throws an exception of the type not listed in its exception specification, the function <span class="t-lc"><a href="../error/unexpected.html" title="cpp/error/unexpected">std::unexpected</a></span> is called. The default function calls <span class="t-lc"><a href="../error/terminate.html" title="cpp/error/terminate">std::terminate</a></span>, but it may be replaced by a user-provided function (via <span class="t-lc"><a href="../error/set_unexpected.html" title="cpp/error/set unexpected">std::set_unexpected</a></span>) which may call <span class="t-lc"><a href="../error/terminate.html" title="cpp/error/terminate">std::terminate</a></span> or throw an exception. If the exception thrown from <span class="t-lc"><a href="../error/unexpected.html" title="cpp/error/unexpected">std::unexpected</a></span> is accepted by the exception specification, stack unwinding continues as usual. If it isn't, but <span class="t-lc"><a href="../error/bad_exception.html" title="cpp/error/bad exception">std::bad_exception</a></span> is allowed by the exception specification, <span class="t-lc"><a href="../error/bad_exception.html" title="cpp/error/bad exception">std::bad_exception</a></span> is thrown. Otherwise, <span class="t-lc"><a href="../error/terminate.html" title="cpp/error/terminate">std::terminate</a></span> is called.
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx17">
+<td>
+<h3> <span class="mw-headline" id="Potential_exceptions">Potential exceptions</span>
+</h3>
+<p>Each function <code>f</code>, pointer to function <code>fp</code>, and pointer to member function <code>mfp</code> has a <i>set of potential exceptions</i>, which consists of types that might be thrown and possibly the "any" placeholder for the possibility of an exception of arbitrary type. This set is defined as follows:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> If the declaration of <code>f</code>, <code>fp</code>, or <code>mfp</code> uses <code>throw()</code><span class="t-mark">(deprecated)</span> or <a href="noexcept.html" title="cpp/language/noexcept">noexcept</a>, the set is empty.</div>
+<div class="t-li1">
+<span class="t-li">2)</span> Otherwise, if the declaration of <code>f</code>, <code>fp</code>, or <code>mfp</code> uses a dynamic exception specification<span class="t-mark">(deprecated)</span>, the set consists of the types listed in that specification</div>
+<div class="t-li1">
+<span class="t-li">3)</span> Otherwise, the set consists of the placeholder "any"</div>
+<p>Note: for implicitly-declared special member functions (constructors, assignment operators, and destructors) and for the inheriting constructors, the set of potential exceptions is a combination of the sets of the potential exceptions of everything they would call: constructors/assignment operators/destructors of non-variant non-static data members, direct bases, and, where appropriate, virtual bases (including default argument expressions, as always)
+</p>
+<p>Each expression <code>e</code> has a <i>set of potential exceptions</i>, defined as follows:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> If <code>e</code> is a <a href="constexpr.html" title="cpp/language/constexpr">core constant expression</a>, the set is empty</div>
+<div class="t-li1">
+<span class="t-li">2)</span> Otherwise, the set is the union of the sets of potential exceptions of all immediate subexpressions of <code>e</code> (including <a href="default_arguments.html" title="cpp/language/default arguments">default argument expressions</a>), combined with another set that depends on the form of <code>e</code>, as follows:</div>
+<div class="t-li2">
+<span class="t-li">1)</span> If <code>e</code> is a function call expression, and the function is named by an id-expression (either directly or as part of member access or pointer-to-member access expression), the set of potential exceptions of the named function is added to the list. For all other function call expressions (where the name is not provided), the set consists of the placeholder "any"</div>
+<div class="t-li2">
+<span class="t-li">2)</span> If <code>e</code> calls a function implicitly (it's an operator expression and the operator is overloaded, it is a <a href="new.html" title="cpp/language/new">new-expression</a> and the allocation function is overloaded, or it is a full expression and the destructor of a temporary is called)), then the set is the set of that function.</div>
+<div class="t-li2">
+<span class="t-li">3)</span> If <code>e</code> is a <a href="throw.html" title="cpp/language/throw">throw-expression</a>, the set is the exception that would be initialized by its operand, or "any" for the re-throwing throw-expression (with no operand)</div>
+<div class="t-li2">
+<span class="t-li">4)</span> If <code>e</code> is a <a href="dynamic_cast.html" title="cpp/language/dynamic cast">dynamic_cast</a> to a reference to a polymorphic type, the set consists of <span class="t-lc"><a href="../types/bad_cast.html" title="cpp/types/bad cast">std::bad_cast</a></span>
+</div>
+<div class="t-li2">
+<span class="t-li">5)</span> If <code>e</code> is a <a href="typeid.html" title="cpp/language/typeid">typeid</a> applied to a polymorphic glvalue, the set consists of <span class="t-lc"><a href="../types/bad_typeid.html" title="cpp/types/bad typeid">std::bad_typeid</a></span>
+</div>
+<div class="t-li2">
+<span class="t-li">6)</span> If <code>e</code> is a <a href="new.html" title="cpp/language/new">new-expression</a> with a non-constant size, the set consists of <span class="t-lc"><a href="../memory/new/bad_array_new_length.html" title="cpp/memory/new/bad array new length">std::bad_array_new_length</a></span>
+</div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="kw1">throw</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// f()'s set is "int"</span>
+<span class="kw4">void</span> g<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>             <span class="co1">// g()'s set is "any"</span>
+<span class="kw1">struct</span> A <span class="br0">{</span> A<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>    <span class="co1">// "new A"'s set is "any"</span>
+<span class="kw1">struct</span> B <span class="br0">{</span> B<span class="br0">(</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// "B()"'s set is empty</span>
+<span class="kw1">struct</span> D<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> D<span class="br0">(</span><span class="br0">)</span> <span class="kw1">throw</span> <span class="br0">(</span><span class="kw4">double</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// new D's set is "double, any"</span></pre></div></div>
+<p>All implicitly-declared member functions (and inheriting constructors) have exception specifications, selected as follows:
+</p>
+<ul>
+<li> If the set of potential exceptions contains "any", the implicit exception specification is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span><span class="br0">(</span><span class="kw2">false</span><span class="br0">)</span></span></span>.
+</li>
+<li> Otherwise, If the set of potential exceptions is not empty, the implicit exception specification lists every type from the set
+</li>
+<li> Otherwise, the implicit exception specification is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span></span></span>
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span>
+    A<span class="br0">(</span><span class="kw4">int</span> <span class="sy1">=</span> <span class="br0">(</span>A<span class="br0">(</span><span class="nu0">5</span><span class="br0">)</span>, <span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    A<span class="br0">(</span><span class="kw4">const</span> A<span class="sy3">&amp;</span><span class="br0">)</span> <span class="kw1">throw</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    A<span class="br0">(</span>A<span class="sy3">&amp;&amp;</span><span class="br0">)</span> <span class="kw1">throw</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    ~A<span class="br0">(</span><span class="br0">)</span> <span class="kw1">throw</span><span class="br0">(</span>X<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="br0">{</span>
+    B<span class="br0">(</span><span class="br0">)</span> <span class="kw1">throw</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    B<span class="br0">(</span><span class="kw4">const</span> B<span class="sy3">&amp;</span><span class="br0">)</span> <span class="sy1">=</span> <span class="kw1">default</span><span class="sy4">;</span> <span class="co1">// exception specification is "noexcept(true)"</span>
+    B<span class="br0">(</span>B<span class="sy3">&amp;&amp;</span>, <span class="kw4">int</span> <span class="sy1">=</span> <span class="br0">(</span><span class="kw1">throw</span> Y<span class="br0">(</span><span class="br0">)</span>, <span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span> <span class="kw1">throw</span><span class="br0">(</span>Y<span class="br0">)</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+    ~B<span class="br0">(</span><span class="br0">)</span> <span class="kw1">throw</span><span class="br0">(</span>Y<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">7</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> <span class="kw1">public</span> A, <span class="kw1">public</span> B <span class="br0">{</span>
+    <span class="kw4">int</span> <span class="sy2">*</span> p <span class="sy1">=</span> new <span class="br0">(</span><a href="../memory/new/nothrow.html"><span class="kw568">std::<span class="me2">nothrow</span></span></a><span class="br0">)</span> <span class="kw4">int</span><span class="br0">[</span>n<span class="br0">]</span><span class="sy4">;</span>
+    <span class="co1">// D has the following implicitly-declared members:</span>
+    <span class="co1">// D::D() throw(X, std::bad_array_new_length);</span>
+    <span class="co1">// D::D(const D&amp;) noexcept(true);</span>
+    <span class="co1">// D::D(D&amp;&amp;) throw(Y);</span>
+    <span class="co1">// D::~D() throw(X, Y);</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx17">(since C++17)</span></td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> X <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">class</span> Y <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">class</span> Z <span class="sy4">:</span> <span class="kw1">public</span> X <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">class</span> W <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="kw1">throw</span><span class="br0">(</span>X, Y<span class="br0">)</span> 
+<span class="br0">{</span>
+    <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>n<span class="br0">)</span> <span class="kw1">throw</span> X<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK</span>
+    <span class="kw1">if</span> <span class="br0">(</span>n<span class="br0">)</span> <span class="kw1">throw</span> Z<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// also OK</span>
+    <span class="kw1">throw</span> W<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// will call std::unexpected()</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<ul><li>
+<a href="noexcept_spec.html" title="cpp/language/noexcept spec"> <code>noexcept</code> specifier</a>
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 967/1000000
+Preprocessor generated node count: 3652/1000000
+Post‐expand include size: 27231/2097152 bytes
+Template argument size: 8201/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:3413-0!*!0!!en!*!* and timestamp 20150704095204 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/except_spec&amp;oldid=79307</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.076 secs. -->
+	</body>
+<!-- Cached 20150704095204 -->
+</html>

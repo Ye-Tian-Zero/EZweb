@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Exceptions - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/exceptions","wgTitle":"cpp/language/exceptions","wgCurRevisionId":73456,"wgArticleId":9898,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/exceptions","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_exceptions skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Exceptions</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"> Exceptions</strong><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="throw.html" title="cpp/language/throw"> throw-expression</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function-try-block.html" title="cpp/language/function-try-block"> function-try-block</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="try_catch.html" title="cpp/language/try catch"> try/catch block</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept_spec.html" title="cpp/language/noexcept spec"> noexcept specifier</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="noexcept.html" title="cpp/language/noexcept"> noexcept operator</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="except_spec.html" title="cpp/language/except spec"> exception-specification</a><span class="t-mark">(deprecated)</span>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Exception handling provides a way of transferring control and information from some point in the execution of a program to a handler associated with a point previously passed by the execution (in other words, exception handling transfers control up the call stack)
+</p>
+<p>An exception can be thrown by a <a href="throw.html" title="cpp/language/throw">throw-expression</a>, <a href="dynamic_cast.html" title="cpp/language/dynamic cast">dynamic_cast</a>, <a href="typeid.html" title="cpp/language/typeid">typeid</a>, <a href="new.html" title="cpp/language/new">new-expression</a>, <a href="../memory/new/operator_new.html" title="cpp/memory/new/operator new">allocation function</a>, and any of the standard library functions that are specified to throw exceptions to signal certain error conditions (e.g. <span class="t-lc"><a href="../container/vector/at.html" title="cpp/container/vector/at">std::vector::at</a></span>, <span class="t-lc"><a href="../string/basic_string/substr.html" title="cpp/string/basic string/substr">std::string::substr</a></span>, etc).
+</p>
+<p>In order for exception to be caught, the throw-expression has to be inside a <a href="try_catch.html" title="cpp/language/try catch">try-block</a> or inside a function called from a try-block, and there has to be a <a href="try_catch.html" title="cpp/language/try catch">catch clause</a> that matches the type of the exception object.
+</p>
+<p>When declaring a function, <a href="except_spec.html" title="cpp/language/except spec"> exception specifications</a> and <a href="noexcept_spec.html" title="cpp/language/noexcept spec"> noexcept specifiers</a> may be provided to limit the types of the exceptions a function may throw.
+</p>
+<p>Errors that arise during exception handling are handled by <span class="t-lc"><a href="../error/terminate.html" title="cpp/error/terminate">std::terminate</a></span> and <span class="t-lc"><a href="../error/unexpected.html" title="cpp/error/unexpected">std::unexpected</a></span>.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1">
+<a href="exceptions.html#Usage"><span class="tocnumber">1</span> <span class="toctext">Usage</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="exceptions.html#Error_handling"><span class="tocnumber">1.1</span> <span class="toctext">Error handling</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="exceptions.html#Exception_safety"><span class="tocnumber">1.2</span> <span class="toctext">Exception safety</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="exceptions.html#Exception_objects"><span class="tocnumber">2</span> <span class="toctext">Exception objects</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="exceptions.html#References"><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Usage">edit</a>]</span> <span class="mw-headline" id="Usage">Usage</span>
+</h3>
+<p>While throw-expression can be used to transfer control to an arbitrary block of code up the execution stack, for arbitrary reasons (similar to <span class="t-lc"><a href="../utility/program/longjmp.html" title="cpp/utility/program/longjmp">std::longjmp</a></span>), its intended usage is error handling. 
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Error handling">edit</a>]</span> <span class="mw-headline" id="Error_handling">Error handling</span>
+</h4>
+<p>Throwing an exception is used to signal errors from functions, where "errors" are typically limited to only the following<sup id="cite_ref-1" class="reference"><a href="exceptions.html#cite_note-1">[1]</a></sup><sup id="cite_ref-2" class="reference"><a href="exceptions.html#cite_note-2">[2]</a></sup>:
+</p>
+<ol>
+<li> Failures to meet the postconditions, such as failing to produce a valid return value object
+</li>
+<li> Failures to meet the preconditions of another function that must be called
+</li>
+<li> (for non-private member functions) Failures to (re)establish a class invariant
+</li>
+</ol>
+<p>In particular, this implies that the failures of constructors (see also <a href="raii.html" title="cpp/language/raii">RAII</a>) and most operators should be reported by throwing exceptions.
+</p>
+<p>In addition, so-called <i>wide contract</i> functions use exceptions to indicate unacceptable inputs, for example, <span class="t-lc"><a href="../string/basic_string/at.html" title="cpp/string/basic string/at">std::string::at</a></span> has no preconditions, but throws an exception to indicate index out of range.
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Exception safety">edit</a>]</span> <span class="mw-headline" id="Exception_safety">Exception safety</span>
+</h4>
+<p>After the error condition is reported by a function, additional guarantees may be provided with regards to the state of the program. The following four levels of exception guarantee are generally recognized<sup id="cite_ref-3" class="reference"><a href="exceptions.html#cite_note-3">[3]</a></sup><sup id="cite_ref-4" class="reference"><a href="exceptions.html#cite_note-4">[4]</a></sup><sup id="cite_ref-5" class="reference"><a href="exceptions.html#cite_note-5">[5]</a></sup>, which are strict supersets of each other:
+</p>
+<ol>
+<li> <i>Nothrow (or nofail) exception guarantee</i> -- the function never throws exceptions. Nothrow (errors are reported by other means or concealed) is expected of <a href="destructor.html" title="cpp/language/destructor">destructors</a> and other functions that may be called during stack unwinding. <span class="t-rev-inl t-since-cxx11"><span>The <a href="destructor.html" title="cpp/language/destructor">destructors</a> are <a href="noexcept.html" title="cpp/language/noexcept">noexcept</a> by default.</span> <span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span> Nofail (the function always succeeds) is expected of swaps, <a href="move_constructor.html" title="cpp/language/move constructor">move constructors</a>, and other functions used by those that provide strong exception guarantee.
+</li>
+<li> <i>Strong exception guarantee</i> -- If the function throws an exception, the state of the program is rolled back to the state just before the function call. (for example, <span class="t-lc"><a href="../container/vector/push_back.html" title="cpp/container/vector/push back">std::vector::push_back</a></span>)
+</li>
+<li> <i>Basic exception guarantee</i> -- If the function throws an exception, the program is in a valid state. It may require cleanup, but all invariants are intact.
+</li>
+<li> <i>No exception guarantee</i> -- If the function throws an exception, the program may not be in a valid state: resource leaks, memory corruption, or other invariant-destroying errors may have occurred.
+</li>
+</ol>
+<p>Generic components may, in addition, offer <i>exception-neutral guarantee</i>: if an exception is thrown from a template parameter (e.g. from the <code>Compare</code> function object of <span class="t-lc"><a href="../algorithm/sort.html" title="cpp/algorithm/sort">std::sort</a></span> or from the constructor of <code>T</code> in <span class="t-lc"><a href="../memory/shared_ptr/make_shared.html" title="cpp/memory/shared ptr/make shared">std::make_shared</a></span>), it is propagated, unchanged, to the caller. 
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Exception objects">edit</a>]</span> <span class="mw-headline" id="Exception_objects">Exception objects</span>
+</h3>
+<p>While objects of any complete type and cv pointers to void may be thrown as exception objects, all standard library functions throw anonymous temporary objects by value, and the types of those objects are derived (directly or indirectly) from <span class="t-lc"><a href="../error/exception.html" title="cpp/error/exception">std::exception</a></span>. User-defined exceptions usually follow this pattern.<sup id="cite_ref-6" class="reference"><a href="exceptions.html#cite_note-6">[6]</a></sup><sup id="cite_ref-7" class="reference"><a href="exceptions.html#cite_note-7">[7]</a></sup>
+</p>
+<p>To avoid unnecessary copying of the exception object and object slicing, the best practice for catch clauses is to catch by reference.<sup id="cite_ref-8" class="reference"><a href="exceptions.html#cite_note-8">[8]</a></sup><sup id="cite_ref-9" class="reference"><a href="exceptions.html#cite_note-9">[9]</a></sup><sup id="cite_ref-10" class="reference"><a href="exceptions.html#cite_note-10">[10]</a></sup>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span>
+</h3>
+<ol class="references">
+<li id="cite_note-1">
+<span class="mw-cite-backlink"><a href="exceptions.html#cite_ref-1">↑</a></span> <span class="reference-text"> H. Sutter (2004) <a rel="nofollow" class="external text" href="http%3A//www.drdobbs.com/when-and-how-to-use-exceptions/184401836">"When and How to Use Exceptions"</a> in Dr. Dobb's</span>
+</li>
+<li id="cite_note-2">
+<span class="mw-cite-backlink"><a href="exceptions.html#cite_ref-2">↑</a></span> <span class="reference-text">H.Sutter, A. Alexandrescu (2004), "C++ Coding Standards", Item 70</span>
+</li>
+<li id="cite_note-3">
+<span class="mw-cite-backlink"><a href="exceptions.html#cite_ref-3">↑</a></span> <span class="reference-text">B. Stroustrup (2000), "The C++ Programming Language"<a rel="nofollow" class="external text" href="http%3A//www2.research.att.com/%7Ebs/3rd_safe.pdf">Appendix E"</a></span>
+</li>
+<li id="cite_note-4">
+<span class="mw-cite-backlink"><a href="exceptions.html#cite_ref-4">↑</a></span> <span class="reference-text">H. Sutter (2000) "Exceptional C++"</span>
+</li>
+<li id="cite_note-5">
+<span class="mw-cite-backlink"><a href="exceptions.html#cite_ref-5">↑</a></span> <span class="reference-text">D. Abrahams (2001) <a rel="nofollow" class="external text" href="http%3A//www.boost.org/community/exception_safety.html">"Exception Safety in Generic Components"</a></span>
+</li>
+<li id="cite_note-6">
+<span class="mw-cite-backlink"><a href="exceptions.html#cite_ref-6">↑</a></span> <span class="reference-text">D. Abrahams (2001) <a rel="nofollow" class="external text" href="http%3A//www.boost.org/community/error_handling.html">"Error and Exception Handling"</a></span>
+</li>
+<li id="cite_note-7">
+<span class="mw-cite-backlink"><a href="exceptions.html#cite_ref-7">↑</a></span> <span class="reference-text">M. Cline, C++FAQ Lite <a rel="nofollow" class="external text" href="http%3A//www.parashift.com/c%2B%2B-faq-lite/exceptions.html#faq-17.11">17.11</a></span>
+</li>
+<li id="cite_note-8">
+<span class="mw-cite-backlink"><a href="exceptions.html#cite_ref-8">↑</a></span> <span class="reference-text">S. Meyers (1996) "More Effective C++" Item 13</span>
+</li>
+<li id="cite_note-9">
+<span class="mw-cite-backlink"><a href="exceptions.html#cite_ref-9">↑</a></span> <span class="reference-text">M. Cline, C++FAQ Lite <a rel="nofollow" class="external text" href="http%3A//www.parashift.com/c%2B%2B-faq-lite/exceptions.html#faq-17.12">17.12</a></span>
+</li>
+<li id="cite_note-10">
+<span class="mw-cite-backlink"><a href="exceptions.html#cite_ref-10">↑</a></span> <span class="reference-text">H.Sutter, A. Alexandrescu (2004) "C++ Coding Standards" Item 73</span>
+</li>
+</ol>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 894/1000000
+Preprocessor generated node count: 2989/1000000
+Post‐expand include size: 21071/2097152 bytes
+Template argument size: 2498/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9898-0!*!0!!en!*!* and timestamp 20150313163614 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/exceptions&amp;oldid=73456</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.433 secs. -->
+	</body>
+<!-- Cached 20150313163616 -->
+</html>

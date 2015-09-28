@@ -1,0 +1,462 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Elaborated type specifier - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/elaborated_type_specifier","wgTitle":"cpp/language/elaborated type specifier","wgCurRevisionId":77589,"wgArticleId":14017,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/elaborated_type_specifier","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_elaborated_type_specifier skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Elaborated type specifier</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="declarations.html" title="cpp/language/declarations"> Declarations</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Overview </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> declaration syntax</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html#Specifiers" title="cpp/language/declarations"> decl-specifier-seq</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html#Declarators" title="cpp/language/declarations"> declarator</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Specifiers </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="typedef.html" title="cpp/language/typedef"><span class="t-lines"><span>typedef</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="inline.html" title="cpp/language/inline"> inline function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual"> virtual function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"> explicit function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="friend.html" title="cpp/language/friend"><span class="t-lines"><span>friend</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="constexpr.html" title="cpp/language/constexpr"><span class="t-lines"><span>constexpr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> storage class specifiers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="enum.html" title="cpp/language/enum"> enum </a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="decltype.html" title="cpp/language/decltype"><span class="t-lines"><span>decltype</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="auto.html" title="cpp/language/auto"><span class="t-lines"><span>auto</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="alignas.html" title="cpp/language/alignas"><span class="t-lines"><span>alignas</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="cv.html" title="cpp/language/cv"><span class="t-lines"><span>const/volatile</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> elaborated type specifier</strong>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="attributes.html" title="cpp/language/attributes"> attributes </a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Declarators </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="reference.html" title="cpp/language/reference"> reference </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="pointer.html" title="cpp/language/pointer"> pointer </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="array.html" title="cpp/language/array"> array </a> </td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Block declarations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> simple-declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="type_alias.html" title="cpp/language/type alias"> alias declaration</a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace_alias.html" title="cpp/language/namespace alias"> namespace alias definition </a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration"> using-declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace.html#Using-directives" title="cpp/language/namespace"> using-directive</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static_assert.html" title="cpp/language/static assert"> static_assert declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="asm.html" title="cpp/language/asm"> asm-definition</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="enum.html" title="cpp/language/enum"> opaque enum declaration</a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Other declarations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace.html" title="cpp/language/namespace"> namespace definition</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html" title="cpp/language/function"> function declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html" title="cpp/language/class template"> class template declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function_template.html" title="cpp/language/function template"> function template declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html#Explicit_instantiation" title="cpp/language/class template"> explicit template instantiation</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_specialization.html" title="cpp/language/template specialization"> explicit template specialization</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language_linkage.html" title="cpp/language/language linkage"> linkage specification</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> attribute declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> empty declaration</a> </td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Elaborated type specifiers may be used to refer to a previously-declared class name (class, struct, or union) or to a previously-declared enum name even if the name was hidden by a non-type declaration. They may also be used to declare new class names. 
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span>
+</h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">class-key</span> <span class="t-spar">class-name</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>enum</b></code> <span class="t-spar">enum-name</span>
+</td>
+<td> (2)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">class-key</span> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <span class="t-spar">identifier</span> <code><b>;</b></code>
+</td>
+<td> (3)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">class-key</span>
+</td>
+<td> -
+</td>
+<td>  one of <a href="../keyword/class.html" title="cpp/keyword/class">class</a>, <a href="../keyword/struct.html" title="cpp/keyword/struct">struct</a>, <a href="../keyword/union.html" title="cpp/keyword/union">union</a>
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">class-name</span>
+</td>
+<td> -
+</td>
+<td>  the name of a previously-declared class type, optionally <a href="name.html#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>, or an identifier not previously declared as a type name
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">enum-name</span>
+</td>
+<td> -
+</td>
+<td>  the name of a previously-declared enumeration type, optionally <a href="name.html#Qualified_identifiers" title="cpp/language/identifiers">qualified</a>
+</td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">1)</span> elaborated type specifier for a class type</div>
+<div class="t-li1">
+<span class="t-li">2)</span> elaborated type specifier for a enumeration type</div>
+<div class="t-li1">
+<span class="t-li">3)</span> A declaration that consists solely of an elaborated type specifier always declares a class type named by <span class="t-spar">identifier</span> in the <a href="scope.html" title="cpp/language/scope">scope</a> that contains the declaration.</div>
+<p><a href="enum.html" title="cpp/language/enum">Opaque enum declaration</a> resembles form (3), but the enum type is a complete type after an opaque enum declaration.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+<p>Form (3) is a special case of elaborated type specifier, usually referred to as <i>forward declaration</i> of classes, for the description of form <span class="t-v">(3)</span>, see <a href="class.html#Forward_declaration" title="cpp/language/class">Forward declaration</a>. The following only apply to form (1) and (2).
+</p>
+<p>The <span class="t-spar">class-name</span> or <span class="t-spar">enum-name</span> in the elaborated type specifier may either be a simple identifer or be a <a href="name.html#Qualified_identifiers" title="cpp/language/identifiers">qualified-id</a>. The name is looked up using <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup">unqualified name lookup</a> or <a href="qualified_lookup.html" title="cpp/language/qualified lookup">qualified name lookup</a>, depending on their appearance. But in either case, non-type names are not considered.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> T <span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw1">class</span> U<span class="sy4">;</span>
+<span class="kw1">private</span><span class="sy4">:</span>
+    <span class="kw4">int</span> U<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> T<span class="sy4">;</span>
+    T t<span class="sy4">;</span> <span class="co1">// error: the local variable T is found</span>
+    <span class="kw1">class</span> T t<span class="sy4">;</span> <span class="co1">// OK: finds ::T, the local variable T is ignored</span>
+    T<span class="sy4">::</span><span class="me2">U</span><span class="sy2">*</span> u<span class="sy4">;</span> <span class="co1">// error: lookup of T::U finds the private data member</span>
+    <span class="kw1">class</span> T<span class="sy4">::</span><span class="me2">U</span><span class="sy2">*</span> u<span class="sy4">;</span> <span class="co1">// OK: the data member is ignored</span>
+<span class="br0">}</span></pre></div></div>
+<p>If the name lookup does not find a previously declared type name
+</p>
+<ul>
+<li> The the elaborated-type-specifier is a declaration that introduces the class-name if both of the following are true:
+<ul>
+<li> the elaborated-type-specifier is introduced by the <span class="t-spar">class-key</span>
+</li>
+<li> <span class="t-spar">class-name</span> is an identifier
+</li>
+</ul>
+</li>
+<li> Otherwise the program is ill-formed (a compile error is produced).
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> Node <span class="br0">{</span>
+    <span class="kw1">struct</span> Node<span class="sy2">*</span> Next<span class="sy4">;</span> <span class="co1">// OK: lookup of Node finds the injected-class-name</span>
+    <span class="kw1">struct</span> Data<span class="sy2">*</span> Data<span class="sy4">;</span> <span class="co1">// OK: declares type Data at global scope</span>
+                       <span class="co1">// and also declares the data member Data</span>
+    <span class="kw1">friend</span> <span class="kw1">class</span> <span class="sy4">::</span><span class="me2">List</span><span class="sy4">;</span> <span class="co1">// error: cannot introduce a qualified name</span>
+    <span class="kw2">enum</span> Kind<span class="sy2">*</span> kind<span class="sy4">;</span> <span class="co1">// error: cannot introduce an enum</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+Data<span class="sy2">*</span> p<span class="sy4">;</span> <span class="co1">// OK: struct Data has been declared</span></pre></div></div>
+<p>If the name refers to a <a href="typedef.html" title="cpp/language/typedef">typedef name</a>, a <a href="type_alias.html" title="cpp/language/type alias">type alias</a>, a <a href="template_parameters.html#Type_template_parameter" title="cpp/language/template parameters">template type parameter</a>, or an <a href="type_alias.html" title="cpp/language/type alias">alias template specialization</a>, the program is ill-formed, otherwise the elaborated type specifier introduces the name into the declaration the same way a <a href="declarations.html#Specifiers" title="cpp/language/declarations">simple type specifier</a> introduces its type-name.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw1">class</span> Node <span class="br0">{</span>
+    <span class="kw1">friend</span> <span class="kw1">class</span> T<span class="sy4">;</span> <span class="co1">// error: type parameter cannot be used in an elaborated type specifier </span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">class</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw2">enum</span> b <span class="br0">{</span> f, t <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">class</span> A a<span class="sy4">;</span> <span class="co1">// OK: equivalent to 'A a;'</span>
+    <span class="kw2">enum</span> b flag<span class="sy4">;</span> <span class="co1">// OK: equivalent to 'b flag;'</span>
+<span class="br0">}</span></pre></div></div>
+<p>The <span class="t-spar">class-key</span> or <code><b>enum</b></code> keyword present in the elaborated-type-specifier must agree in kind with the declaration to which the name in the elaborated-type-specifier refers.
+</p>
+<ul>
+<li> the <code><b>enum</b></code> keyword must be used to refer to an <a href="enum.html" title="cpp/language/enum">enumeration type</a> (whether scoped or unscoped)
+</li>
+<li> the <code><b>union</b></code> <span class="t-spar">class-key</span> must be used to refer to a <a href="union.html" title="cpp/language/union">union</a>
+</li>
+<li> either the <code><b>class</b></code> or <code><b>struct</b></code> <span class="t-spar">class-key</span> must be used to refer to a non-union class type (the keywords <code><b>class</b></code> and <code><b>struct</b></code> are interchangeable here).
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw2">enum</span> <span class="kw1">class</span> E <span class="br0">{</span> a, b <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw2">enum</span> E x <span class="sy1">=</span> E<span class="sy4">::</span><span class="me2">a</span><span class="sy4">;</span> <span class="co1">// OK</span>
+<span class="kw2">enum</span> <span class="kw1">class</span> E y <span class="sy1">=</span> E<span class="sy4">::</span><span class="me2">b</span><span class="sy4">;</span> <span class="co1">// error: 'enum class' cannot introduce a elaborated type specifier</span>
+ 
+<span class="kw1">struct</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">class</span> A a<span class="sy4">;</span> <span class="co1">// OK</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span>
+</h3>
+<div class="t-ref-std-c++11">
+<ul><li> C++11 standard (ISO/IEC 14882:2011): 
+</li></ul>
+<dl><dd>
+<ul><li> 3.4.4 Elaborated type specifiers [basic.lookup.elab]
+</li></ul>
+</dd></dl>
+<dl><dd>
+<ul><li> 7.1.6.3 Elaborated type specifiers [dcl.type.elab]
+</li></ul>
+</dd></dl>
+</div>
+<div class="t-ref-std-c++98">
+<ul><li> C++98 standard (ISO/IEC 14882:1998): 
+</li></ul>
+<dl><dd>
+<ul><li> 3.4.4 Elaborated type specifiers [basic.lookup.elab]
+</li></ul>
+</dd></dl>
+<dl><dd>
+<ul><li> 7.1.5.3 Elaborated type specifiers [dcl.type.elab]
+</li></ul>
+</dd></dl>
+</div>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: probably pull most of 9.1[class.name]/2-3 out of cpp/language/class </td>
+</tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1979/1000000
+Preprocessor generated node count: 7727/1000000
+Post‐expand include size: 57984/2097152 bytes
+Template argument size: 9846/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:14017-0!*!0!!*!*!* and timestamp 20150331134825 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/elaborated_type_specifier&amp;oldid=77589</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.082 secs. -->
+	</body>
+<!-- Cached 20150331143408 -->
+</html>

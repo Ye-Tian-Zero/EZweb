@@ -1,0 +1,375 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Experimental C++ standard libraries - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/experimental","wgTitle":"cpp/experimental","wgCurRevisionId":79454,"wgArticleId":13460,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/experimental","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_experimental skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Experimental C++ standard libraries</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> Technical Specifications</strong> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"> Technical specifications</strong><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="experimental/fs.html" title="cpp/experimental/fs">Filesystem library</a> <span class="t-mark-rev t-since-fs-ts t-mark-ts">(filesystem TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/memory.html" title="cpp/experimental/lib extensions">Library fundamentals</a> <span class="t-mark-rev t-since-libfund-ts t-mark-ts">(library fundamentals TS)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/lib_extensions_2.html" title="cpp/experimental/lib extensions 2">Library fundamentals 2</a> <span class="t-mark-rev t-since-libfund-2-ts t-mark-ts">(library fundamentals 2 TS)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/parallelism.html" title="cpp/experimental/parallelism">Extensions for parallelism</a> <span class="t-mark-rev t-since-fs-ts t-mark-ts">(parallelism TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/concepts.html" title="cpp/language/constraints">Concepts</a> <span class="t-mark-rev t-since-concepts-ts t-mark-ts">(concepts TS)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental/concurrency.html" title="cpp/experimental/concurrency">Extensions for concurrency</a> <span class="t-mark-rev t-since-concurrency-ts t-mark-ts">(concurrency TS)</span> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>The C++ standards committee publishes experimental C++ language and library extensions for future standardization.
+</p>
+<p>Note: until 2012, these publications used the TR (technical report) format. Since 2012 ISO procedure changed to use the TS (technical specification) format.
+</p>
+<table class="wikitable">
+
+<tr>
+<th>ISO number</th>
+<th>Name</th>
+<th>Status</th>
+<th>links
+</th>
+</tr>
+<tr>
+<td> ISO/IEC TR
+<p>18015:2006
+</p>
+</td>
+<td> Technical Report on C++ Performance
+</td>
+<td> Published 2006 (<a rel="nofollow" class="external text" href="http%3A//www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm%3Fcsnumber%3D43351">ISO store</a>)
+<p>Draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/TR18015.pdf">TR18015</a> (2006-02-15)<br>
+</p>
+</td>
+<td> <code>std::hardware</code>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC TR
+<p>19768:2007
+</p>
+</td>
+<td> Technical Report on C++ Library Extensions
+</td>
+<td> Published 2007-11-15 (<a rel="nofollow" class="external text" href="http%3A//www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm%3Fcsnumber%3D43289">ISO store</a>)
+<p>Draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1745.pdf">n1745</a> (2005-01-17)<br>
+TR 29124 split off, the rest merged into C++11
+</p>
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC TR
+<p>29124:2010
+</p>
+</td>
+<td> Extensions to the C++ Library to support mathematical special functions
+</td>
+<td> Published 2010-09-03 (<a rel="nofollow" class="external text" href="http%3A//www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm%3Fcsnumber%3D50511">ISO Store</a>)
+<p>Final draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3060.pdf">n3060</a> (2010-03-06). Under consideration to merge into C++17 by <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4437.pdf">n4437</a> (2015-04-09)
+</p>
+</td>
+<td> <code>hermite</code>, <code>legendre</code>
+<p><code>laguerre</code>, <code>ellint_1</code><br>
+<code>cyl_bessel_i</code>, <code>riemann_zeta</code>
+</p>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC TR
+<p>24733:2011
+</p>
+</td>
+<td> Extensions for the programming language C++ to support decimal floating-point arithmetic
+</td>
+<td> Published 2011-10-25 (<a rel="nofollow" class="external text" href="http%3A//www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm%3Fcsnumber%3D38843">ISO Store</a>)
+<p>Draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2849.pdf">n2849</a> (2009-03-06)<br>
+May be superseded by a future Decimal TS or merged into C++ by <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n3871.html">n3871</a>
+</p>
+</td>
+<td> <code>decimal32</code><br><code>decimal64</code><br><code>decimal128</code>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC TS
+<p>18822:2015
+</p>
+</td>
+<td> C++ File System Technical Specification
+</td>
+<td> Published 2015-06-18. (<a rel="nofollow" class="external text" href="http%3A//www.iso.org/iso/catalogue_detail.htm%3Fcsnumber%3D63483">ISO store</a>). Final draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2014/n4100.pdf">n4100</a> (2014-07-04)
+</td>
+<td> <a href="experimental/fs.html" title="cpp/experimental/fs"><tt>filesystem</tt></a>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC TS
+<p>19570:2015
+</p>
+</td>
+<td> C++ Extensions for Parallelism
+</td>
+<td> Published 2015-06-24. (<a rel="nofollow" class="external text" href="http%3A//www.iso.org/iso/home/store/catalogue_tc/catalogue_detail.htm%3Fcsnumber%3D65241">ISO Store</a>). Final draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4507.pdf">n4507</a> (2015-05-05)
+</td>
+<td> <a href="experimental/parallelism.html" title="cpp/experimental/parallelism"><tt>parallelism</tt></a>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC DTS
+<p>19568:xxxx
+</p>
+</td>
+<td> C++ Extensions for Library Fundamentals
+</td>
+<td> DTS. Final draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4480.html">n4480</a> (2015-04-07)
+</td>
+<td>
+<a href="experimental/memory.html" title="cpp/experimental/lib extensions"><tt>library extensions</tt></a>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC DTS
+<p>19571:xxxx
+</p>
+</td>
+<td> C++ Extensions for Concurrency
+</td>
+<td> DTS: Draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4538.pdf">n4538</a> (2015-05-20)
+</td>
+<td> <a href="experimental/concurrency.html" title="cpp/experimental/concurrency"><tt>concurrency</tt></a>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC DTS
+<p>19217:xxxx
+</p>
+</td>
+<td> Concepts TS
+</td>
+<td> PDTS. Draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4377.pdf">n4377</a> (2015-02-09)
+</td>
+<td>
+<a href="language/concepts.html" title="cpp/language/constraints">constraints and concepts</a>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC DTS 19568:xxxx
+</td>
+<td> C++ Extensions for Library Fundamentals, Version 2
+</td>
+<td> In development. Draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4529.html">n4529</a> (2015-05-22)
+</td>
+<td> <a href="experimental/lib_extensions_2.html" title="cpp/experimental/lib extensions 2"><tt>library extensions 2</tt></a>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC DTS
+<p>19569:xxxx
+</p>
+</td>
+<td> Array Extensions TS
+</td>
+<td> Under overhaul. Abandoned draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3820.html">n3820</a> (2013-10-10)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC PRF TS 19841
+</td>
+<td> Transactional Memory TS
+</td>
+<td> DTS, Final draft: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4514.pdf">n4514</a> (2015-05-08)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td> Ranges TS
+</td>
+<td> In development, Draft <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4382.pdf">n4382</a> (2015-04-12)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td> ISO/IEC
+<p>DTS 19216:xxxx
+</p>
+</td>
+<td> Networking TS
+</td>
+<td> In development, Draft <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4478.html">n4478</a> (2015-04-13)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td> Modules
+</td>
+<td> In development, Draft <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4465.pdf">n4465</a> (2015-04-13) and <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4466.pdf">n4466</a> (2015-04-13)
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td> Numerics TS
+</td>
+<td> Early development
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td> Concurrency TS part 2
+</td>
+<td> Early development
+</td>
+<td>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td> Parallelism TS part 2
+</td>
+<td> Early development
+</td>
+<td>
+</td>
+</tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 511/1000000
+Preprocessor generated node count: 1831/1000000
+Post‐expand include size: 22204/2097152 bytes
+Template argument size: 3106/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13460-0!*!0!*!*!*!* and timestamp 20150707035306 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/experimental&amp;oldid=79454</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.070 secs. -->
+	</body>
+<!-- Cached 20150707035752 -->
+</html>

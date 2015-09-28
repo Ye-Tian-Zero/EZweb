@@ -1,0 +1,1168 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Algorithms library - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/algorithm","wgTitle":"cpp/algorithm","wgCurRevisionId":70996,"wgArticleId":721,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/algorithm","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_algorithm skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Algorithms library</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> Algorithms library</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"> Algorithm library</strong><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Non-modifying sequence operations </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/all_any_none_of.html" title="cpp/algorithm/all any none of"><span class="t-lines"><span>all_of</span><span>any_of</span><span>none_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/for_each.html" title="cpp/algorithm/for each"><span class="t-lines"><span>for_each</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/count.html" title="cpp/algorithm/count"><span class="t-lines"><span>count</span><span>count_if</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/mismatch.html" title="cpp/algorithm/mismatch"><span class="t-lines"><span>mismatch</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/equal.html" title="cpp/algorithm/equal"><span class="t-lines"><span>equal</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/find.html" title="cpp/algorithm/find"><span class="t-lines"><span>find</span><span>find_if</span><span>find_if_not</span></span></a></div>
+<div><span class="t-lines"><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/find_end.html" title="cpp/algorithm/find end"><span class="t-lines"><span>find_end</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/find_first_of.html" title="cpp/algorithm/find first of"><span class="t-lines"><span>find_first_of</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/adjacent_find.html" title="cpp/algorithm/adjacent find"><span class="t-lines"><span>adjacent_find</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/search.html" title="cpp/algorithm/search"><span class="t-lines"><span>search</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/search_n.html" title="cpp/algorithm/search n"><span class="t-lines"><span>search_n</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Modifying sequence operations </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/copy.html" title="cpp/algorithm/copy"><span class="t-lines"><span>copy</span><span>copy_if</span></span></a></div>
+<div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/copy_n.html" title="cpp/algorithm/copy n"><span class="t-lines"><span>copy_n</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/copy_backward.html" title="cpp/algorithm/copy backward"><span class="t-lines"><span>copy_backward</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/move.html" title="cpp/algorithm/move"><span class="t-lines"><span>move</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/move_backward.html" title="cpp/algorithm/move backward"><span class="t-lines"><span>move_backward</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/fill.html" title="cpp/algorithm/fill"><span class="t-lines"><span>fill</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/fill_n.html" title="cpp/algorithm/fill n"><span class="t-lines"><span>fill_n</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/transform.html" title="cpp/algorithm/transform"><span class="t-lines"><span>transform</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/generate.html" title="cpp/algorithm/generate"><span class="t-lines"><span>generate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/generate_n.html" title="cpp/algorithm/generate n"><span class="t-lines"><span>generate_n</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/remove.html" title="cpp/algorithm/remove"><span class="t-lines"><span>remove</span><span>remove_if</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/remove_copy.html" title="cpp/algorithm/remove copy"><span class="t-lines"><span>remove_copy</span><span>remove_copy_if</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/replace.html" title="cpp/algorithm/replace"><span class="t-lines"><span>replace</span><span>replace_if</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/replace_copy.html" title="cpp/algorithm/replace copy"><span class="t-lines"><span>replace_copy</span><span>replace_copy_if</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/swap.html" title="cpp/algorithm/swap"><span class="t-lines"><span>swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/swap_ranges.html" title="cpp/algorithm/swap ranges"><span class="t-lines"><span>swap_ranges</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/iter_swap.html" title="cpp/algorithm/iter swap"><span class="t-lines"><span>iter_swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/reverse.html" title="cpp/algorithm/reverse"><span class="t-lines"><span>reverse</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/reverse_copy.html" title="cpp/algorithm/reverse copy"><span class="t-lines"><span>reverse_copy</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/rotate.html" title="cpp/algorithm/rotate"><span class="t-lines"><span>rotate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/rotate_copy.html" title="cpp/algorithm/rotate copy"><span class="t-lines"><span>rotate_copy</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/random_shuffle.html" title="cpp/algorithm/random shuffle"><span class="t-lines"><span>random_shuffle</span><span>shuffle</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/unique.html" title="cpp/algorithm/unique"><span class="t-lines"><span>unique</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/unique_copy.html" title="cpp/algorithm/unique copy"><span class="t-lines"><span>unique_copy</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Partitioning operations</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/is_partitioned.html" title="cpp/algorithm/is partitioned"><span class="t-lines"><span>is_partitioned</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/partition.html" title="cpp/algorithm/partition"><span class="t-lines"><span>partition</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/partition_copy.html" title="cpp/algorithm/partition copy"><span class="t-lines"><span>partition_copy</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/stable_partition.html" title="cpp/algorithm/stable partition"><span class="t-lines"><span>stable_partition</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/partition_point.html" title="cpp/algorithm/partition point"><span class="t-lines"><span>partition_point</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Sorting operations (on sorted ranges) </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/is_sorted.html" title="cpp/algorithm/is sorted"><span class="t-lines"><span>is_sorted</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/is_sorted_until.html" title="cpp/algorithm/is sorted until"><span class="t-lines"><span>is_sorted_until</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/sort.html" title="cpp/algorithm/sort"><span class="t-lines"><span>sort</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/partial_sort.html" title="cpp/algorithm/partial sort"><span class="t-lines"><span>partial_sort</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/partial_sort_copy.html" title="cpp/algorithm/partial sort copy"><span class="t-lines"><span>partial_sort_copy</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/stable_sort.html" title="cpp/algorithm/stable sort"><span class="t-lines"><span>stable_sort</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/nth_element.html" title="cpp/algorithm/nth element"><span class="t-lines"><span>nth_element</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Binary search operations (on sorted ranges) </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/lower_bound.html" title="cpp/algorithm/lower bound"><span class="t-lines"><span>lower_bound</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/upper_bound.html" title="cpp/algorithm/upper bound"><span class="t-lines"><span>upper_bound</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/binary_search.html" title="cpp/algorithm/binary search"><span class="t-lines"><span>binary_search</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/equal_range.html" title="cpp/algorithm/equal range"><span class="t-lines"><span>equal_range</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Set operations (on sorted ranges) </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/merge.html" title="cpp/algorithm/merge"><span class="t-lines"><span>merge</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/inplace_merge.html" title="cpp/algorithm/inplace merge"><span class="t-lines"><span>inplace_merge</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/includes.html" title="cpp/algorithm/includes"><span class="t-lines"><span>includes</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/set_difference.html" title="cpp/algorithm/set difference"><span class="t-lines"><span>set_difference</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/set_intersection.html" title="cpp/algorithm/set intersection"><span class="t-lines"><span>set_intersection</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/set_symmetric_difference.html" title="cpp/algorithm/set symmetric difference"><span class="t-lines"><span>set_symmetric_difference</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/set_union.html" title="cpp/algorithm/set union"><span class="t-lines"><span>set_union</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Heap operations </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/is_heap.html" title="cpp/algorithm/is heap"><span class="t-lines"><span>is_heap</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/is_heap_until.html" title="cpp/algorithm/is heap until"><span class="t-lines"><span>is_heap_until</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/make_heap.html" title="cpp/algorithm/make heap"><span class="t-lines"><span>make_heap</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/push_heap.html" title="cpp/algorithm/push heap"><span class="t-lines"><span>push_heap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/pop_heap.html" title="cpp/algorithm/pop heap"><span class="t-lines"><span>pop_heap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/sort_heap.html" title="cpp/algorithm/sort heap"><span class="t-lines"><span>sort_heap</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Minimum/maximum operations </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/max.html" title="cpp/algorithm/max"><span class="t-lines"><span>max</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/max_element.html" title="cpp/algorithm/max element"><span class="t-lines"><span>max_element</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/min.html" title="cpp/algorithm/min"><span class="t-lines"><span>min</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/min_element.html" title="cpp/algorithm/min element"><span class="t-lines"><span>min_element</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/minmax.html" title="cpp/algorithm/minmax"><span class="t-lines"><span>minmax</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/minmax_element.html" title="cpp/algorithm/minmax element"><span class="t-lines"><span>minmax_element</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/lexicographical_compare.html" title="cpp/algorithm/lexicographical compare"><span class="t-lines"><span>lexicographical_compare</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/is_permutation.html" title="cpp/algorithm/is permutation"><span class="t-lines"><span>is_permutation</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/next_permutation.html" title="cpp/algorithm/next permutation"><span class="t-lines"><span>next_permutation</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/prev_permutation.html" title="cpp/algorithm/prev permutation"><span class="t-lines"><span>prev_permutation</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Numeric operations </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="algorithm/iota.html" title="cpp/algorithm/iota"><span class="t-lines"><span>iota</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/accumulate.html" title="cpp/algorithm/accumulate"><span class="t-lines"><span>accumulate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/inner_product.html" title="cpp/algorithm/inner product"><span class="t-lines"><span>inner_product</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/adjacent_difference.html" title="cpp/algorithm/adjacent difference"><span class="t-lines"><span>adjacent_difference</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/partial_sum.html" title="cpp/algorithm/partial sum"><span class="t-lines"><span>partial_sum</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> C library </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/qsort.html" title="cpp/algorithm/qsort"><span class="t-lines"><span>qsort</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="algorithm/bsearch.html" title="cpp/algorithm/bsearch"><span class="t-lines"><span>bsearch</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>The algorithms library defines functions for a variety of purposes (e.g. searching, sorting, counting, manipulating) that operate on ranges of elements. Note that a range is defined as <code>[first, last)</code> where <code>last</code> refers to the element <i>past</i> the last element to inspect or modify.
+</p>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="algorithm.html#Non-modifying_sequence_operations"><span class="tocnumber">1</span> <span class="toctext">Non-modifying sequence operations</span></a></li>
+<li class="toclevel-1"><a href="algorithm.html#Modifying_sequence_operations"><span class="tocnumber">2</span> <span class="toctext">Modifying sequence operations</span></a></li>
+<li class="toclevel-1"><a href="algorithm.html#Partitioning_operations"><span class="tocnumber">3</span> <span class="toctext">Partitioning operations</span></a></li>
+<li class="toclevel-1"><a href="algorithm.html#Sorting_operations"><span class="tocnumber">4</span> <span class="toctext">Sorting operations</span></a></li>
+<li class="toclevel-1"><a href="algorithm.html#Binary_search_operations_.28on_sorted_ranges.29"><span class="tocnumber">5</span> <span class="toctext">Binary search operations (on sorted ranges)</span></a></li>
+<li class="toclevel-1"><a href="algorithm.html#Set_operations_.28on_sorted_ranges.29"><span class="tocnumber">6</span> <span class="toctext">Set operations (on sorted ranges)</span></a></li>
+<li class="toclevel-1"><a href="algorithm.html#Heap_operations"><span class="tocnumber">7</span> <span class="toctext">Heap operations</span></a></li>
+<li class="toclevel-1"><a href="algorithm.html#Minimum.2Fmaximum_operations"><span class="tocnumber">8</span> <span class="toctext">Minimum/maximum operations</span></a></li>
+<li class="toclevel-1"><a href="algorithm.html#Numeric_operations"><span class="tocnumber">9</span> <span class="toctext">Numeric operations</span></a></li>
+<li class="toclevel-1"><a href="algorithm.html#C_library"><span class="tocnumber">10</span> <span class="toctext">C library</span></a></li>
+<li class="toclevel-1 tocsection-1"><a href="algorithm.html#See_also"><span class="tocnumber">11</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h5> <span class="mw-headline" id="Non-modifying_sequence_operations">  Non-modifying sequence operations </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;algorithm&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/all_any_none_of.html" title="cpp/algorithm/all any none of"> <span class="t-lines"><span>all_of</span><span>any_of</span><span>none_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if a predicate is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">true</span></span></span> for all, any or none of the elements in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/for_each.html" title="cpp/algorithm/for each"> <span class="t-lines"><span>for_each</span></span></a></div></div>
+</td>
+<td>   applies a function to a range of elements <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/count.html" title="cpp/algorithm/count"> <span class="t-lines"><span>count</span><span>count_if</span></span></a></div></div>
+</td>
+<td>   returns the number of elements satisfying specific criteria  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/mismatch.html" title="cpp/algorithm/mismatch"> <span class="t-lines"><span>mismatch</span></span></a></div></div>
+</td>
+<td>   finds the first position where two ranges differ  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/equal.html" title="cpp/algorithm/equal"> <span class="t-lines"><span>equal</span></span></a></div></div>
+</td>
+<td>   determines if two sets of elements are the same  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/find.html" title="cpp/algorithm/find"> <span class="t-lines"><span>find</span><span>find_if</span><span>find_if_not</span></span></a></div>
+<div><span class="t-lines"><span></span><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   finds the first element satisfying specific criteria  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/find_end.html" title="cpp/algorithm/find end"> <span class="t-lines"><span>find_end</span></span></a></div></div>
+</td>
+<td>   finds the last sequence of elements in a certain range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/find_first_of.html" title="cpp/algorithm/find first of"> <span class="t-lines"><span>find_first_of</span></span></a></div></div>
+</td>
+<td>   searches for any one of a set of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/adjacent_find.html" title="cpp/algorithm/adjacent find"> <span class="t-lines"><span>adjacent_find</span></span></a></div></div>
+</td>
+<td>   finds the first two adjacent items that are equal (or satisfy a given predicate)  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/search.html" title="cpp/algorithm/search"> <span class="t-lines"><span>search</span></span></a></div></div>
+</td>
+<td>   searches for a range of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/search_n.html" title="cpp/algorithm/search n"> <span class="t-lines"><span>search_n</span></span></a></div></div>
+</td>
+<td>   searches for a number consecutive copies of an element in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Modifying_sequence_operations">  Modifying sequence operations </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;algorithm&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/copy.html" title="cpp/algorithm/copy"> <span class="t-lines"><span>copy</span><span>copy_if</span></span></a></div>
+<div><span class="t-lines"><span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   copies a range of elements to a new location  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/copy_n.html" title="cpp/algorithm/copy n"> <span class="t-lines"><span>copy_n</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   copies a number of elements to a new location  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/copy_backward.html" title="cpp/algorithm/copy backward"> <span class="t-lines"><span>copy_backward</span></span></a></div></div>
+</td>
+<td>   copies a range of elements in backwards order  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/move.html" title="cpp/algorithm/move"> <span class="t-lines"><span>move</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   moves a range of elements to a new location  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/move_backward.html" title="cpp/algorithm/move backward"> <span class="t-lines"><span>move_backward</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   moves a range of elements to a new location in backwards order  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/fill.html" title="cpp/algorithm/fill"> <span class="t-lines"><span>fill</span></span></a></div></div>
+</td>
+<td>   assigns a range of elements a certain value  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/fill_n.html" title="cpp/algorithm/fill n"> <span class="t-lines"><span>fill_n</span></span></a></div></div>
+</td>
+<td>   assigns a value to a number of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/transform.html" title="cpp/algorithm/transform"> <span class="t-lines"><span>transform</span></span></a></div></div>
+</td>
+<td>   applies a function to a range of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/generate.html" title="cpp/algorithm/generate"> <span class="t-lines"><span>generate</span></span></a></div></div>
+</td>
+<td>   saves the result of a function in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/generate_n.html" title="cpp/algorithm/generate n"> <span class="t-lines"><span>generate_n</span></span></a></div></div>
+</td>
+<td>   saves the result of N applications of a function  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/remove.html" title="cpp/algorithm/remove"> <span class="t-lines"><span>remove</span><span>remove_if</span></span></a></div></div>
+</td>
+<td>   removes elements satisfying specific criteria  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/remove_copy.html" title="cpp/algorithm/remove copy"> <span class="t-lines"><span>remove_copy</span><span>remove_copy_if</span></span></a></div></div>
+</td>
+<td>   copies a range of elements omitting those that satisfy specific criteria  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/replace.html" title="cpp/algorithm/replace"> <span class="t-lines"><span>replace</span><span>replace_if</span></span></a></div></div>
+</td>
+<td>   replaces all values satisfying specific criteria with another value  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/replace_copy.html" title="cpp/algorithm/replace copy"> <span class="t-lines"><span>replace_copy</span><span>replace_copy_if</span></span></a></div></div>
+</td>
+<td>   copies a range, replacing elements satisfying specific criteria with another value  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/swap.html" title="cpp/algorithm/swap"> <span class="t-lines"><span>swap</span></span></a></div></div>
+</td>
+<td>   swaps the values of two objects  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/swap_ranges.html" title="cpp/algorithm/swap ranges"> <span class="t-lines"><span>swap_ranges</span></span></a></div></div>
+</td>
+<td>   swaps two ranges of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/iter_swap.html" title="cpp/algorithm/iter swap"> <span class="t-lines"><span>iter_swap</span></span></a></div></div>
+</td>
+<td>   swaps the elements pointed to by two iterators  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/reverse.html" title="cpp/algorithm/reverse"> <span class="t-lines"><span>reverse</span></span></a></div></div>
+</td>
+<td>   reverses the order of elements in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/reverse_copy.html" title="cpp/algorithm/reverse copy"> <span class="t-lines"><span>reverse_copy</span></span></a></div></div>
+</td>
+<td>   creates a copy of a range that is reversed  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/rotate.html" title="cpp/algorithm/rotate"> <span class="t-lines"><span>rotate</span></span></a></div></div>
+</td>
+<td>   rotates the order of elements in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/rotate_copy.html" title="cpp/algorithm/rotate copy"> <span class="t-lines"><span>rotate_copy</span></span></a></div></div>
+</td>
+<td>   copies and rotate a range of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/random_shuffle.html" title="cpp/algorithm/random shuffle"> <span class="t-lines"><span>random_shuffle</span><span>shuffle</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   randomly re-orders elements in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/unique.html" title="cpp/algorithm/unique"> <span class="t-lines"><span>unique</span></span></a></div></div>
+</td>
+<td>   removes consecutive duplicate elements in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/unique_copy.html" title="cpp/algorithm/unique copy"> <span class="t-lines"><span>unique_copy</span></span></a></div></div>
+</td>
+<td>   creates a copy of some range of elements that contains no consecutive duplicates  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Partitioning_operations">  Partitioning operations </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;algorithm&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/is_partitioned.html" title="cpp/algorithm/is partitioned"> <span class="t-lines"><span>is_partitioned</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   determines if the range is partitioned by the given predicate  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/partition.html" title="cpp/algorithm/partition"> <span class="t-lines"><span>partition</span></span></a></div></div>
+</td>
+<td>   divides a range of elements into two groups  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/partition_copy.html" title="cpp/algorithm/partition copy"> <span class="t-lines"><span>partition_copy</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   copies a range dividing the elements into two groups  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/stable_partition.html" title="cpp/algorithm/stable partition"> <span class="t-lines"><span>stable_partition</span></span></a></div></div>
+</td>
+<td>   divides elements into two groups while preserving their relative order  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/partition_point.html" title="cpp/algorithm/partition point"> <span class="t-lines"><span>partition_point</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   locates the partition point of a partitioned range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Sorting_operations">  Sorting operations </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;algorithm&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/is_sorted.html" title="cpp/algorithm/is sorted"> <span class="t-lines"><span>is_sorted</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks whether a range is sorted into ascending order  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/is_sorted_until.html" title="cpp/algorithm/is sorted until"> <span class="t-lines"><span>is_sorted_until</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   finds the largest sorted subrange  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/sort.html" title="cpp/algorithm/sort"> <span class="t-lines"><span>sort</span></span></a></div></div>
+</td>
+<td>   sorts a range into ascending order  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/partial_sort.html" title="cpp/algorithm/partial sort"> <span class="t-lines"><span>partial_sort</span></span></a></div></div>
+</td>
+<td>   sorts the first N elements of a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/partial_sort_copy.html" title="cpp/algorithm/partial sort copy"> <span class="t-lines"><span>partial_sort_copy</span></span></a></div></div>
+</td>
+<td>   copies and partially sorts a range of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/stable_sort.html" title="cpp/algorithm/stable sort"> <span class="t-lines"><span>stable_sort</span></span></a></div></div>
+</td>
+<td>   sorts a range of elements while preserving order between equal elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/nth_element.html" title="cpp/algorithm/nth element"> <span class="t-lines"><span>nth_element</span></span></a></div></div>
+</td>
+<td>   partially sorts the given range making sure that it is partitioned by the given element  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Binary_search_operations_.28on_sorted_ranges.29">  Binary search operations (on sorted ranges) </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;algorithm&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/lower_bound.html" title="cpp/algorithm/lower bound"> <span class="t-lines"><span>lower_bound</span></span></a></div></div>
+</td>
+<td>   returns an iterator to the first element <i>not less</i> than the given value <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/upper_bound.html" title="cpp/algorithm/upper bound"> <span class="t-lines"><span>upper_bound</span></span></a></div></div>
+</td>
+<td>   returns an iterator to the first element <i>greater</i> than a certain value <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/binary_search.html" title="cpp/algorithm/binary search"> <span class="t-lines"><span>binary_search</span></span></a></div></div>
+</td>
+<td>   determines if an element exists in a certain range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/equal_range.html" title="cpp/algorithm/equal range"> <span class="t-lines"><span>equal_range</span></span></a></div></div>
+</td>
+<td>   returns range of elements matching a specific key <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Set_operations_.28on_sorted_ranges.29">  Set operations (on sorted ranges) </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;algorithm&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/merge.html" title="cpp/algorithm/merge"> <span class="t-lines"><span>merge</span></span></a></div></div>
+</td>
+<td>   merges two sorted ranges  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/inplace_merge.html" title="cpp/algorithm/inplace merge"> <span class="t-lines"><span>inplace_merge</span></span></a></div></div>
+</td>
+<td>   merges two ordered ranges in-place  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/includes.html" title="cpp/algorithm/includes"> <span class="t-lines"><span>includes</span></span></a></div></div>
+</td>
+<td>   returns true if one set is a subset of another  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/set_difference.html" title="cpp/algorithm/set difference"> <span class="t-lines"><span>set_difference</span></span></a></div></div>
+</td>
+<td>   computes the difference between two sets  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/set_intersection.html" title="cpp/algorithm/set intersection"> <span class="t-lines"><span>set_intersection</span></span></a></div></div>
+</td>
+<td>   computes the intersection of two sets  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/set_symmetric_difference.html" title="cpp/algorithm/set symmetric difference"> <span class="t-lines"><span>set_symmetric_difference</span></span></a></div></div>
+</td>
+<td>   computes the symmetric difference between two sets  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/set_union.html" title="cpp/algorithm/set union"> <span class="t-lines"><span>set_union</span></span></a></div></div>
+</td>
+<td>   computes the union of two sets  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Heap_operations">  Heap operations </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;algorithm&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/is_heap.html" title="cpp/algorithm/is heap"> <span class="t-lines"><span>is_heap</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   checks if the given range is a max heap <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/is_heap_until.html" title="cpp/algorithm/is heap until"> <span class="t-lines"><span>is_heap_until</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   finds the largest subrange that is a max heap  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/make_heap.html" title="cpp/algorithm/make heap"> <span class="t-lines"><span>make_heap</span></span></a></div></div>
+</td>
+<td>   creates a max heap out of a range of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/push_heap.html" title="cpp/algorithm/push heap"> <span class="t-lines"><span>push_heap</span></span></a></div></div>
+</td>
+<td>   adds an element to a max heap  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/pop_heap.html" title="cpp/algorithm/pop heap"> <span class="t-lines"><span>pop_heap</span></span></a></div></div>
+</td>
+<td>   removes the largest element from a max heap  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/sort_heap.html" title="cpp/algorithm/sort heap"> <span class="t-lines"><span>sort_heap</span></span></a></div></div>
+</td>
+<td>   turns a max heap into a range of elements sorted in ascending order  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Minimum.2Fmaximum_operations">  Minimum/maximum operations </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;algorithm&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/max.html" title="cpp/algorithm/max"> <span class="t-lines"><span>max</span></span></a></div></div>
+</td>
+<td>   returns the larger of two elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/max_element.html" title="cpp/algorithm/max element"> <span class="t-lines"><span>max_element</span></span></a></div></div>
+</td>
+<td>   returns the largest element in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/min.html" title="cpp/algorithm/min"> <span class="t-lines"><span>min</span></span></a></div></div>
+</td>
+<td>   returns the smaller of two elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/min_element.html" title="cpp/algorithm/min element"> <span class="t-lines"><span>min_element</span></span></a></div></div>
+</td>
+<td>   returns the smallest element in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/minmax.html" title="cpp/algorithm/minmax"> <span class="t-lines"><span>minmax</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   returns the larger and the smaller of two elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/minmax_element.html" title="cpp/algorithm/minmax element"> <span class="t-lines"><span>minmax_element</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   returns the smallest and the largest element in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/lexicographical_compare.html" title="cpp/algorithm/lexicographical compare"> <span class="t-lines"><span>lexicographical_compare</span></span></a></div></div>
+</td>
+<td>   returns true if one range is lexicographically less than another  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/is_permutation.html" title="cpp/algorithm/is permutation"> <span class="t-lines"><span>is_permutation</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   determines if a sequence is a permutation of another sequence  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/next_permutation.html" title="cpp/algorithm/next permutation"> <span class="t-lines"><span>next_permutation</span></span></a></div></div>
+</td>
+<td>   generates the next greater lexicographic permutation of a range of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/prev_permutation.html" title="cpp/algorithm/prev permutation"> <span class="t-lines"><span>prev_permutation</span></span></a></div></div>
+</td>
+<td>   generates the next smaller lexicographic permutation of a range of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Numeric_operations">  Numeric operations </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;numeric&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="algorithm/iota.html" title="cpp/algorithm/iota"> <span class="t-lines"><span>iota</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   fills a range with successive increments of the starting value  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/accumulate.html" title="cpp/algorithm/accumulate"> <span class="t-lines"><span>accumulate</span></span></a></div></div>
+</td>
+<td>   sums up a range of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/inner_product.html" title="cpp/algorithm/inner product"> <span class="t-lines"><span>inner_product</span></span></a></div></div>
+</td>
+<td>   computes the inner product of two ranges of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/adjacent_difference.html" title="cpp/algorithm/adjacent difference"> <span class="t-lines"><span>adjacent_difference</span></span></a></div></div>
+</td>
+<td>   computes the differences between adjacent elements in a range  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/partial_sum.html" title="cpp/algorithm/partial sum"> <span class="t-lines"><span>partial_sum</span></span></a></div></div>
+</td>
+<td>   computes the partial sum of a range of elements  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="C_library">  C library </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;cstdlib&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/qsort.html" title="cpp/algorithm/qsort"> <span class="t-lines"><span>qsort</span></span></a></div></div>
+</td>
+<td>   sorts a range of elements with unspecified type <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="algorithm/bsearch.html" title="cpp/algorithm/bsearch"> <span class="t-lines"><span>bsearch</span></span></a></div></div>
+</td>
+<td>   searches an array for an element of unspecified type <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see">
+<span><a href="../c/algorithm.html" title="c/algorithm">C documentation</a></span> for <span class="t-dsc-see-tt"><span>Algorithms</span></span>
+</div>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 13891/1000000
+Preprocessor generated node count: 9672/1000000
+Post‐expand include size: 499963/2097152 bytes
+Template argument size: 84953/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:721-0!*!0!!en!*!* and timestamp 20150715192128 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/algorithm&amp;oldid=70996</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.080 secs. -->
+	</body>
+<!-- Cached 20150715192330 -->
+</html>

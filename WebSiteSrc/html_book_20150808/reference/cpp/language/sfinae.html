@@ -1,0 +1,528 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>SFINAE - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/sfinae","wgTitle":"cpp/language/sfinae","wgCurRevisionId":78773,"wgArticleId":13155,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/sfinae","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_sfinae skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">SFINAE</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="templates.html" title="cpp/language/templates"> Templates</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="template_parameters.html" title="cpp/language/template parameters"> parameters and arguments</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html" title="cpp/language/class template"> class templates</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function_template.html" title="cpp/language/function template"> function templates</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template"> class member templates</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="variable_template.html" title="cpp/language/variable template"> variable templates</a><span class="t-mark-rev t-since-cxx14">(C++14)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_argument_deduction.html" title="cpp/language/template argument deduction"> template argument deduction</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_specialization.html" title="cpp/language/template specialization"> explicit (full) specialization</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="partial_specialization.html" title="cpp/language/partial specialization"> partial specialization</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="dependent_name.html" title="cpp/language/dependent name"> dependent names</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="parameter_pack.html" title="cpp/language/parameter pack"> parameter packs</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="sizeof....html" title="cpp/language/sizeof..."><span class="t-lines"><span>sizeof...</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fold.html" title="cpp/language/fold"> fold-expressions</a><span class="t-mark-rev t-since-cxx17">(C++17)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> SFINAE</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concepts.html" title="cpp/language/constraints"> Constraints and concepts</a><span class="t-mark-rev t-since-concepts-ts t-mark-ts">(concepts TS)</span> </td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>"Substitution Failure Is Not An Error"
+</p>
+<p><br>
+This rule applies during overload resolution of function templates: When <a href="function_template.html#Template_argument_substitution" title="cpp/language/function template">substituting</a> the <a href="template_argument_deduction.html" title="cpp/language/template argument deduction">deduced type</a> for the template parameter fails, the specialization is discarded from the <a href="overload_resolution.html" title="cpp/language/overload resolution">overload set</a> instead of causing a compile error.
+</p>
+<p>This feature is used in template metaprogramming.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="sfinae.html#Explanation"><span class="tocnumber">1</span> <span class="toctext">Explanation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="sfinae.html#Type_SFINAE"><span class="tocnumber">2</span> <span class="toctext">Type SFINAE</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="sfinae.html#Expression_SFINAE"><span class="tocnumber">3</span> <span class="toctext">Expression SFINAE</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="sfinae.html#Library_support"><span class="tocnumber">4</span> <span class="toctext">Library support</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="sfinae.html#Alternatives"><span class="tocnumber">5</span> <span class="toctext">Alternatives</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="sfinae.html#Examples"><span class="tocnumber">6</span> <span class="toctext">Examples</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+<p>Function template parameters are substituted (replaced by template arguments) twice:
+</p>
+<ul>
+<li> explicitly specified template arguments are substituted before template argument deduction
+</li>
+<li> deduced arguments and the arguments obtained from the defaults are substituted after template argument deduction
+</li>
+</ul>
+<p>Substitution occurs in
+</p>
+<ul>
+<li> all types used in the function type (which includes return type and the types of all parameters)
+</li>
+<li> all types used in the template parameter declarations
+</li>
+</ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<ul>
+<li> all expressions used in the function type
+</li>
+<li> all expressions used in a template parameter declaration
+</li>
+</ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<p>A <i>substitution failure</i> is any situation when the type or expression above would be ill-formed (with a required diagnostic), if written using the substituted arguments.
+</p>
+<p>Only the failures in the types and expressions in the <i>immediate context</i> of the function type or its template parameter types are SFINAE errors. If the evaluation of a substituted type/expression causes a side-effect such as instantiation of some template specialization, generation of an implicitly-defined member function, etc, errors in those side-effects are treated as hard errors.
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: mini-example where this matters </td>
+</tr></table>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14">
+<td>
+<p>Substitution proceeds in lexical order and stops when a failure is encountered.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> SomeType<span class="sy1">&gt;</span>
+<span class="kw1">struct</span> inner_type <span class="br0">{</span> <span class="kw1">typedef</span> <span class="kw1">typename</span> SomeType<span class="sy4">::</span><span class="me2">type</span> type<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span>
+  <span class="kw1">class</span> T,
+  <span class="kw1">class</span>   <span class="sy1">=</span> <span class="kw1">typename</span> T<span class="sy4">::</span><span class="me2">type</span>,            <span class="co1">// SFINAE failure if T has no member type</span>
+  <span class="kw1">class</span> U <span class="sy1">=</span> <span class="kw1">typename</span> inner_type<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">type</span> <span class="co1">// hard error if T has no member type</span>
+                                         <span class="co1">// (guaranteed to not occur as of C++14)</span>
+<span class="sy1">&gt;</span> <span class="kw4">void</span> foo <span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Type SFINAE">edit</a>]</span> <span class="mw-headline" id="Type_SFINAE">Type SFINAE</span>
+</h3>
+<p>The following type errors are SFINAE errors:
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<ul><li> attempting to instantiate a pack expansion containing multiple packs of different lengths
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<ul><li> attempting to create an array of void, array of reference, array of function, array of abstract class types, array of negative size, or array of size zero.
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">int</span> I<span class="sy1">&gt;</span> <span class="kw4">void</span> div<span class="br0">(</span><span class="kw4">char</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">[</span>I <span class="sy2">%</span> <span class="nu0">2</span> <span class="sy1">==</span> <span class="nu0">0</span><span class="br0">]</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// this overload is selected when I is even</span>
+<span class="br0">}</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw4">int</span> I<span class="sy1">&gt;</span> <span class="kw4">void</span> div<span class="br0">(</span><span class="kw4">char</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">[</span>I <span class="sy2">%</span> <span class="nu0">2</span> <span class="sy1">==</span> <span class="nu0">1</span><span class="br0">]</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// this overload is selected  when I is odd</span>
+<span class="br0">}</span></pre></div></div>
+<ul><li> attempting to use a type that is not a class or enumeration on the left of a scope resolution operator <code><b>::</b></code>
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">int</span> f<span class="br0">(</span><span class="kw1">typename</span> T<span class="sy4">::</span><span class="me2">B</span><span class="sy2">*</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">int</span> f<span class="br0">(</span>T<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> i <span class="sy1">=</span> f<span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// uses second overload</span></pre></div></div>
+<ul><li> attempting to use a member of a type, where
+</li></ul>
+<dl><dd>
+<ul>
+<li> the type does not contain the specified member
+</li>
+<li> the specified member is not a type where a type is required
+</li>
+<li> the specified member is not a template where a template is required
+</li>
+<li> the specified member is not a non-type where a non-type is required
+</li>
+</ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw4">int</span> I<span class="sy1">&gt;</span> <span class="kw1">struct</span> X <span class="br0">{</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span><span class="sy1">&gt;</span> <span class="kw1">struct</span> Z <span class="br0">{</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="kw1">typename</span> T<span class="sy4">::</span><span class="me2">Y</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">{</span><span class="br0">}</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">void</span> g<span class="br0">(</span>X<span class="sy1">&lt;</span>T<span class="sy4">::</span><span class="me2">N</span><span class="sy1">&gt;</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">{</span><span class="br0">}</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">void</span> h<span class="br0">(</span>Z<span class="sy1">&lt;</span>T<span class="sy4">::</span><span class="kw1">template</span> TT<span class="sy1">&gt;</span><span class="sy2">*</span><span class="br0">)</span><span class="br0">{</span><span class="br0">}</span>
+<span class="kw1">struct</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="br0">{</span> <span class="kw4">int</span> Y<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> C <span class="br0">{</span> <span class="kw1">typedef</span> <span class="kw4">int</span> N<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D <span class="br0">{</span> <span class="kw1">typedef</span> <span class="kw4">int</span> TT<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// Deduction fails in each of these cases:</span>
+    f<span class="sy1">&lt;</span>A<span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// A does not contain a member Y</span>
+    f<span class="sy1">&lt;</span>B<span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// The Y member of B is not a type</span>
+    g<span class="sy1">&lt;</span>C<span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// The N member of C is not a non-type</span>
+    h<span class="sy1">&lt;</span>D<span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// The TT member of D is not a template</span>
+<span class="br0">}</span>
+<span class="co1">// todo: needs to demonstrate overload resolution, not just failure</span></pre></div></div>
+<ul>
+<li> attempting to create a pointer to reference
+</li>
+<li> attempting to create a reference to void
+</li>
+<li> attempting to create pointer to member of T, where T is not a class type
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> T<span class="sy1">&gt;</span>
+<span class="kw1">class</span> is_class <span class="br0">{</span>
+    <span class="kw1">typedef</span> <span class="kw4">char</span> yes<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span><span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="kw4">char</span> no <span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> C<span class="sy1">&gt;</span> <span class="kw4">static</span> yes<span class="sy3">&amp;</span> test<span class="br0">(</span><span class="kw4">int</span> C<span class="sy4">::</span><span class="sy2">*</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// selected if C is a class type</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> C<span class="sy1">&gt;</span> <span class="kw4">static</span> no<span class="sy3">&amp;</span>  test<span class="br0">(</span>...<span class="br0">)</span><span class="sy4">;</span>      <span class="co1">// selected otherwise</span>
+  <span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw4">static</span> <span class="kw4">bool</span> <span class="kw4">const</span> value <span class="sy1">=</span> sizeof<span class="br0">(</span>test<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="br0">)</span> <span class="sy1">==</span> sizeof<span class="br0">(</span>yes<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<ul><li> attempting to give an invalid type to a non-type template parameter
+</li></ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T, T<span class="sy1">&gt;</span> <span class="kw1">struct</span> S <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">int</span> f<span class="br0">(</span>S<span class="sy1">&lt;</span>T, T<span class="br0">(</span><span class="br0">)</span><span class="sy1">&gt;</span><span class="sy2">*</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">struct</span> X <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> i0 <span class="sy1">=</span> f<span class="sy1">&lt;</span>X<span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="co1">// todo: needs to demonstrate overload resolution, not just failure</span></pre></div></div>
+<ul><li> attempting to perform an invalid conversion in 
+</li></ul>
+<dl><dd>
+<ul>
+<li> in a template argument expression
+</li>
+<li> in an expression used in function declaration
+</li>
+</ul>
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T, T<span class="sy2">*</span><span class="sy1">&gt;</span> <span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="kw4">int</span> i2 <span class="sy1">=</span> f<span class="sy1">&lt;</span><span class="kw4">int</span>,<span class="nu0">1</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// can’t conv 1 to int*</span>
+<span class="co1">// todo: needs to demonstrate overload resolution, not just failure</span></pre></div></div>
+<ul>
+<li> attempting to create a function type with a parameter of type void
+</li>
+<li> attempting to create a function type which returns an array type or a function type
+</li>
+</ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx11">
+<td>
+<ul><li> attempting to create a cv-qualified function type
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td>
+</tr>
+<tr class="t-rev t-since-cxx11">
+<td>
+<ul><li> attempting to create a function type with a parameter or return type that is an <a href="abstract_class.html" title="cpp/language/abstract class">abstract class</a>.
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Expression SFINAE">edit</a>]</span> <span class="mw-headline" id="Expression_SFINAE">Expression SFINAE</span>
+</h3>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<p>The following expression errors are SFINAE errors
+</p>
+<ul>
+<li> Ill-formed expression used in a template parameter type
+</li>
+<li> Ill-formed expression used in the function type
+</li>
+</ul>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> X <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> Y <span class="br0">{</span> Y<span class="br0">(</span>X<span class="br0">)</span><span class="br0">{</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// X is convertible to Y</span>
+ 
+<span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span>
+<span class="kw4">auto</span> f<span class="br0">(</span>T t1, T t2<span class="br0">)</span> <span class="sy2">-</span><span class="sy1">&gt;</span> decltype<span class="br0">(</span>t1 <span class="sy2">+</span> t2<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// overload #1</span>
+ 
+X f<span class="br0">(</span>Y, Y<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// overload #2</span>
+ 
+X x1, x2<span class="sy4">;</span>
+X x3 <span class="sy1">=</span> f<span class="br0">(</span>x1, x2<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// deduction fails on #1 (expression x1+x2 is ill-formed)</span>
+                   <span class="co1">// only #2 is in the overload set, and is called</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+<tr class="t-rev t-until-cxx11">
+<td>
+<p>Only constant expressions that are used in types (such as array bounds) were required to be treated as SFINAE (and not hard errors) before C++11.
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Library support">edit</a>]</span> <span class="mw-headline" id="Library_support">Library support</span>
+</h3>
+<p>The standard library component <span class="t-lc"><a href="../types/enable_if.html" title="cpp/types/enable if">std::enable_if</a></span> allows for creating a substitution failure in order to enable or disable particular overloads based on a condition evaluated at compile time.
+</p>
+<p>The standard library component <span class="t-lc"><a href="../types/void_t.html" title="cpp/types/void t">std::void_t</a></span> is another utility metafunction that simplifies SFINAE applications.
+</p>
+<p>In addition, many <a href="../types.html" title="cpp/types">type traits</a> are implemented using SFINAE.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Alternatives">edit</a>]</span> <span class="mw-headline" id="Alternatives">Alternatives</span>
+</h3>
+<p>Where applicable, <a href="../iterator/iterator_tags.html#Example" title="cpp/iterator/iterator tags">tag dispatch</a>, <a href="static_assert.html" title="cpp/language/static assert">static_assert</a>, and, if available, <a href="concepts.html" title="cpp/language/concepts" class="mw-redirect">concepts</a>, are usually preferred over direct use of SFINAE.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Examples">edit</a>]</span> <span class="mw-headline" id="Examples">Examples</span>
+</h3>
+<div class="t-example">
+<p>A common idiom is to use expression SFINAE on the return type, where the expression uses the comma operator, whose left subexpression is the one that is being examined (cast to void to ensure the user-defined operator comma on the returned type is not selected), and the right subexpression has the type that the function is supposed to return.
+</p>
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+ 
+<span class="co1">// this overload is always in the set of overloads</span>
+<span class="co1">// ellipsis parameter has the lowest ranking for overload resolution</span>
+<span class="kw4">void</span> test<span class="br0">(</span>...<span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1448">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Catch-all overload called<span class="es1">\n</span>"</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// this overload is added to the set of overloads if</span>
+<span class="co1">// C is a reference-to-class type and F is a member function pointer</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> C, <span class="kw1">class</span> F<span class="sy1">&gt;</span>
+<span class="kw4">auto</span> test<span class="br0">(</span>C c, F f<span class="br0">)</span> <span class="sy2">-</span><span class="sy1">&gt;</span> decltype<span class="br0">(</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="br0">(</span>c.<span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span>, <span class="kw4">void</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1448">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Reference overload called<span class="es1">\n</span>"</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// this overload is added to the set of overloads if</span>
+<span class="co1">// C is a pointer-to-class type and F is a member function pointer</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> C, <span class="kw1">class</span> F<span class="sy1">&gt;</span>
+<span class="kw4">auto</span> test<span class="br0">(</span>C c, F f<span class="br0">)</span> <span class="sy2">-</span><span class="sy1">&gt;</span> decltype<span class="br0">(</span><span class="br0">(</span><span class="kw4">void</span><span class="br0">)</span><span class="br0">(</span><span class="br0">(</span>c<span class="sy2">-</span><span class="sy1">&gt;</span><span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>, <span class="kw4">void</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1448">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Pointer overload called<span class="es1">\n</span>"</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">struct</span> X <span class="br0">{</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span><span class="br0">{</span>
+  X x<span class="sy4">;</span>
+  test<span class="br0">(</span> x, <span class="sy3">&amp;</span>X<span class="sy4">::</span><span class="me2">f</span><span class="br0">)</span><span class="sy4">;</span>
+  test<span class="br0">(</span><span class="sy3">&amp;</span>x, <span class="sy3">&amp;</span>X<span class="sy4">::</span><span class="me2">f</span><span class="br0">)</span><span class="sy4">;</span>
+  test<span class="br0">(</span><span class="nu0">42</span>, <span class="nu0">1337</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Reference overload called
+Pointer overload called
+Catch-all overload called</pre></div></div> 
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1273/1000000
+Preprocessor generated node count: 6746/1000000
+Post‐expand include size: 33819/2097152 bytes
+Template argument size: 10299/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13155-0!*!0!!en!*!* and timestamp 20150608165411 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/sfinae&amp;oldid=78773</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.081 secs. -->
+	</body>
+<!-- Cached 20150608174233 -->
+</html>

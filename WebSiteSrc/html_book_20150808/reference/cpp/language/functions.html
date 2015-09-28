@@ -1,0 +1,251 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Functions - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/functions","wgTitle":"cpp/language/functions","wgCurRevisionId":69664,"wgArticleId":9921,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/functions","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_functions skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Functions</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"> Functions</strong><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Declarations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html" title="cpp/language/function"> function declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html#Parameter_list" title="cpp/language/function"> function parameter list</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html#Function_definition" title="cpp/language/function"> function definition</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_arguments.html" title="cpp/language/default arguments"> default arguments</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="variadic_arguments.html" title="cpp/language/variadic arguments"> variadic arguments</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="inline.html" title="cpp/language/inline"> inline specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lambda.html" title="cpp/language/lambda"> lambda expression</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Function calls </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="adl.html" title="cpp/language/adl"> argument-dependent lookup (ADL)</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operator_other.html#Built-in_function_call_operator" title="cpp/language/operator other"> function-call operator</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept/FunctionObject.html" title="cpp/concept/FunctionObject"> function objects</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Overloading </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="overload_resolution.html" title="cpp/language/overload resolution"> overload resolution</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="operators.html" title="cpp/language/operators"> operator overloading</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="overloaded_address.html" title="cpp/language/overloaded address"> address of an overload set</a> </td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Functions are C++ entities that associate a sequence of <a href="statements.html" title="cpp/language/statements">statements</a> (a <i>function body</i>) with a <i>name</i> and a list of zero or more <i>function parameters</i>.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// function name: "isodd"</span>
+<span class="co1">// parameter list has one parameter, with name "n" and type int</span>
+<span class="co1">// the return type is bool</span>
+<span class="kw4">bool</span> isodd<span class="br0">(</span><span class="kw4">int</span> n<span class="br0">)</span>
+<span class="br0">{</span>                      <span class="co1">// the body of the function begins</span>
+    <span class="kw1">return</span> n <span class="sy2">%</span> <span class="nu0">2</span><span class="sy4">;</span>
+<span class="br0">}</span>                      <span class="co1">// the body of the function ends</span></pre></div></div>
+<p>When a function is invoked, e.g. in a <a href="operator_other.html#Built-in_function_call_operator" title="cpp/language/operator other">function-call expression</a>, the parameters are initialized from the arguments (either provided at the place of call or <a href="default_arguments.html" title="cpp/language/default arguments">defaulted</a>) and the statements in the function body are executed.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">for</span><span class="br0">(</span><span class="kw4">int</span> arg <span class="sy4">:</span> <span class="br0">{</span><span class="sy2">-</span><span class="nu0">3</span>, <span class="sy2">-</span><span class="nu0">2</span>, <span class="sy2">-</span><span class="nu0">1</span>, <span class="nu0">0</span>, <span class="nu0">1</span>, <span class="nu0">2</span>, <span class="nu0">3</span><span class="br0">}</span><span class="br0">)</span>
+        <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> isodd<span class="br0">(</span>arg<span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">' '</span><span class="sy4">;</span> <span class="co1">// isodd called 7 times, each</span>
+                                        <span class="co1">// time n is copy-initialized from arg</span>
+<span class="br0">}</span></pre></div></div>
+<p>A function can terminate by <a href="return.html" title="cpp/language/return">returning</a> or by <a href="throw.html" title="cpp/language/throw">throwing</a> an <a href="exceptions.html" title="cpp/language/exceptions">exception</a>.
+</p>
+<p>A <a href="function.html" title="cpp/language/function">function declaration</a> may appear in any scope, but a <a href="function.html" title="cpp/language/function">function definition</a> may only appear in namespace scope or, for <a href="member_functions.html" title="cpp/language/member functions">member</a> and <a href="friend.html" title="cpp/language/friend">friend</a> functions, in class scope. A function that is declared in a class body without a friend specifier is a class member function. Such functions have many additional properties, see <a href="member_functions.html" title="cpp/language/member functions">member functions</a> for details.
+</p>
+<p>Functions are not objects: there are no arrays of functions and functions cannot be passed by value or returned from other functions. Pointers and references to functions are allowed, and may be used where functions themselves cannot.
+</p>
+<p>Each function has a type, which consists of the function's return type, the types of all parameters (after array-to-pointer and function-to-pointer transformations, see <a href="function.html#Parameter_list" title="cpp/language/function">parameter list</a>), and, for member functions, cv-qualification and ref-qualification. Function types also have <a href="language_linkage.html" title="cpp/language/language linkage">language linkage</a>. There are no cv-qualified function types (not to be confused with the types of <a href="member_functions.html" title="cpp/language/member functions">cv-qualified functions</a> such as <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> f<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span></span></span> or functions returning <a href="cv.html" title="cpp/language/cv">cv-qualified types</a>, such as <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> <span class="kw4">const</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span></span></span>)
+</p>
+<p>Unnamed functions can be generated by <a href="lambda.html" title="cpp/language/lambda">lambda-expressions</a>.
+</p>
+<p>Multiple functions in the same scope may have the same name, as long as their parameter lists and, for member functions, cv/ref qualifications are different. This is known as <a href="overload_resolution.html" title="cpp/language/overload resolution">function overloading</a>.
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: links to other Function subpages </td>
+</tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Function objects">edit</a>]</span> <span class="mw-headline" id="Function_objects">Function objects</span>
+</h3>
+<p>Besides function lvalues, the function call expression supports pointers to functions, dereferenced pointers to member functions, <a href="lambda.html" title="cpp/language/lambda">lambda-expressions</a>, and any variable of class type that overloads the function-call operator. Together, these types are known as <a href="../concept/FunctionObject.html" title="cpp/concept/FunctionObject"><code>FunctionObject</code>s</a>, and they are used ubiquitously through the C++ standard library, see for example, usages of <a href="../concept/BinaryPredicate.html" title="cpp/concept/BinaryPredicate"><code>BinaryPredicate</code></a> and <a href="../concept/Compare.html" title="cpp/concept/Compare"><code>Compare</code></a>.
+</p>
+<p>The standard library also provides a number of pre-defined <a href="../utility/functional.html" title="cpp/utility/functional">function object templates</a> as well as the methods to compose new ones (including <span class="t-lc"><a href="../utility/functional/mem_fn.html" title="cpp/utility/functional/mem fn">std::mem_fn</a></span>, <span class="t-lc"><a href="../utility/functional/bind.html" title="cpp/utility/functional/bind">std::bind</a></span>, and <span class="t-lc"><a href="../utility/functional/function.html" title="cpp/utility/functional/function">std::function</a></span>).
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1062/1000000
+Preprocessor generated node count: 5457/1000000
+Post‐expand include size: 27822/2097152 bytes
+Template argument size: 4104/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9921-0!*!0!*!*!*!* and timestamp 20150313154951 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/functions&amp;oldid=69664</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.319 secs. -->
+	</body>
+<!-- Cached 20150313154951 -->
+</html>

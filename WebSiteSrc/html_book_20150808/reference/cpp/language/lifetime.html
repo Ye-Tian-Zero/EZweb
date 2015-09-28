@@ -1,0 +1,328 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Object lifetime - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/lifetime","wgTitle":"cpp/language/lifetime","wgCurRevisionId":74900,"wgArticleId":13096,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/lifetime","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_lifetime skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Object lifetime</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="basic_concepts.html" title="cpp/language/basic concepts"> Basic Concepts</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> language keywords</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="translation_phases.html" title="cpp/language/translation phases"> phases of translation</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> comments </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> the main() function</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> names and identifiers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="incomplete_type.html" title="cpp/language/type"> types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> fundamental types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="objects.html" title="cpp/language/object"> objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scope.html" title="cpp/language/scope"> scope</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> object lifetime</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> storage duration and linkage</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="definition.html" title="cpp/language/definition"> definitions and ODR</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup">qualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup">unqualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory_model.html" title="cpp/language/memory model"> memory model</a> </td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Every <a href="objects.html" title="cpp/language/object">object</a> has a <i>lifetime</i>, which is a runtime property: for any object, there is a moment during the execution of a program when its lifetime begins, and there is a moment when it ends.
+</p>
+<ul>
+<li> For objects of class or aggregate types that are initialized by anything other than the <a href="default_constructor.html#Trivial_default_constructor" title="cpp/language/default constructor">trivial default constructor</a>, lifetime begins when initialization ends.
+</li>
+<li> For objects of class types whose <a href="destructor.html#Trivial_destructor" title="cpp/language/destructor">destructor</a> is not trivial, lifetime ends when the execution of the destructor begins.
+</li>
+<li> For all other objects (class objects initialized by a trivial default constructor, non-class objects, array objects, etc), lifetime begins when the properly-aligned storage for the object is allocated and ends when the storage is deallocated or reused by another object.
+</li>
+</ul>
+<p>Lifetime of an object is equal to or is nested within the lifetime of its storage, see <a href="storage_duration.html" title="cpp/language/storage duration">storage duration</a>.
+</p>
+<p>Lifetime of a <a href="reference.html" title="cpp/language/reference">reference</a> is exactly its storage duration (which makes <a href="reference.html#Dangling_references" title="cpp/language/reference">dangling references</a> possible)
+</p>
+<p>Lifetimes of member objects and base subobjects begin and end following <a href="constructor.html#Initialization_order" title="cpp/language/initializer list">class initialization order</a>.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="lifetime.html#Temporary_object_lifetime"><span class="tocnumber">1</span> <span class="toctext">Temporary object lifetime</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="lifetime.html#Storage_reuse"><span class="tocnumber">2</span> <span class="toctext">Storage reuse</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="lifetime.html#Access_outside_of_lifetime"><span class="tocnumber">3</span> <span class="toctext">Access outside of lifetime</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="lifetime.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Temporary object lifetime">edit</a>]</span> <span class="mw-headline" id="Temporary_object_lifetime">Temporary object lifetime</span>
+</h3>
+<p>Temporary objects are created in various situations: binding a reference to a prvalue, returning a prvalue from a function, cast to a prvalue, throwing an exception, entering an exception handler, and in some initializations. In every case, all temporaries are destroyed as the last step in evaluating the full-expression that (lexically) contains the point where they were created, and if multiple temporaries were created, they are destroyed in the order opposite to the order of creation. This is true even if that evaluation ends in throwing an exception.
+</p>
+<p>There are two exceptions from that:
+</p>
+<p>1. The lifetime of a temporary object may be extended by binding to a const lvalue reference <span class="t-rev-inl t-since-cxx11"><span>or to an rvalue reference</span> <span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span>, see <a href="reference_initialization.html#Lifetime_of_a_temporary" title="cpp/language/reference initialization">reference initialization</a> for details.
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+2. The lifetime of a temporary created when evaluating the default arguments of a default constructor used to initialize an element of an array ends before the next element of the array begins initialization.</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Storage reuse">edit</a>]</span> <span class="mw-headline" id="Storage_reuse">Storage reuse</span>
+</h3>
+<p>A program is not required to call the destructor of an object to end its lifetime if the object is <a href="destructor.html#Trivial_destructor" title="cpp/language/destructor">trivially-destructible</a> or if the program does not rely on the side effects of the destructor. However, if a program ends the lifetime of an non-trivial object, it must ensure that a new object of the same type is constructed in-place (e.g. via placement new) before the destructor may be called implicitly, i.e. due to scope exit or exception for automatic objects, due to thread exit for thread-local objects, or due to program exit for static objects; otherwise the behavior is undefined.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> T <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// trivial</span>
+<span class="kw1">struct</span> B <span class="br0">{</span>
+    ~B<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// non-trivial</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> x<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">long</span> <span class="kw4">long</span> n<span class="sy4">;</span> <span class="co1">// automatic, trivial</span>
+    new <span class="br0">(</span><span class="sy3">&amp;</span>n<span class="br0">)</span> <span class="kw4">double</span><span class="br0">(</span><span class="nu16">3.14</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// reuse with a different type okay</span>
+<span class="br0">}</span> <span class="co1">// okay</span>
+<span class="kw4">void</span> h<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    B b<span class="sy4">;</span> <span class="co1">// automatic non-trivially destructible</span>
+    b.~B<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// end lifetime (not required, since no side-effects)</span>
+    new <span class="br0">(</span><span class="sy3">&amp;</span>b<span class="br0">)</span> T<span class="sy4">;</span> <span class="co1">// wrong type: okay until the destructor is called</span>
+<span class="br0">}</span> <span class="co1">// destructor is called: undefined behavior</span></pre></div></div>
+<p>It is undefined behavior to reuse storage that is or was occupied by a const object of static, thread-local, or automatic storage duration.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> B <span class="br0">{</span>
+    B<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// non-trivial</span>
+    ~B<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// non-trivial</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">const</span> B b<span class="sy4">;</span> <span class="co1">// const static</span>
+<span class="kw4">void</span> h<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    b.~B<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// end the lifetime of b</span>
+    new <span class="br0">(</span><span class="kw1">const_cast</span><span class="sy1">&lt;</span>B<span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span><span class="sy3">&amp;</span>b<span class="br0">)</span><span class="br0">)</span> <span class="kw4">const</span> B<span class="sy4">;</span> <span class="co1">// undefined behavior: attempted reuse of a const</span>
+<span class="br0">}</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Access outside of lifetime">edit</a>]</span> <span class="mw-headline" id="Access_outside_of_lifetime">Access outside of lifetime</span>
+</h3>
+<p>If an object was destroyed (e.g. by explicit destructor call), but the storage was not deallocated, the following uses of the glvalue expression that identifies that object are undefined:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> lvalue to rvalue conversion (e.g. function call to a function that takes a value)</div>
+<div class="t-li1">
+<span class="t-li">2)</span> access to a non-static data member or a call to a non-static member function</div>
+<div class="t-li1">
+<span class="t-li">3)</span> binding to reference to a virtual base class subobject</div>
+<div class="t-li1">
+<span class="t-li">5)</span> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">dynamic_cast</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">typeid</span></span></span> expressions</div>
+<p>If an object is recreated at the same memory location (e.g. by placement new), the glvalue becomes valid once again, if all of the following is true:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> the storage occupied by the new object exactly overlays the storage occupied by the old object</div>
+<div class="t-li1">
+<span class="t-li">2)</span> the new object has the same type as the old object, ignoring top-level cv-qualifiers</div>
+<div class="t-li1">
+<span class="t-li">3)</span> the original object's type was not const-qualified</div>
+<div class="t-li1">
+<span class="t-li">4)</span> the original object was not a class with const or reference non-static data members</div>
+<div class="t-li1">
+<span class="t-li">5)</span> both the original and the new objects are the most-derived objects of their type</div>
+<p>The above rules apply to pointers as well (binding a reference to virtual base is replaced by implicit conversion to a pointer to virtual base), with two additional rules:
+</p>
+<ul>
+<li> <a href="static_cast.html" title="cpp/language/static cast">static_cast</a> of a pointer to storage without an object is only allowed when casting to (possibly cv-qualified) <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span></span>
+</li>
+<li> pointers to storage without an object that were cast to possibly cv-qualified <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span><span class="sy2">*</span></span></span> can only be <a href="static_cast.html" title="cpp/language/static cast">static_cast</a> to pointers to possibly cv-qualified <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span> or pointer to possibly cv-qualified <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span>
+</li>
+</ul>
+<p><br>
+During construction and destruction, other restrictions apply, see <a href="virtual.html#During_construction_and_destruction" title="cpp/language/virtual">virtual function calls during construction and destruction</a>.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see">
+<span><a href="../../c/language/lifetime.html" title="c/language/lifetime">C documentation</a></span> for <span class="t-dsc-see-tt"><span>lifetime</span></span>
+</div>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 864/1000000
+Preprocessor generated node count: 3082/1000000
+Post‐expand include size: 27187/2097152 bytes
+Template argument size: 4422/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13096-0!*!0!!en!*!* and timestamp 20150313152111 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/lifetime&amp;oldid=74900</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.677 secs. -->
+	</body>
+<!-- Cached 20150313152111 -->
+</html>

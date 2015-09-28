@@ -1,0 +1,784 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NULL - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/types/NULL","wgTitle":"cpp/types/NULL","wgCurRevisionId":78403,"wgArticleId":2772,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/types/NULL","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_types_NULL skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">NULL</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../types.html" title="cpp/types">types</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../utility.html" title="cpp/utility"> Utilities library</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../types.html" title="cpp/types"> Type support</a> (basic types, RTTI, type traits) </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../memory.html" title="cpp/memory"> Dynamic memory management</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../error.html" title="cpp/error"> Error handling</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility/program.html" title="cpp/utility/program"> Program utilities</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility/variadic.html" title="cpp/utility/variadic"> Variadic functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../chrono.html" title="cpp/chrono"> Date and time</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility/functional.html" title="cpp/utility/functional"> Function objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/initializer_list.html" title="cpp/utility/initializer list"><span class="t-lines"><span>initializer_list</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../utility/bitset.html" title="cpp/utility/bitset"><span class="t-lines"><span>bitset</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/hash.html" title="cpp/utility/hash"><span class="t-lines"><span>hash</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Relational operators</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../utility/rel_ops/operator_cmp.html" title="cpp/utility/rel ops/operator cmp"><span class="t-lines"><span>rel_ops::operator!=</span><span>rel_ops::operator&gt;</span><span>rel_ops::operator&lt;=</span><span>rel_ops::operator&gt;=</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Pairs and tuples</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../utility/pair.html" title="cpp/utility/pair"><span class="t-lines"><span>pair</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/tuple.html" title="cpp/utility/tuple"><span class="t-lines"><span>tuple</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/piecewise_construct_t.html" title="cpp/utility/piecewise construct t"><span class="t-lines"><span>piecewise_construct_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/piecewise_construct.html" title="cpp/utility/piecewise construct"><span class="t-lines"><span>piecewise_construct</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/integer_sequence.html" title="cpp/utility/integer sequence"><span class="t-lines"><span>integer_sequence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Swap, forward and move</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../algorithm/swap.html" title="cpp/algorithm/swap"><span class="t-lines"><span>swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/exchange.html" title="cpp/utility/exchange"><span class="t-lines"><span>exchange</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/forward.html" title="cpp/utility/forward"><span class="t-lines"><span>forward</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/move.html" title="cpp/utility/move"><span class="t-lines"><span>move</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/move_if_noexcept.html" title="cpp/utility/move if noexcept"><span class="t-lines"><span>move_if_noexcept</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../utility/declval.html" title="cpp/utility/declval"><span class="t-lines"><span>declval</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../types.html" title="cpp/types"> Type support</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block; vertical-align: top;">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Basic types</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../language/types.html" title="cpp/language/types"> Fundamental types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="integer.html" title="cpp/types/integer"> Fixed width integer types</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="ptrdiff_t.html" title="cpp/types/ptrdiff t"><span class="t-lines"><span>ptrdiff_t</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="size_t.html" title="cpp/types/size t"><span class="t-lines"><span>size_t</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="max_align_t.html" title="cpp/types/max align t"><span class="t-lines"><span>max_align_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="nullptr_t.html" title="cpp/types/nullptr t"><span class="t-lines"><span>nullptr_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="offsetof.html" title="cpp/types/offsetof"><span class="t-lines"><span>offsetof</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>NULL</span></span></strong></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Numeric limits</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="numeric_limits.1.html" title="cpp/types/numeric limits"><span class="t-lines"><span>numeric_limits</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="climits.1.html" title="cpp/types/climits">C numeric limits interface</a>
+</td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Runtime type information</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="type_info.html" title="cpp/types/type info"><span class="t-lines"><span>type_info</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="type_index.html" title="cpp/types/type index"><span class="t-lines"><span>type_index</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="bad_typeid.html" title="cpp/types/bad typeid"><span class="t-lines"><span>bad_typeid</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="bad_cast.html" title="cpp/types/bad cast"><span class="t-lines"><span>bad_cast</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Type traits</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Type categories</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_void.html" title="cpp/types/is void"><span class="t-lines"><span>is_void</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_null_pointer.html" title="cpp/types/is null pointer"><span class="t-lines"><span>is_null_pointer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_array.html" title="cpp/types/is array"><span class="t-lines"><span>is_array</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_pointer.html" title="cpp/types/is pointer"><span class="t-lines"><span>is_pointer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_enum.html" title="cpp/types/is enum"><span class="t-lines"><span>is_enum</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_union.html" title="cpp/types/is union"><span class="t-lines"><span>is_union</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_class.html" title="cpp/types/is class"><span class="t-lines"><span>is_class</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_function.html" title="cpp/types/is function"><span class="t-lines"><span>is_function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_object.html" title="cpp/types/is object"><span class="t-lines"><span>is_object</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_scalar.html" title="cpp/types/is scalar"><span class="t-lines"><span>is_scalar</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_compound.html" title="cpp/types/is compound"><span class="t-lines"><span>is_compound</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_integral.html" title="cpp/types/is integral"><span class="t-lines"><span>is_integral</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_floating_point.html" title="cpp/types/is floating point"><span class="t-lines"><span>is_floating_point</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_fundamental.html" title="cpp/types/is fundamental"><span class="t-lines"><span>is_fundamental</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_arithmetic.html" title="cpp/types/is arithmetic"><span class="t-lines"><span>is_arithmetic</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_reference.html" title="cpp/types/is reference"><span class="t-lines"><span>is_reference</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_lvalue_reference.html" title="cpp/types/is lvalue reference"><span class="t-lines"><span>is_lvalue_reference</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_rvalue_reference.html" title="cpp/types/is rvalue reference"><span class="t-lines"><span>is_rvalue_reference</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_member_pointer.html" title="cpp/types/is member pointer"><span class="t-lines"><span>is_member_pointer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_member_object_pointer.html" title="cpp/types/is member object pointer"><span class="t-lines"><span>is_member_object_pointer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_member_function_pointer.html" title="cpp/types/is member function pointer"><span class="t-lines"><span>is_member_function_pointer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Type properties</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_const.html" title="cpp/types/is const"><span class="t-lines"><span>is_const</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_volatile.html" title="cpp/types/is volatile"><span class="t-lines"><span>is_volatile</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_pod.html" title="cpp/types/is pod"><span class="t-lines"><span>is_pod</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_empty.html" title="cpp/types/is empty"><span class="t-lines"><span>is_empty</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_polymorphic.html" title="cpp/types/is polymorphic"><span class="t-lines"><span>is_polymorphic</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_final.html" title="cpp/types/is final"><span class="t-lines"><span>is_final</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_abstract.html" title="cpp/types/is abstract"><span class="t-lines"><span>is_abstract</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_trivial.html" title="cpp/types/is trivial"><span class="t-lines"><span>is_trivial</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_trivially_copyable.html" title="cpp/types/is trivially copyable"><span class="t-lines"><span>is_trivially_copyable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_standard_layout.html" title="cpp/types/is standard layout"><span class="t-lines"><span>is_standard_layout</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_literal_type.html" title="cpp/types/is literal type"><span class="t-lines"><span>is_literal_type</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_signed.html" title="cpp/types/is signed"><span class="t-lines"><span>is_signed</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_unsigned.html" title="cpp/types/is unsigned"><span class="t-lines"><span>is_unsigned</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div style="display:inline-block; vertical-align: top;">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Supported operations</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_constructible.html" title="cpp/types/is constructible"><span class="t-lines"><span>is_constructible</span><span>is_trivially_constructible</span><span>is_nothrow_constructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_default_constructible.html" title="cpp/types/is default constructible"><span class="t-lines"><span>is_default_constructible</span><span>is_trivially_default_constructible</span><span>is_nothrow_default_constructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_copy_constructible.html" title="cpp/types/is copy constructible"><span class="t-lines"><span>is_copy_constructible</span><span>is_trivially_copy_constructible</span><span>is_nothrow_copy_constructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_move_constructible.html" title="cpp/types/is move constructible"><span class="t-lines"><span>is_move_constructible</span><span>is_trivially_move_constructible</span><span>is_nothrow_move_constructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_assignable.html" title="cpp/types/is assignable"><span class="t-lines"><span>is_assignable</span><span>is_trivially_assignable</span><span>is_nothrow_assignable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_copy_assignable.html" title="cpp/types/is copy assignable"><span class="t-lines"><span>is_copy_assignable</span><span>is_trivially_copy_assignable</span><span>is_nothrow_copy_assignable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_move_assignable.html" title="cpp/types/is move assignable"><span class="t-lines"><span>is_move_assignable</span><span>is_trivially_move_assignable</span><span>is_nothrow_move_assignable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_destructible.html" title="cpp/types/is destructible"><span class="t-lines"><span>is_destructible</span><span>is_trivially_destructible</span><span>is_nothrow_destructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="has_virtual_destructor.html" title="cpp/types/has virtual destructor"><span class="t-lines"><span>has_virtual_destructor</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Relationships and property queries</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_same.html" title="cpp/types/is same"><span class="t-lines"><span>is_same</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_base_of.html" title="cpp/types/is base of"><span class="t-lines"><span>is_base_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_convertible.html" title="cpp/types/is convertible"><span class="t-lines"><span>is_convertible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="alignment_of.html" title="cpp/types/alignment of"><span class="t-lines"><span>alignment_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="rank.html" title="cpp/types/rank"><span class="t-lines"><span>rank</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="extent.html" title="cpp/types/extent"><span class="t-lines"><span>extent</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Type modifications</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="remove_cv.html" title="cpp/types/remove cv"><span class="t-lines"><span>remove_cv</span><span>remove_const</span><span>remove_volatile</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="add_cv.html" title="cpp/types/add cv"><span class="t-lines"><span>add_cv</span><span>add_const</span><span>add_volatile</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="make_signed.html" title="cpp/types/make signed"><span class="t-lines"><span>make_signed</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="make_unsigned.html" title="cpp/types/make unsigned"><span class="t-lines"><span>make_unsigned</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="remove_reference.html" title="cpp/types/remove reference"><span class="t-lines"><span>remove_reference</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="add_reference.html" title="cpp/types/add reference"><span class="t-lines"><span>add_lvalue_reference</span><span>add_rvalue_reference</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="remove_pointer.html" title="cpp/types/remove pointer"><span class="t-lines"><span>remove_pointer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="add_pointer.html" title="cpp/types/add pointer"><span class="t-lines"><span>add_pointer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="remove_extent.html" title="cpp/types/remove extent"><span class="t-lines"><span>remove_extent</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="remove_all_extents.html" title="cpp/types/remove all extents"><span class="t-lines"><span>remove_all_extents</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Type transformations</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="aligned_storage.html" title="cpp/types/aligned storage"><span class="t-lines"><span>aligned_storage</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="aligned_union.html" title="cpp/types/aligned union"><span class="t-lines"><span>aligned_union</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="decay.html" title="cpp/types/decay"><span class="t-lines"><span>decay</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="enable_if.html" title="cpp/types/enable if"><span class="t-lines"><span>enable_if</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="void_t.html" title="cpp/types/void t"><span class="t-lines"><span>void_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="conditional.html" title="cpp/types/conditional"><span class="t-lines"><span>conditional</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="common_type.html" title="cpp/types/common type"><span class="t-lines"><span>common_type</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="underlying_type.html" title="cpp/types/underlying type"><span class="t-lines"><span>underlying_type</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="result_of.html" title="cpp/types/result of"><span class="t-lines"><span>result_of</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Type trait constants</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="integral_constant.html" title="cpp/types/integral constant"><span class="t-lines"><span>integral_constant</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/cstddef.html" title="cpp/header/cstddef">&lt;cstddef&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/cstring.html" title="cpp/header/cstring">&lt;cstring&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/cwchar.html" title="cpp/header/cwchar">&lt;cwchar&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/ctime.html" title="cpp/header/ctime">&lt;ctime&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/cstdio.html" title="cpp/header/cstdio">&lt;cstdio&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td><div><span class="t-mark-rev t-until-cxx11">(until C++11)</span></div></td>
+</tr>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/clocale.html" title="cpp/header/clocale">&lt;clocale&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td><div><span class="t-mark-rev t-since-cxx11">(since C++11)</span></div></td>
+</tr>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/cstdlib.html" title="cpp/header/cstdlib">&lt;cstdlib&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td><div><span class="t-mark-rev t-since-cxx11">(since C++11)</span></div></td>
+</tr>
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="co2">#define NULL /*implementation-defined*/</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>The macro <code>NULL</code> is an implementation-defined null pointer constant, which may be
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx11">
+<td>
+<p>an integral <a href="../language/constant_expression.html" title="cpp/language/constant expression">constant expression</a> <a href="../language/value_category.html" title="cpp/language/value category">rvalue</a> of integer type that evaluates to zero
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td>
+</tr>
+<tr class="t-rev t-since-cxx11 t-until-cxx14">
+<td>
+<p>an integral <a href="../language/constant_expression.html" title="cpp/language/constant expression">constant expression</a> <a href="../language/value_category.html" title="cpp/language/value category">prvalue</a> of integer type that evaluates to zero or a prvalue of type <span class="t-lc">std::nullptr_t</span> 
+</p>
+</td>
+<td>
+<span class="t-mark-rev t-since-cxx11">(since C++11)</span><br><span class="t-mark-rev t-until-cxx14">(until C++14)</span>
+</td>
+</tr>
+<tr class="t-rev t-since-cxx14">
+<td>
+<p>an <a href="../language/integer_literal.html" title="cpp/language/integer literal">integer literal</a> with value zero, or a prvalue of type <span class="t-lc">std::nullptr_t</span>
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td>
+</tr>
+</table>
+<p>A null pointer constant may be <a href="../language/implicit_cast.html" title="cpp/language/implicit cast">implicitly converted</a> to any pointer type; such conversion results in the null pointer value of that type. If a null pointer constant has integer type, it may be converted to a prvalue of type <span class="t-lc">std::nullptr_t</span>.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="NULL.html#Possible_implementation"><span class="tocnumber">1</span> <span class="toctext">Possible implementation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="NULL.html#Notes"><span class="tocnumber">2</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="NULL.html#Example"><span class="tocnumber">3</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="NULL.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Possible implementation">edit</a>]</span> <span class="mw-headline" id="Possible_implementation">Possible implementation</span>
+</h3>
+<table class="eq-fun-cpp-table">
+
+
+<tr>
+<td>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#define NULL 0</span>
+<span class="co1">//since C++11</span>
+<span class="co2">#define NULL nullptr</span></pre></div></div>
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span>
+</h3>
+<p>In C, the macro <code>NULL</code> may have the type <code>void*</code>, but that is not allowed in C++.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;cstddef&gt;</span>
+<span class="kw1">class</span> S<span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span><span class="sy2">*</span> p <span class="sy1">=</span> NULL<span class="sy4">;</span>
+    <span class="kw4">int</span><span class="sy2">*</span> p2 <span class="sy1">=</span> <span class="kw1">static_cast</span><span class="sy1">&lt;</span><a href="nullptr_t.html"><span class="kw102">std::<span class="me2">nullptr_t</span></span></a><span class="sy1">&gt;</span><span class="br0">(</span>NULL<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span><span class="br0">(</span><span class="sy2">*</span>f<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> <span class="sy1">=</span> NULL<span class="sy4">;</span>
+    <span class="kw4">int</span> S<span class="sy4">::</span><span class="sy2">*</span>mp <span class="sy1">=</span> NULL<span class="sy4">;</span>
+    <span class="kw4">void</span><span class="br0">(</span>S<span class="sy4">::</span><span class="sy2">*</span>mfp<span class="br0">)</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span> <span class="sy1">=</span> NULL<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <a href="../language/nullptr.html" title="cpp/language/nullptr"> nullptr </a>
+</td>
+<td>  the pointer literal which specifies a null pointer value <span class="t-mark-rev t-since-cxx11">(C++11)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="nullptr_t.html" title="cpp/types/nullptr t"> <span class="t-lines"><span>nullptr_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   the type of the null pointer literal <a href="../language/nullptr.html" title="cpp/language/nullptr"><tt>nullptr</tt></a>  <br> <span class="t-mark">(typedef)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see">
+<span><a href="../../c/types/NULL.html" title="c/types/NULL">C documentation</a></span> for <span class="t-dsc-see-tt"><span>NULL</span></span>
+</div>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 8637/1000000
+Preprocessor generated node count: 10358/1000000
+Post‐expand include size: 289583/2097152 bytes
+Template argument size: 55293/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2772-0!*!0!!en!*!* and timestamp 20150804093118 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/types/NULL&amp;oldid=78403</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 2.247 secs. -->
+	</body>
+<!-- Cached 20150804093118 -->
+</html>

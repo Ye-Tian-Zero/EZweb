@@ -1,0 +1,509 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Reference declaration - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/reference","wgTitle":"cpp/language/reference","wgCurRevisionId":73562,"wgArticleId":9955,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/reference","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_reference skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Reference declaration</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="declarations.html" title="cpp/language/declarations"> Declarations</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Overview </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> declaration syntax</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html#Specifiers" title="cpp/language/declarations"> decl-specifier-seq</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html#Declarators" title="cpp/language/declarations"> declarator</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Specifiers </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="typedef.html" title="cpp/language/typedef"><span class="t-lines"><span>typedef</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="inline.html" title="cpp/language/inline"> inline function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual"> virtual function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"> explicit function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="friend.html" title="cpp/language/friend"><span class="t-lines"><span>friend</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="constexpr.html" title="cpp/language/constexpr"><span class="t-lines"><span>constexpr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> storage class specifiers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="enum.html" title="cpp/language/enum"> enum </a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="decltype.html" title="cpp/language/decltype"><span class="t-lines"><span>decltype</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="auto.html" title="cpp/language/auto"><span class="t-lines"><span>auto</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="alignas.html" title="cpp/language/alignas"><span class="t-lines"><span>alignas</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="cv.html" title="cpp/language/cv"><span class="t-lines"><span>const/volatile</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="elaborated_type_specifier.html" title="cpp/language/elaborated type specifier"> elaborated type specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="attributes.html" title="cpp/language/attributes"> attributes </a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Declarators </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> reference </strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="pointer.html" title="cpp/language/pointer"> pointer </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="array.html" title="cpp/language/array"> array </a> </td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Block declarations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> simple-declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="type_alias.html" title="cpp/language/type alias"> alias declaration</a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace_alias.html" title="cpp/language/namespace alias"> namespace alias definition </a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration"> using-declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace.html#Using-directives" title="cpp/language/namespace"> using-directive</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static_assert.html" title="cpp/language/static assert"> static_assert declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="asm.html" title="cpp/language/asm"> asm-definition</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="enum.html" title="cpp/language/enum"> opaque enum declaration</a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Other declarations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace.html" title="cpp/language/namespace"> namespace definition</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html" title="cpp/language/function"> function declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html" title="cpp/language/class template"> class template declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function_template.html" title="cpp/language/function template"> function template declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html#Explicit_instantiation" title="cpp/language/class template"> explicit template instantiation</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_specialization.html" title="cpp/language/template specialization"> explicit template specialization</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language_linkage.html" title="cpp/language/language linkage"> linkage specification</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> attribute declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> empty declaration</a> </td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Declares a named variable as a reference, that is, an alias to an already-existing object or function.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1">
+<a href="reference.html#Syntax"><span class="tocnumber">1</span> <span class="toctext">Syntax</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="reference.html#Lvalue_references"><span class="tocnumber">1.1</span> <span class="toctext">Lvalue references</span></a></li>
+<li class="toclevel-2"><a href="reference.html#Rvalue_references"><span class="tocnumber">1.2</span> <span class="toctext">Rvalue references</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="reference.html#Dangling_references"><span class="tocnumber">1.3</span> <span class="toctext">Dangling references</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span>
+</h3>
+<p>A reference variable declaration is any simple declaration whose <a href="declarations.html" title="cpp/language/declarations">declarator</a> has the form
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>&amp;</b></code> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <span class="t-spar">declarator</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <code><b>&amp;&amp;</b></code> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <span class="t-spar">declarator</span>
+</td>
+<td> (2)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">1)</span> <b>Lvalue reference declarator</b>: the declaration <span class="t-c"><span class="mw-geshi cpp source-cpp">S <span class="sy3">&amp;</span> D<span class="sy4">;</span></span></span> declares <code>D</code> as an <i>lvalue reference</i> to the type determined by <span class="t-spar">decl-specifier-seq</span> <code>S</code>.</div>
+<div class="t-li1">
+<span class="t-li">2)</span> <b>Rvalue reference declarator</b>: the declaration <span class="t-c"><span class="mw-geshi cpp source-cpp">S <span class="sy3">&amp;&amp;</span> D<span class="sy4">;</span></span></span> declares <code>D</code> as an <i>rvalue reference</i> to type determined by <span class="t-spar">decl-specifier-seq</span> <code>S</code>.</div>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">declarator</span>
+</td>
+<td> -
+</td>
+<td>  any <a href="declarations.html" title="cpp/language/declarations">declarator</a> except another reference declarator (there are no references to references)
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">attr</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td>  optional list of <a href="attributes.html" title="cpp/language/attributes">attributes</a>
+</td>
+</tr>
+</table>
+<p>A declaration of a reference (except for class members and function parameters) is required to contain an initializer: see <a href="reference_initialization.html" title="cpp/language/reference initialization">reference initialization</a> which must identify a valid object or function.
+</p>
+<p>There are no references to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> and no references to references.
+</p>
+<p>Reference types cannot be <a href="cv.html" title="cpp/language/cv">cv-qualified</a> at the top level; there is no syntax for that in declaration, and if a qualification is introduced through a typedef, decltype, or template type argument, it is ignored.
+</p>
+<p>References are not objects; they do not necessarily occupy storage, although the compiler may allocate storage if it is necessary to implement the desired semantics (e.g. a non-static data member of reference type usually increases the size of the class by the amount necessary to store a memory address)
+</p>
+<p>Because references are not objects, there are no arrays of references, no pointers to references, and no references to references:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span><span class="sy3">&amp;</span> a<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// error</span>
+<span class="kw4">int</span><span class="sy3">&amp;</span><span class="sy2">*</span> p<span class="sy4">;</span> <span class="co1">// error</span>
+<span class="kw4">int</span><span class="sy3">&amp;</span> <span class="sy3">&amp;</span>r<span class="sy4">;</span> <span class="co1">// error</span></pre></div></div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<p>It is permitted to form references to references through type manipulations in templates or typedefs, in which case the <i>reference collapsing</i> rules apply: rvalue reference to rvalue reference collapses to rvalue reference, all other combinations form lvalue reference:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">typedef</span> <span class="kw4">int</span><span class="sy3">&amp;</span>  lref<span class="sy4">;</span>
+<span class="kw1">typedef</span> <span class="kw4">int</span><span class="sy3">&amp;&amp;</span> rref<span class="sy4">;</span>
+<span class="kw4">int</span> n<span class="sy4">;</span>
+lref<span class="sy3">&amp;</span>  r1 <span class="sy1">=</span> n<span class="sy4">;</span> <span class="co1">// type of r1 is int&amp;</span>
+lref<span class="sy3">&amp;&amp;</span> r2 <span class="sy1">=</span> n<span class="sy4">;</span> <span class="co1">// type of r2 is int&amp;</span>
+rref<span class="sy3">&amp;</span>  r3 <span class="sy1">=</span> n<span class="sy4">;</span> <span class="co1">// type of r3 is int&amp;</span>
+rref<span class="sy3">&amp;&amp;</span> r4 <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// type of r4 is int&amp;&amp;</span></pre></div></div>
+<p>(this, along with special rules for <a href="template_argument_deduction.html" title="cpp/language/template argument deduction">template argument deduction</a> when <code>T&amp;&amp;</code> is used in a function template, forms the rules that make <span class="t-lc"><a href="../utility/forward.html" title="cpp/utility/forward">std::forward</a></span> possible)
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Lvalue references">edit</a>]</span> <span class="mw-headline" id="Lvalue_references">Lvalue references</span>
+</h4>
+<p>Lvalue references can be used to alias an existing object (optionally with different cv-qualification)
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> s <span class="sy1">=</span> <span class="st0">"Ex"</span><span class="sy4">;</span>
+    <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> r1 <span class="sy1">=</span> s<span class="sy4">;</span>
+    <span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> r2 <span class="sy1">=</span> s<span class="sy4">;</span>
+ 
+    r1 <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">"ample"</span><span class="sy4">;</span> <span class="co1">// modifies s</span>
+<span class="co1">//  r2 += "!"; // error: cannot modify through reference to const</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> r2 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints s, which now holds "Example"</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<p>They can also be used to implement pass-by-reference semantics in function calls:
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="kw4">void</span> double_string<span class="br0">(</span><a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> s<span class="br0">)</span>
+<span class="br0">{</span>
+    s <span class="sy2">+</span><span class="sy1">=</span> s<span class="sy4">;</span> <span class="co1">// 's' is the same object as main()'s 'str'</span>
+<span class="br0">}</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">"Test"</span><span class="sy4">;</span>
+    double_string<span class="br0">(</span>str<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<p>When a function's return type is lvalue reference, the function call expression becomes an <a href="value_category.html" title="cpp/language/value category">lvalue expression</a>:
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="kw4">char</span><span class="sy3">&amp;</span> char_number<span class="br0">(</span><a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> s, <a href="../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> n<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">return</span> s.<span class="me1">at</span><span class="br0">(</span>n<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// string::at() returns a reference to char</span>
+<span class="br0">}</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">"Test"</span><span class="sy4">;</span>
+    char_number<span class="br0">(</span>str, <span class="nu0">1</span><span class="br0">)</span> <span class="sy1">=</span> <span class="st0">'a'</span><span class="sy4">;</span> <span class="co1">// the function call is lvalue, can be assigned to</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> str <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<h4> <span class="mw-headline" id="Rvalue_references">Rvalue references</span>
+</h4>
+<p>Rvalue references can be used to extend the lifetime of a modifiable temporary (note, lvalue references to const can <a href="reference_initialization.html" title="cpp/language/reference initialization">extend lifetimes</a> too, but they are not modifiable)
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> s1 <span class="sy1">=</span> <span class="st0">"Test"</span><span class="sy4">;</span>
+<span class="co1">//    std::string&amp;&amp; r1 = s1; // error: can't bind to lvalue</span>
+ 
+    <span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> r2 <span class="sy1">=</span> s1 <span class="sy2">+</span> s1<span class="sy4">;</span> <span class="co1">// OK, lvalue ref to const extends lifetime</span>
+<span class="co1">//    r2 += "Test"; // error: can't modify through reference to const</span>
+ 
+    <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a><span class="sy3">&amp;&amp;</span> r3 <span class="sy1">=</span> s1 <span class="sy2">+</span> s1<span class="sy4">;</span> <span class="co1">// OK, rvalue ref extends lifetime</span>
+    r3 <span class="sy2">+</span><span class="sy1">=</span> <span class="st0">"Test"</span><span class="sy4">;</span> <span class="co1">// this object can be modified</span>
+    <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> r3 <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<p>More importantly, when a function has both rvalue reference and lvalue reference <a href="overload_resolution.html" title="cpp/language/overload resolution">overloads</a>, the rvalue reference overload binds to rvalues, while the lvalue reference overload binds to lvalues.
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="sy3">&amp;</span> x<span class="br0">)</span>
+<span class="br0">{</span>
+     <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"lvalue reference overload f("</span> <span class="sy1">&lt;&lt;</span> x <span class="sy1">&lt;&lt;</span> <span class="st0">")<span class="es1">\n</span>"</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> x<span class="br0">)</span>
+<span class="br0">{</span>
+     <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"lvalue reference to const overload f("</span> <span class="sy1">&lt;&lt;</span> x <span class="sy1">&lt;&lt;</span> <span class="st0">")<span class="es1">\n</span>"</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="sy3">&amp;&amp;</span> x<span class="br0">)</span>
+<span class="br0">{</span>
+     <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"rvalue reference overload f("</span> <span class="sy1">&lt;&lt;</span> x <span class="sy1">&lt;&lt;</span> <span class="st0">")<span class="es1">\n</span>"</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw4">const</span> <span class="kw4">int</span> x <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>
+    f<span class="br0">(</span>n<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// calls f(int&amp;)</span>
+    f<span class="br0">(</span>x<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// calls f(const int&amp;)</span>
+    f<span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// calls f(int&amp;&amp;)</span>
+          <span class="co1">// would call f(const int&amp;) if f(int&amp;&amp;) overload wasn't provided</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<p>This allows <a href="move_constructor.html" title="cpp/language/move constructor">move constructors</a>, <a href="move_operator.html" title="cpp/language/move operator">move assignment</a> operators, and other move-aware functions (e.g. <a href="../container/vector/push_back.html" title="cpp/container/vector/push back"><tt>vector::push_back()</tt></a> to be automatically selected when suitable.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Dangling references">edit</a>]</span> <span class="mw-headline" id="Dangling_references">Dangling references</span>
+</h4>
+<p>Although references, once initialized, always refer to valid objects or functions, it is possible to create a program where the <a href="lifetime.html" title="cpp/language/lifetime">lifetime</a> of the referred-to object ends, but the reference remains accessible (<i>dangling</i>). Accessing such reference is undefined behavior.
+A common example a function returning a reference to an automatic variable:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> str <span class="sy1">=</span> <span class="st0">"Example"</span><span class="sy4">;</span>
+    <span class="kw1">return</span> str<span class="sy4">;</span> <span class="co1">// exits the scope of str: str's destructor is called</span>
+<span class="br0">}</span>               <span class="co1">// stack storage deallocated</span>
+...
+<a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> r <span class="sy1">=</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// r is a dangling reference</span>
+<a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> r<span class="sy4">;</span>      <span class="co1">// Undefined: reads from a dangling reference</span>
+<a href="../string/basic_string.html"><span class="kw1042">std::<span class="me2">string</span></span></a> s <span class="sy1">=</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// Undefined: uses a dangling reference to copy-initialize s</span></pre></div></div>
+<p>Note that rvalue references and lvalue references to const extend the lifetimes of temporary objects, see <a href="reference_initialization.html" title="cpp/language/reference initialization">reference initialization</a> for rules and exceptions.
+</p>
+<p>If the referred-to object was destroyed (e.g. by explicit destructor call), but the storage was not deallocated, a reference to the out-of-lifetime object may be used in limited ways, and may become valid if the object is recreated in the same storage, see <a href="lifetime.html#Access_outside_of_lifetime" title="cpp/language/lifetime">Access outside of lifetime</a> for details.
+</p>
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1869/1000000
+Preprocessor generated node count: 5140/1000000
+Post‐expand include size: 60437/2097152 bytes
+Template argument size: 15669/2097152 bytes
+Highest expansion depth: 15/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9955-0!*!0!!en!*!* and timestamp 20150313153141 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/reference&amp;oldid=73562</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 3.655 secs. -->
+	</body>
+<!-- Cached 20150313153141 -->
+</html>

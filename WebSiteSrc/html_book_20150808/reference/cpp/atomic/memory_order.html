@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>std::memory_order - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/atomic/memory_order","wgTitle":"cpp/atomic/memory order","wgCurRevisionId":76741,"wgArticleId":2839,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/atomic/memory_order","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_atomic_memory_order skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">
+<span style="font-size:0.7em; line-height:130%">std::</span>memory_order</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../atomic.html" title="cpp/atomic">atomic</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Types</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic.html" title="cpp/atomic/atomic"><span class="t-lines"><span>atomic</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_is_lock_free.html" title="cpp/atomic/atomic is lock free"><span class="t-lines"><span>atomic_is_lock_free</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_store.html" title="cpp/atomic/atomic store"><span class="t-lines"><span>atomic_store</span><span>atomic_store_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_load.html" title="cpp/atomic/atomic load"><span class="t-lines"><span>atomic_load</span><span>atomic_load_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_exchange.html" title="cpp/atomic/atomic exchange"><span class="t-lines"><span>atomic_exchange</span><span>atomic_exchange_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_compare_exchange.html" title="cpp/atomic/atomic compare exchange"><span class="t-lines"><span>atomic_compare_exchange_weak</span><span>atomic_compare_exchange_weak_explicit</span><span>atomic_compare_exchange_strong</span><span>atomic_compare_exchange_strong_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_fetch_add.html" title="cpp/atomic/atomic fetch add"><span class="t-lines"><span>atomic_fetch_add</span><span>atomic_fetch_add_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_fetch_sub.html" title="cpp/atomic/atomic fetch sub"><span class="t-lines"><span>atomic_fetch_sub</span><span>atomic_fetch_sub_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_fetch_and.html" title="cpp/atomic/atomic fetch and"><span class="t-lines"><span>atomic_fetch_and</span><span>atomic_fetch_and_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_fetch_or.html" title="cpp/atomic/atomic fetch or"><span class="t-lines"><span>atomic_fetch_or</span><span>atomic_fetch_or_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_fetch_xor.html" title="cpp/atomic/atomic fetch xor"><span class="t-lines"><span>atomic_fetch_xor</span><span>atomic_fetch_xor_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Atomic flags</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_flag.html" title="cpp/atomic/atomic flag"><span class="t-lines"><span>atomic_flag</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_flag_test_and_set.html" title="cpp/atomic/atomic flag test and set"><span class="t-lines"><span>atomic_flag_test_and_set</span><span>atomic_flag_test_and_set_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_flag_clear.html" title="cpp/atomic/atomic flag clear"><span class="t-lines"><span>atomic_flag_clear</span><span>atomic_flag_clear_explicit</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Initialization</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_init.html" title="cpp/atomic/atomic init"><span class="t-lines"><span>atomic_init</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="ATOMIC_VAR_INIT.html" title="cpp/atomic/ATOMIC VAR INIT"><span class="t-lines"><span>ATOMIC_VAR_INIT</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="ATOMIC_FLAG_INIT.html" title="cpp/atomic/ATOMIC FLAG INIT"><span class="t-lines"><span>ATOMIC_FLAG_INIT</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Memory ordering</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><strong class="selflink"><span class="t-lines"><span>memory_order</span></span></strong></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="kill_dependency.html" title="cpp/atomic/kill dependency"><span class="t-lines"><span>kill_dependency</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_thread_fence.html" title="cpp/atomic/atomic thread fence"><span class="t-lines"><span>atomic_thread_fence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="atomic_signal_fence.html" title="cpp/atomic/atomic signal fence"><span class="t-lines"><span>atomic_signal_fence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../header/atomic.html" title="cpp/header/atomic">&lt;atomic&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx11">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw2">enum</span> memory_order <span class="br0">{</span><br>
+<p>    memory_order_relaxed,<br>
+    memory_order_consume,<br>
+    memory_order_acquire,<br>
+    memory_order_release,<br>
+    memory_order_acq_rel,<br>
+    memory_order_seq_cst<br>
+</p>
+<span class="br0">}</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span> </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><code>std::memory_order</code> specifies how regular, non-atomic memory accesses are to be ordered around an atomic operation. Absent any constraints on a multi-core system, when multiple threads simultaneously read and write to several variables, one thread can observe the values change in an order different from the order another thread wrote them. Indeed, the apparent order of changes can even differ among multiple reader threads. Some similar effects can occur even on uniprocessor systems due to compiler transformations allowed by the memory model.
+</p>
+<p>The default behavior of all atomic operations in the  library provides for <i>sequentially consistent ordering</i> (see discussion below). That default can hurt performance, but the library's atomic operations can be given an additional <code>std::memory_order</code> argument to specify the exact constraints, beyond atomicity, that the compiler and processor must enforce for that operation.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="memory_order.html#Constants"><span class="tocnumber">1</span> <span class="toctext">Constants</span></a></li>
+<li class="toclevel-1 tocsection-2">
+<a href="memory_order.html#Formal_description"><span class="tocnumber">2</span> <span class="toctext">Formal description</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="memory_order.html#Sequenced-before"><span class="tocnumber">2.1</span> <span class="toctext">Sequenced-before</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="memory_order.html#Carries_dependency"><span class="tocnumber">2.2</span> <span class="toctext">Carries dependency</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="memory_order.html#Modification_order"><span class="tocnumber">2.3</span> <span class="toctext">Modification order</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="memory_order.html#Release_sequence"><span class="tocnumber">2.4</span> <span class="toctext">Release sequence</span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="memory_order.html#Dependency-ordered_before"><span class="tocnumber">2.5</span> <span class="toctext">Dependency-ordered before</span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="memory_order.html#Inter-thread_happens-before"><span class="tocnumber">2.6</span> <span class="toctext">Inter-thread happens-before</span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="memory_order.html#Happens-before"><span class="tocnumber">2.7</span> <span class="toctext">Happens-before</span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="memory_order.html#Visible_side-effects"><span class="tocnumber">2.8</span> <span class="toctext">Visible side-effects</span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="memory_order.html#Consume_operation"><span class="tocnumber">2.9</span> <span class="toctext">Consume operation</span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="memory_order.html#Acquire_operation"><span class="tocnumber">2.10</span> <span class="toctext">Acquire operation</span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="memory_order.html#Release_operation"><span class="tocnumber">2.11</span> <span class="toctext">Release operation</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-14">
+<a href="memory_order.html#Explanation"><span class="tocnumber">3</span> <span class="toctext">Explanation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-15"><a href="memory_order.html#Relaxed_ordering"><span class="tocnumber">3.1</span> <span class="toctext">Relaxed ordering</span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="memory_order.html#Release-Acquire_ordering"><span class="tocnumber">3.2</span> <span class="toctext">Release-Acquire ordering</span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="memory_order.html#Release-Consume_ordering"><span class="tocnumber">3.3</span> <span class="toctext">Release-Consume ordering</span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="memory_order.html#Sequentially-consistent_ordering"><span class="tocnumber">3.4</span> <span class="toctext">Sequentially-consistent ordering</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-19"><a href="memory_order.html#Relationship_with_volatile"><span class="tocnumber">4</span> <span class="toctext">Relationship with <span><span><span>volatile</span></span></span></span></a></li>
+<li class="toclevel-1 tocsection-20"><a href="memory_order.html#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-21"><a href="memory_order.html#External_links"><span class="tocnumber">6</span> <span class="toctext">External links</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Constants">edit</a>]</span> <span class="mw-headline" id="Constants">Constants</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;atomic&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc-hitem">
+<td>  Value
+</td>
+<td>  Explanation
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>memory_order_relaxed</code>
+</td>
+<td>  Relaxed operation: there are no synchronization or ordering constraints, only atomicity is required of this operation.
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>memory_order_consume</code>
+</td>
+<td>  A load operation with this memory order performs a <i>consume operation</i> on the affected memory location: no reads in the current thread dependent on the value currently loaded can be reordered before this load. This ensures that writes to data-dependent variables in other threads that release the same atomic variable are visible in the current thread. On most platforms, this affects compiler optimizations only.
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>memory_order_acquire</code>
+</td>
+<td>  A load operation with this memory order performs the <i>acquire operation</i> on the affected memory location: no memory accesses in the current thread can be reordered before this load. This ensures that all writes in other threads that release the same atomic variable are visible in the current thread.
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>memory_order_release</code>
+</td>
+<td>  A store operation with this memory order performs the <i>release operation</i>: no memory accesses in the current thread can be reordered after this store. This ensures that all writes in the current thread are visible in other threads that acquire or the same atomic variable and writes that carry a dependency into the atomic variable become visible in other threads that consume the same atomic.
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>memory_order_acq_rel</code>
+</td>
+<td>  A read-modify-write operation with this memory order is both an <i>acquire operation</i> and a <i>release operation</i>. No memory accesses in the current thread can be reordered before this load, and no memory accesses in the current thread can be reordered after this store. It is ensured that all writes in another threads that release the same atomic variable are visible before the modification and the modification is visible in other threads that acquire the same atomic variable.
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>memory_order_seq_cst</code>
+</td>
+<td>  Same as <code>memory_order_acq_rel</code>, plus a single total order exists in which all threads observe all modifications (see below) in the same order.
+</td>
+</tr>
+
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Formal description">edit</a>]</span> <span class="mw-headline" id="Formal_description">Formal description</span>
+</h3>
+<p>Inter-thread synchronization and memory ordering determine how <i>evaluations</i> and <i>side effects</i> of expressions are ordered between different threads of execution. They are defined in the following terms:
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Sequenced-before">edit</a>]</span> <span class="mw-headline" id="Sequenced-before">Sequenced-before</span>
+</h4>
+<p>Within the same thread, evaluation A may be <i>sequenced-before</i> evaluation B, as described in <a href="../language/eval_order.html" title="cpp/language/eval order">evaluation order</a>.
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Carries dependency">edit</a>]</span> <span class="mw-headline" id="Carries_dependency">Carries dependency</span>
+</h4>
+<p>Within the same thread, evaluation A that is <i>sequenced-before</i> evaluation B may also carry a dependency into B (that is, B depends on A), if any of the following is true
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> The value of A is used as an operand of B, <b>except</b>
+</div>
+<div class="t-li2">
+<span class="t-li">a)</span> if B is a call to <span class="t-lc"><a href="kill_dependency.html" title="cpp/atomic/kill dependency">std::kill_dependency</a></span>
+</div>
+<div class="t-li2">
+<span class="t-li">b)</span> if A is the left operand of the built-in <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">&amp;&amp;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy3">||</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy4">?:</span></span></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp">,</span></span> operators.</div>
+<div class="t-li1">
+<span class="t-li">2)</span> A writes to a scalar object M, B reads from M</div>
+<div class="t-li1">
+<span class="t-li">3)</span> A carries dependency into another evaluation X, and X carries dependency into B</div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Modification order">edit</a>]</span> <span class="mw-headline" id="Modification_order">Modification order</span>
+</h4>
+<p>All modifications to any particular atomic variable occur in a total order that is specific to this one atomic variable.
+</p>
+<p>The following four requirements are guaranteed for all atomic operations:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> <b>Write-write coherence</b>: If evaluation A that modifies some atomic M (a write) <i>happens-before</i> evaluation B that modifies M, then A appears earlier than B in the <i>modification order</i> of M</div>
+<div class="t-li1">
+<span class="t-li">2)</span> <b>Read-read coherence</b>: if a value computation A of some atomic M (a read) <i>happens-before</i> a value computation B on M, and if the value of A comes from a write X on M, then the value of B is either the value stored by X, or the value stored by a side effect Y on M that appears later than X in the <i>modification order</i> of M.</div>
+<div class="t-li1">
+<span class="t-li">3)</span> <b>Read-write coherence</b>: if a value computation A of some atomic M (a read) <i>happens-before</i> an operation B on M (a write), then the value of A comes from a side-effect (a write) X that appears earlier than B in the <i>modification order</i> of M</div>
+<div class="t-li1">
+<span class="t-li">4)</span> <b>Write-read coherence</b>: if a side effect (a write) X on an atomic object M <i>happens-before</i> a value computation (a read) B of M, then the evaluation B shall take its value from X or from a side effect Y that follows X in the modification order of M</div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Release sequence">edit</a>]</span> <span class="mw-headline" id="Release_sequence">Release sequence</span>
+</h4>
+<p>After a <i>release operation</i> A is performed on an atomic object M, the longest continuous subsequence of the modification order of M that consists of
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> Writes performed by the same thread that performed A</div>
+<div class="t-li1">
+<span class="t-li">2)</span> Atomic read-modify-write operations made to M by any thread</div>
+<p>is known as <i>release sequence headed by A</i>
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Dependency-ordered before">edit</a>]</span> <span class="mw-headline" id="Dependency-ordered_before">Dependency-ordered before</span>
+</h4>
+<p>Between threads, evaluation A is <i>dependency-ordered before</i> evaluation B if any of the following is true
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> A performs a <i>release operation</i> on some atomic M, and, in a different thread, B performs a <i>consume operation</i> on the same atomic M, and B reads a value written by any part of the release sequence headed by A.</div>
+<div class="t-li1">
+<span class="t-li">2)</span> A is dependency-ordered before X and X carries a dependency into B.</div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Inter-thread happens-before">edit</a>]</span> <span class="mw-headline" id="Inter-thread_happens-before">Inter-thread happens-before</span>
+</h4>
+<p>Between threads, evaluation A <i>inter-thread happens before</i> evaluation B if any of the following is true
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> A <i>synchronizes-with</i> B</div>
+<div class="t-li1">
+<span class="t-li">2)</span> A is <i>dependency-ordered before</i> B</div>
+<div class="t-li1">
+<span class="t-li">3)</span> A <i>synchronizes-with</i> some evaluation X, and X is <i>sequenced-before</i> B</div>
+<div class="t-li1">
+<span class="t-li">3)</span> A is <i>sequenced-before</i> some evaluation X, and X <i>inter-thread happens-before</i> B</div>
+<div class="t-li1">
+<span class="t-li">4)</span> A <i>inter-thread happens-before</i> some evaluation X, and X <i>inter-thread happens-before</i> B</div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Happens-before">edit</a>]</span> <span class="mw-headline" id="Happens-before">Happens-before</span>
+</h4>
+<p>Regardless of threads, evaluation A <i>happens-before</i> evaluation B if any of the following is true:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> A is <i>sequenced-before</i> B</div>
+<div class="t-li1">
+<span class="t-li">2)</span> A <i>inter-thread happens before</i> B</div>
+<p>If one evaluation modifies a memory location, and the other reads or modifies the same memory location, and if at least one of the evaluations is not an atomic operation, the behavior of the program is undefined (the program has a <a href="../language/memory_model.html" title="cpp/language/memory model">data race</a>) unless there exists a <i>happens-before</i> relationship between these two evaluations.
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Visible side-effects">edit</a>]</span> <span class="mw-headline" id="Visible_side-effects">Visible side-effects</span>
+</h4>
+<p>The side-effect A on a scalar M (a write) is <i>visible</i> with respect to value computation B on M (a read) if both of the following are true:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> A <i>happens-before</i> B</div>
+<div class="t-li1">
+<span class="t-li">2)</span> There is no other side effect X to M where A <i>happens-before</i> X and X <i>happens-before</i> B</div>
+<p>If side-effect A is visible with respect to the value computation B, then the longest contiguous subset of the side-effects to M, in <i>modification order</i>, where B does not <i>happen-before</i> it is known as the <i>visible sequence of side-effects</i>. (the value of M, determined by B, will be the value stored by one of these side effects)
+</p>
+<p>Note: inter-thread synchronization boils down to defining which side effects become visible under what conditions
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Consume operation">edit</a>]</span> <span class="mw-headline" id="Consume_operation">Consume operation</span>
+</h4>
+<p>Atomic load with <code>memory_order_consume</code> or stronger is a consume operation. Note that <span class="t-lc"><a href="atomic_thread_fence.html" title="cpp/atomic/atomic thread fence">std::atomic_thread_fence</a></span> is not a consume operation.
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Acquire operation">edit</a>]</span> <span class="mw-headline" id="Acquire_operation">Acquire operation</span>
+</h4>
+<p>Atomic load with <code>memory_order_acquire</code> or stronger is an acquire operation. The lock() operation on a <a href="../concept/Mutex.html" title="cpp/concept/Mutex"><code>Mutex</code></a> is also an acquire operation. Note that <span class="t-lc"><a href="atomic_thread_fence.html" title="cpp/atomic/atomic thread fence">std::atomic_thread_fence</a></span> is not an acquire operation.
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Release operation">edit</a>]</span> <span class="mw-headline" id="Release_operation">Release operation</span>
+</h4>
+<p>Atomic store with <code>memory_order_release</code> or stronger is a release operation. The unlock() operation on a <a href="../concept/Mutex.html" title="cpp/concept/Mutex"><code>Mutex</code></a> is also a release operation. Note that <span class="t-lc"><a href="atomic_thread_fence.html" title="cpp/atomic/atomic thread fence">std::atomic_thread_fence</a></span> is not a release operation.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Relaxed ordering">edit</a>]</span> <span class="mw-headline" id="Relaxed_ordering">Relaxed ordering</span>
+</h4>
+<p>Atomic operations tagged <span class="t-c"><span class="mw-geshi cpp source-cpp">memory_order_relaxed</span></span> are not synchronization operations, they do not order memory. They only guarantee atomicity and  modification order consistency.
+</p>
+<p>For example, with <code>x</code> and <code>y</code> initially zero,
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// Thread 1:</span>
+r1 <span class="sy1">=</span> y.<span class="me1">load</span><span class="br0">(</span>memory_order_relaxed<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// A</span>
+x.<span class="me1">store</span><span class="br0">(</span>r1, memory_order_relaxed<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// B</span>
+<span class="co1">// Thread 2:</span>
+r2 <span class="sy1">=</span> x.<span class="me1">load</span><span class="br0">(</span>memory_order_relaxed<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// C </span>
+y.<span class="me1">store</span><span class="br0">(</span><span class="nu0">42</span>, memory_order_relaxed<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// D</span></pre></div></div>
+<p>is allowed to produce <code>r1 == r2 == 42</code> because, although A is <i>sequenced-before</i> B within thread 1 and C is <i>sequenced before</i> D within thread 2, nothing prevents D from appearing before A in the modification order of y, and B from appearing before C in the modification order of x. The side-effect of D on y could be visible to the load A in Thread 1  while the side effect of B on x could be visible to the load C in Thread 2.
+</p>
+<table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14">
+<td>
+<p>Even with relaxed memory model, out-of-thin-air values are not allowed to circularly depend on their own computations, for example, with <code>x</code> and <code>y</code> initially zero,
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// Thread 1:</span>
+r1 <span class="sy1">=</span> x.<span class="me1">load</span><span class="br0">(</span>memory_order_relaxed<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">if</span> <span class="br0">(</span>r1 <span class="sy1">==</span> <span class="nu0">42</span><span class="br0">)</span> y.<span class="me1">store</span><span class="br0">(</span>r1, memory_order_relaxed<span class="br0">)</span><span class="sy4">;</span>
+<span class="co1">// Thread 2:</span>
+r2 <span class="sy1">=</span> y.<span class="me1">load</span><span class="br0">(</span>memory_order_relaxed<span class="br0">)</span><span class="sy4">;</span>
+<span class="kw1">if</span> <span class="br0">(</span>r2 <span class="sy1">==</span> <span class="nu0">42</span><span class="br0">)</span> x.<span class="me1">store</span><span class="br0">(</span><span class="nu0">42</span>, memory_order_relaxed<span class="br0">)</span><span class="sy4">;</span></pre></div></div>
+<p>is not allowed to produce <code>r1 == r2 == 42</code> since the store of 42 to y is only possible if the store to x stores 42, which circularly depends on the store to y storing 42. Note that until C++14, this was technically allowed by the specification, but not recommended for implementors.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td>
+</tr>
+</table>
+<p>Typical use for relaxed memory ordering is updating counters, such as the reference counters of <span class="t-lc"><a href="../memory/shared_ptr.html" title="cpp/memory/shared ptr">std::shared_ptr</a></span>, since this only requires atomicity, but not ordering or synchronization.
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;vector&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;thread&gt;</span>
+<span class="co2">#include &lt;atomic&gt;</span>
+ 
+<a href="atomic.html"><span class="kw1755">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> cnt <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> n <span class="sy1">&lt;</span> <span class="nu0">1000</span><span class="sy4">;</span> <span class="sy2">++</span>n<span class="br0">)</span> <span class="br0">{</span>
+        cnt.<span class="me1">fetch_add</span><span class="br0">(</span><span class="nu0">1</span>, std<span class="sy4">::</span><span class="me2">memory_order_relaxed</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../container/vector.html"><span class="kw1065">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a><span class="sy1">&gt;</span> v<span class="sy4">;</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> n <span class="sy1">&lt;</span> <span class="nu0">10</span><span class="sy4">;</span> <span class="sy2">++</span>n<span class="br0">)</span> <span class="br0">{</span>
+        v.<span class="me1">emplace_back</span><span class="br0">(</span>f<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw1">for</span> <span class="br0">(</span><span class="kw4">auto</span><span class="sy3">&amp;</span> t <span class="sy4">:</span> v<span class="br0">)</span> <span class="br0">{</span>
+        t.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Final counter value is "</span> <span class="sy1">&lt;&lt;</span> cnt <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Final counter value is 10000</pre></div></div> 
+</div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Release-Acquire ordering">edit</a>]</span> <span class="mw-headline" id="Release-Acquire_ordering">Release-Acquire ordering</span>
+</h4>
+<p>If an atomic store in thread A is tagged <span class="t-c"><span class="mw-geshi cpp source-cpp">memory_order_release</span></span> and an atomic load in thread B from the same variable is tagged <span class="t-c"><span class="mw-geshi cpp source-cpp">memory_order_acquire</span></span>, all memory writes (non-atomic and relaxed atomic) that <i>happened-before</i> the atomic store from the point of view of thread A, become <i>visible side-effects</i> in thread B, that is, once the atomic load is completed, thread B is guaranteed to see everything thread A wrote to memory.
+</p>
+<p>The synchronization is established only between the threads <i>releasing</i> and <i>acquiring</i> the same atomic variable. Other threads can see different order of memory accesses than either or both of the synchronized threads.
+</p>
+<p>On strongly-ordered systems (x86, SPARC TSO, IBM mainframe), release-acquire ordering is automatic for the majority of operations. No additional CPU instructions are issued for this synchronization mode, only certain compiler optimizations are affected (e.g. the compiler is prohibited from moving non-atomic stores past the atomic store-release or perform non-atomic loads earlier than the atomic load-acquire). On weakly-ordered systems (ARM, Itanium, PowerPC), special CPU load or memory fence instructions have to be used.
+</p>
+<p>Mutual exclusion locks (such as <span class="t-lc"><a href="../thread/mutex.html" title="cpp/thread/mutex">std::mutex</a></span> or <a href="atomic_flag.html" title="cpp/atomic/atomic flag">atomic spinlock</a>) are an example of release-acquire synchronization: when the lock is released by thread A and acquired by thread B, everything that took place in the critical section (before the release) in the context of thread A has to be visible to thread B (after the acquire) which is executing the same critical section.
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;thread&gt;</span>
+<span class="co2">#include &lt;atomic&gt;</span>
+<span class="co2">#include &lt;cassert&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+ 
+<a href="atomic.html"><span class="kw1755">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a><span class="sy2">*</span><span class="sy1">&gt;</span> ptr<span class="sy4">;</span>
+<span class="kw4">int</span> data<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> producer<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a><span class="sy2">*</span> p  <span class="sy1">=</span> new <a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a><span class="br0">(</span><span class="st0">"Hello"</span><span class="br0">)</span><span class="sy4">;</span>
+    data <span class="sy1">=</span> <span class="nu0">42</span><span class="sy4">;</span>
+    ptr.<span class="me1">store</span><span class="br0">(</span>p, std<span class="sy4">::</span><span class="me2">memory_order_release</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> consumer<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a><span class="sy2">*</span> p2<span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span><span class="br0">(</span>p2 <span class="sy1">=</span> ptr.<span class="me1">load</span><span class="br0">(</span>std<span class="sy4">::</span><span class="me2">memory_order_acquire</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>
+        <span class="sy4">;</span>
+    <a href="../error/assert.html"><span class="kw621">assert</span></a><span class="br0">(</span><span class="sy2">*</span>p2 <span class="sy1">==</span> <span class="st0">"Hello"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// never fires</span>
+    <a href="../error/assert.html"><span class="kw621">assert</span></a><span class="br0">(</span>data <span class="sy1">==</span> <span class="nu0">42</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// never fires</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> t1<span class="br0">(</span>producer<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> t2<span class="br0">(</span>consumer<span class="br0">)</span><span class="sy4">;</span>
+    t1.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> t2.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<div class="t-example">
+<p> The following example demonstrates transitive release-acquire ordering across three threads
+ </p>
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;thread&gt;</span>
+<span class="co2">#include &lt;atomic&gt;</span>
+<span class="co2">#include &lt;cassert&gt;</span>
+<span class="co2">#include &lt;vector&gt;</span>
+ 
+<a href="../container/vector.html"><span class="kw1065">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> data<span class="sy4">;</span>
+<a href="atomic.html"><span class="kw1755">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> flag <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> thread_1<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    data.<span class="me1">push_back</span><span class="br0">(</span><span class="nu0">42</span><span class="br0">)</span><span class="sy4">;</span>
+    flag.<span class="me1">store</span><span class="br0">(</span><span class="nu0">1</span>, std<span class="sy4">::</span><span class="me2">memory_order_release</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> thread_2<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw4">int</span> expected<span class="sy1">=</span><span class="nu0">1</span><span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span>flag.<span class="me1">compare_exchange_strong</span><span class="br0">(</span>expected, <span class="nu0">2</span>, std<span class="sy4">::</span><span class="me2">memory_order_acq_rel</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        expected <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> thread_3<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">while</span> <span class="br0">(</span>flag.<span class="me1">load</span><span class="br0">(</span>std<span class="sy4">::</span><span class="me2">memory_order_acquire</span><span class="br0">)</span> <span class="sy1">&lt;</span> <span class="nu0">2</span><span class="br0">)</span>
+        <span class="sy4">;</span>
+    <a href="../error/assert.html"><span class="kw621">assert</span></a><span class="br0">(</span>data.<span class="me1">at</span><span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span> <span class="sy1">==</span> <span class="nu0">42</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// will never fire</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> a<span class="br0">(</span>thread_1<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> b<span class="br0">(</span>thread_2<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> c<span class="br0">(</span>thread_3<span class="br0">)</span><span class="sy4">;</span>
+    a.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> b.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> c.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Release-Consume ordering">edit</a>]</span> <span class="mw-headline" id="Release-Consume_ordering">Release-Consume ordering</span>
+</h4>
+<p>If an atomic store in thread A is tagged <span class="t-c"><span class="mw-geshi cpp source-cpp">memory_order_release</span></span> and an atomic load in thread B from the same variable is tagged <span class="t-c"><span class="mw-geshi cpp source-cpp">memory_order_consume</span></span>, all memory writes (non-atomic and relaxed atomic) that are <i>dependency-ordered-before</i> the atomic store from the point of view of thread A, become <i>visible side-effects</i> within those operations in thread B into which the load operation <i>carries dependency</i>, that is, once the atomic load is completed, those operators and functions in thread B that use the value obtained from the load are guaranteed to see what thread A wrote to memory.
+</p>
+<p>The synchronization is established only between the threads <i>releasing</i> and <i>consuming</i> the same atomic variable. Other threads can see different order of memory accesses than either or both of the synchronized threads.
+</p>
+<p>On all mainstream CPUs other than DEC Alpha, dependency ordering is automatic, no additional CPU instructions are issued for this synchronization mode, only certain compiler optimizations are affected (e.g. the compiler is prohibited from performing speculative loads on the objects that are involved in the dependency chain). 
+</p>
+<p>Typical use cases for this ordering involve read access to rarely written concurrent data structures (routing tables, configuration, security policies, firewall rules, etc) and publisher-subscriber situations with pointer-mediated publication, that is, when the producer publishes a pointer through which the consumer can access information: there is no need to make everything else the producer wrote to memory visible to the consumer (which may be an expensive operation on weakly-ordered architectures). An example of such scenario is <a href="http%3A//en.wikipedia.com/wiki/Read-copy-update" class="extiw" title="enwiki:Read-copy-update">rcu_dereference</a>.
+</p>
+<p>See also <span class="t-lc"><a href="kill_dependency.html" title="cpp/atomic/kill dependency">std::kill_dependency</a></span> and <a href="../language/attributes.html" title="cpp/language/attributes">[[carries_dependency]]</a> for fine-grained dependency chain control.
+</p>
+<p>Note that currently (2/2015) no known production compilers track dependency chains: consume operations are lifted to acquire operations.
+</p>
+<div class="t-example">
+<p> This example demonstrates dependency-ordered synchronization for pointer-mediated publication: the integer data is not related to the pointer to string by a data-dependency relationship, thus its value is undefined in the consumer.
+ </p>
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;thread&gt;</span>
+<span class="co2">#include &lt;atomic&gt;</span>
+<span class="co2">#include &lt;cassert&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+ 
+<a href="atomic.html"><span class="kw1755">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a><span class="sy2">*</span><span class="sy1">&gt;</span> ptr<span class="sy4">;</span>
+<span class="kw4">int</span> data<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> producer<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a><span class="sy2">*</span> p  <span class="sy1">=</span> new <a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a><span class="br0">(</span><span class="st0">"Hello"</span><span class="br0">)</span><span class="sy4">;</span>
+    data <span class="sy1">=</span> <span class="nu0">42</span><span class="sy4">;</span>
+    ptr.<span class="me1">store</span><span class="br0">(</span>p, std<span class="sy4">::</span><span class="me2">memory_order_release</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> consumer<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a><span class="sy2">*</span> p2<span class="sy4">;</span>
+    <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span><span class="br0">(</span>p2 <span class="sy1">=</span> ptr.<span class="me1">load</span><span class="br0">(</span>std<span class="sy4">::</span><span class="me2">memory_order_consume</span><span class="br0">)</span><span class="br0">)</span><span class="br0">)</span>
+        <span class="sy4">;</span>
+    <a href="../error/assert.html"><span class="kw621">assert</span></a><span class="br0">(</span><span class="sy2">*</span>p2 <span class="sy1">==</span> <span class="st0">"Hello"</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// never fires: *p2 carries dependency from ptr</span>
+    <a href="../error/assert.html"><span class="kw621">assert</span></a><span class="br0">(</span>data <span class="sy1">==</span> <span class="nu0">42</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// may or may not fire: data does not carry dependency from ptr</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> t1<span class="br0">(</span>producer<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> t2<span class="br0">(</span>consumer<span class="br0">)</span><span class="sy4">;</span>
+    t1.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> t2.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<p><br>
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Sequentially-consistent ordering">edit</a>]</span> <span class="mw-headline" id="Sequentially-consistent_ordering">Sequentially-consistent ordering</span>
+</h4>
+<p>Atomic operations tagged <span class="t-c"><span class="mw-geshi cpp source-cpp">memory_order_seq_cst</span></span> not only order memory the same way as release/acquire ordering (everything that <i>happened-before</i> a store in one thread becomes a <i>visible side effect</i> in the thread that did a load), but also establish a <i>single total modification order</i> of all atomic operations that are so tagged.
+</p>
+<p>Formally,
+</p>
+<p>Each <code>memory_order_seq_cst</code> operation B that loads from atomic variable M, observes one of the following:
+</p>
+<ul>
+<li> the result of the last operation A that modified M, which appears before B in the single total order
+</li>
+<li> OR, if there was such an A, B may observe the result of some modification on M that is not <code>memory_order_seq_cst</code> and does not <i>happen-before</i> A
+</li>
+<li> OR, if there wasn't such an A, B may observe the result of some unrelated modification of M that is not <code>memory_order_seq_cst</code>
+</li>
+</ul>
+<p>If there was a <code>memory_order_seq_cst</code> <span class="t-lc"><a href="atomic_thread_fence.html" title="cpp/atomic/atomic thread fence">std::atomic_thread_fence</a></span> operation X <i>sequenced-before</i> B, then B observes one of the following:
+</p>
+<ul>
+<li> the last <code>memory_order_seq_cst</code> modification of M that appears before X in the single total order
+</li>
+<li> some unrelated modification of M that appears later in M's modification order
+</li>
+</ul>
+<p>For a pair of atomic operations on M called A and B, where A writes and B reads M's value, if there are two <code>memory_order_seq_cst</code> <span class="t-lc"><a href="atomic_thread_fence.html" title="cpp/atomic/atomic thread fence">std::atomic_thread_fence</a></span>s X and Y, and if A is <i>sequenced-before</i> X, Y is <i>sequenced-before</i> B, and X appears before Y in the Single Total Order, then B observes either:
+</p>
+<ul>
+<li> the effect of A
+</li>
+<li> some unrelated modification of M that appears after A in M's modification order
+</li>
+</ul>
+<p>For a pair of atomic modifications of M called A and B, B occurs after A in M's modification order if 
+</p>
+<ul>
+<li> there is a <code>memory_order_seq_cst</code> <span class="t-lc"><a href="atomic_thread_fence.html" title="cpp/atomic/atomic thread fence">std::atomic_thread_fence</a></span> X such that A is <i>sequenced-before</i> X and X appears before B in the Single Total Order
+</li>
+<li> or, there is a <code>memory_order_seq_cst</code> <span class="t-lc"><a href="atomic_thread_fence.html" title="cpp/atomic/atomic thread fence">std::atomic_thread_fence</a></span> Y such that Y is <i>sequenced-before</i> B and A appears before Y in the Single Total Order
+</li>
+<li> or, there are <code>memory_order_seq_cst</code> <span class="t-lc"><a href="atomic_thread_fence.html" title="cpp/atomic/atomic thread fence">std::atomic_thread_fence</a></span>s X and Y such that A is <i>sequenced-before</i> X, Y is <i>sequenced-before</i> B, and X appears before Y in the Single Total Order.
+</li>
+</ul>
+<p>Note that the means that:
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> as soon as atomic operations that are not tagged <code>memory_order_seq_cst</code> enter the picture, the sequential consistency is lost</div>
+<div class="t-li1">
+<span class="t-li">2)</span> the sequentially-consistent fences are only establishing total ordering for the fences themselves, not for the atomic operations in the general case (<i>sequenced-before</i> is not a cross-thread relationship, unlike <i>happens-before</i>)</div>
+<p>Sequential ordering may be necessary for multiple producer-multiple consumer situations where all consumers must observe the actions of all producers occurring in the same order.
+</p>
+<p>Total sequential ordering requires a full memory fence CPU instruction on all multi-core systems. This may become a performance bottleneck since it forces the affected memory accesses to propagate to every core.
+</p>
+<div class="t-example">
+<p> This example demonstrates a situation where sequential ordering is necessary. Any other ordering may trigger the assert because it would be possible for the threads <code>c</code> and <code>d</code> to observe changes to the atomics <code>x</code> and <code>y</code> in opposite order.
+ </p>
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;thread&gt;</span>
+<span class="co2">#include &lt;atomic&gt;</span>
+<span class="co2">#include &lt;cassert&gt;</span>
+ 
+<a href="atomic.html"><span class="kw1755">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span> x <span class="sy1">=</span> <span class="br0">{</span><span class="kw2">false</span><span class="br0">}</span><span class="sy4">;</span>
+<a href="atomic.html"><span class="kw1755">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">bool</span><span class="sy1">&gt;</span> y <span class="sy1">=</span> <span class="br0">{</span><span class="kw2">false</span><span class="br0">}</span><span class="sy4">;</span>
+<a href="atomic.html"><span class="kw1755">std::<span class="me2">atomic</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> z <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">0</span><span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> write_x<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    x.<span class="me1">store</span><span class="br0">(</span><span class="kw2">true</span>, std<span class="sy4">::</span><span class="me2">memory_order_seq_cst</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> write_y<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    y.<span class="me1">store</span><span class="br0">(</span><span class="kw2">true</span>, std<span class="sy4">::</span><span class="me2">memory_order_seq_cst</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> read_x_then_y<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span>x.<span class="me1">load</span><span class="br0">(</span>std<span class="sy4">::</span><span class="me2">memory_order_seq_cst</span><span class="br0">)</span><span class="br0">)</span>
+        <span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>y.<span class="me1">load</span><span class="br0">(</span>std<span class="sy4">::</span><span class="me2">memory_order_seq_cst</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="sy2">++</span>z<span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">void</span> read_y_then_x<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="kw1">while</span> <span class="br0">(</span><span class="sy3">!</span>y.<span class="me1">load</span><span class="br0">(</span>std<span class="sy4">::</span><span class="me2">memory_order_seq_cst</span><span class="br0">)</span><span class="br0">)</span>
+        <span class="sy4">;</span>
+    <span class="kw1">if</span> <span class="br0">(</span>x.<span class="me1">load</span><span class="br0">(</span>std<span class="sy4">::</span><span class="me2">memory_order_seq_cst</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+        <span class="sy2">++</span>z<span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> a<span class="br0">(</span>write_x<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> b<span class="br0">(</span>write_y<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> c<span class="br0">(</span>read_x_then_y<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../thread/thread.html"><span class="kw1784">std::<span class="me2">thread</span></span></a> d<span class="br0">(</span>read_y_then_x<span class="br0">)</span><span class="sy4">;</span>
+    a.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> b.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> c.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> d.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../error/assert.html"><span class="kw621">assert</span></a><span class="br0">(</span>z.<span class="me1">load</span><span class="br0">(</span><span class="br0">)</span> <span class="sy3">!</span><span class="sy1">=</span> <span class="nu0">0</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// will never happen</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Relationship with volatile">edit</a>]</span> <span class="mw-headline" id="Relationship_with_volatile">Relationship with <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">volatile</span></span></span></span>
+</h3>
+<p>Within a thread of execution, accesses (reads and writes) to all <a href="../language/cv.html" title="cpp/language/cv">volatile objects</a> are guaranteed to not be reordered relative to each other, but this order is not guaranteed to be observed by another thread, since volatile access does not establish inter-thread synchronization.
+</p>
+<p>In addition, volatile accesses are not atomic (concurrent read and write is a <a href="../language/memory_model.html" title="cpp/language/memory model">data race</a>) and do not order memory (non-volatile memory accesses may be freely reordered around the volatile access).
+</p>
+<p>One notable exception is Visual Studio, where, with default settings, every volatile write has release semantics and every volatile read has acquire semantics (<a rel="nofollow" class="external text" href="http%3A//msdn.microsoft.com/en-us/library/12a04hfd%28v%3Dvs.100%29.aspx">MSDN</a>), and thus volatiles may be used for inter-thread synchronization. Standard <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">volatile</span></span></span> semantics are not applicable to multithreaded programming, although they are sufficient for e.g. communication with a <span class="t-lc"><a href="../utility/program/signal.html" title="cpp/utility/program/signal">std::signal</a></span> handler.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see">
+<span><a href="../../c/atomic/memory_order.html" title="c/atomic/memory order">C documentation</a></span> for <span class="t-dsc-see-tt"><span>memory order</span></span>
+</div>
+</td>
+</tr>
+
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: External links">edit</a>]</span> <span class="mw-headline" id="External_links">External links</span>
+</h3>
+<ul><li> <a href="http%3A//en.wikipedia.com/wiki/MOESI_protocol" class="extiw" title="enwiki:MOESI protocol">MOESI protocol</a>
+</li></ul>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: let's find good refs on MOESI, MESIF, and maybe Dragon </td>
+</tr></table>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http%3A//www.cl.cam.ac.uk/%7Epes20/weakmemory/cacm.pdf">x86-TSO: A Rigorous and Usable Programmer’s Model for x86 Multiprocessors</a> P. Sewell et. al., 2010
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//www.cl.cam.ac.uk/%7Epes20/ppc-supplemental/test7.pdf">A Tutorial Introduction to the ARM and POWER Relaxed Memory Models</a> P. Sewell et al, 2012
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 3675/1000000
+Preprocessor generated node count: 10618/1000000
+Post‐expand include size: 116855/2097152 bytes
+Template argument size: 34549/2097152 bytes
+Highest expansion depth: 18/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2839-0!*!0!!en!*!* and timestamp 20150523195706 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/atomic/memory_order&amp;oldid=76741</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 3.426 secs. -->
+	</body>
+<!-- Cached 20150523195706 -->
+</html>

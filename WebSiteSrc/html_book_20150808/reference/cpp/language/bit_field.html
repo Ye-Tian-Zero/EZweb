@@ -1,0 +1,457 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Bit field - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/bit_field","wgTitle":"cpp/language/bit field","wgCurRevisionId":80338,"wgArticleId":9905,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/bit_field","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_bit_field skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Bit field</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="classes.html" title="cpp/language/classes"> Classes</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> General </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="classes.html" title="cpp/language/classes"> overview</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class/struct types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union types</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Members </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html" title="cpp/language/data members">data members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static.html" title="cpp/language/static">static members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="this.html" title="cpp/language/this">the <code>this</code> pointer</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nested_classes.html" title="cpp/language/nested classes" class="mw-redirect">nested classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template">member templates</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">bit fields</strong>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration">using-declarations</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_functions.html" title="cpp/language/member functions">member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="access.html" title="cpp/language/access">member access specifiers</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constructor.html" title="cpp/language/initializer list">constructors and member initializer lists</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html#Member_initialization" title="cpp/language/data members">in-class <i>brace-or-equal</i> initializer</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="friend.html" title="cpp/language/friend"><code>friend</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"><code>explicit</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="converting_constructor.html" title="cpp/language/converting constructor">converting constructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Special member functions </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_constructor.html" title="cpp/language/default constructor">default constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_constructor.html" title="cpp/language/copy constructor">copy constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_constructor.html" title="cpp/language/move constructor">move constructor</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_operator.html" title="cpp/language/as operator">copy assignment operator</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_operator.html" title="cpp/language/move operator">move assignment operator</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="destructor.html" title="cpp/language/destructor">destructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Inheritance </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="derived_class.html" title="cpp/language/derived class">base and derived classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual">virtual member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="override.html" title="cpp/language/override">override</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="final.html" title="cpp/language/final">final</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="abstract_class.html" title="cpp/language/abstract class">pure virtual functions and abstract classes</a>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Declares a class data member with explicit size, in bits. Adjacent bit field members may be packed to share and straddle the individual bytes.
+</p>
+<p>A bit field declaration is a <a href="data_members.html" title="cpp/language/data members">class data member declaration</a> which uses the following declarator:
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">identifier</span><span class="t-mark">(optional)</span> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <code><b>:</b></code> <span class="t-spar">size</span>
+</td>
+<td> (1)
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<p>The <i>type</i> of the bit field is introduced by the <span class="t-spar">decl-specifier-seq</span> of the <a href="declarations.html" title="cpp/language/declarations">declaration syntax</a>.
+</p>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">attr</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td>  optional sequence of any number of <a href="attributes.html" title="cpp/language/attributes">attributes</a>
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">identifier</span>
+</td>
+<td> -
+</td>
+<td>  the name of the bit field that is being declared. The name is optional: nameless bitfields introduce the specified number of bits of padding
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">size</span>
+</td>
+<td> -
+</td>
+<td>  an integral constant expression with a value greater or equal to zero. When greater than zero, this is the number of bits that this bit field will occupy. The value zero is only allowed for nameless bitfields and has special meaning: it specifies that the next bit field in the class definition will begin at an allocation unit's boundary.
+</td>
+</tr>
+</table>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="bit_field.html#Explanation"><span class="tocnumber">1</span> <span class="toctext">Explanation</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="bit_field.html#Notes"><span class="tocnumber">2</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="bit_field.html#References"><span class="tocnumber">3</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="bit_field.html#See_also"><span class="tocnumber">4</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+<p>The number of bits in a bit field sets the limit to the range of values it can hold:
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw1">struct</span> S <span class="br0">{</span>
+ <span class="co1">// three-bit unsigned field,</span>
+ <span class="co1">// allowed values are 0...7</span>
+ <span class="kw4">unsigned</span> <span class="kw4">int</span> b <span class="sy4">:</span> <span class="nu0">3</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    S s <span class="sy1">=</span> <span class="br0">{</span><span class="nu0">7</span><span class="br0">}</span><span class="sy4">;</span>
+    <span class="sy2">++</span>s.<span class="me1">b</span><span class="sy4">;</span> <span class="co1">// unsigned overflow (guaranteed wrap-around)</span>
+    <a href="../io/cout.html"><span class="kw1585">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> s.<span class="me1">b</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// output: 0</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<p>Multiple adjacent bit fields are usually packed together (although this behavior is implementation-defined):
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="co1">// will usually occupy 2 bytes:</span>
+    <span class="co1">// 3 bits: value of b1</span>
+    <span class="co1">// 2 bits: unused</span>
+    <span class="co1">// 6 bits: value of b2</span>
+    <span class="co1">// 2 bits: value of b3</span>
+    <span class="co1">// 3 bits: unused</span>
+    <span class="kw4">unsigned</span> <span class="kw4">char</span> b1 <span class="sy4">:</span> <span class="nu0">3</span>, <span class="sy4">:</span> <span class="nu0">2</span>, b2 <span class="sy4">:</span> <span class="nu0">6</span>, b3 <span class="sy4">:</span> <span class="nu0">2</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1585">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> sizeof<span class="br0">(</span>S<span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// usually prints 2</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<p>The special unnamed bit field of size zero can be forced to break up padding. It specifies that the next bit field begins at the beginning of its allocation unit:
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw1">struct</span> S <span class="br0">{</span>
+    <span class="co1">// will usually occupy 2 bytes:</span>
+    <span class="co1">// 3 bits: value of b1</span>
+    <span class="co1">// 5 bits: unused</span>
+    <span class="co1">// 6 bits: value of b2</span>
+    <span class="co1">// 2 bits: value of b3</span>
+    <span class="kw4">unsigned</span> <span class="kw4">char</span> b1 <span class="sy4">:</span> <span class="nu0">3</span><span class="sy4">;</span>
+    <span class="kw4">unsigned</span> <span class="kw4">char</span> <span class="sy4">:</span><span class="nu0">0</span><span class="sy4">;</span> <span class="co1">// start a new byte</span>
+    <span class="kw4">unsigned</span> <span class="kw4">char</span> b2 <span class="sy4">:</span> <span class="nu0">6</span><span class="sy4">;</span>
+    <span class="kw4">unsigned</span> <span class="kw4">char</span> b3 <span class="sy4">:</span> <span class="nu0">2</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../io/cout.html"><span class="kw1585">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> sizeof<span class="br0">(</span>S<span class="br0">)</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// usually prints 2</span>
+<span class="br0">}</span></pre></div></div>
+<p><br> 
+</p>
+</div>
+<p>If the specified size of the bit field is greater than the size of its type, the value is limited by the type: a <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../types/integer.html"><span class="kw120">std::<span class="me2">uint8_t</span></span></a> b <span class="sy4">:</span> <span class="nu0">1000</span><span class="sy4">;</span></span></span> would still hold values between 0 and 255. the extra bits become unused padding.
+</p>
+<p>Because bit fields do not necessarily begin at the beginning of a byte, address of a bit field cannot be taken. Pointers and non-const references to bit fields are not possible. When <a href="reference_initialization.html" title="cpp/language/reference initialization">initializing a const reference</a> from a bit field, a temporary is created (its type is the type of the bit field), copy initialized with the value of the bit field, and the reference is bound to that temporary.
+</p>
+<p>The type of a bit field can only be integral or enumeration type.
+</p>
+<p>A bit field cannot be a <a href="static.html" title="cpp/language/static">static data member</a>.
+</p>
+<p>There are no bit field <a href="value_category.html" title="cpp/language/value category">prvalues</a>: lvalue-to-rvalue conversion always produces an object of the underlying type of the bit field.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span>
+</h3>
+<p>The following properties of bit fields are <i>implementation-defined</i>
+</p>
+<ul>
+<li> The value that results from assigning or initializing a bit field with a value out of range, or from incrementing a bit field past its range.
+</li>
+<li> Everything about the actual allocation details of bit fields within the class object
+</li>
+</ul>
+<dl><dd>
+<ul>
+<li> For example, on some platforms, bit fields don't straddle bytes, on others they do
+</li>
+<li> Also, on some platforms, bit fields are packed left-to-right, on others right-to-left
+</li>
+</ul>
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx14">
+<td>
+<ul><li> Whether <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">short</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span>, and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span> bit fields that aren't explicitly <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span></span></span> are signed or unsigned.
+</li></ul>
+<dl><dd>
+<ul><li> For example, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span> b<span class="sy4">:</span><span class="nu0">3</span><span class="sy4">;</span></span></span> may have the range of values <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="nu0">0</span>..<span class="nu0">7</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="sy2">-</span><span class="nu0">4</span>..<span class="nu0">3</span></span></span>.
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-until-cxx14">(until C++14)</span></td>
+</tr>
+</table>
+<p>In the C programming language, the width of a bit field cannot exceed the width of the underlying type.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span>
+</h3>
+<div class="t-ref-std-c++11">
+<ul><li> C++11 standard (ISO/IEC 14882:2011): 
+</li></ul>
+<dl><dd>
+<ul><li> 9.6 Bit-fields [class.bit]
+</li></ul>
+</dd></dl>
+</div>
+<div class="t-ref-std-c++98">
+<ul><li> C++98 standard (ISO/IEC 14882:1998): 
+</li></ul>
+<dl><dd>
+<ul><li> 9.6 Bit-fields [class.bit]
+</li></ul>
+</dd></dl>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see">
+<span><a href="../../c/language/bit_field.html" title="c/language/bit field">C documentation</a></span> for <span class="t-dsc-see-tt"><span>Bit fields</span></span>
+</div>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1253/1000000
+Preprocessor generated node count: 4110/1000000
+Post‐expand include size: 41161/2097152 bytes
+Template argument size: 8643/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9905-0!*!0!!en!*!* and timestamp 20150806144831 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/bit_field&amp;oldid=80338</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.078 secs. -->
+	</body>
+<!-- Cached 20150806145234 -->
+</html>

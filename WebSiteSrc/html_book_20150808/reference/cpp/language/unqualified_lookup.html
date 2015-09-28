@@ -1,0 +1,684 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Unqualified name lookup - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/unqualified_lookup","wgTitle":"cpp/language/unqualified lookup","wgCurRevisionId":77133,"wgArticleId":14018,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason","Todo without reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/unqualified_lookup","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_unqualified_lookup skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Unqualified name lookup</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="basic_concepts.html" title="cpp/language/basic concepts"> Basic Concepts</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> language keywords</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="translation_phases.html" title="cpp/language/translation phases"> phases of translation</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> comments </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> the main() function</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> names and identifiers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="incomplete_type.html" title="cpp/language/type"> types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> fundamental types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="objects.html" title="cpp/language/object"> objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scope.html" title="cpp/language/scope"> scope</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lifetime.html" title="cpp/language/lifetime"> object lifetime</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> storage duration and linkage</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="definition.html" title="cpp/language/definition"> definitions and ODR</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup">qualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">unqualified name lookup</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory_model.html" title="cpp/language/memory model"> memory model</a> </td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>For an <i>unqualified</i> name, that is name that does not appear to the right of a scope resolution operator <code><b>::</b></code>, name lookup examines the <a href="scope.html" title="cpp/language/scope">scopes</a> as described below, until it finds at least one declaration of any kind, at which time the lookup stops and no further scopes are examined. (Note: lookup from some contexts skips some declarations, for example, lookup of the name used to the left of <code><b>::</b></code> ignores function, variable, and enumerator declarations, lookup of a name used as a base class specifier ignores all non-type declarations)
+</p>
+<p>For the purpose of unqualified name lookup, all declarations from a namespace nominated by a <a href="namespace.html" title="cpp/language/namespace">using directive</a> appear as if declared in the nearest enclosing namespace which contains, directly or indirectly, both the using-directive and the nominated namespace.
+</p>
+<p>Unqualified name lookup of the name used to the left of the function-call operator (and, equivalently, operator in an expression) is described in <a href="adl.html" title="cpp/language/adl">argument-dependent lookup</a>.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="unqualified_lookup.html#File_scope"><span class="tocnumber">1</span> <span class="toctext">File scope</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="unqualified_lookup.html#Namespace_scope"><span class="tocnumber">2</span> <span class="toctext">Namespace scope</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="unqualified_lookup.html#Definition_outside_of_its_namespace"><span class="tocnumber">3</span> <span class="toctext">Definition outside of its namespace</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="unqualified_lookup.html#Non-member_function_definition"><span class="tocnumber">4</span> <span class="toctext">Non-member function definition</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="unqualified_lookup.html#Class_definition"><span class="tocnumber">5</span> <span class="toctext">Class definition</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="unqualified_lookup.html#Injected_class_name"><span class="tocnumber">6</span> <span class="toctext">Injected class name</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="unqualified_lookup.html#Member_function_definition"><span class="tocnumber">7</span> <span class="toctext">Member function definition</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="unqualified_lookup.html#Friend_function_definition"><span class="tocnumber">8</span> <span class="toctext">Friend function definition</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="unqualified_lookup.html#Friend_function_declaration"><span class="tocnumber">9</span> <span class="toctext">Friend function declaration</span></a></li>
+<li class="toclevel-1 tocsection-10"><a href="unqualified_lookup.html#Default_argument"><span class="tocnumber">10</span> <span class="toctext">Default argument</span></a></li>
+<li class="toclevel-1 tocsection-11"><a href="unqualified_lookup.html#Static_data_member_definition"><span class="tocnumber">11</span> <span class="toctext">Static data member definition</span></a></li>
+<li class="toclevel-1 tocsection-12"><a href="unqualified_lookup.html#Enumerator_declaration"><span class="tocnumber">12</span> <span class="toctext">Enumerator declaration</span></a></li>
+<li class="toclevel-1 tocsection-13"><a href="unqualified_lookup.html#Catch_clause_of_a_function-try_block"><span class="tocnumber">13</span> <span class="toctext">Catch clause of a function-try block</span></a></li>
+<li class="toclevel-1 tocsection-14"><a href="unqualified_lookup.html#Overloaded_operator"><span class="tocnumber">14</span> <span class="toctext">Overloaded operator</span></a></li>
+<li class="toclevel-1 tocsection-15"><a href="unqualified_lookup.html#Template_definition"><span class="tocnumber">15</span> <span class="toctext">Template definition</span></a></li>
+<li class="toclevel-1 tocsection-16"><a href="unqualified_lookup.html#Template_name"><span class="tocnumber">16</span> <span class="toctext">Template name</span></a></li>
+<li class="toclevel-1 tocsection-17"><a href="unqualified_lookup.html#Member_of_a_class_template_outside_of_template"><span class="tocnumber">17</span> <span class="toctext">Member of a class template outside of template</span></a></li>
+<li class="toclevel-1 tocsection-18"><a href="unqualified_lookup.html#References"><span class="tocnumber">18</span> <span class="toctext">References</span></a></li>
+<li class="toclevel-1 tocsection-19"><a href="unqualified_lookup.html#See_also"><span class="tocnumber">19</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: File scope">edit</a>]</span> <span class="mw-headline" id="File_scope">File scope</span>
+</h3>
+<p>For a name used in global (top-level namespace) scope, outside of any function, class, or user-declared namespace, the global scope before the use of the name is examined:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span>     <span class="co1">// declaration of n</span>
+<span class="kw4">int</span> x <span class="sy1">=</span> n <span class="sy2">+</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// OK: lookup finds ::n</span>
+ 
+<span class="kw4">int</span> z <span class="sy1">=</span> y <span class="sy2">-</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// Error: lookup fails</span>
+<span class="kw4">int</span> y <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>     <span class="co1">// declaration of y</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Namespace scope">edit</a>]</span> <span class="mw-headline" id="Namespace_scope">Namespace scope</span>
+</h3>
+<p>For a name used in a user-declared namespace outside of any function or class, this namespace is searched before the use of the name, then the namespace enclosing this namespace before the declaration of this namespace, etc until the global namespace is reached.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// declaration</span>
+<span class="kw1">namespace</span> N <span class="br0">{</span>
+  <span class="kw4">int</span> m <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span>
+  <span class="kw1">namespace</span> Y <span class="br0">{</span>
+    <span class="kw4">int</span> x <span class="sy1">=</span> n<span class="sy4">;</span> <span class="co1">// OK, lookup finds ::n</span>
+    <span class="kw4">int</span> y <span class="sy1">=</span> m<span class="sy4">;</span> <span class="co1">// OK, lookup finds ::N::m</span>
+    <span class="kw4">int</span> z <span class="sy1">=</span> k<span class="sy4">;</span> <span class="co1">// Error: lookup fails</span>
+  <span class="br0">}</span>
+  <span class="kw4">int</span> k <span class="sy1">=</span> <span class="nu0">3</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Definition outside of its namespace">edit</a>]</span> <span class="mw-headline" id="Definition_outside_of_its_namespace">Definition outside of its namespace</span>
+</h3>
+<p>For a name used in the definition of a namespace-member variable outside the namespace, lookup proceeds the same way as for a name used inside the namespace:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">namespace</span> X <span class="br0">{</span>
+    <span class="kw4">extern</span> <span class="kw4">int</span> x<span class="sy4">;</span> <span class="co1">// declaration, not definition</span>
+    <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// found 1st</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// found 2nd.</span>
+<span class="kw4">int</span> X<span class="sy4">::</span><span class="me2">x</span> <span class="sy1">=</span> n<span class="sy4">;</span> <span class="co1">// finds X::n, sets X::x to 1</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Non-member function definition">edit</a>]</span> <span class="mw-headline" id="Non-member_function_definition">Non-member function definition</span>
+</h3>
+<p>For a name used in the definition of a function, either in its body or as part of default argument, where the function is a member of user-declared or global namespace, the block in which the name is used is searched before the use of the name, then the enclosing block is searched before the start of that block, etc, until reaching the block that is the function body. Then the namespace in which the function is declared is searched until the definition (not necessarily the declaration) of the function that uses the name, then the enclosing namespaces, etc.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">namespace</span> A <span class="br0">{</span>
+   <span class="kw1">namespace</span> N <span class="br0">{</span>
+       <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+       <span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">3</span><span class="sy4">;</span> <span class="co1">// found 3rd (if 2nd is not present)</span>
+    <span class="br0">}</span>
+    <span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">4</span><span class="sy4">;</span> <span class="co1">// found 4th (if 3rd is not present)</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> i<span class="sy1">=</span><span class="nu0">5</span><span class="sy4">;</span> <span class="co1">// found 5th (if 4th is not present)</span>
+ 
+<span class="kw4">void</span> A<span class="sy4">::</span><span class="me2">N</span><span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// found 2nd (if 1st is not present)</span>
+    <span class="kw1">while</span><span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span> <span class="br0">{</span>
+       <span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// found 1st: lookup is done</span>
+       <a href="../io/cout.html"><span class="kw1446">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> i<span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="co1">// int i; // not found</span>
+ 
+<span class="kw1">namespace</span> A <span class="br0">{</span>
+  <span class="kw1">namespace</span> N <span class="br0">{</span>
+    <span class="co1">// int i; // not found</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class definition">edit</a>]</span> <span class="mw-headline" id="Class_definition">Class definition</span>
+</h3>
+<p>For a name used anywhere in <a href="class.html" title="cpp/language/class">class definition</a>, except inside a member function body, a default argument of a member function, exception specification of a member function, in-class brace-or-equal initializer of a data member, or inside a nested class definition (including names of the bases from which the nested class is derived), the following scopes are searched:
+</p>
+<div class="t-li1">
+<span class="t-li">a)</span> the body of the class in which the name is used until the point of use and the entire body of its base class(es)</div>
+<div class="t-li1">
+<span class="t-li">b)</span> if this class is <a href="nested_classes.html" title="cpp/language/nested types">nested</a>, the body of the enclosing class until the declaration of this class and the entire body of the base class(es) of the enclosing class.</div>
+<div class="t-li1">
+<span class="t-li">c)</span> if this class is <a href="class.html#Local_classes" title="cpp/language/class">local</a>, or nested within a local class, the block scope in which the class is defined until the point of definition</div>
+<div class="t-li1">
+<span class="t-li">d)</span> if this class is a member of a namespace, or is nested in a class that is a member of a namespace, or is a local class in a function that is a member of a namespace, the scope of the namespace is searched until the definition of the class, enclosing class, or function. if the lookup of for a name introduced by a <a href="friend.html" title="cpp/language/friend">friend</a> declaration: in this case only the innermost enclosing namespace is considered, otherwise lookup continues to enclosing namespaces until the global scope as usual.
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">namespace</span> M <span class="br0">{</span>
+    <span class="co1">// const int i = 1; // never found</span>
+    <span class="kw1">class</span> B <span class="br0">{</span>
+        <span class="co1">// const const int i = 3; // found 3nd (but later rejected by access check)</span>
+    <span class="br0">}</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="co1">// const int i = 5; // found 5th</span>
+<span class="kw1">namespace</span> N <span class="br0">{</span>
+    <span class="co1">// const int i = 4; // found 4th</span>
+    <span class="kw1">class</span> Y <span class="sy4">:</span> <span class="kw1">public</span> M<span class="sy4">::</span><span class="me2">B</span> <span class="br0">{</span>
+        <span class="co1">// static const int i = 2; // found 2nd</span>
+        <span class="kw1">class</span> X <span class="br0">{</span>
+            <span class="co1">// static const int i = 1; // found 1st</span>
+            <span class="kw4">int</span> a<span class="br0">[</span>i<span class="br0">]</span><span class="sy4">;</span> <span class="co1">// use of i</span>
+            <span class="co1">// static const int i = 1; // never found</span>
+        <span class="br0">}</span><span class="sy4">;</span>
+        <span class="co1">// static const int i = 2; // never found</span>
+    <span class="br0">}</span><span class="sy4">;</span>
+    <span class="co1">// const int i = 4; // never found</span>
+<span class="br0">}</span>
+<span class="co1">// const int i = 5; // never found</span></pre></div></div>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Injected class name">edit</a>]</span> <span class="mw-headline" id="Injected_class_name">Injected class name</span>
+</h3>
+For the name of a class or class template used within the definition of that same class or template, unqualified name lookup finds the class that's being defined as if the name was introduced by a member declaration (with public member access) <table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: anything else that's relevant on injected class names </td>
+</tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Member function definition">edit</a>]</span> <span class="mw-headline" id="Member_function_definition">Member function definition</span>
+</h3>
+<p>For a name used inside a member function body, a default argument of a member function, exception specification of a member function, in-class brace-or-equal initializer of a data member, or inside a nested class definition (including names of the bases from which the nested class is derived), the scopes searched are the same as in <a href="unqualified_lookup.html#Class_definition">class definition</a>, except that the entire scope of the class is considered, not just the part prior to the declaration that uses the name. For nested classes the entire body of the enclosing class is searched.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> B <span class="br0">{</span>
+    <span class="co1">// int i; // found 3rd</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">namespace</span> M <span class="br0">{</span>
+    <span class="co1">// int i; // found 5th</span>
+    <span class="kw1">namespace</span> N <span class="br0">{</span>
+        <span class="co1">// int i; // found 4th</span>
+        <span class="kw1">class</span> X <span class="sy4">:</span> <span class="kw1">public</span> B <span class="br0">{</span>
+            <span class="co1">// int i; // found 2nd</span>
+            <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+            <span class="co1">// int i; // found 2nd as well</span>
+        <span class="br0">}</span><span class="sy4">;</span>
+        <span class="co1">// int i; // found 4th</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+<span class="co1">// int i; // found 6th</span>
+<span class="kw4">void</span> M<span class="sy4">::</span><span class="me2">N</span><span class="sy4">::</span><span class="me2">X</span><span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="co1">// int i; // found 1st</span>
+    i <span class="sy1">=</span> <span class="nu0">16</span><span class="sy4">;</span>
+    <span class="co1">// int i; // never found</span>
+<span class="br0">}</span>
+<span class="kw1">namespace</span> M <span class="br0">{</span>
+  <span class="kw1">namespace</span> N <span class="br0">{</span>
+    <span class="co1">// int i; // never found</span>
+  <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<dl><dd> Either way, when examining the bases from which the class is derived, the following rules, sometime referred to as <a href="http%3A//en.wikipedia.com/wiki/Dominance_%28C%2B%2B%29" class="extiw" title="enwiki:Dominance (C++)">dominance in virtual inheritance</a>, are followed:
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx11">
+<td>A member name found in a sub-object <code>B</code> hides the same member name in any sub-object <code>A</code> if <code>A</code> is a base class sub-object of <code>B</code>. (Note that this does not hide the name in any additional, non-virtual, copies of <code>A</code> on the inheritance lattice that aren't bases of <code>B</code>: this rule only has an effect on virtual inheritance.) Names introduced by using-declarations are treated as names in the class containing the declaration. After examining each base, the resulting set must either include declarations of a static member from subobjects of the same type, or declarations of non-static members from the same subobject</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td>
+</tr>
+<tr class="t-rev t-since-cxx11">
+<td>A <i>lookup set</i> is constructed, which consists of the declarations and the subobjects in which these declarations were found. Using-declarations are replaced by the members they represent and type declarations, including injected-class-names are replaced by the types they represent. If <code>C</code> is the class in whose scope the name was used, <code>C</code> is examined first. If the list of declarations in <code>C</code> is empty, lookup set is built for each of its direct bases <code>Bi</code> (recursively applying these rules if <code>Bi</code> has its own bases). Once built, the lookup sets for the direct bases are merged into the lookup set in <code>C</code> as follows
+<dl><dd>
+<ul>
+<li> if the set of declarations in <code>Bi</code> is empty, it is discarded
+</li>
+<li> if the lookup set of <code>C</code> built so far is empty, it is replaced by the lookup set of <code>Bi</code>
+</li>
+<li> if every subobject in the lookup set of <code>Bi</code> is a base of at least one of the subobjects already added to the lookup set of <code>C</code>, the lookup set of <code>Bi</code> is discarded.
+</li>
+<li> if every subobject already added to the lookup set of <code>C</code> is a base of at least one subobject in the lookup set of <code>Bi</code>, then the lookup set of <code>C</code> is discarded and replaced with the lookup set of <code>Bi</code>
+</li>
+<li> otherwise, if the declaration sets in <code>Bi</code> and in <code>C</code> are different, the result is an ambiguous merge: the new lookup set of <code>C</code> has an invalid declaration and a union of the subobjects ealier merged into <code>C</code> and introduced from <code>Bi</code>. This invalid lookup set may not be an error if it is discarded later.
+</li>
+<li> otherwise, the new lookup set of <code>C</code> has the shared declaration sets and the union of the subobjects ealier merged into <code>C</code> and introduced from <code>Bi</code>
+</li>
+</ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table> 
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> X <span class="br0">{</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B1<span class="sy4">:</span> <span class="kw1">virtual</span> X <span class="br0">{</span> <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B2<span class="sy4">:</span> <span class="kw1">virtual</span> X <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> B1, B2 <span class="br0">{</span>
+    <span class="kw4">void</span> foo<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        X<span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK, calls X::f (qualified lookup)</span>
+        f<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// OK, calls B1::f (unqualified lookup)</span>
+<span class="co1">// C++98 rules: B1::f hides X::f, so even though X::f can be reached from D</span>
+<span class="co1">// through B2, it is not found by name lookup from D.</span>
+<span class="co1">// C++11 rules: lookup set for f in D finds nothing, proceeds to bases</span>
+<span class="co1">//  lookup set for f in B1 finds B1::f, and is completed</span>
+<span class="co1">// merge replaces the empty set, now lookup set for f in C has B1::f in B1</span>
+<span class="co1">//  lookup set for f in B2 finds nothing, proceeds to bases</span>
+<span class="co1">//    lookup for f in X finds X::f</span>
+<span class="co1">//  merge replaces the empty set, now lookup set for f in B2 has X::f in X</span>
+<span class="co1">// merge into C finds that every subobject (X) in the lookup set in B2 is a base</span>
+<span class="co1">// of every subobject (B1) already merged, so the B2 set is discareded</span>
+<span class="co1">// C is left with just B1::f found in B1</span>
+<span class="co1">// (if struct D : B2, B1 was used, then the last merge would *replace* C's </span>
+<span class="co1">//  so far merged X::f in X because every subobject already added to C (that is X)</span>
+<span class="co1">//  would be a base of at least one subobject in the new set (B1), the end</span>
+<span class="co1">//  result would be the same: lookup set in C holds just B1::f found in B1)</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<dl><dd> Unqualified name lookup that finds static members of <code>B</code>, nested types of <code>B</code>, and enumerators declared in <code>B</code> is unambiguous even if there are multiple non-virtual base subobjects of type <code>B</code> in the inheritance tree of the class being examined:
+</dd></dl>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> V <span class="br0">{</span> <span class="kw4">int</span> v<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> A <span class="br0">{</span>
+        <span class="kw4">int</span> a<span class="sy4">;</span>
+        <span class="kw4">static</span> <span class="kw4">int</span> s<span class="sy4">;</span>
+        <span class="kw2">enum</span> <span class="br0">{</span> e <span class="br0">}</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> B <span class="sy4">:</span> A, <span class="kw1">virtual</span> V <span class="br0">{</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> C <span class="sy4">:</span> A, <span class="kw1">virtual</span> V <span class="br0">{</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> B, C <span class="br0">{</span> <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span>D<span class="sy3">&amp;</span> pd<span class="br0">)</span> <span class="br0">{</span>
+        <span class="sy2">++</span>pd.<span class="me1">v</span><span class="sy4">;</span> <span class="co1">// OK: only one v because only one virtual base subobject</span>
+        <span class="sy2">++</span>pd.<span class="me1">s</span><span class="sy4">;</span> <span class="co1">// OK: only one static A::s, even though found in B and in C</span>
+        <span class="kw4">int</span> i <span class="sy1">=</span> pd.<span class="me1">e</span><span class="sy4">;</span> <span class="co1">// OK: only one enumerator A::e, even though found in B and C</span>
+        <span class="sy2">++</span>pd.<span class="me1">a</span><span class="sy4">;</span> <span class="co1">// error, ambiguous: A::a in B and A::a in C </span>
+<span class="br0">}</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Friend function definition">edit</a>]</span> <span class="mw-headline" id="Friend_function_definition">Friend function definition</span>
+</h3>
+<p>For a name used in a <a href="friend.html" title="cpp/language/friend">friend</a> function definition inside the body of the class that is granting friendship, unqualified name lookup proceeds the same way as for a member function. For a name used in a <a href="friend.html" title="cpp/language/friend">friend</a> function which is defined outside the body of a class, unqualified name lookup proceeds the same way as for a function in a namespace.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">3</span><span class="sy4">;</span> <span class="co1">// found 3rd for f1, found 2nd for f2</span>
+<span class="kw1">struct</span> X <span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> i <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// found 2nd for f1, never found for f2</span>
+    <span class="kw1">friend</span> <span class="kw4">void</span> f1<span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span>
+    <span class="br0">{</span>
+        <span class="co1">// int i; // found 1st</span>
+        i <span class="sy1">=</span> x<span class="sy4">;</span> <span class="co1">// finds and modifies X::i</span>
+    <span class="br0">}</span>
+    <span class="kw1">friend</span> <span class="kw4">int</span> f2<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// static const int i = 2; // found 2nd for f1 anywhere in class scope</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> f2<span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span> <span class="br0">{</span>
+    <span class="co1">// int i; // found 1st</span>
+    i <span class="sy1">=</span> x<span class="sy4">;</span> <span class="co1">// finds and modifies ::i</span>
+<span class="br0">}</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Friend function declaration">edit</a>]</span> <span class="mw-headline" id="Friend_function_declaration">Friend function declaration</span>
+</h3>
+<p>For a name used in the declarator of a <a href="friend.html" title="cpp/language/friend">friend</a> function declaration that friends a member function from another class, if the name isn't a part of any template argument, the unqualified lookup first examines the entire scope of the member function's class. If not found in that scope (or if the name is a part of a template argument), the lookup continues as if for a member function of the class that is granting friendship
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// the class whose member functions are friended</span>
+<span class="kw1">struct</span> A <span class="br0">{</span> 
+    <span class="kw1">typedef</span> <span class="kw4">int</span> AT<span class="sy4">;</span>
+    <span class="kw4">void</span> f1<span class="br0">(</span>AT<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> f2<span class="br0">(</span><span class="kw4">float</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw4">void</span> f3<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// the class that is granting friendship</span>
+<span class="kw1">struct</span> B <span class="br0">{</span>
+    <span class="kw1">typedef</span> <span class="kw4">char</span> AT<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="kw4">float</span> BT<span class="sy4">;</span>
+    <span class="kw1">friend</span> <span class="kw4">void</span> A<span class="sy4">::</span><span class="me2">f1</span><span class="br0">(</span>AT<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// lookup for AT finds A::AT</span>
+    <span class="kw1">friend</span> <span class="kw4">void</span> A<span class="sy4">::</span><span class="me2">f2</span><span class="br0">(</span>BT<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// lookup for BT finds B::BT </span>
+    <span class="kw1">friend</span> <span class="kw4">void</span> A<span class="sy4">::</span><span class="me2">f3</span><span class="sy1">&lt;</span>AT<span class="sy1">&gt;</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// lookup for AT finds B::AT </span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Default argument">edit</a>]</span> <span class="mw-headline" id="Default_argument">Default argument</span>
+</h3>
+<p>For a name used in a <a href="default_arguments.html" title="cpp/language/default arguments">default argument</a> in a function declaration, or name used in the <span class="t-spar">expression</span> part of a <a href="constructor.html" title="cpp/language/initializer list">member-initializer</a> of a constructor, the function parameter names are found first, before the enclosing block, class, or namespace scopes are examined:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> X <span class="br0">{</span>
+    <span class="kw4">int</span> a, b, i, j<span class="sy4">;</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw4">const</span> <span class="kw4">int</span><span class="sy3">&amp;</span> r<span class="sy4">;</span>
+    X<span class="br0">(</span><span class="kw4">int</span> i<span class="br0">)</span><span class="sy4">:</span> r<span class="br0">(</span>a<span class="br0">)</span>, <span class="co1">// initializes X::r to refer to X::a</span>
+              b<span class="br0">(</span>i<span class="br0">)</span>, <span class="co1">// initializes X::b to the value of the parameter i</span>
+              i<span class="br0">(</span>i<span class="br0">)</span>, <span class="co1">// initializes X::i to the value of the parameter i</span>
+              j<span class="br0">(</span>this<span class="sy2">-</span><span class="sy1">&gt;</span>i<span class="br0">)</span> <span class="co1">// initializes X::j to the value of X::i</span>
+    <span class="br0">{</span> <span class="br0">}</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> a<span class="sy4">;</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> a, <span class="kw4">int</span> b <span class="sy1">=</span> a<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// error: lookup for a finds the parameter a, not ::a</span>
+                         <span class="co1">// and parameters are not allowed as default arguments</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Static data member definition">edit</a>]</span> <span class="mw-headline" id="Static_data_member_definition">Static data member definition</span>
+</h3>
+<p>For a name used in the definition of a <a href="static.html" title="cpp/language/static">static data member</a>, lookup proceeds the same way as for a name used in the definition of a member function.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> X <span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">int</span> x<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">const</span> <span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// found 1st</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// found 2nd.</span>
+<span class="kw4">int</span> X<span class="sy4">::</span><span class="me2">x</span> <span class="sy1">=</span> n<span class="sy4">;</span> <span class="co1">// finds X::n, sets X::x to 1, not 2</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Enumerator declaration">edit</a>]</span> <span class="mw-headline" id="Enumerator_declaration">Enumerator declaration</span>
+</h3>
+<p>For a name used in the initializer part of the <a href="enum.html" title="cpp/language/enum">enumerator declaration</a>, previously declared enumerators in the same enumeration are found first, before the unqualified name lookup proceeds to examine the enclosing block, class, or namespace scope.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">const</span> <span class="kw4">int</span> RED <span class="sy1">=</span> <span class="nu0">7</span><span class="sy4">;</span>
+<span class="kw2">enum</span> <span class="kw1">class</span> color <span class="br0">{</span>
+    RED,
+    GREEN <span class="sy1">=</span> RED<span class="sy2">+</span><span class="nu0">2</span>, <span class="co1">// RED finds color::RED, not ::RED, so GREEN = 2</span>
+    BLUE <span class="sy1">=</span> <span class="sy4">::</span><span class="me2">RED</span><span class="sy2">+</span><span class="nu0">4</span> <span class="co1">// qualified lookup finds ::RED, BLUE = 11</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Catch clause of a function-try block">edit</a>]</span> <span class="mw-headline" id="Catch_clause_of_a_function-try_block">Catch clause of a function-try block</span>
+</h3>
+<p>For a name used in the catch-clause of a <a href="function-try-block.html" title="cpp/language/function-try-block">function-try-block</a>, lookup proceeds as if for a name used in the very beginning of the outermost block of the function body (in particular, function parameters are visible, but names declared in that outermost block are not)
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">3</span><span class="sy4">;</span> <span class="co1">// found 3rd</span>
+<span class="kw4">int</span> f<span class="br0">(</span><span class="kw4">int</span> n <span class="sy1">=</span> <span class="nu0">2</span><span class="br0">)</span> <span class="co1">// found 2nd</span>
+<span class="kw1">try</span> <span class="br0">{</span>
+   <span class="kw4">int</span> n <span class="sy1">=</span> <span class="sy2">-</span><span class="nu0">1</span><span class="sy4">;</span>  <span class="co1">// never found</span>
+<span class="br0">}</span> <span class="kw1">catch</span><span class="br0">(</span>...<span class="br0">)</span> <span class="br0">{</span>
+   <span class="co1">// int n = 1; // found 1st</span>
+   <a href="../error/assert.html"><span class="kw621">assert</span></a><span class="br0">(</span>n <span class="sy1">==</span> <span class="nu0">2</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// loookup for n finds function parameter f</span>
+   <span class="kw1">throw</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Overloaded operator">edit</a>]</span> <span class="mw-headline" id="Overloaded_operator">Overloaded operator</span>
+</h3>
+<p>For an <a href="expressions.html#Operators" title="cpp/language/expressions">operator</a> used in expression (e.g., <code>operator+</code> used in <code>a+b</code>), the lookup rules are slightly different from the operator used in an explicit function-call expression such as <code>operator+(a,b)</code>: when parsing an expression, two separate lookups are performed: for the non-member operator overloads and for the member operator overloads (for the operators where both forms are permitted). Those sets are then merged with the built-in operator overloads on equal grounds as described in <a href="overload_resolution.html" title="cpp/language/overload resolution">overload resolution</a>. If explicit function call syntax is used, regular unqualified name lookup is performed:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> A <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> operator<span class="sy2">+</span><span class="br0">(</span>A, A<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// user-defined non-member operator+</span>
+ 
+<span class="kw1">struct</span> B <span class="br0">{</span>
+    <span class="kw4">void</span> operator<span class="sy2">+</span><span class="br0">(</span>B<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// user-defined member operator+</span>
+    <span class="kw4">void</span> f <span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+A a<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> B<span class="sy4">::</span><span class="me2">f</span><span class="br0">(</span><span class="br0">)</span> <span class="co1">// definition of a member function of B</span>
+<span class="br0">{</span>
+    operator<span class="sy2">+</span><span class="br0">(</span>a,a<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// error: regular name lookup from a member function</span>
+                    <span class="co1">// finds the declaration of operator+ in the scope of B</span>
+                    <span class="co1">// and stops there, never reaching the global scope</span>
+    a <span class="sy2">+</span> a<span class="sy4">;</span> <span class="co1">// OK: member lookup finds B::operator+, non-member lookup</span>
+           <span class="co1">// finds ::operator+(A,A), overload resolution selects ::operator+(A,A)</span>
+<span class="br0">}</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Template definition">edit</a>]</span> <span class="mw-headline" id="Template_definition">Template definition</span>
+</h3>
+<p>For a <a href="dependent_name.html" title="cpp/language/dependent name">non-dependent name</a> used in a template definition, unqualified name lookup takes place when the template definition is examined. The binding to the declarations made at that point is not affected by declarations visible at the point of instantiation. For a <a href="dependent_name.html" title="cpp/language/dependent name">dependent name</a> used in a template definition, the lookup is postponed until the template arguments are known, at which time <a href="adl.html" title="cpp/language/adl">ADL</a> examines function declarations <span class="t-rev-inl t-until-cxx11"><span>with external linkage</span> <span><span class="t-mark-rev t-until-cxx11">(until C++11)</span></span></span> that are visible from the template definition context as well as in the template instantiation context, while non-ADL lookup only examines function declarations <span class="t-rev-inl t-until-cxx11"><span>with external linkage</span> <span><span class="t-mark-rev t-until-cxx11">(until C++11)</span></span></span> that are visible from the template definition context (in other words, adding a new function declaration after template definition does not make it visible except via ADL). The behavior is undefined if there is a better match with external linkage in the namespaces examined by the ADL lookup, declared in some other translation unit, or if the lookup would have been ambiguous if those translation units were examined. In any case, if a base class depends on a template parameter, its scope is not examined by unqualified name lookup (neither at the point of definition nor at the point of instantiation).
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">char</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// first declaration of f</span>
+ 
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> 
+<span class="kw4">void</span> g<span class="br0">(</span>T t<span class="br0">)</span> <span class="br0">{</span>
+    f<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// non-dependent name: lookup finds ::f(char) and binds it now</span>
+    f<span class="br0">(</span>T<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// dependent name: lookup postponed</span>
+    f<span class="br0">(</span>t<span class="br0">)</span><span class="sy4">;</span>    <span class="co1">// dependent name: lookup postponed</span>
+<span class="co1">//  dd++;    // non-dependent name: lookup finds no declaration</span>
+<span class="br0">}</span>
+ 
+<span class="kw2">enum</span> E <span class="br0">{</span> e <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">void</span> f<span class="br0">(</span>E<span class="br0">)</span><span class="sy4">;</span>   <span class="co1">// second declaration of f</span>
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// third declaration of f</span>
+<span class="kw4">double</span> dd<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> h<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+    g<span class="br0">(</span>e<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// instantiates g&lt;E&gt;, at which point</span>
+           <span class="co1">// the second and the third uses of the name 'f'</span>
+           <span class="co1">// are looked up and find ::f(char) (by lookup) and ::f(E) (by ADL)</span>
+           <span class="co1">// then overload resolution chooses ::f(E).</span>
+           <span class="co1">// This calls f(char), then f(E) twice</span>
+    g<span class="br0">(</span><span class="nu0">32</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// instantiates g&lt;int&gt;, at which point</span>
+           <span class="co1">// the second and the third uses of the name 'f'</span>
+           <span class="co1">// are looked up and find ::f(char) only</span>
+           <span class="co1">// then overload resolution chooses ::f(char)</span>
+           <span class="co1">// This calls f(char) three times</span>
+<span class="br0">}</span>
+ 
+<span class="kw1">typedef</span> <span class="kw4">double</span> A<span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">class</span> B <span class="br0">{</span>
+   <span class="kw1">typedef</span> <span class="kw4">int</span> A<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> X <span class="sy4">:</span> B<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> <span class="br0">{</span>
+   A a<span class="sy4">;</span> <span class="co1">// lookup for A finds ::A (double), not B&lt;T&gt;::A</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>Note: see <a href="dependent_name.html#Lookup_rules" title="cpp/language/dependent name">dependent name lookup rules</a> for the reasoning and implications of this rule.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Template name">edit</a>]</span> <span class="mw-headline" id="Template_name">Template name</span>
+</h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: dual-scope lookup of the template name after -&gt; and . </td>
+</tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Member of a class template outside of template">edit</a>]</span> <span class="mw-headline" id="Member_of_a_class_template_outside_of_template">Member of a class template outside of template</span>
+</h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete </td>
+</tr></table>
+<p><br>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span>
+</h3>
+<div class="t-ref-std-c++11">
+<ul><li> C++11 standard (ISO/IEC 14882:2011): 
+</li></ul>
+<dl><dd>
+<ul><li> 3.4 Name lookup [basic.lookup]
+</li></ul>
+</dd></dl>
+<dl><dd>
+<ul><li> 10.2 Member name lookup [class.member.lookup]
+</li></ul>
+</dd></dl>
+<dl><dd>
+<ul><li> 14.6 Name resolution [temp.res]
+</li></ul>
+</dd></dl>
+</div>
+<div class="t-ref-std-c++98">
+<ul><li> C++98 standard (ISO/IEC 14882:1998): 
+</li></ul>
+<dl><dd>
+<ul><li> 3.4 Name lookup [basic.lookup]
+</li></ul>
+</dd></dl>
+<dl><dd>
+<ul><li> 10.2 Member name lookup [class.member.lookup]
+</li></ul>
+</dd></dl>
+<dl><dd>
+<ul><li> 14.6 Name resolution [temp.res]
+</li></ul>
+</dd></dl>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<ul>
+<li> <a href="qualified_lookup.html" title="cpp/language/qualified lookup">Qualified name lookup</a> 
+</li>
+<li> <a href="scope.html" title="cpp/language/scope">Scope</a> 
+</li>
+<li> <a href="adl.html" title="cpp/language/adl">Argument-dependent lookup</a> 
+</li>
+<li> <a href="function_template.html" title="cpp/language/function template">Template argument deduction</a>
+</li>
+<li> <a href="overload_resolution.html" title="cpp/language/overload resolution">Overload resolution</a>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2257/1000000
+Preprocessor generated node count: 7391/1000000
+Post‐expand include size: 35397/2097152 bytes
+Template argument size: 14649/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:14018-0!*!0!!en!*!* and timestamp 20150316153744 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/unqualified_lookup&amp;oldid=77133</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Categories</a>: <ul>
+<li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li>
+<li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_without_reason" title="Category:Todo without reason">Todo without reason</a></li>
+</ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.088 secs. -->
+	</body>
+<!-- Cached 20150316154418 -->
+</html>

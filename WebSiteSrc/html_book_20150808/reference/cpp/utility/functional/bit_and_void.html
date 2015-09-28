@@ -1,0 +1,512 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>std::bit_and&lt;void&gt; - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/utility/functional/bit_and_void","wgTitle":"cpp/utility/functional/bit and void","wgCurRevisionId":66304,"wgArticleId":13080,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo no example"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/utility/functional/bit_and_void","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_utility_functional_bit_and_void skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">
+<span style="font-size:0.7em; line-height:130%">std::</span>bit_and&lt;void&gt;</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../utility.html" title="cpp/utility">utility</a>‎ | <a href="../functional.html" title="cpp/utility/functional">functional</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../utility.html" title="cpp/utility"> Utilities library</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../../types.html" title="cpp/types"> Type support</a> (basic types, RTTI, type traits) </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../memory.html" title="cpp/memory"> Dynamic memory management</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../error.html" title="cpp/error"> Error handling</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../program.html" title="cpp/utility/program"> Program utilities</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../variadic.html" title="cpp/utility/variadic"> Variadic functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../chrono.html" title="cpp/chrono"> Date and time</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../functional.html" title="cpp/utility/functional"> Function objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../initializer_list.html" title="cpp/utility/initializer list"><span class="t-lines"><span>initializer_list</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../bitset.html" title="cpp/utility/bitset"><span class="t-lines"><span>bitset</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../hash.html" title="cpp/utility/hash"><span class="t-lines"><span>hash</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Relational operators</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../rel_ops/operator_cmp.html" title="cpp/utility/rel ops/operator cmp"><span class="t-lines"><span>rel_ops::operator!=</span><span>rel_ops::operator&gt;</span><span>rel_ops::operator&lt;=</span><span>rel_ops::operator&gt;=</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Pairs and tuples</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../pair.html" title="cpp/utility/pair"><span class="t-lines"><span>pair</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../tuple.html" title="cpp/utility/tuple"><span class="t-lines"><span>tuple</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../piecewise_construct_t.html" title="cpp/utility/piecewise construct t"><span class="t-lines"><span>piecewise_construct_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../piecewise_construct.html" title="cpp/utility/piecewise construct"><span class="t-lines"><span>piecewise_construct</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../integer_sequence.html" title="cpp/utility/integer sequence"><span class="t-lines"><span>integer_sequence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Swap, forward and move</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/swap.html" title="cpp/algorithm/swap"><span class="t-lines"><span>swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../exchange.html" title="cpp/utility/exchange"><span class="t-lines"><span>exchange</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../forward.html" title="cpp/utility/forward"><span class="t-lines"><span>forward</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../move.html" title="cpp/utility/move"><span class="t-lines"><span>move</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../move_if_noexcept.html" title="cpp/utility/move if noexcept"><span class="t-lines"><span>move_if_noexcept</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../declval.html" title="cpp/utility/declval"><span class="t-lines"><span>declval</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../functional.html" title="cpp/utility/functional"> Function objects</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Function wrappers </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="function.html" title="cpp/utility/functional/function"><span class="t-lines"><span>function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="mem_fn.html" title="cpp/utility/functional/mem fn"><span class="t-lines"><span>mem_fn</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="bad_function_call.html" title="cpp/utility/functional/bad function call"><span class="t-lines"><span>bad_function_call</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="invoke.html" title="cpp/utility/functional/invoke"><span class="t-lines"><span>invoke</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Bind </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="bind.html" title="cpp/utility/functional/bind"><span class="t-lines"><span>bind</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_bind_expression.html" title="cpp/utility/functional/is bind expression"><span class="t-lines"><span>is_bind_expression</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="is_placeholder.html" title="cpp/utility/functional/is placeholder"><span class="t-lines"><span>is_placeholder</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="placeholders.html" title="cpp/utility/functional/placeholders"><span class="t-lines"><span>_1, _2, _3, ...</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Reference wrappers </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="reference_wrapper.html" title="cpp/utility/functional/reference wrapper"><span class="t-lines"><span>reference_wrapper</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="ref.html" title="cpp/utility/functional/ref"><span class="t-lines"><span>ref</span><span>cref</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Operator wrappers </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="plus.html" title="cpp/utility/functional/plus"><span class="t-lines"><span>plus</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="minus.html" title="cpp/utility/functional/minus"><span class="t-lines"><span>minus</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="negate.html" title="cpp/utility/functional/negate"><span class="t-lines"><span>negate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="multiplies.html" title="cpp/utility/functional/multiplies"><span class="t-lines"><span>multiplies</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="divides.html" title="cpp/utility/functional/divides"><span class="t-lines"><span>divides</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="modulus.html" title="cpp/utility/functional/modulus"><span class="t-lines"><span>modulus</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="logical_and.html" title="cpp/utility/functional/logical and"><span class="t-lines"><span>logical_and</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="logical_or.html" title="cpp/utility/functional/logical or"><span class="t-lines"><span>logical_or</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="logical_not.html" title="cpp/utility/functional/logical not"><span class="t-lines"><span>logical_not</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="equal_to.html" title="cpp/utility/functional/equal to"><span class="t-lines"><span>equal_to</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="not_equal_to.html" title="cpp/utility/functional/not equal to"><span class="t-lines"><span>not_equal_to</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="greater.html" title="cpp/utility/functional/greater"><span class="t-lines"><span>greater</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="less.html" title="cpp/utility/functional/less"><span class="t-lines"><span>less</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="greater_equal.html" title="cpp/utility/functional/greater equal"><span class="t-lines"><span>greater_equal</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="less_equal.html" title="cpp/utility/functional/less equal"><span class="t-lines"><span>less_equal</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="bit_and.html" title="cpp/utility/functional/bit and"><span class="t-lines"><span>bit_and</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="bit_or.html" title="cpp/utility/functional/bit or"><span class="t-lines"><span>bit_or</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="bit_xor.html" title="cpp/utility/functional/bit xor"><span class="t-lines"><span>bit_xor</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="bit_not.html" title="cpp/utility/functional/bit not"><span class="t-lines"><span>bit_not</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Negators </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="unary_negate.html" title="cpp/utility/functional/unary negate"><span class="t-lines"><span>unary_negate</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="binary_negate.html" title="cpp/utility/functional/binary negate"><span class="t-lines"><span>binary_negate</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="not1.html" title="cpp/utility/functional/not1"><span class="t-lines"><span>not1</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="not2.html" title="cpp/utility/functional/not2"><span class="t-lines"><span>not2</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Deprecated binders and adaptors </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="unary_function.html" title="cpp/utility/functional/unary function"><span class="t-lines"><span>unary_function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="binary_function.html" title="cpp/utility/functional/binary function"><span class="t-lines"><span>binary_function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="ptr_fun.html" title="cpp/utility/functional/ptr fun"><span class="t-lines"><span>ptr_fun</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="pointer_to_unary_function.html" title="cpp/utility/functional/pointer to unary function"><span class="t-lines"><span>pointer_to_unary_function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="pointer_to_binary_function.html" title="cpp/utility/functional/pointer to binary function"><span class="t-lines"><span>pointer_to_binary_function</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="mem_fun.html" title="cpp/utility/functional/mem fun"><span class="t-lines"><span>mem_fun</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="mem_fun_t.html" title="cpp/utility/functional/mem fun t"><span class="t-lines"><span>mem_fun_t</span><span>mem_fun1_t</span><span>const_mem_fun_t</span><span>const_mem_fun1_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="mem_fun_ref.html" title="cpp/utility/functional/mem fun ref"><span class="t-lines"><span>mem_fun_ref</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="mem_fun_ref_t.html" title="cpp/utility/functional/mem fun ref t"><span class="t-lines"><span>mem_fun_ref_t</span><span>mem_fun1_ref_t</span><span>const_mem_fun_ref_t</span><span>const_mem_fun1_ref_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="binder12.html" title="cpp/utility/functional/binder12"><span class="t-lines"><span>binder1st</span><span>binder2nd</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="bind12.html" title="cpp/utility/functional/bind12"><span class="t-lines"><span>bind1st</span><span>bind2nd</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/functional.html" title="cpp/header/functional">&lt;functional&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;&gt;</span><br>
+<span class="kw1">class</span> bit_and<span class="sy1">&lt;</span><span class="kw4">void</span><span class="sy1">&gt;</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="bit_and.html"><span class="kw886">std::<span class="me2">bit_and</span></span></a><span class="sy1">&lt;&gt;</span></span></span> is a specialization of <span class="t-lc"><a href="bit_and.html" title="cpp/utility/functional/bit and">std::bit_and</a></span> with parameter and return type deduced.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="bit_and_void.html#Member_types"><span class="tocnumber">1</span> <span class="toctext">Member types</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="bit_and_void.html#Member_functions"><span class="tocnumber">2</span> <span class="toctext">Member functions</span></a></li>
+<li class="toclevel-1">
+<a href="bit_and_void.html#std%3A%3Abit_and.3C.3E%3A%3Aoperator.28.29"><span class="tocnumber">3</span> <span class="toctext"><span>std::bit_and&lt;&gt;::</span>operator()</span></a>
+<ul>
+<li class="toclevel-2"><a href="bit_and_void.html#Parameters"><span class="tocnumber">3.1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-2"><a href="bit_and_void.html#Return_value"><span class="tocnumber">3.2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="bit_and_void.html#Notes"><span class="tocnumber">3.3</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="bit_and_void.html#Example"><span class="tocnumber">3.4</span> <span class="toctext">Example</span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Member types">edit</a>]</span> <span class="mw-headline" id="Member_types">Member types</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-hitem">
+<td>  Member type
+</td>
+<td>  Definition
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>is_transparent</code>
+</td>
+<td>  /* unspecified */
+</td>
+</tr>
+
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Member functions">edit</a>]</span> <span class="mw-headline" id="Member_functions">Member functions</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><strong class="selflink"> <span class="t-lines"><span>operator()</span></span></strong></div></div>
+</td>
+<td>   applies <code>operator&amp;</code> to lhs and rhs <br> <span class="t-mark">(public member function)</span>
+</td>
+</tr>
+
+</table>
+<div class="t-member">
+<h2> <span class="mw-headline" id="std::bit_and.3C.3E::operator.28.29"> <span style="font-size:0.7em; line-height:130%">std::bit_and&lt;&gt;::</span>operator() </span>
+</h2>
+<table class="t-dcl-begin"><tbody>
+
+<tr class="t-dcl">
+<td class="t-dcl-nopad"> <div><span class="mw-geshi cpp source-cpp"><span class="kw1">template</span><span class="sy1">&lt;</span> <span class="kw1">class</span> T, <span class="kw1">class</span> U<span class="sy1">&gt;</span><br>
+<p><span class="kw4">constexpr</span> <span class="kw4">auto</span> operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span> T<span class="sy3">&amp;&amp;</span> lhs, U<span class="sy3">&amp;&amp;</span> rhs <span class="br0">)</span> <span class="kw4">const</span><br>
+</p>
+  <span class="sy2">-</span><span class="sy1">&gt;</span> decltype<span class="br0">(</span><a href="../forward.html"><span class="kw918">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>T<span class="sy1">&gt;</span><span class="br0">(</span>lhs<span class="br0">)</span> <span class="sy3">&amp;</span> <a href="../forward.html"><span class="kw918">std::<span class="me2">forward</span></span></a><span class="sy1">&lt;</span>U<span class="sy1">&gt;</span><span class="br0">(</span>rhs<span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td class="t-dcl-nopad">  </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Returns the result of <code>lhs &amp; rhs</code>.
+</p>
+<h3> <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  lhs, rhs
+</td>
+<td> -
+</td>
+<td>  values to compute bitwise AND for
+</td>
+</tr>
+</table>
+<h3> <span class="mw-headline" id="Return_value">Return value</span>
+</h3>
+<p>The result of <span class="t-c"><span class="mw-geshi cpp source-cpp">lhs <span class="sy3">&amp;</span> rhs</span></span>.
+</p>
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span>
+</h3>
+<p>The member type <code>is_transparent</code> indicates to the caller that this function object is a <i>transparent</i> function object: it accepts arguments of arbitrary types and uses perfect forwarding, which avoids unnecessary copying and conversion when the function object is used in heterogeneous context, or with rvalue arguments. In particular, template functions such as <span class="t-lc"><a href="../../container/set/find.html" title="cpp/container/set/find">std::set::find</a></span> and <span class="t-lc"><a href="../../container/set/lower_bound.html" title="cpp/container/set/lower bound">std::set::lower_bound</a></span> make use of this member type on their <code>Compare</code> types.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: no example </td>
+</tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 5447/1000000
+Preprocessor generated node count: 11448/1000000
+Post‐expand include size: 159290/2097152 bytes
+Template argument size: 30646/2097152 bytes
+Highest expansion depth: 19/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13080-0!*!0!!en!*!* and timestamp 20150726004738 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/utility/functional/bit_and_void&amp;oldid=66304</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_no_example" title="Category:Todo no example">Todo no example</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 1.610 secs. -->
+	</body>
+<!-- Cached 20150726004738 -->
+</html>

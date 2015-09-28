@@ -1,0 +1,599 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Iterator library - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/iterator","wgTitle":"cpp/iterator","wgCurRevisionId":79306,"wgArticleId":626,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/iterator","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_iterator skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Iterator library</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> Iterators library</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"> Iterator library</strong><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Iterator primitives</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/iterator_traits.html" title="cpp/iterator/iterator traits"><span class="t-lines"><span>iterator_traits</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/iterator_tags.html" title="cpp/iterator/iterator tags"><span class="t-lines"><span>input_iterator_tag</span><span>output_iterator_tag</span><span>forward_iterator_tag</span><span>bidirectional_iterator_tag</span><span>random_access_iterator_tag</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/iterator.html" title="cpp/iterator/iterator"><span class="t-lines"><span>iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Iterator adaptors</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/reverse_iterator.html" title="cpp/iterator/reverse iterator"><span class="t-lines"><span>reverse_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/move_iterator.html" title="cpp/iterator/move iterator"><span class="t-lines"><span>move_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/back_insert_iterator.html" title="cpp/iterator/back insert iterator"><span class="t-lines"><span>back_insert_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/front_insert_iterator.html" title="cpp/iterator/front insert iterator"><span class="t-lines"><span>front_insert_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/insert_iterator.html" title="cpp/iterator/insert iterator"><span class="t-lines"><span>insert_iterator</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/make_reverse_iterator.html" title="cpp/iterator/make reverse iterator"><span class="t-lines"><span>make_reverse_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/make_move_iterator.html" title="cpp/iterator/make move iterator"><span class="t-lines"><span>make_move_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/back_inserter.html" title="cpp/iterator/back inserter"><span class="t-lines"><span>back_inserter</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/front_inserter.html" title="cpp/iterator/front inserter"><span class="t-lines"><span>front_inserter</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/inserter.html" title="cpp/iterator/inserter"><span class="t-lines"><span>inserter</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Stream iterators</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/istream_iterator.html" title="cpp/iterator/istream iterator"><span class="t-lines"><span>istream_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/ostream_iterator.html" title="cpp/iterator/ostream iterator"><span class="t-lines"><span>ostream_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/istreambuf_iterator.html" title="cpp/iterator/istreambuf iterator"><span class="t-lines"><span>istreambuf_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/ostreambuf_iterator.html" title="cpp/iterator/ostreambuf iterator"><span class="t-lines"><span>ostreambuf_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Iterator operations</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/advance.html" title="cpp/iterator/advance"><span class="t-lines"><span>advance</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="iterator/distance.html" title="cpp/iterator/distance"><span class="t-lines"><span>distance</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/prev.html" title="cpp/iterator/prev"><span class="t-lines"><span>prev</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/next.html" title="cpp/iterator/next"><span class="t-lines"><span>next</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Range access</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/begin.html" title="cpp/iterator/begin"><span class="t-lines"><span>begin</span><span>cbegin</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/end.html" title="cpp/iterator/end"><span class="t-lines"><span>end</span><span>cend</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/rbegin.html" title="cpp/iterator/rbegin"><span class="t-lines"><span>rbegin</span><span>crbegin</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/rend.html" title="cpp/iterator/rend"><span class="t-lines"><span>rend</span><span>crend</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Container access</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/size.html" title="cpp/iterator/size"><span class="t-lines"><span>size</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/empty.html" title="cpp/iterator/empty"><span class="t-lines"><span>empty</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="iterator/data.html" title="cpp/iterator/data"><span class="t-lines"><span>data</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>The iterator library provides definitions for five kinds of iterators as well as iterator traits, adapters, and utility functions. 
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="iterator.html#Iterator_categories"><span class="tocnumber">1</span> <span class="toctext">Iterator categories</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="iterator.html#Iterator_primitives"><span class="tocnumber">2</span> <span class="toctext">Iterator primitives</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="iterator.html#Iterator_adaptors"><span class="tocnumber">3</span> <span class="toctext">Iterator adaptors</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="iterator.html#Stream_iterators"><span class="tocnumber">4</span> <span class="toctext">Stream iterators</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="iterator.html#Iterator_operations"><span class="tocnumber">5</span> <span class="toctext">Iterator operations</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="iterator.html#Range_access"><span class="tocnumber">6</span> <span class="toctext">Range access</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="iterator.html#Container_access"><span class="tocnumber">7</span> <span class="toctext">Container access</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Iterator categories">edit</a>]</span> <span class="mw-headline" id="Iterator_categories">Iterator categories</span>
+</h3>
+<p>There are <span class="t-rev-inl t-until-cxx17"><span>five</span> <span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span><span class="t-rev-inl t-since-cxx17"><span>six</span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span> kinds of iterators: <a href="concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a>, <a href="concept/OutputIterator.html" title="cpp/concept/OutputIterator"><code>OutputIterator</code></a>, <a href="concept/ForwardIterator.html" title="cpp/concept/ForwardIterator"><code>ForwardIterator</code></a>, <a href="concept/BidirectionalIterator.html" title="cpp/concept/BidirectionalIterator"><code>BidirectionalIterator</code></a>, <a href="concept/RandomAccessIterator.html" title="cpp/concept/RandomAccessIterator"><code>RandomAccessIterator</code></a><span class="t-rev-inl t-since-cxx17"><span>, and <a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/ContiguousIterator (page does not exist)"><code>ContiguousIterator</code></a></span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span>.
+</p>
+<p>Instead of being defined by specific types, each category of iterator is defined by the operations that can be performed on it.  This definition means that any type that supports the necessary operations can be used as an iterator -- for example, a pointer supports all of the operations required by <a href="concept/RandomAccessIterator.html" title="cpp/concept/RandomAccessIterator"><code>RandomAccessIterator</code></a>, so a pointer can be used anywhere a <a href="concept/RandomAccessIterator.html" title="cpp/concept/RandomAccessIterator"><code>RandomAccessIterator</code></a> is expected.
+</p>
+<p>All of the iterator categories (except <a href="concept/OutputIterator.html" title="cpp/concept/OutputIterator"><code>OutputIterator</code></a>) can be organized into a hierarchy, where more powerful iterator categories (e.g. <a href="concept/RandomAccessIterator.html" title="cpp/concept/RandomAccessIterator"><code>RandomAccessIterator</code></a>) support the operations of less powerful categories (e.g. <a href="concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a>). If an iterator falls into one of these categories and also satisfies the requirements of <a href="concept/OutputIterator.html" title="cpp/concept/OutputIterator"><code>OutputIterator</code></a>, then it is called a <i>mutable</i> iterator and supports <i>both</i> input and output. Non-mutable iterators are called <i>constant</i> iterators.
+</p>
+<table class="wikitable">
+<tr>
+<th colspan="5">Iterator category
+</th>
+<th>Defined operations
+</th>
+</tr>
+<tr>
+<td rowspan="5">
+<a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/ContiguousIterator (page does not exist)"><code>ContiguousIterator</code></a>
+</td>
+<td rowspan="4">
+<a href="concept/RandomAccessIterator.html" title="cpp/concept/RandomAccessIterator"><code>RandomAccessIterator</code></a>
+</td>
+<td rowspan="3">
+<a href="concept/BidirectionalIterator.html" title="cpp/concept/BidirectionalIterator"><code>BidirectionalIterator</code></a>
+</td>
+<td rowspan="2">
+<a href="concept/ForwardIterator.html" title="cpp/concept/ForwardIterator"><code>ForwardIterator</code></a>
+</td>
+<td>
+<a href="concept/InputIterator.html" title="cpp/concept/InputIterator"><code>InputIterator</code></a>
+</td>
+<td>
+<ul>
+<li> read
+</li>
+<li> increment (without multiple passes)
+</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+</td>
+<td>
+<ul><li> increment (with multiple passes)
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="2">
+</td>
+<td>
+<ul><li> decrement
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="3">
+</td>
+<td>
+<ul><li> random access
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="4">
+</td>
+<td>
+<ul><li> contiguous storage
+</li></ul>
+</td>
+</tr>
+<tr>
+<td colspan="6" style="text-align:center;">
+<p>Iterators that fall into one of the above categories and also meet the requirements of <a href="concept/OutputIterator.html" title="cpp/concept/OutputIterator"><code>OutputIterator</code></a> are called mutable iterators.
+</p>
+</td>
+</tr>
+<tr>
+<td>
+<a href="concept/OutputIterator.html" title="cpp/concept/OutputIterator"><code>OutputIterator</code></a>
+</td>
+<td colspan="4">
+</td>
+<td>
+<ul>
+<li> write
+</li>
+<li> increment (without multiple passes)
+</li>
+</ul>
+</td>
+</tr>
+</table>
+<p>Note: <a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/ContiguousIterator (page does not exist)"><code>ContiguousIterator</code></a> category was only formally specified in C++17, but the iterators of <span class="t-lc"><a href="container/vector.html" title="cpp/container/vector">std::vector</a></span>, <span class="t-lc"><a href="string/basic_string.html" title="cpp/string/basic string">std::basic_string</a></span>, <span class="t-lc"><a href="container/array.html" title="cpp/container/array">std::array</a></span>, and <span class="t-lc"><a href="numeric/valarray.html" title="cpp/numeric/valarray">std::valarray</a></span>, as well as pointers into C arrays are often treated as a separate category in pre-C++17 code.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Iterator primitives">edit</a>]</span> <span class="mw-headline" id="Iterator_primitives"> Iterator primitives </span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/iterator_traits.html" title="cpp/iterator/iterator traits"> <span class="t-lines"><span>iterator_traits</span></span></a></div></div>
+</td>
+<td>   provides uniform interface to the properties of an iterator <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/iterator_tags.html" title="cpp/iterator/iterator tags"> <span class="t-lines"><span>input_iterator_tag</span><span>output_iterator_tag</span><span>forward_iterator_tag</span><span>bidirectional_iterator_tag</span><span>random_access_iterator_tag</span></span></a></div></div>
+</td>
+<td>   empty class types used to indicate iterator categories <br> <span class="t-mark">(class)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/iterator.html" title="cpp/iterator/iterator"> <span class="t-lines"><span>iterator</span></span></a></div></div>
+</td>
+<td>   the basic iterator  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Iterator adaptors">edit</a>]</span> <span class="mw-headline" id="Iterator_adaptors"> Iterator adaptors </span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/reverse_iterator.html" title="cpp/iterator/reverse iterator"> <span class="t-lines"><span>reverse_iterator</span></span></a></div></div>
+</td>
+<td>   iterator adaptor for reverse-order traversal <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/make_reverse_iterator.html" title="cpp/iterator/make reverse iterator"> <span class="t-lines"><span>make_reverse_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div>
+</td>
+<td>   creates a <span class="t-lc"><a href="iterator/reverse_iterator.html" title="cpp/iterator/reverse iterator">std::reverse_iterator</a></span> of type inferred from the argument <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/move_iterator.html" title="cpp/iterator/move iterator"> <span class="t-lines"><span>move_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   iterator adaptor which dereferences to an rvalue reference  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/make_move_iterator.html" title="cpp/iterator/make move iterator"> <span class="t-lines"><span>make_move_iterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   creates a <span class="t-lc"><a href="iterator/move_iterator.html" title="cpp/iterator/move iterator">std::move_iterator</a></span> of type inferred from the argument <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/back_insert_iterator.html" title="cpp/iterator/back insert iterator"> <span class="t-lines"><span>back_insert_iterator</span></span></a></div></div>
+</td>
+<td>   iterator adaptor for insertion at the end of a container  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/back_inserter.html" title="cpp/iterator/back inserter"> <span class="t-lines"><span>back_inserter</span></span></a></div></div>
+</td>
+<td>   creates a <span class="t-lc"><a href="iterator/back_insert_iterator.html" title="cpp/iterator/back insert iterator">std::back_insert_iterator</a></span> of type inferred from the argument <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/front_insert_iterator.html" title="cpp/iterator/front insert iterator"> <span class="t-lines"><span>front_insert_iterator</span></span></a></div></div>
+</td>
+<td>   iterator adaptor for insertion at the front of a container  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/front_inserter.html" title="cpp/iterator/front inserter"> <span class="t-lines"><span>front_inserter</span></span></a></div></div>
+</td>
+<td>   creates a <span class="t-lc"><a href="iterator/front_insert_iterator.html" title="cpp/iterator/front insert iterator">std::front_insert_iterator</a></span> of type inferred from the argument <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/insert_iterator.html" title="cpp/iterator/insert iterator"> <span class="t-lines"><span>insert_iterator</span></span></a></div></div>
+</td>
+<td>   iterator adaptor for insertion into a container <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/inserter.html" title="cpp/iterator/inserter"> <span class="t-lines"><span>inserter</span></span></a></div></div>
+</td>
+<td>   creates a <span class="t-lc"><a href="iterator/insert_iterator.html" title="cpp/iterator/insert iterator">std::insert_iterator</a></span> of type inferred from the argument <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Stream iterators">edit</a>]</span> <span class="mw-headline" id="Stream_iterators"> Stream iterators </span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/istream_iterator.html" title="cpp/iterator/istream iterator"> <span class="t-lines"><span>istream_iterator</span></span></a></div></div>
+</td>
+<td>   input iterator that reads from <span class="t-lc"><a href="io/basic_istream.html" title="cpp/io/basic istream">std::basic_istream</a></span> <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/ostream_iterator.html" title="cpp/iterator/ostream iterator"> <span class="t-lines"><span>ostream_iterator</span></span></a></div></div>
+</td>
+<td>   output iterator that writes to <span class="t-lc"><a href="io/basic_ostream.html" title="cpp/io/basic ostream">std::basic_ostream</a></span> <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/istreambuf_iterator.html" title="cpp/iterator/istreambuf iterator"> <span class="t-lines"><span>istreambuf_iterator</span></span></a></div></div>
+</td>
+<td>   input iterator that reads from <span class="t-lc"><a href="io/basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span> <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/ostreambuf_iterator.html" title="cpp/iterator/ostreambuf iterator"> <span class="t-lines"><span>ostreambuf_iterator</span></span></a></div></div>
+</td>
+<td>   output iterator that writes to <span class="t-lc"><a href="io/basic_streambuf.html" title="cpp/io/basic streambuf">std::basic_streambuf</a></span> <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Iterator operations">edit</a>]</span> <span class="mw-headline" id="Iterator_operations"> Iterator operations </span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;iterator&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/advance.html" title="cpp/iterator/advance"> <span class="t-lines"><span>advance</span></span></a></div></div>
+</td>
+<td>   advances an iterator by given distance  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="iterator/distance.html" title="cpp/iterator/distance"> <span class="t-lines"><span>distance</span></span></a></div></div>
+</td>
+<td>   returns the distance between two iterators  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/next.html" title="cpp/iterator/next"> <span class="t-lines"><span>next</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   increment an iterator  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/prev.html" title="cpp/iterator/prev"> <span class="t-lines"><span>prev</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   decrement an iterator  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Range access">edit</a>]</span> <span class="mw-headline" id="Range_access"> Range access </span>
+</h3>
+<p>These non-member functions provide a generic interface for containers, plain arrays, and <span class="t-lc"><a href="utility/initializer_list.html" title="cpp/utility/initializer list">std::initializer_list</a></span>.
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc-header">
+<td colspan="2"> <div>Defined in header <code>&lt;iterator&gt;</code> </div>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/begin.html" title="cpp/iterator/begin"> <span class="t-lines"><span>begin</span><span>cbegin</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div>
+</td>
+<td>   returns an iterator to the beginning of a container or array <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/end.html" title="cpp/iterator/end"> <span class="t-lines"><span>end</span><span>cend</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div>
+</td>
+<td>   returns an iterator to the end of a container or array  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/rbegin.html" title="cpp/iterator/rbegin"> <span class="t-lines"><span>rbegin</span><span>crbegin</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div>
+</td>
+<td>   returns a reverse iterator to a container or array <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/rend.html" title="cpp/iterator/rend"> <span class="t-lines"><span>rend</span><span>crend</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div>
+</td>
+<td>   returns a reverse end iterator for a container or array <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Container access">edit</a>]</span> <span class="mw-headline" id="Container_access"> Container access </span>
+</h3>
+<p>These non-member functions provide a generic interface for containers, plain arrays, and <span class="t-lc"><a href="utility/initializer_list.html" title="cpp/utility/initializer list">std::initializer_list</a></span>.
+</p>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/size.html" title="cpp/iterator/size"> <span class="t-lines"><span>size</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div>
+</td>
+<td>   returns the size of a container or array <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/empty.html" title="cpp/iterator/empty"> <span class="t-lines"><span>empty</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div>
+</td>
+<td>   checks whether the container is empty <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="iterator/data.html" title="cpp/iterator/data"> <span class="t-lines"><span>data</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div>
+</td>
+<td>   obtains the pointer to the underlying array <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 6005/1000000
+Preprocessor generated node count: 6630/1000000
+Post‐expand include size: 208842/2097152 bytes
+Template argument size: 38795/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:626-0!*!0!!en!*!* and timestamp 20150704013903 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/iterator&amp;oldid=79306</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.081 secs. -->
+	</body>
+<!-- Cached 20150704030610 -->
+</html>

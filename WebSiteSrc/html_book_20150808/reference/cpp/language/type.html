@@ -1,0 +1,505 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Type - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/type","wgTitle":"cpp/language/type","wgCurRevisionId":78338,"wgArticleId":13105,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/type","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_type skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Type</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="basic_concepts.html" title="cpp/language/basic concepts"> Basic Concepts</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../keywords.html" title="cpp/keyword"> language keywords</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="translation_phases.html" title="cpp/language/translation phases"> phases of translation</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../comments.html" title="cpp/comment"> comments </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="main_function.html" title="cpp/language/main function"> the main() function</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="name.html" title="cpp/language/identifiers"> names and identifiers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> types</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="types.html" title="cpp/language/types"> fundamental types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="objects.html" title="cpp/language/object"> objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scope.html" title="cpp/language/scope"> scope</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lifetime.html" title="cpp/language/lifetime"> object lifetime</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="storage_duration.html" title="cpp/language/storage duration"> storage duration and linkage</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="definition.html" title="cpp/language/definition"> definitions and ODR</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="lookup.html" title="cpp/language/lookup"> name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="qualified_lookup.html" title="cpp/language/qualified lookup">qualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unqualified_lookup.html" title="cpp/language/unqualified lookup">unqualified name lookup</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory_model.html" title="cpp/language/memory model"> memory model</a> </td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p><a href="objects.html" title="cpp/language/object">Objects</a>, <a href="reference.html" title="cpp/language/reference">references</a>, <a href="functions.html" title="cpp/language/functions">functions</a> including <a href="template_specialization.html" title="cpp/language/template specialization">function template specializations</a>, and <a href="expressions.html" title="cpp/language/expressions">expressions</a> have a property called <i>type</i>, which both restricts the operations that are permitted for those entities and provides semantic meaning to the otherwise generic sequences of bits.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="incomplete_type.html#Type_classification"><span class="tocnumber">1</span> <span class="toctext">Type classification</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="incomplete_type.html#Type_naming"><span class="tocnumber">2</span> <span class="toctext">Type naming</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="incomplete_type.html#Elaborated_type_specifier"><span class="tocnumber">3</span> <span class="toctext">Elaborated type specifier</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="incomplete_type.html#Static_type"><span class="tocnumber">4</span> <span class="toctext">Static type</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="incomplete_type.html#Dynamic_type"><span class="tocnumber">5</span> <span class="toctext">Dynamic type</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="incomplete_type.html#Incomplete_type"><span class="tocnumber">6</span> <span class="toctext">Incomplete type</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="incomplete_type.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Type classification">edit</a>]</span> <span class="mw-headline" id="Type_classification">Type classification</span>
+</h3>
+<p>The C++ type system consists of the following types:
+</p>
+<ul><li> <a href="types.html" title="cpp/language/types">Fundamental types</a> (see also <span class="t-lc"><a href="../types/is_fundamental.html" title="cpp/types/is fundamental">std::is_fundamental</a></span>)
+</li></ul>
+<dl><dd>
+<ul>
+<li> The type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span> (see also <span class="t-lc"><a href="../types/is_void.html" title="cpp/types/is void">std::is_void</a></span>)
+</li>
+<li> The type <span class="t-lc"><a href="../types/nullptr_t.html" title="cpp/types/nullptr t">std::nullptr_t</a></span> (see also <span class="t-lc">std::is_null_pointer</span>)
+</li>
+<li> Arithmetic types (see also <span class="t-lc"><a href="../types/is_arithmetic.html" title="cpp/types/is arithmetic">std::is_arithmetic</a></span>)
+</li>
+</ul>
+<dl><dd>
+<ul>
+<li> Floating-point types (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">float</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">double</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">double</span></span></span>) (see also <span class="t-lc"><a href="../types/is_floating_point.html" title="cpp/types/is floating point">std::is_floating_point</a></span>)
+</li>
+<li> Integral types (see also <span class="t-lc"><a href="../types/is_integral.html" title="cpp/types/is integral">std::is_integral</a></span>)
+</li>
+</ul>
+<dl><dd>
+<ul>
+<li> The type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span>
+</li>
+<li> Character types
+</li>
+</ul>
+<dl><dd>
+<ul>
+<li> Narrow character types (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">signed</span> <span class="kw4">char</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">char</span></span></span>)
+</li>
+<li> Wide character types (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char16_t</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">char32_t</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">wchar_t</span></span></span>)
+</li>
+</ul>
+</dd></dl>
+<ul>
+<li> Signed integer types (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">short</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">int</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span>)
+</li>
+<li> Unsigned integer types (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">short</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">int</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span></span></span>)
+</li>
+</ul>
+</dd></dl>
+</dd></dl>
+</dd></dl>
+<ul><li> Compound types (see also <span class="t-lc"><a href="../types/is_compound.html" title="cpp/types/is compound">std::is_compound</a></span>)
+</li></ul>
+<dl><dd>
+<ul><li> Reference (see also <span class="t-lc"><a href="../types/is_reference.html" title="cpp/types/is reference">std::is_reference</a></span>)
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a href="reference.html#Lvalue_references" title="cpp/language/reference">Lvalue reference</a> (see also <span class="t-lc"><a href="../types/is_lvalue_reference.html" title="cpp/types/is lvalue reference">std::is_lvalue_reference</a></span>)
+</li>
+<li> <a href="reference.html#Rvalue_references" title="cpp/language/reference">Rvalue reference</a> (see also <span class="t-lc"><a href="../types/is_rvalue_reference.html" title="cpp/types/is rvalue reference">std::is_rvalue_reference</a></span>)
+</li>
+</ul>
+</dd></dl>
+<ul><li> Pointer (see also <span class="t-lc"><a href="../types/is_pointer.html" title="cpp/types/is pointer">std::is_pointer</a></span>)
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a href="pointer.html#Pointers_to_objects" title="cpp/language/pointer">Pointer to object</a>
+</li>
+<li> <a href="pointer.html#Pointers_to_functions" title="cpp/language/pointer">Pointer to function</a>
+</li>
+</ul>
+</dd></dl>
+<ul><li> Pointer to member (see also <span class="t-lc"><a href="../types/is_member_pointer.html" title="cpp/types/is member pointer">std::is_member_pointer</a></span>)
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a href="pointer.html#Pointers_to_data_members" title="cpp/language/pointer">Pointer to data member</a> (see also <span class="t-lc"><a href="../types/is_member_object_pointer.html" title="cpp/types/is member object pointer">std::is_member_object_pointer</a></span>)
+</li>
+<li> <a href="pointer.html#Pointers_to_member_functions" title="cpp/language/pointer">Pointer to member function</a> (see also <span class="t-lc"><a href="../types/is_member_function_pointer.html" title="cpp/types/is member function pointer">std::is_member_function_pointer</a></span>)
+</li>
+</ul>
+</dd></dl>
+<ul>
+<li> <a href="array.html" title="cpp/language/array">Array</a> (see also <span class="t-lc"><a href="../types/is_array.html" title="cpp/types/is array">std::is_array</a></span>)
+</li>
+<li> <a href="function.html" title="cpp/language/function">Function</a> (see also <span class="t-lc"><a href="../types/is_function.html" title="cpp/types/is function">std::is_function</a></span>)
+</li>
+<li> <a href="enum.html" title="cpp/language/enum">Enumeration</a> (see also <span class="t-lc"><a href="../types/is_enum.html" title="cpp/types/is enum">std::is_enum</a></span>)
+</li>
+<li> <a href="class.html" title="cpp/language/class">Class types</a>
+</li>
+</ul>
+<dl><dd>
+<ul>
+<li> Non-union class types (see also <span class="t-lc"><a href="../types/is_class.html" title="cpp/types/is class">std::is_class</a></span>)
+</li>
+<li> <a href="union.html" title="cpp/language/union">Unions</a> (see also <span class="t-lc"><a href="../types/is_union.html" title="cpp/types/is union">std::is_union</a></span>)
+</li>
+</ul>
+</dd></dl>
+</dd></dl>
+<p>For every type other than reference and function, the type system supports three additional <a href="cv.html" title="cpp/language/cv">cv-qualified versions</a> of that type (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">volatile</span></span></span>, and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <span class="kw4">volatile</span></span></span>)
+</p>
+<p>Types are grouped in various categories based on their properties:
+</p>
+<ul>
+<li> <i>object type</i>: any type other than void, function, or reference (that is, a type that an <a href="objects.html" title="cpp/language/object">object</a> may have). (see also <span class="t-lc"><a href="../types/is_object.html" title="cpp/types/is object">std::is_object</a></span>)
+</li>
+<li> <i>scalar type</i>: arithmetic, pointer, enumeration, <code>std::nullptr_t</code> (see also <span class="t-lc"><a href="../types/is_scalar.html" title="cpp/types/is scalar">std::is_scalar</a></span>)
+</li>
+<li> <span class="t-lc"><a href="../types/is_trivial.html" title="cpp/types/is trivial">std::is_trivial</a></span>, <span class="t-lc"><a href="../types/is_pod.html" title="cpp/types/is pod">std::is_pod</a></span>, <span class="t-lc"><a href="../types/is_literal_type.html" title="cpp/types/is literal type">std::is_literal_type</a></span>, and other categories listed in the <a href="../types.html" title="cpp/types"> the type traits library</a> or as <a href="../concept.html" title="cpp/concept">named type requirements</a>.
+</li>
+</ul>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Type naming">edit</a>]</span> <span class="mw-headline" id="Type_naming">Type naming</span>
+</h3>
+<p>A <a href="name.html" title="cpp/language/name" class="mw-redirect">name</a> can be declared to refer to a type by means of
+</p>
+<ul>
+<li> <a href="class.html" title="cpp/language/class">class</a> declaration
+</li>
+<li> <a href="enum.html" title="cpp/language/enum">enum</a> declaration
+</li>
+<li> <a href="typedef.html" title="cpp/language/typedef">typedef</a> declaration
+</li>
+<li> <a href="type_alias.html" title="cpp/language/type alias">type alias</a> declaration
+</li>
+</ul>
+<p>Types that do not have names often need to be referred to in C++ programs; the syntax for that is known as <i>type-id</i>. The syntax of the type-id that names type T is exactly the syntax of a <a href="declarations.html" title="cpp/language/declarations">declaration</a> of a variable or function of type T, with the identifier omitted, except that <i>decl-specifier-seq</i> of the declaration grammar is constrained to <i>type-specifier-seq</i>. New types may be declared.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw4">int</span><span class="sy2">*</span> p<span class="sy4">;</span>               <span class="co1">// declration of a pointer to int</span>
+<span class="kw1">static_cast</span><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy2">*</span><span class="sy1">&gt;</span><span class="br0">(</span>p<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// type-id is "int*"</span>
+ 
+<span class="kw4">int</span> a<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span>   <span class="co1">// declaration of an array of 3 int</span>
+new <span class="kw4">int</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// type-id is "int[3]"</span>
+ 
+<span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span><span class="sy2">*</span>x<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="sy4">;</span>      <span class="co1">// declaration of an array of 2 pointers to functions</span>
+                          <span class="co1">// returning pointer to array of 3 int</span>
+new <span class="br0">(</span><span class="kw4">int</span> <span class="br0">(</span><span class="sy2">*</span><span class="br0">(</span><span class="sy2">*</span><span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// type-id is "int (*(*[2])())[3]"</span>
+ 
+<span class="kw4">void</span> f<span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// declaration of a function that takes int and returns void</span>
+<a href="../utility/functional/function.html"><span class="kw896">std::<span class="me2">function</span></span></a><span class="sy1">&lt;</span><span class="kw4">void</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy1">&gt;</span> x <span class="sy1">=</span> f<span class="sy4">;</span> <span class="co1">// type template parameter is a type-id "void(int)"</span>
+ 
+<a href="../container/vector.html"><span class="kw1064">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span> v<span class="sy4">;</span>       <span class="co1">// declaration of a vector of int</span>
+sizeof<span class="br0">(</span><a href="../container/vector.html"><span class="kw1064">std::<span class="me2">vector</span></span></a><span class="sy1">&lt;</span><span class="kw4">int</span><span class="sy1">&gt;</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// type-id is "std::vector&lt;int&gt;"</span>
+ 
+<span class="kw1">struct</span> <span class="br0">{</span> <span class="kw4">int</span> x<span class="sy4">;</span> <span class="br0">}</span> b<span class="sy4">;</span>       <span class="co1">// creates a new type and declares an object b of that type</span>
+sizeof<span class="br0">(</span><span class="kw1">struct</span><span class="br0">{</span> <span class="kw4">int</span> x<span class="sy4">;</span> <span class="br0">}</span><span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// error: cannot define new types in a sizeof expression</span>
+<span class="kw1">using</span> t <span class="sy1">=</span> <span class="kw1">struct</span> <span class="br0">{</span> <span class="kw4">int</span> x<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// creates a new type and declares t as an alias of that type</span>
+ 
+sizeof<span class="br0">(</span><span class="kw4">static</span> <span class="kw4">int</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// error: storage class specifiers not part of type-specifier-seq</span>
+<a href="../utility/functional/function.html"><span class="kw896">std::<span class="me2">function</span></span></a><span class="sy1">&lt;</span><span class="kw1">inline</span> <span class="kw4">void</span><span class="br0">(</span><span class="kw4">int</span><span class="br0">)</span><span class="sy1">&gt;</span> f<span class="sy4">;</span> <span class="co1">// error: function specifiers aren't either</span></pre></div></div>
+<p>The <i>declarator</i> part of the declaration grammar with the name removed is referred to as <i>abstract-declarator</i>.
+</p>
+<p><i>type-id</i> may be used in the following situations:
+</p>
+<ul>
+<li> To specify the target type in <a href="expressions.html#Conversions" title="cpp/language/expressions">cast expressions</a>
+</li>
+<li> As arguments to <a href="sizeof.html" title="cpp/language/sizeof">sizeof</a>, <a href="alignof.html" title="cpp/language/alignof">alignof</a>, <a href="alignas.html" title="cpp/language/alignas">alignas</a>, <a href="new.html" title="cpp/language/new">new</a>, and <a href="typeid.html" title="cpp/language/typeid">typeid</a>
+</li>
+<li> On the right hand side of an <a href="type_alias.html" title="cpp/language/type alias">type alias</a> declaration
+</li>
+<li> As the trailing return type of a <a href="function.html" title="cpp/language/function">function</a> declaration
+</li>
+<li> As the default argument of a <a href="template_parameters.html#Type_template_parameter" title="cpp/language/template parameters">template type parameter</a>
+</li>
+<li> As the template argument for a <a href="template_parameters.html#Template_type_arguments" title="cpp/language/template parameters">template type parameter</a>
+</li>
+<li> in <a href="except_spec.html" title="cpp/language/except spec">dynamic exception specification</a>
+</li>
+</ul>
+<p><i>type-id</i> can be used with some modifications in the following situations:
+</p>
+<ul>
+<li> In the parameter list of a <a href="function.html#Parameter_list" title="cpp/language/function">function</a> (when the parameter name is omitted), type-id uses <i>decl-specifier-seq</i> instead of <i>type-specifier-seq</i> (in particular, some storage class specifiers are allowed)
+</li>
+<li> In the name of a <a href="cast_operator.html" title="cpp/language/cast operator">user-defined conversion function</a>, the abstract declarator cannot include function or array operators
+</li>
+</ul>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: 8.2[dcl.ambig.res] if it can be compactly summarized </td>
+</tr></table>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: mention and link to decltype and auto </td>
+</tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Elaborated type specifier">edit</a>]</span> <span class="mw-headline" id="Elaborated_type_specifier">Elaborated type specifier</span>
+</h3>
+<p>Elaborated type specifiers may be used to refer to a previously-declared class name (class, struct, or union) or to a previously-declared enum name even if the name was hidden by a non-type declaration. They may also be used to declare new class names.
+</p>
+<p>See <a href="elaborated_type_specifier.html" title="cpp/language/elaborated type specifier">elaborated type specifier</a> for details.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Static type">edit</a>]</span> <span class="mw-headline" id="Static_type">Static type</span>
+</h3>
+<p>The type of an expression that results from the compile-time analysis of the program is known as the <i>static type</i> of the expression. The static type does not change while the program is executing.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Dynamic type">edit</a>]</span> <span class="mw-headline" id="Dynamic_type">Dynamic type</span>
+</h3>
+<p>If some <a href="value_category.html" title="cpp/language/value category">glvalue expression</a> refers to a <a href="objects.html" title="cpp/language/object">polymorphic object</a>, the type of its most derived object is known as the dynamic type.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co1">// given</span>
+<span class="kw1">struct</span> B <span class="br0">{</span> <span class="kw1">virtual</span> ~B<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// polymorphic type</span>
+<span class="kw1">struct</span> D <span class="sy4">:</span> B <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span> <span class="co1">// polymorphic type</span>
+D d<span class="sy4">;</span> <span class="co1">// most-derived object</span>
+B<span class="sy2">*</span> ptr <span class="sy1">=</span> <span class="sy3">&amp;</span>d<span class="sy4">;</span>
+<span class="co1">// The static type of (*ptr) is B</span>
+<span class="co1">// The dynamic type of (*ptr) is D</span></pre></div></div>
+<p>For prvalue expressions, the dynamic type is always the same as the static type.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Incomplete type">edit</a>]</span> <span class="mw-headline" id="Incomplete_type">Incomplete type</span>
+</h3>
+<p>The following types are <i>incomplete types</i>
+</p>
+<ul>
+<li> the type <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span></span></span>
+</li>
+<li> class type that has been declared (e.g. by <a href="class.html#Forward_declaration" title="cpp/language/class">forward declaration</a>) but not defined
+</li>
+<li> array of unknown size
+</li>
+<li> array of elements of incomplete type
+</li>
+<li> <a href="enum.html" title="cpp/language/enum">enumeration type</a> from the point of declaration until its underlying type is determined
+</li>
+</ul>
+<p>Any of the following contexts requires class <code>T</code> to be complete:
+</p>
+<ul>
+<li> <a href="function.html" title="cpp/language/function">definition</a> or function call to a function with return type <code>T</code> or argument type <code>T</code>
+</li>
+<li> <a href="definition.html" title="cpp/language/definition">definition</a> of an object of type <code>T</code>
+</li>
+<li> declaration of a <a href="data_members.html" title="cpp/language/data members">non-static class data member</a> of type <code>T</code>
+</li>
+<li> <a href="new.html" title="cpp/language/new">new-expression</a> for an object of type <code>T</code> or an array whose element type is <code>T</code>
+</li>
+<li> <a href="implicit_cast.html#Lvalue_to_rvalue_conversion" title="cpp/language/implicit cast">lvalue-to-rvalue conversion</a> applied to a glvalue of type <code>T</code>
+</li>
+<li> an <a href="implicit_cast.html" title="cpp/language/implicit cast">implicit</a> or <a href="explicit_cast.html" title="cpp/language/explicit cast">explicit</a> conversion to type <code>T</code>
+</li>
+<li> a <a href="implicit_cast.html" title="cpp/language/implicit cast">standard conversion</a>, <a href="dynamic_cast.html" title="cpp/language/dynamic cast">dynamic_cast</a>, or <a href="static_cast.html" title="cpp/language/static cast">static_cast</a> to type <code>T*</code> or <code>T&amp;</code>, except when converting from the <a href="../types/NULL.html" title="cpp/types/NULL">null pointer constant</a> or from a <a href="pointer.html#Pointers_to_void" title="cpp/language/pointer">pointer to void</a>
+</li>
+<li> <a href="operator_member_access.html" title="cpp/language/operator member access">class member access operator</a> applied to an expression of type <code>T</code>
+</li>
+<li> <a href="typeid.html" title="cpp/language/typeid">typeid</a>, <a href="sizeof.html" title="cpp/language/sizeof">sizeof</a>, or <a href="alignof.html" title="cpp/language/alignof">alignof</a> operator applied to type <code>T</code>
+</li>
+<li> <a href="operator_arithmetic.html" title="cpp/language/operator arithmetic">arithmetic operator</a> applied to a pointer to <code>T</code>
+</li>
+<li> definition of a class with base class <code>T</code>
+</li>
+<li> assignment to an lvalue of type <code>T</code>
+</li>
+<li> a <a href="try_catch.html" title="cpp/language/try catch">catch-clause</a> for an exception of type <code>T</code>, <code>T&amp;</code>, or <code>T*</code>
+</li>
+</ul>
+<p>(In general, when the size and layout of <code>T</code> must be known)
+</p>
+<p>If any of these situations occur in a translation unit, the definition of the type must appear in the same translation unit. Otherwise, it is not required.
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: rules for completing the incomplete types from §3.9[basic.types]/6 </td>
+</tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see">
+<span><a href="../../c/language/compatible_type.html" title="c/language/type">C documentation</a></span> for <span class="t-dsc-see-tt"><span>Type</span></span>
+</div>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 3206/1000000
+Preprocessor generated node count: 8081/1000000
+Post‐expand include size: 39888/2097152 bytes
+Template argument size: 8719/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13105-0!*!0!!en!*!* and timestamp 20150517191215 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/type&amp;oldid=78338</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.103 secs. -->
+	</body>
+<!-- Cached 20150517193706 -->
+</html>

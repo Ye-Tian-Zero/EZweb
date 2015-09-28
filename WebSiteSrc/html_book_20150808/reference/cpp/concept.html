@@ -1,0 +1,1199 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Concepts - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/concept","wgTitle":"cpp/concept","wgCurRevisionId":78668,"wgArticleId":2427,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/concept","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_concept skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Concepts</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> Concepts</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<strong class="selflink"> C++ concepts</strong><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Basic</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/DefaultConstructible.html" title="cpp/concept/DefaultConstructible"><span class="t-lines"><span>DefaultConstructible</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/CopyAssignable.html" title="cpp/concept/CopyAssignable"><span class="t-lines"><span>CopyAssignable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/CopyConstructible.html" title="cpp/concept/CopyConstructible"><span class="t-lines"><span>CopyConstructible</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/MoveAssignable.html" title="cpp/concept/MoveAssignable"><span class="t-lines"><span>MoveAssignable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/MoveConstructible.html" title="cpp/concept/MoveConstructible"><span class="t-lines"><span>MoveConstructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/Destructible.html" title="cpp/concept/Destructible"><span class="t-lines"><span>Destructible</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Layout</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/TrivialType.html" title="cpp/concept/TrivialType"><span class="t-lines"><span>TrivialType</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/TriviallyCopyable.html" title="cpp/concept/TriviallyCopyable"><span class="t-lines"><span>TriviallyCopyable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/StandardLayoutType.html" title="cpp/concept/StandardLayoutType"><span class="t-lines"><span>StandardLayoutType</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/PODType.html" title="cpp/concept/PODType"><span class="t-lines"><span>PODType</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Library-Wide</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/EqualityComparable.html" title="cpp/concept/EqualityComparable"><span class="t-lines"><span>EqualityComparable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/LessThanComparable.html" title="cpp/concept/LessThanComparable"><span class="t-lines"><span>LessThanComparable</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/Swappable.html" title="cpp/concept/Swappable"><span class="t-lines"><span>Swappable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/ValueSwappable.html" title="cpp/concept/ValueSwappable"><span class="t-lines"><span>ValueSwappable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/NullablePointer.html" title="cpp/concept/NullablePointer"><span class="t-lines"><span>NullablePointer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/Hash.html" title="cpp/concept/Hash"><span class="t-lines"><span>Hash</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/Allocator.html" title="cpp/concept/Allocator"><span class="t-lines"><span>Allocator</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Container</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/Container.html" title="cpp/concept/Container"><span class="t-lines"><span>Container</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/SequenceContainer.html" title="cpp/concept/SequenceContainer"><span class="t-lines"><span>SequenceContainer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/ContiguousContainer (page does not exist)"><span class="t-lines"><span>ContiguousContainer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/ReversibleContainer.html" title="cpp/concept/ReversibleContainer"><span class="t-lines"><span>ReversibleContainer</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/AssociativeContainer.html" title="cpp/concept/AssociativeContainer"><span class="t-lines"><span>AssociativeContainer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/AllocatorAwareContainer.html" title="cpp/concept/AllocatorAwareContainer"><span class="t-lines"><span>AllocatorAwareContainer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/UnorderedAssociativeContainer.html" title="cpp/concept/UnorderedAssociativeContainer"><span class="t-lines"><span>UnorderedAssociativeContainer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Container Elements</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/DefaultInsertable.html" title="cpp/concept/DefaultInsertable"><span class="t-lines"><span>DefaultInsertable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/CopyInsertable.html" title="cpp/concept/CopyInsertable"><span class="t-lines"><span>CopyInsertable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/MoveInsertable.html" title="cpp/concept/MoveInsertable"><span class="t-lines"><span>MoveInsertable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/EmplaceConstructible.html" title="cpp/concept/EmplaceConstructible"><span class="t-lines"><span>EmplaceConstructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/Eraseable.html" title="cpp/concept/Erasable"><span class="t-lines"><span>Erasable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Iterator</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/Iterator.html" title="cpp/concept/Iterator"><span class="t-lines"><span>Iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/OutputIterator.html" title="cpp/concept/OutputIterator"><span class="t-lines"><span>OutputIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/InputIterator.html" title="cpp/concept/InputIterator"><span class="t-lines"><span>InputIterator</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/ForwardIterator.html" title="cpp/concept/ForwardIterator"><span class="t-lines"><span>ForwardIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/BidirectionalIterator.html" title="cpp/concept/BidirectionalIterator"><span class="t-lines"><span>BidirectionalIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/RandomAccessIterator.html" title="cpp/concept/RandomAccessIterator"><span class="t-lines"><span>RandomAccessIterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/ContiguousIterator (page does not exist)"><span class="t-lines"><span>ContiguousIterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Stream I/O</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/FormattedInputFunction.html" title="cpp/concept/FormattedInputFunction"><span class="t-lines"><span>FormattedInputFunction</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/UnformattedInputFunction.html" title="cpp/concept/UnformattedInputFunction"><span class="t-lines"><span>UnformattedInputFunction</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/FormattedOutputFunction.html" title="cpp/concept/FormattedOutputFunction"><span class="t-lines"><span>FormattedOutputFunction</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/UnformattedOutputFunction.html" title="cpp/concept/UnformattedOutputFunction"><span class="t-lines"><span>UnformattedOutputFunction</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Random Numbers</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/SeedSequence.html" title="cpp/concept/SeedSequence"><span class="t-lines"><span>SeedSequence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/RandomNumberEngine (page does not exist)"><span class="t-lines"><span>RandomNumberEngine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/RandomNumberDistribution.html" title="cpp/concept/RandomNumberDistribution"><span class="t-lines"><span>RandomNumberDistribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/UniformRandomNumberGenerator.html" title="cpp/concept/UniformRandomNumberGenerator"><span class="t-lines"><span>UniformRandomNumberGenerator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/RandomNumberEngineAdaptor (page does not exist)"><span class="t-lines"><span>RandomNumberEngineAdaptor</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Concurrency</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/BasicLockable.html" title="cpp/concept/BasicLockable"><span class="t-lines"><span>BasicLockable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/Lockable.html" title="cpp/concept/Lockable"><span class="t-lines"><span>Lockable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/TimedLockable.html" title="cpp/concept/TimedLockable"><span class="t-lines"><span>TimedLockable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/Mutex.html" title="cpp/concept/Mutex"><span class="t-lines"><span>Mutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/TimedMutex.html" title="cpp/concept/TimedMutex"><span class="t-lines"><span>TimedMutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/SharedMutex.html" title="cpp/concept/SharedMutex"><span class="t-lines"><span>SharedMutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/SharedTimedMutex.html" title="cpp/concept/SharedTimedMutex"><span class="t-lines"><span>SharedTimedMutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Other</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/CharTraits (page does not exist)"><span class="t-lines"><span>CharTraits</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/pos type (page does not exist)"><span class="t-lines"><span>pos_type</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/off type (page does not exist)"><span class="t-lines"><span>off_type</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/Clock.html" title="cpp/concept/Clock"><span class="t-lines"><span>Clock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="concept/BitmaskType.html" title="cpp/concept/BitmaskType"><span class="t-lines"><span>BitmaskType</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/UnaryTypeTrait (page does not exist)"><span class="t-lines"><span>UnaryTypeTrait</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/BinaryTypeTrait (page does not exist)"><span class="t-lines"><span>BinaryTypeTrait</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/TransformationTrait (page does not exist)"><span class="t-lines"><span>TransformationTrait</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/TrivialClock.html" title="cpp/concept/TrivialClock"><span class="t-lines"><span>TrivialClock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="concept/LiteralType.html" title="cpp/concept/LiteralType"><span class="t-lines"><span>LiteralType</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div></td>
+</tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p><i>Concept</i> is a term that describes a <b>named set of requirements</b> for a type. 
+</p>
+<p><a href="language/concepts.html" title="cpp/language/constraints">Formal specification of concepts</a> (ISO/IEC TS 19217) is an experimental technical specification, finalized in 2015, which makes it possible to verify that template arguments satisfy the expectations of a template or function during <a href="language/overload_resolution.html" title="cpp/language/overload resolution">overload resolution</a> and <a href="language/template_specialization.html" title="cpp/language/template specialization">template specialization</a>.
+</p>
+<p>The <i>concepts</i> listed on this page are the named requirements used in the normative text of the C++ standard to define the expectations of the standard library. It is expected that a future version of the C++ standard library will formalize these library concepts using the facilities of the above-mentioned technical specification. Until then, the burden is on the programmer to ensure that library templates are instantiated with template arguments that satisfy these concepts. Failure to do so may result in very complex compiler diagnostics.
+</p>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1"><a href="concept.html#Basic"><span class="tocnumber">1</span> <span class="toctext">Basic</span></a></li>
+<li class="toclevel-1"><a href="concept.html#Layout"><span class="tocnumber">2</span> <span class="toctext">Layout</span></a></li>
+<li class="toclevel-1"><a href="concept.html#Library-wide"><span class="tocnumber">3</span> <span class="toctext">Library-wide</span></a></li>
+<li class="toclevel-1">
+<a href="concept.html#Container"><span class="tocnumber">4</span> <span class="toctext">Container</span></a>
+<ul>
+<li class="toclevel-2"><a href="concept.html#Container_element"><span class="tocnumber">4.1</span> <span class="toctext">Container element</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="concept.html#Iterator"><span class="tocnumber">5</span> <span class="toctext">Iterator</span></a></li>
+<li class="toclevel-1"><a href="concept.html#Stream_I.2FO_functions"><span class="tocnumber">6</span> <span class="toctext">Stream I/O functions</span></a></li>
+<li class="toclevel-1"><a href="concept.html#Random_Number_Generation"><span class="tocnumber">7</span> <span class="toctext">Random Number Generation</span></a></li>
+<li class="toclevel-1"><a href="concept.html#Concurrency"><span class="tocnumber">8</span> <span class="toctext">Concurrency</span></a></li>
+<li class="toclevel-1"><a href="concept.html#Other"><span class="tocnumber">9</span> <span class="toctext">Other</span></a></li>
+</ul>
+</td></tr></table>
+<h3> <span class="mw-headline" id="Basic"> Basic</span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/DefaultConstructible.html" title="cpp/concept/DefaultConstructible"> <span class="t-lines"><span>DefaultConstructible</span></span></a></div></div>
+</td>
+<td>   specifies that an object of the type can be default constructed <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/MoveConstructible.html" title="cpp/concept/MoveConstructible"> <span class="t-lines"><span>MoveConstructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   specifies that an object of the type can be constructed from rvalue  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/CopyConstructible.html" title="cpp/concept/CopyConstructible"> <span class="t-lines"><span>CopyConstructible</span></span></a></div></div>
+</td>
+<td>   specifies that an object of the type can be constructed from lvalue <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/MoveAssignable.html" title="cpp/concept/MoveAssignable"> <span class="t-lines"><span>MoveAssignable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   specifies that an object of the type can be assigned from rvalue <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/CopyAssignable.html" title="cpp/concept/CopyAssignable"> <span class="t-lines"><span>CopyAssignable</span></span></a></div></div>
+</td>
+<td>   specifies that an object of the type can be assigned from lvalue <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/Destructible.html" title="cpp/concept/Destructible"> <span class="t-lines"><span>Destructible</span></span></a></div></div>
+</td>
+<td>   specifies that type has a destructor <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Layout"> Layout</span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td colspan="2">  Note, that the standard doesn't define named requirements or concepts with names specified in this subcategory. <br>These are type categories defined by the core language. They are included here as concepts only for consistency.
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/TriviallyCopyable.html" title="cpp/concept/TriviallyCopyable"> <span class="t-lines"><span>TriviallyCopyable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   class with trivial copy, assignment and destructor  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/TrivialType.html" title="cpp/concept/TrivialType"> <span class="t-lines"><span>TrivialType</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   class with trivial constructors, assignment and destructor  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/StandardLayoutType.html" title="cpp/concept/StandardLayoutType"> <span class="t-lines"><span>StandardLayoutType</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   non-virtual class containing only other StandardLayout members, all with the same access control  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/PODType.html" title="cpp/concept/PODType"> <span class="t-lines"><span>PODType</span></span></a></div></div>
+</td>
+<td>   POD (Plain Old Data) structure, compatible with C <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span></span></span>   <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Library-wide"> Library-wide</span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/EqualityComparable.html" title="cpp/concept/EqualityComparable"> <span class="t-lines"><span>EqualityComparable</span></span></a></div></div>
+</td>
+<td>   has a working <code>operator==</code> that is an equivalence relation <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/LessThanComparable.html" title="cpp/concept/LessThanComparable"> <span class="t-lines"><span>LessThanComparable</span></span></a></div></div>
+</td>
+<td>   <code>operator&lt;</code> is a strict weak ordering relation <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/Swappable.html" title="cpp/concept/Swappable"> <span class="t-lines"><span>Swappable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   can be swapped with an unqualified non-member function call <span class="t-c"><span class="mw-geshi cpp source-cpp">swap<span class="br0">(</span><span class="br0">)</span></span></span>  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/ValueSwappable.html" title="cpp/concept/ValueSwappable"> <span class="t-lines"><span>ValueSwappable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   an <a href="concept/Iterator.html" title="cpp/concept/Iterator"><code>Iterator</code></a> that dereferences to a <a href="concept/Swappable.html" title="cpp/concept/Swappable"><code>Swappable</code></a> type  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/NullablePointer.html" title="cpp/concept/NullablePointer"> <span class="t-lines"><span>NullablePointer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   pointer-like type supporting a null value  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/Hash.html" title="cpp/concept/Hash"> <span class="t-lines"><span>Hash</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   a <a href="concept/FunctionObject.html" title="cpp/concept/FunctionObject"><code>FunctionObject</code></a> that for inputs with different values has a low probability of giving the same output  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/Allocator.html" title="cpp/concept/Allocator"> <span class="t-lines"><span>Allocator</span></span></a></div></div>
+</td>
+<td>   class type that contains allocation information <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/FunctionObject.html" title="cpp/concept/FunctionObject"> <span class="t-lines"><span>FunctionObject</span></span></a></div></div>
+</td>
+<td>   an object that can be called with the function call syntax <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/Callable.html" title="cpp/concept/Callable"> <span class="t-lines"><span>Callable</span></span></a></div></div>
+</td>
+<td>   a type for which the invoke operation is defined <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/Predicate.html" title="cpp/concept/Predicate"> <span class="t-lines"><span>Predicate</span></span></a></div></div>
+</td>
+<td>   a <a href="concept/FunctionObject.html" title="cpp/concept/FunctionObject"><code>FunctionObject</code></a> that returns a value convertible to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> for one argument without modifying it <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/BinaryPredicate.html" title="cpp/concept/BinaryPredicate"> <span class="t-lines"><span>BinaryPredicate</span></span></a></div></div>
+</td>
+<td>   a <a href="concept/FunctionObject.html" title="cpp/concept/FunctionObject"><code>FunctionObject</code></a> that returns a value convertible to <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> for two arguments without modifying them <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/Compare.html" title="cpp/concept/Compare"> <span class="t-lines"><span>Compare</span></span></a></div></div>
+</td>
+<td>   a <a href="concept/BinaryPredicate.html" title="cpp/concept/BinaryPredicate"><code>BinaryPredicate</code></a> that establishes an ordering relation <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+</table>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Container"> Container</span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/Container.html" title="cpp/concept/Container"> <span class="t-lines"><span>Container</span></span></a></div></div>
+</td>
+<td>   data structure that allows element access using iterators  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/ReversibleContainer.html" title="cpp/concept/ReversibleContainer"> <span class="t-lines"><span>ReversibleContainer</span></span></a></div></div>
+</td>
+<td>   container using bidirectional iterators  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/AllocatorAwareContainer.html" title="cpp/concept/AllocatorAwareContainer"> <span class="t-lines"><span>AllocatorAwareContainer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   container using an allocator  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/SequenceContainer.html" title="cpp/concept/SequenceContainer"> <span class="t-lines"><span>SequenceContainer</span></span></a></div></div>
+</td>
+<td>   container with elements stored linearly  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/ContiguousContainer (page does not exist)"> <span class="t-lines"><span>ContiguousContainer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div>
+</td>
+<td>   container with elements stored at adjacent memory addresses  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/AssociativeContainer.html" title="cpp/concept/AssociativeContainer"> <span class="t-lines"><span>AssociativeContainer</span></span></a></div></div>
+</td>
+<td>   container that stores elements by associating them to keys  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/UnorderedAssociativeContainer.html" title="cpp/concept/UnorderedAssociativeContainer"> <span class="t-lines"><span>UnorderedAssociativeContainer</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   container that stores elements stored in buckets by associating them to keys  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Container_element">  Container element </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/DefaultInsertable.html" title="cpp/concept/DefaultInsertable"> <span class="t-lines"><span>DefaultInsertable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   element can be default-constructed in uninitialized storage  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/CopyInsertable.html" title="cpp/concept/CopyInsertable"> <span class="t-lines"><span>CopyInsertable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   element can be copy-constructed in uninitialized storage  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/MoveInsertable.html" title="cpp/concept/MoveInsertable"> <span class="t-lines"><span>MoveInsertable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   element can be move-constructed in uninitialized storage  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/EmplaceConstructible.html" title="cpp/concept/EmplaceConstructible"> <span class="t-lines"><span>EmplaceConstructible</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   element can be constructed in uninitialized storage  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/Eraseable.html" title="cpp/concept/Erasable"> <span class="t-lines"><span>Erasable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   element can be destroyed using an allocator  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Iterator"> Iterator</span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/Iterator.html" title="cpp/concept/Iterator"> <span class="t-lines"><span>Iterator</span></span></a></div></div>
+</td>
+<td>   general concept to access data within some data structure  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/InputIterator.html" title="cpp/concept/InputIterator"> <span class="t-lines"><span>InputIterator</span></span></a></div></div>
+</td>
+<td>   iterator that can be used to read data  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/OutputIterator.html" title="cpp/concept/OutputIterator"> <span class="t-lines"><span>OutputIterator</span></span></a></div></div>
+</td>
+<td>   iterator that can be used to write data  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/ForwardIterator.html" title="cpp/concept/ForwardIterator"> <span class="t-lines"><span>ForwardIterator</span></span></a></div></div>
+</td>
+<td>   iterator that can be used to read data multiple times <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/BidirectionalIterator.html" title="cpp/concept/BidirectionalIterator"> <span class="t-lines"><span>BidirectionalIterator</span></span></a></div></div>
+</td>
+<td>   iterator that can be both incremented and decremented  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/RandomAccessIterator.html" title="cpp/concept/RandomAccessIterator"> <span class="t-lines"><span>RandomAccessIterator</span></span></a></div></div>
+</td>
+<td>   iterator that can be advanced in constant time  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/ContiguousIterator (page does not exist)"> <span class="t-lines"><span>ContiguousIterator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div>
+</td>
+<td>   iterator to contiguously-allocated elements  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Stream_I.2FO_functions"> Stream I/O functions </span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/UnformattedInputFunction.html" title="cpp/concept/UnformattedInputFunction"> <span class="t-lines"><span>UnformattedInputFunction</span></span></a></div></div>
+</td>
+<td>   a stream input function that doesn't skip whitespace and counts the processed characters <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/FormattedInputFunction.html" title="cpp/concept/FormattedInputFunction"> <span class="t-lines"><span>FormattedInputFunction</span></span></a></div></div>
+</td>
+<td>   a stream input function that skips leading whitespace <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/UnformattedOutputFunction.html" title="cpp/concept/UnformattedOutputFunction"> <span class="t-lines"><span>UnformattedOutputFunction</span></span></a></div></div>
+</td>
+<td>   a basic stream output function  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/FormattedOutputFunction.html" title="cpp/concept/FormattedOutputFunction"> <span class="t-lines"><span>FormattedOutputFunction</span></span></a></div></div>
+</td>
+<td>   a stream output function that sets failbit on errors and returns a reference to the stream <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Random_Number_Generation"> Random Number Generation</span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/SeedSequence.html" title="cpp/concept/SeedSequence"> <span class="t-lines"><span>SeedSequence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   consumes a sequence of integers and produces a sequence of 32-bit unsigned values  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/UniformRandomNumberGenerator.html" title="cpp/concept/UniformRandomNumberGenerator"> <span class="t-lines"><span>UniformRandomNumberGenerator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   returns uniformly distributed random unsigned integers  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/RandomNumberEngine (page does not exist)"> <span class="t-lines"><span>RandomNumberEngine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   a deterministic <a href="concept/UniformRandomNumberGenerator.html" title="cpp/concept/UniformRandomNumberGenerator"><code>UniformRandomNumberGenerator</code></a>, defined by the seed  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/RandomNumberEngineAdaptor (page does not exist)"> <span class="t-lines"><span>RandomNumberEngineAdaptor</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   a <a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/RandomNumberEngine (page does not exist)"><code>RandomNumberEngine</code></a> that transforms the output of another <a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/RandomNumberEngine (page does not exist)"><code>RandomNumberEngine</code></a>  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/RandomNumberDistribution.html" title="cpp/concept/RandomNumberDistribution"> <span class="t-lines"><span>RandomNumberDistribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   returns random numbers distributed according to a given mathematical probability density function  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Concurrency"> Concurrency</span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/BasicLockable.html" title="cpp/concept/BasicLockable"> <span class="t-lines"><span>BasicLockable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   provides exclusive ownership semantics for execution agents (i.e. threads)  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/Lockable.html" title="cpp/concept/Lockable"> <span class="t-lines"><span>Lockable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   adds attempted lock acquisition to <a href="concept/BasicLockable.html" title="cpp/concept/BasicLockable"><code>BasicLockable</code></a>  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/TimedLockable.html" title="cpp/concept/TimedLockable"> <span class="t-lines"><span>TimedLockable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   adds timed lock acquisition to <a href="concept/Lockable.html" title="cpp/concept/Lockable"><code>Lockable</code></a>  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/Mutex.html" title="cpp/concept/Mutex"> <span class="t-lines"><span>Mutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   a <a href="concept/Lockable.html" title="cpp/concept/Lockable"><code>Lockable</code></a> that protects against data races and sequentially consistent synchronization  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/TimedMutex.html" title="cpp/concept/TimedMutex"> <span class="t-lines"><span>TimedMutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   a <a href="concept/TimedLockable.html" title="cpp/concept/TimedLockable"><code>TimedLockable</code></a> that protects against data races and sequentially consistent synchronization  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/SharedMutex.html" title="cpp/concept/SharedMutex"> <span class="t-lines"><span>SharedMutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx17">(C++17)</span></span></span></div>
+</div>
+</td>
+<td>   a <a href="concept/Mutex.html" title="cpp/concept/Mutex"><code>Mutex</code></a> that supports shared ownership mode  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/SharedTimedMutex.html" title="cpp/concept/SharedTimedMutex"> <span class="t-lines"><span>SharedTimedMutex</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div>
+</td>
+<td>   a <a href="concept/TimedMutex.html" title="cpp/concept/TimedMutex"><code>TimedMutex</code></a> that supports shared ownership mode  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h3> <span class="mw-headline" id="Other"> Other</span>
+</h3>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/UnaryTypeTrait (page does not exist)"> <span class="t-lines"><span>UnaryTypeTrait</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   describes a property of a type  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/BinaryTypeTrait (page does not exist)"> <span class="t-lines"><span>BinaryTypeTrait</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   describes a relationship  between two types  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/TransformationTrait (page does not exist)"> <span class="t-lines"><span>TransformationTrait</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   modifies a property of a type  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/Clock.html" title="cpp/concept/Clock"> <span class="t-lines"><span>Clock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   aggregates a duration, a time point, and a function to get the current time point  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/TrivialClock.html" title="cpp/concept/TrivialClock"> <span class="t-lines"><span>TrivialClock</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   a <a href="concept/Clock.html" title="cpp/concept/Clock"><code>Clock</code></a> that doesn't throw exceptions  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/CharTraits (page does not exist)"> <span class="t-lines"><span>CharTraits</span></span></a></div></div>
+</td>
+<td>   defines types and functions for a character type <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/pos type (page does not exist)"> <span class="t-lines"><span>pos_type</span></span></a></div></div>
+</td>
+<td>   represents a position in a stream  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/off type (page does not exist)"> <span class="t-lines"><span>off_type</span></span></a></div></div>
+</td>
+<td>   represents an offset in a stream  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/BitmaskType.html" title="cpp/concept/BitmaskType"> <span class="t-lines"><span>BitmaskType</span></span></a></div></div>
+</td>
+<td>   bitset, integer, or enumeration <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+ 
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="concept/NumericType.html" title="cpp/concept/NumericType"> <span class="t-lines"><span>NumericType</span></span></a></div></div>
+</td>
+<td>   a type for which initialization is effectively equal to assignment  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+ 
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="cpp/concept/RegexTraits (page does not exist)"> <span class="t-lines"><span>RegexTraits</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   defines types and functions used by the <a href="regex.html" title="cpp/regex">regular expressions library</a>  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+ 
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="concept/LiteralType.html" title="cpp/concept/LiteralType"> <span class="t-lines"><span>LiteralType</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   a type with constexpr constructor  <br> <span class="t-mark">(concept)</span>
+</td>
+</tr>
+
+
+</table>
+<p><br>
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: Any other missing concept? </td>
+</tr></table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 11486/1000000
+Preprocessor generated node count: 11619/1000000
+Post‐expand include size: 286784/2097152 bytes
+Template argument size: 80847/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:2427-0!*!0!!en!*!* and timestamp 20150602210748 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/concept&amp;oldid=78668</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.084 secs. -->
+	</body>
+<!-- Cached 20150602214516 -->
+</html>

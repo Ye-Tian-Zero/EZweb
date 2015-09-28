@@ -1,0 +1,2416 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>C++ compiler support - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/compiler_support","wgTitle":"cpp/compiler support","wgCurRevisionId":80137,"wgArticleId":13465,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/compiler_support","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_compiler_support skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">C++ compiler support</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../cpp.html" title="cpp">cpp</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="language.1.html" title="cpp/language"> C++ language</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> General topics</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="preprocessor.html" title="cpp/preprocessor"> Preprocessor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="comments.html" title="cpp/comment"> Comments</a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="keywords.html" title="cpp/keyword"> Keywords</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/escape.html" title="cpp/language/escape"> Escape sequences</a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Flow control</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Conditional execution statements</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/if.html" title="cpp/language/if"> <code>if</code></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/switch.html" title="cpp/language/switch"> <code>switch</code></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Iteration statements (loops)</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/for.html" title="cpp/language/for"> <code>for</code></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/range-for.html" title="cpp/language/range-for"> range-<code>for</code></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/while.html" title="cpp/language/while"> <code>while</code></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/do.html" title="cpp/language/do"> <code>do-while</code></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Jump statements </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/continue.html" title="cpp/language/continue"> <code>continue</code></a> - <a href="language/break.html" title="cpp/language/break"> <code>break</code></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/goto.html" title="cpp/language/goto"> <code>goto</code></a> - <a href="language/return.html" title="cpp/language/return"> <code>return</code></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/function.html" title="cpp/language/function"> Function declaration</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/lambda.html" title="cpp/language/lambda"> Lambda function declaration</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/inline.html" title="cpp/language/inline"> <code>inline</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/except_spec.html" title="cpp/language/except spec"> Exception specifications</a> <span class="t-mark">(deprecated)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/noexcept_spec.html" title="cpp/language/noexcept spec"> <code>noexcept</code> specifier</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Exceptions</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/throw.html" title="cpp/language/throw"> <code>throw</code>-expression</a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/try_catch.html" title="cpp/language/try catch"> <code>try</code>-<code>catch</code> block</a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Namespaces</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/namespace.html" title="cpp/language/namespace"> Namespace declaration</a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/namespace_alias.html" title="cpp/language/namespace alias"> Namespace aliases</a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Types</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/types.html" title="cpp/language/types"> Fundamental types</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/enum.html" title="cpp/language/enum"> Enumeration types</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/function.html" title="cpp/language/function"> Function types</a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/class.html" title="cpp/language/class"> Compound types</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/union.html" title="cpp/language/union"> Union types</a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Specifiers</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/decltype.html" title="cpp/language/decltype"> <code>decltype</code></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/auto.html" title="cpp/language/auto"> <code>auto</code></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/alignas.html" title="cpp/language/alignas"> <code>alignas</code></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/cv.html" title="cpp/language/cv"> <code>const</code>/<code>volatile</code></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/constexpr.html" title="cpp/language/constexpr"> <code>constexpr</code></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/storage_duration.html" title="cpp/language/storage duration"> Storage duration specifiers</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Initialization</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/default_initialization.html" title="cpp/language/default initialization"> Default initialization</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/value_initialization.html" title="cpp/language/value initialization"> Value initialization</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/zero_initialization.html" title="cpp/language/zero initialization"> Zero initialization</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/copy_initialization.html" title="cpp/language/copy initialization"> Copy initialization</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/direct_initialization.html" title="cpp/language/direct initialization"> Direct initialization</a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/aggregate_initialization.html" title="cpp/language/aggregate initialization"> Aggregate initialization</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/list_initialization.html" title="cpp/language/list initialization"> List initialization</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/constant_initialization.html" title="cpp/language/constant initialization"> Constant initialization</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/reference_initialization.html" title="cpp/language/reference initialization"> Reference initialization</a>
+</td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Expressions</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/value_category.html" title="cpp/language/value category"> Value categories</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/eval_order.html" title="cpp/language/eval order"> Order of evaluation</a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/operators.html" title="cpp/language/operators"> Operators</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/operator_precedence.html" title="cpp/language/operator precedence"> Operator precedence</a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/operator_alternative.html" title="cpp/language/operator alternative"> Alternative representations</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Literals</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/bool_literal.html" title="cpp/language/bool literal"> Boolean</a> - <a href="language/integer_literal.html" title="cpp/language/integer literal"> Integer</a> - <a href="language/floating_literal.html" title="cpp/language/floating literal"> Floating-point</a>
+</td></tr>   
+<tr class="t-nv"><td colspan="5"> <a href="language/character_literal.html" title="cpp/language/character literal"> Character</a> - <a href="language/string_literal.html" title="cpp/language/string literal"> String</a> - <a href="language/nullptr.html" title="cpp/language/nullptr"> <code>nullptr</code></a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr> 
+<tr class="t-nv"><td colspan="5"> <a href="language/user_literal.html" title="cpp/language/user literal"> User-defined</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Utilities</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/attributes.html" title="cpp/language/attributes"> Attributes</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Types</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/typedef.html" title="cpp/language/typedef"> <code>typedef</code> declaration</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/type_alias.html" title="cpp/language/type alias"> Type alias declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Casts</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/implicit_cast.html" title="cpp/language/implicit cast"> Implicit conversions</a> - <a href="language/explicit_cast.html" title="cpp/language/explicit cast"> Explicit conversions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/static_cast.html" title="cpp/language/static cast"> <code>static_cast</code></a> - <a href="language/dynamic_cast.html" title="cpp/language/dynamic cast"> <code>dynamic_cast</code></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/const_cast.html" title="cpp/language/const cast"> <code>const_cast</code></a> - <a href="language/reinterpret_cast.html" title="cpp/language/reinterpret cast"> <code>reinterpret_cast</code></a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Memory allocation</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/new.html" title="cpp/language/new"> <code>new</code> expression</a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/delete.html" title="cpp/language/delete"> <code>delete</code> expression</a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/class.html" title="cpp/language/class"> Class declaration</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/constructor.html" title="cpp/language/initializer list"> Initializer lists</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/this.html" title="cpp/language/this"> <code>this</code> pointer</a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/access.html" title="cpp/language/access"> Access specifiers</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/friend.html" title="cpp/language/friend"> <code>friend</code> specifier</a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Class-specific function properties</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/virtual.html" title="cpp/language/virtual"> Virtual function</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/override.html" title="cpp/language/override"> override specifier</a>  <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/final.html" title="cpp/language/final"> final specifier</a>  <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/explicit.html" title="cpp/language/explicit"> <code>explicit</code></a>  <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/static.html" title="cpp/language/static"> <code>static</code></a> </td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h2"><td colspan="5"> Special member functions</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/default_constructor.html" title="cpp/language/default constructor"> Default constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/copy_constructor.html" title="cpp/language/copy constructor"> Copy constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/move_constructor.html" title="cpp/language/move constructor"> Move constructor</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/as_operator.html" title="cpp/language/as operator"> Copy assignment</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/move_operator.html" title="cpp/language/move operator"> Move assignment</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/destructor.html" title="cpp/language/destructor"> Destructor</a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5">Templates </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/class_template.html" title="cpp/language/class template"> Class template </a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language/function_template.html" title="cpp/language/function template"> Function template </a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/template_specialization.html" title="cpp/language/template specialization"> Template specialization</a>
+</td></tr>   
+<tr class="t-nv"><td colspan="5"> <a href="language/parameter_pack.html" title="cpp/language/parameter pack"> Parameter packs</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Miscellaneous </td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/asm.html" title="cpp/language/asm"> Inline assembly</a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="language/history.html" title="cpp/language/history"> History of C++</a>
+</td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="plainlinks fmbox fmbox-system" style="">
+<tr>
+<td class="mbox-image">
+  <img alt="" src="../../common/images/3/31/Imbox_notice.png" width="40" height="40">
+</td>
+<td class="mbox-text" style=""> This page is work-in-progress and not yet up to date </td>
+</tr>
+</table>
+<p>The following table presents compiler support for new C++ features. These include C++11, C++14 and various technical specifications.
+</p>
+<div style="margin-left: 50%; display: inline-block;">
+<div style="margin-left: -50%; display: inline-block;">
+<table class="wikitable sortable" style="font-size:0.8em; width: 820px;">
+
+<tr style="height:15em">
+<th style="vertical-align:bottom;"> C++ feature<br> 
+</th>
+<th style="vertical-align:bottom;"> Paper(s)<br> 
+</th>
+<th style="vertical-align:bottom;"> Version<br> 
+</th>
+<th> <div class="t-vertical"><div>HP aCC</div></div>
+</th>
+<th> <div class="t-vertical"><div>EDG eccp</div></div>
+</th>
+<th> <div class="t-vertical"><div>GCC</div></div>
+</th>
+<th> <div class="t-vertical"><div>Intel C++</div></div>
+</th>
+<th> <div class="t-vertical"><div>MSVC</div></div>
+</th>
+<th> <div class="t-vertical"><div>IBM XLC++</div></div>
+</th>
+<th> <div class="t-vertical"><div>Sun/Oracle C++</div></div>
+</th>
+<th> <div class="t-vertical"><div>Embarcadero C++ Builder</div></div>
+</th>
+<th> <div class="t-vertical"><div>Digital Mars C++</div></div>
+</th>
+<th> <div class="t-vertical"><div>Clang</div></div>
+</th>
+</tr>
+<tr>
+<td> <a href="language/alignas.html" title="cpp/language/alignas"><code>alignas</code></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2341.pdf">N2341</a>
+</td>
+<td> c++11
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.8
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.8
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">15.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">11.0*</span>
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> <a href="language/alignof.html" title="cpp/language/alignof"><code>alignof</code></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2341.pdf">N2341</a>
+</td>
+<td> c++11
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.8
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">15.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> <a href="atomic.html" title="cpp/atomic">Atomic operations</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2427.html">N2427</a>
+</td>
+<td> c++11
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">13.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.1
+</td>
+</tr>
+<tr>
+<td> <a href="language/auto.html" title="cpp/language/auto"><code>auto</code></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n1984.pdf">N1984(v1.0)</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.1(v0.9)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4(v1.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.0(v0.9)<br>12.0(v1.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">10.0(v0.9)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.1(v1.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+</tr>
+<tr>
+<td> C99 preprocessor
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2004/n1653.htm">N1653</a>
+</td>
+<td>
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.3
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial (buggy variadic macros)">14.0*</span>
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">10.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.9
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+</tr>
+<tr>
+<td> <a href="language/constexpr.html" title="cpp/language/constexpr"><code>constexpr</code></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2235.pdf">N2235</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.6
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.6
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">13.0*</span><br>14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">14.0*</span><br>14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">12.1*</span><br>13.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.1
+</td>
+</tr>
+<tr>
+<td> <a href="language/decltype.html" title="cpp/language/decltype"><code>decltype</code></a>
+</td>
+<td> v1.0: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2343.pdf">N2343</a><br>
+<p>v1.1: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3276.pdf">N3276</a>
+</p>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.1(v1.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.3(v1.0)<br>4.8.1(v1.1)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.0(v1.0)<br>12.0(v1.1)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">10.0(v1.0)<br>11.0(v1.1)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.1(v1.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">8.52(v1.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> Defaulted and deleted functions
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2346.htm">N2346</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">13.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> <a href="language/constructor.html#Delegating_constructor" title="cpp/language/initializer list">Delegating constructors</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n1986.pdf">N1986</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> Explicit conversion operators
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2437.pdf">N2437</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.27
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">13.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> Extended <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">friend</span></span></span> declarations
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1791.pdf">N1791</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">11.1*</span><br>12.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">10.0*</span><br>12.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">extern</span> <span class="kw1">template</span></span></span>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n1987.htm">N1987</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.9
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.3
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">9.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">6.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+</tr>
+<tr>
+<td> Forward <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">enum</span></span></span> declarations
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2764.pdf">N2764</a>
+</td>
+<td> c++11
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.6
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">11.1*</span><br>14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.1
+</td>
+</tr>
+<tr>
+<td> Inheriting constructors
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2540.htm">N2540</a>
+</td>
+<td> c++11
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.8
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.8
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">15.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.3
+</td>
+</tr>
+<tr>
+<td> Initializer lists
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2672.htm">N2672</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">13.0*</span><br>14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.1
+</td>
+</tr>
+<tr>
+<td> <a href="language/lambda.html" title="cpp/language/lambda">Lambda expressions</a>
+</td>
+<td> v0.9: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2550.pdf">N2550</a> <br>
+<p>v1.0: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2658.pdf">N2658</a> <br>
+v1.1: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2927.pdf">N2927</a>
+</p>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.1(v1.1)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5(v1.1)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0(v1.1)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">10.0(v1.0)<br>11.0(v1.1)
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.1
+</td>
+</tr>
+<tr>
+<td> Local and unnamed types as template parameters
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2657.htm">N2657</a>
+</td>
+<td>
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.27
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.2
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">10.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">long</span> <span class="kw4">long</span></span></span>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1811.pdf">N1811</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+</tr>
+<tr>
+<td> Inline namespaces
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2535.htm">N2535</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> New character types
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2249.html">N2249</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.27
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial on Windows; yes on Linux and OS X">12.1*</span><br>14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">8.52
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> Trailing function return types
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2541.htm">N2541</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.27
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">10.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> <a href="language/nullptr.html" title="cpp/language/nullptr"><span class="t-c"><span class="mw-geshi cpp source-cpp">nullptr</span></span></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2431.pdf">N2431</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.27
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.2
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.6
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">10.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">13.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">8.52
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> Unicode string literals
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2442.htm">N2442</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="undocumented">11.0*</span>
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">8.52
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> Raw string literals
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2442.htm">N2442</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">8.52
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+</tr>
+<tr>
+<td> User-defined literals
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2765.html">N2765</a>
+</td>
+<td> c++11
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.8
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">15.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.1
+</td>
+</tr>
+<tr>
+<td> Right angle brackets
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1757.html">N1757</a>
+</td>
+<td> c++11
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.3
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">8.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+</tr>
+<tr>
+<td> R-value references
+</td>
+<td> v1.0: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2006/n2118.html">N2118</a><br>
+<p>v2.0: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2844.html">N2844</a><br>
+v2.1: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/cwg_defects.html#1138">N2844+</a><br>
+v3.0: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3053.html">N3053</a>
+</p>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5(v3.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.3(v1.0)<br>4.5(v2.1)<br>4.6(v3.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.1(v1.0)<br>12.0(v2.0)<br>14.0(v3.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">10.0(v2.0)<br>11.0(v2.1)<br>14.0(v3.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.1(v2.1)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp">static_assert</span></span>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2004/n1720.html">N1720</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.3
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">10.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">8.52
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> <a href="language/enum.html#Scoped_enumerations" title="cpp/language/enum">Strongly-typed <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw2">enum</span></span></span></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2347.pdf">N2347</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.4
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">13.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> Template aliases
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2258.pdf">N2258</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.27
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.2
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> Thread-local storage
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2659.htm">N2659</a>
+</td>
+<td> c++11
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.8
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">4.4*</span><br>4.8
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">11.1*</span><br><span title="Linux and OS X">15.0*</span>
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">10.0*</span><br>14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">5.9*</span>
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">8.52*</span>
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">3.3*</span><br>3.3
+</td>
+</tr>
+<tr>
+<td> Unrestricted unions
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2544.pdf">N2544</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.6
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.6
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="Linux and OS X">14.0*</span>
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> Type traits
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2005/n1836.pdf">N1836</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">6.16
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.3
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">10.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">8.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> Variadic templates
+</td>
+<td> v0.9: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2242.pdf">N2242</a><br>
+<p>v1.0: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2555.pdf">N2555</a>
+</p>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.27
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.1(v0.9)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.3(v0.9)<br>4.4(v1.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.1(v1.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.1(v0.9)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9(v1.0)
+</td>
+</tr>
+<tr>
+<td> Range-for loop
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2930.html">N2930</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.6
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">13.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">11.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> <a href="language/override.html" title="cpp/language/override"><span class="t-c"><span class="mw-geshi cpp source-cpp">override</span></span></a> and <a href="language/final.html" title="cpp/language/final"><span class="t-c"><span class="mw-geshi cpp source-cpp">final</span></span></a>
+</td>
+<td> v0.8: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2009/n2928.htm">N2928</a><br>
+<p>v0.9: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3206.htm">N3206</a><br>
+v1.0: <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3272.htm">N3272</a>
+</p>
+</td>
+<td> c++11
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.8(v1.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0(v0.8)<br>14.0(v1.0)
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">8.0(v0.8)<br>11.0(v1.0)
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> Attributes
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2761.pdf">N2761</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.27
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.2
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.8
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.3
+</td>
+</tr>
+<tr>
+<td> ref-qualifiers
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2007/n2439.htm">N2439</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.8.1
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> Non-static data member initializers
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2756.htm">N2756</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.6
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.7
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">12.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.13
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> Dynamic initialization and destruction with concurrency (<a href="language/storage_duration.html#Static_local_variables" title="cpp/language/storage duration">magic statics</a>)
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2008/n2660.htm">N2660</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.25
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.3
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="Linux and OS X">11.1*</span>
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">2.9
+</td>
+</tr>
+<tr>
+<td> <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span></span></span>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2010/n3050.html">N3050</a>
+</td>
+<td> c++11
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">A.06.28
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.5
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.6
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span>14.0</span>
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.0
+</td>
+</tr>
+<tr>
+<td> Variable templates
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3651.pdf">N3651</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> Deprecated attribute
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3760.html">N3760</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.9
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">4.9
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="Linux and OS X">15.0*</span>
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> <span class="t-lc"><a href="types/result_of.html" title="cpp/types/result of">std::result_of</a></span> and SFINAE
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3462.html">N3462</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">Yes
+</td>
+</tr>
+<tr>
+<td> Improving <span class="t-lc"><a href="utility/pair.html" title="cpp/utility/pair">std::pair</a></span> and <span class="t-lc"><a href="utility/tuple.html" title="cpp/utility/tuple">std::tuple</a></span>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4387.html">N4387</a>
+</td>
+<td> c++17
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+</tr>
+<tr>
+<td> <span class="t-lc"><a href="thread/shared_mutex.html" title="cpp/thread/shared mutex">std::shared_mutex</a></span> (untimed)
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2015/n4508.html">N4508</a>
+</td>
+<td> c++17
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.7
+</td>
+</tr>
+<tr>
+<td> <code>constexpr</code> for <a href="header/complex.html" title="cpp/header/complex"><code>&lt;complex&gt;</code></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2011/n3302.html">N3302</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> <code>constexpr</code> for <a href="header/chrono.html" title="cpp/header/chrono"><code>&lt;chrono&gt;</code></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3469.html">N3469</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> <code>constexpr</code> for <a href="header/array.html" title="cpp/header/array"><code>&lt;array&gt;</code></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3470.html">N3470</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> <code>constexpr</code> for <a href="header/initializer_list.html" title="cpp/header/initializer list"><code>&lt;initializer_list&gt;</code></a>, <a href="header/utility.html" title="cpp/header/utility"><code>&lt;utility&gt;</code></a> and <a href="header/tuple.html" title="cpp/header/tuple"><code>&lt;tuple&gt;</code></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2012/n3471.html">N3471</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> Improved <span class="t-lc"><a href="types/integral_constant.html" title="cpp/types/integral constant">std::integral_constant</a></span>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3545.pdf">N3545</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> User-defined literals for <a href="header/chrono.html" title="cpp/header/chrono"><code>&lt;chrono&gt;</code></a> and <a href="header/string.html" title="cpp/header/string"><code>&lt;string&gt;</code></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3642.pdf">N3642</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> <a href="concept/ForwardIterator.html#Singular_iterators" title="cpp/concept/ForwardIterator">Null forward iterators</a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3644.pdf">N3644</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">
+<span title="partial">5.0*</span>
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> <span class="t-lc"><a href="io/manip/quoted.html" title="cpp/io/manip/quoted">std::quoted</a></span>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3654.html">N3654</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> Heterogeneous associative lookup
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3657.htm">N3657</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> <span class="t-lc"><a href="utility/integer_sequence.html" title="cpp/utility/integer sequence">std::integer_sequence</a></span>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3658.html">N3658</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> <span class="t-lc"><a href="thread/shared_mutex.html" title="cpp/thread/shared mutex">std::shared_mutex</a></span> (timed)
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3659.html">N3659</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> <span class="t-lc"><a href="utility/exchange.html" title="cpp/utility/exchange">std::exchange</a></span>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3668.html">N3668</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> fixing <code>constexpr</code> member functions without <code>const</code>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3669.pdf">N3669</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> <a href="utility/pair/get.html" title="cpp/utility/pair/get"><span class="t-lc">std::get&lt;T&gt;()</span></a>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3670.html">N3670</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+<tr>
+<td> Dual-Range <span class="t-lc"><a href="algorithm/equal.html" title="cpp/algorithm/equal">std::equal</a></span>, <span class="t-lc"><a href="algorithm/is_permutation.html" title="cpp/algorithm/is permutation">std::is_permutation</a></span>, <span class="t-lc"><a href="algorithm/mismatch.html" title="cpp/algorithm/mismatch">std::mismatch</a></span>
+</td>
+<td> <a rel="nofollow" class="external text" href="http%3A//www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3671.html">N3671</a>
+</td>
+<td> c++14
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">5.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">14.0
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background:#ff9090; color:black; vertical-align: middle; text-align: center;" class="table-no">
+</td>
+<td style="background: #90ff90; color: black; vertical-align: middle; text-align: center;" class="table-yes">3.4
+</td>
+</tr>
+</table>
+</div>
+</div>
+<p><i>*</i> - hover over the version number to see notes
+</p>
+<p><br>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: References">edit</a>]</span> <span class="mw-headline" id="References">References</span>
+</h3>
+<p>Individual vendor compatibility checklists (these are more up-to-date than the table above)
+</p>
+<ul><li> GCC
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a rel="nofollow" class="external text" href="https%3A//gcc.gnu.org/gcc-4.8/cxx0x_status.html">C++11 core language support status</a> (complete as of 4.8.1)
+</li>
+<li> <a rel="nofollow" class="external text" href="https%3A//gcc.gnu.org/projects/cxx1y.html">C++14 core language support status</a> (complete as of 5.0)
+</li>
+<li> <a rel="nofollow" class="external text" href="https%3A//gcc.gnu.org/onlinedocs/libstdc%2B%2B/manual/status.html#status.iso.200x">C++11 library support status</a> (complete as of 5.0)
+</li>
+<li> <a rel="nofollow" class="external text" href="https%3A//gcc.gnu.org/onlinedocs/libstdc%2B%2B/manual/status.html#status.iso.2014">C++14 library support status</a> (complete as of 5.0)
+</li>
+<li> <a rel="nofollow" class="external text" href="https%3A//gcc.gnu.org/onlinedocs/libstdc%2B%2B/manual/status.html#table.ts_status">Technical Specifications support status</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="https%3A//gcc.gnu.org/onlinedocs/libstdc%2B%2B/manual/status.html#status.iso.201z">C++17 library support status</a>
+</li>
+</ul>
+</dd></dl>
+<ul><li> Clang++
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http%3A//clang.llvm.org/cxx_status.html#cxx11">C++11 core language support status</a> (complete as of 3.3)
+</li>
+<li> C++11 library support status (complete as of <a rel="nofollow" class="external text" href="http%3A//llvm.org/viewvc/llvm-project/libcxx/trunk/include/memory%3Frevision%3D160940%26view%3Dmarkup">2012-07-29</a>)
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//clang.llvm.org/cxx_status.html#cxx14">C++14 core language support status</a> (complete as of 3.4)
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//libcxx.llvm.org/cxx1y_status.html">C++14 library support status</a> (complete as of 3.5)
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//clang.llvm.org/cxx_status.html#ts">Technical Specifications support status</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//clang.llvm.org/cxx_status.html#cxx17">C++17 core language support status</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//libcxx.llvm.org/cxx1z_status.html">C++17 library support status</a>
+</li>
+</ul>
+</dd></dl>
+<ul><li> Microsoft Visual Studio
+</li></ul>
+<dl><dd>
+<ul><li> C++11/C++14/C++17 core language support status
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http%3A//msdn.microsoft.com/en-us/library/hh567368.aspx#featurelist">C++11 core language support status in VS2013 ("VS12")</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//blogs.msdn.com/b/vcblog/archive/2013/12/02/c-11-14-core-language-features-in-vs-2013-and-the-nov-2013-ctp.aspx">VS2013 vs. VS2015 CTP0</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//blogs.msdn.com/b/vcblog/archive/2014/06/11/c-11-14-feature-tables-for-visual-studio-14-ctp1.aspx">VS2013 vs. VS2015 CTP1</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//blogs.msdn.com/b/vcblog/archive/2014/08/21/c-11-14-features-in-visual-studio-14-ctp3.aspx">VS2013 vs. VS2015 CTP3</a> (includes the roadmap table)
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//blogs.msdn.com/b/vcblog/archive/2014/11/17/c-11-14-17-features-in-vs-2015-preview.aspx">VS2015 ("VS14") preview</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//blogs.msdn.com/b/vcblog/archive/2015/04/29/c-11-14-17-features-in-vs-2015-rc.aspx">VS2015 ("VS14") release candidate</a> (C++11 remains incomplete, but C++17 support appears)
+</li>
+</ul>
+</dd></dl>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http%3A//msdn.microsoft.com/en-us/library/hh567368.aspx#stl">C++11 and C++14 library support status</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//blogs.msdn.com/b/vcblog/archive/2015/06/19/c-11-14-17-features-in-vs-2015-rtm.aspx">C++11/14/17 Features In VS 2015 RTM</a> including core language and standard library (including technical specifications)
+</li>
+</ul>
+</dd></dl>
+<ul><li> Intel C++
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a rel="nofollow" class="external text" href="https%3A//software.intel.com/en-us/articles/c0x-features-supported-by-intel-c-compiler">C++11 core language support status</a> (complete as of 15.0)
+</li>
+<li> <a rel="nofollow" class="external text" href="https%3A//software.intel.com/en-us/articles/c14-features-supported-by-intel-c-compiler">C++14 core language support status</a> (incomplete)
+</li>
+</ul>
+<dl><dd>
+<ul><li> <a rel="nofollow" class="external text" href="https%3A//software.intel.com/en-us/articles/intel-c-compiler-160-for-linux-release-notes#cpp14">C++14 core language support in 16.0 beta</a>
+</li></ul>
+</dd></dl>
+<ul><li> Intel does not ship an implementation of the C++ standard library
+</li></ul>
+</dd></dl>
+<ul><li> EDG
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a rel="nofollow" class="external text" href="https%3A//www.edg.com/features.html">C++11 core language support status</a>
+</li>
+<li> <a rel="nofollow" class="external text" href="https%3A//www.edg.com/cpp14_features.html">C++14 core language support status</a>
+</li>
+<li> EDG does not ship an implementation of the C++ standard library
+</li>
+</ul>
+</dd></dl>
+<ul><li> Oracle C++
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http%3A//docs.oracle.com/cd/E37069_01/html/E37071/gncix.html">C++11 core language support status</a>
+</li>
+<li> Oracle ships three implementations of the C++ standard library:
+</li>
+</ul>
+<dl><dd>
+<ul>
+<li> libCstd (RogueWave Standard Library version 2), predates C++98
+</li>
+<li> stlport4 (STLport Standard Library version 4.5.3), predates C++03
+</li>
+<li> stdcxx4 (Apache Standard Library version 4), predates C++11
+</li>
+</ul>
+</dd></dl>
+</dd></dl>
+<ul><li> IBM XL C++
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http%3A//www-01.ibm.com/support/knowledgecenter/SSGH3R_13.1.0/com.ibm.xlcpp131.aix.doc/language_ref/cpp0x_exts.html%3Flang%3Den">C++11 core language support status</a>  (v 13.1 for AIX)
+</li>
+<li> IBM ships <a rel="nofollow" class="external text" href="http%3A//www-01.ibm.com/support/knowledgecenter/SSGH3R_13.1.0/com.ibm.xlcpp131.aix.doc/standlib/header_files.html%3Flang%3Den">a version of Dinkumware library</a> for AIX with full support for C++ TR1, including &lt;regex&gt;, but no C++11
+</li>
+<li> <a rel="nofollow" class="external text" href="http%3A//www-01.ibm.com/support/knowledgecenter/SSXVZZ_13.1.1/com.ibm.xlcpp1311.lelinux.doc/language_ref/standard_features.html%3Flang%3Den">C++11 core language support status</a> (v 13.1.1 for Linux)
+</li>
+<li> IBM does not ship an implementation of C++ standard library for Linux (uses GNU libstdc++)
+</li>
+</ul>
+</dd></dl>
+<ul><li> HP aCC
+</li></ul>
+<dl><dd>
+<ul>
+<li> <a rel="nofollow" class="external text" href="http%3A//h21007.www2.hp.com/portal/site/dspp/menuitem.863c3e4cbcdc3f3515b49c108973a801%3Fciid%3D887a551fac19b410VgnVCM200000a460ea10RCRD">C++11 core language support status</a>
+</li>
+<li> HP ships a version of RogueWave STL 2.0 implementation of the C++98 standard library
+</li>
+</ul>
+</dd></dl>
+<ul><li> Digital Mars C++
+</li></ul>
+<dl><dd>
+<ul><li> <a rel="nofollow" class="external text" href="http%3A//www.digitalmars.com/ctg/CPP0x-Language-Implementation.html">C++11 core language support status</a>
+</li></ul>
+</dd></dl>
+<ul><li> Embarcadero C++
+</li></ul>
+<dl><dd>
+<ul><li> <a rel="nofollow" class="external text" href="http%3A//docwiki.embarcadero.com/RADStudio/XE6/en/C%2B%2B11_Language_Features_Compliance_Status">C++11 core language support status</a>
+</li></ul>
+</dd></dl>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 8225/1000000
+Preprocessor generated node count: 18722/1000000
+Post‐expand include size: 246388/2097152 bytes
+Template argument size: 61147/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:13465-0!*!0!*!*!2!* and timestamp 20150729233255 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/compiler_support&amp;oldid=80137</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.073 secs. -->
+	</body>
+<!-- Cached 20150729233255 -->
+</html>

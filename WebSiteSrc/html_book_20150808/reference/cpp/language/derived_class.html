@@ -1,0 +1,441 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Derived classes - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/derived_class","wgTitle":"cpp/language/derived class","wgCurRevisionId":80107,"wgArticleId":10177,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/derived_class","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_derived_class skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Derived classes</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="classes.html" title="cpp/language/classes"> Classes</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> General </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="classes.html" title="cpp/language/classes"> overview</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class/struct types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union types</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Members </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html" title="cpp/language/data members">data members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static.html" title="cpp/language/static">static members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="this.html" title="cpp/language/this">the <code>this</code> pointer</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nested_classes.html" title="cpp/language/nested classes" class="mw-redirect">nested classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template">member templates</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bit_field.html" title="cpp/language/bit field">bit fields</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration">using-declarations</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_functions.html" title="cpp/language/member functions">member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="access.html" title="cpp/language/access">member access specifiers</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constructor.html" title="cpp/language/initializer list">constructors and member initializer lists</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html#Member_initialization" title="cpp/language/data members">in-class <i>brace-or-equal</i> initializer</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="friend.html" title="cpp/language/friend"><code>friend</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"><code>explicit</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="converting_constructor.html" title="cpp/language/converting constructor">converting constructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Special member functions </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_constructor.html" title="cpp/language/default constructor">default constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_constructor.html" title="cpp/language/copy constructor">copy constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_constructor.html" title="cpp/language/move constructor">move constructor</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_operator.html" title="cpp/language/as operator">copy assignment operator</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_operator.html" title="cpp/language/move operator">move assignment operator</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="destructor.html" title="cpp/language/destructor">destructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Inheritance </td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">base and derived classes</strong>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual">virtual member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="override.html" title="cpp/language/override">override</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="final.html" title="cpp/language/final">final</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="abstract_class.html" title="cpp/language/abstract class">pure virtual functions and abstract classes</a>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>Any class type (whether declared with <span class="t-spar">class-key</span> <code>class</code> or <code>struct</code>) may be declared as <i>derived</i> from one or more <i>base classes</i> which, in turn, may be derived from their own base classes, forming an inheritance hierarchy.
+</p>
+<p>The list of base classes is provided in the <span class="t-spar">base-clause</span> of the  <a href="class.html" title="cpp/language/class">class declaration syntax</a>. The <span class="t-spar">base-clause</span> consists of the character <code><b>:</b></code> followed by a comma-separated list of one or more <span class="t-spar">base-specifier</span>s.
+</p>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td class="t-sdsc-nopad"> <span class="t-spar">attr</span><span class="t-mark">(optional)</span> <span class="t-spar">access-specifier</span><span class="t-mark">(optional)</span> <span class="t-spar">virtual-specifier</span><span class="t-mark">(optional)</span> <span class="t-spar">class-or-decltype</span>
+</td>
+<td class="t-sdsc-nopad">
+</td>
+<td class="t-sdsc-nopad">
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  <span class="t-spar">attr</span><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td>
+<td> -
+</td>
+<td>  optional sequence of any number of <a href="attributes.html" title="cpp/language/attributes">attributes</a>
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">access-specifier</span>
+</td>
+<td> -
+</td>
+<td>  one of <code>private</code>, <code>public</code>, or <code>protected</code>
+</td>
+</tr>
+<tr class="t-par">
+<td>  <span class="t-spar">virtual-specifier</span>
+</td>
+<td> -
+</td>
+<td>  the keyword <code>virtual</code>
+</td>
+</tr>
+</table>
+<p><span class="t-spar">virtual-specifier</span> and <span class="t-spar">access-specifier</span> may appear in any order
+</p>
+<p>The last <span class="t-spar">base-specifier</span> in a <span class="t-spar">base-clause</span> may be a <a href="parameter_pack.html" title="cpp/language/parameter pack">pack expansion</a>.
+</p>
+<p>If <span class="t-spar">access-specifier</span> is omitted, it defaults to <code>public</code> for classes declared with class-key <code>struct</code> and to <code>private</code> for classes declared with class-key <code>class</code>.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> Base <span class="br0">{</span>
+    <span class="kw4">int</span> a, b, c<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="co1">// every object of type Derived includes Base as a subobject</span>
+<span class="kw1">struct</span> Derived <span class="sy4">:</span> Base <span class="br0">{</span>
+    <span class="kw4">int</span> b<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="co1">// every object of type Derived2 includes Derived and Base as subobjects</span>
+<span class="kw1">struct</span> Derived2 <span class="sy4">:</span> Derived <span class="br0">{</span>
+    <span class="kw4">int</span> c<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>The classes listed in the <span class="t-spar">base-clause</span> are direct base classes. Their bases are indirect base classes. The same class cannot be specified as a direct base class more than once, but the same class can be both direct and indirect base class.
+</p>
+<p>Each direct and indirect base class is present, as <i>base class subobject</i>, within the object representation of the derived class at implementation-defined offset. Empty base classes usually do not increase the size of the derived object due to <a href="ebo.html" title="cpp/language/ebo">empty base optimization</a>. The constructors of base class subobjects are called by the constructor of the derived class: arguments may be provided to those constructors in the <a href="constructor.html" title="cpp/language/initializer list">member initializer list</a>. 
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="derived_class.html#Virtual_base_classes"><span class="tocnumber">1</span> <span class="toctext">Virtual base classes</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="derived_class.html#Public_inheritance"><span class="tocnumber">2</span> <span class="toctext">Public inheritance</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="derived_class.html#Protected_inheritance"><span class="tocnumber">3</span> <span class="toctext">Protected inheritance</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="derived_class.html#Private_inheritance"><span class="tocnumber">4</span> <span class="toctext">Private inheritance</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="derived_class.html#Member_name_lookup"><span class="tocnumber">5</span> <span class="toctext">Member name lookup</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="derived_class.html#See_also"><span class="tocnumber">6</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Virtual base classes">edit</a>]</span> <span class="mw-headline" id="Virtual_base_classes">Virtual base classes</span>
+</h3>
+<p>For each distinct base class that is specified <code>virtual</code>, the most derived object contains only one base class subobject of that type, even if the class appears many times in the inheritance hierarchy (as long as it is inherited <code>virtual</code> every time).
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> B <span class="br0">{</span> <span class="kw4">int</span> n<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">class</span> X <span class="sy4">:</span> <span class="kw1">public</span> <span class="kw1">virtual</span> B <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">class</span> Y <span class="sy4">:</span> <span class="kw1">virtual</span> <span class="kw1">public</span> B <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">class</span> Z <span class="sy4">:</span> <span class="kw1">public</span> B <span class="br0">{</span><span class="br0">}</span><span class="sy4">;</span>
+<span class="co1">// every object of type AA has one X, one Y, one Z, and two B's:</span>
+<span class="co1">// one that is the base of Z and one that is shared by X and Y</span>
+<span class="kw1">struct</span> AA <span class="sy4">:</span> X, Y, Z <span class="br0">{</span>
+    <span class="kw4">void</span> f<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        X<span class="sy4">::</span><span class="me2">n</span> <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="co1">// modifies the virtual B subobject's member</span>
+        Y<span class="sy4">::</span><span class="me2">n</span> <span class="sy1">=</span> <span class="nu0">2</span><span class="sy4">;</span> <span class="co1">// modifies the same virtual B subobject's member</span>
+        Z<span class="sy4">::</span><span class="me2">n</span> <span class="sy1">=</span> <span class="nu0">3</span><span class="sy4">;</span> <span class="co1">// modifies the non-virtual B subobject's member</span>
+ 
+        <a href="../io/cout.html"><span class="kw1453">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> X<span class="sy4">::</span><span class="me2">n</span> <span class="sy1">&lt;&lt;</span> Y<span class="sy4">::</span><span class="me2">n</span> <span class="sy1">&lt;&lt;</span> Z<span class="sy4">::</span><span class="me2">n</span> <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span> <span class="co1">// prints 223</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p>An example of an inheritance hierarchy with virtual base classes is the iostreams hierarchy of the standard library: <span class="t-lc"><a href="../io/basic_istream.html" title="cpp/io/basic istream">std::istream</a></span> and <span class="t-lc"><a href="../io/basic_ostream.html" title="cpp/io/basic ostream">std::ostream</a></span> are derived from <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ios</span></span></span> using virtual inheritance. <span class="t-lc"><a href="../io/basic_iostream.html" title="cpp/io/basic iostream">std::iostream</a></span> is derived from both <span class="t-lc"><a href="../io/basic_istream.html" title="cpp/io/basic istream">std::istream</a></span> and <span class="t-lc"><a href="../io/basic_ostream.html" title="cpp/io/basic ostream">std::ostream</a></span>, so every instance of <span class="t-lc"><a href="../io/basic_iostream.html" title="cpp/io/basic iostream">std::iostream</a></span> contains a <span class="t-lc"><a href="../io/basic_ostream.html" title="cpp/io/basic ostream">std::ostream</a></span> subobject, a <span class="t-lc"><a href="../io/basic_istream.html" title="cpp/io/basic istream">std::istream</a></span> subobject, and just one <span class="t-c"><span class="mw-geshi cpp source-cpp">std<span class="sy4">::</span><span class="me2">ios</span></span></span> subobject (and, consequently, one <span class="t-lc"><a href="../io/ios_base.html" title="cpp/io/ios base">std::ios_base</a></span>).
+</p>
+<p>All virtual base subobjects are initialized before any non-virtual base subobject, so only the most derived class calls the constructors of the virtual bases in its <a href="constructor.html" title="cpp/language/initializer list">member initializer list</a>:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> B <span class="br0">{</span>
+    <span class="kw4">int</span> n<span class="sy4">;</span>
+    B<span class="br0">(</span><span class="kw4">int</span> x<span class="br0">)</span> <span class="sy4">:</span> n<span class="br0">(</span>x<span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> X <span class="sy4">:</span> <span class="kw1">virtual</span> B <span class="br0">{</span> X<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> B<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> Y <span class="sy4">:</span> <span class="kw1">virtual</span> B <span class="br0">{</span> Y<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> B<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> AA <span class="sy4">:</span> X, Y     <span class="br0">{</span> AA<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> B<span class="br0">(</span><span class="nu0">3</span><span class="br0">)</span>, X<span class="br0">(</span><span class="br0">)</span>, Y<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="co1">// the default constructor of AA calls the default constructors of X and Y</span>
+<span class="co1">// but those constructors do not call the constructor of B because B is a virtual base</span>
+AA a<span class="sy4">;</span> <span class="co1">// a.n == 3</span>
+<span class="co1">// the default constructor of X calls the constructor of B</span>
+X x<span class="sy4">;</span> <span class="co1">// x.n == 1</span></pre></div></div>
+<p>The are special rules for unqualified name lookup for class members when virtual inheritance is involved (sometimes referred to as the rules of dominance), see <a href="unqualified_lookup.html#Member_function_definition" title="cpp/language/unqualified lookup">unqualified_lookup#Member_function_definition</a>.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Public inheritance">edit</a>]</span> <span class="mw-headline" id="Public_inheritance">Public inheritance</span>
+</h3>
+<p>When a class uses <code>public</code> <a href="access.html" title="cpp/language/access">member access specifier</a> to derive from a base, all public members of the base class are accessible as public members of the derived class and all protected members of the base class are accessible as protected members of the derived class (private members of the base are never accessible unless friended or using-declared)
+</p>
+<p>Public inheritance models the subtyping relationship of object-oriented programming: the derived class object IS-A base class object. References and pointers to a derived object are expected to be usable by any code that expects references or pointers to any of its public bases (see <a href="http%3A//en.wikipedia.com/wiki/Liskov_substitution_principle" class="extiw" title="enwiki:Liskov substitution principle">LSP</a>) or, in <a href="http%3A//en.wikipedia.com/wiki/Design_by_contract" class="extiw" title="enwiki:Design by contract">DbC</a> terms, a derived class should maintain class invariants of its public bases, should not strengthen any precondition or weaken any postcondition of a member function it <a href="virtual.html" title="cpp/language/virtual">overrides</a>.
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: typical Shape, Vehicle, and Animal don't do much with invariants. Would be nice to have a a concise example that adjusts contracts correctly: weakens pre and/or strengthens post in the derived class </td>
+</tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Protected inheritance">edit</a>]</span> <span class="mw-headline" id="Protected_inheritance">Protected inheritance</span>
+</h3>
+<p>When a class uses <code>protected</code> <a href="access.html" title="cpp/language/access">member access specifier</a> to derive from a base, all public and protected members of the base class are accessible as protected members of the derived class (private members of the base are never accessible unless friended or using-declared)
+</p>
+<p>Protected inheritance may be used for "controlled polymorphism": within the members of Derived, as well as within the members of all further-derived classes, the derived class IS-A base: references and pointers to Derived may be used where references and pointers to Base are expected.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Private inheritance">edit</a>]</span> <span class="mw-headline" id="Private_inheritance">Private inheritance</span>
+</h3>
+<p>When a class uses <code>private</code> <a href="access.html" title="cpp/language/access">member access specifier</a> to derive from a base, all public and protected members of the base class are accessible as private members of the derived class (private members of the base are never accessible unless friended or using-declared).
+</p>
+<p>Private inheritance is commonly used in policy-based design, since policies are usually empty classes, and using them as bases both enables static polymorphism and leverages <a href="ebo.html" title="cpp/language/ebo">empty-base optimization</a>
+</p>
+<p>Private inheritance can also be used to implement the composition relationship (the base class subobject is an implementation detail of the derived class object). Using a member offers better encapsulation and is generally preferred unless the derived class requires access to protected members (including constructors) of the base, needs to override a virtual member of the base, needs the base to be constructed before and destructed after some other base subobject, needs to share a virtual base or needs to control the construction of a virtual base. Use of members to implement composition is also not applicable in the case of multiple inheritance from a <a href="parameter_pack.html" title="cpp/language/parameter pack">parameter pack</a> or when the identities of the base classes are determined at compile time through template metaprogramming.
+</p>
+<p>Similar to protected inheritance, private inheritance may also be used for controlled polymorphism: within the members of the derived (but not within further-derived classes), derived IS-A base.
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">typename</span> Transport<span class="sy1">&gt;</span>
+<span class="kw1">class</span> service <span class="sy4">:</span> Transport  <span class="co1">// private inheritance from the Transport policy</span>
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw4">void</span> transmit<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+        this<span class="sy2">-</span><span class="sy1">&gt;</span>send<span class="br0">(</span>...<span class="br0">)</span><span class="sy4">;</span>  <span class="co1">// send using whatever transport was supplied</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="co1">// TCP transport policy</span>
+<span class="kw1">class</span> tcp <span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw4">void</span> send<span class="br0">(</span>...<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="co1">// UDP transport policy</span>
+<span class="kw1">class</span> udp <span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="kw4">void</span> send<span class="br0">(</span>...<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+service<span class="sy1">&lt;</span>tcp<span class="sy1">&gt;</span> service<span class="br0">(</span>host, port<span class="br0">)</span><span class="sy4">;</span> 
+service.<span class="me1">send</span><span class="br0">(</span>...<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// send over TCP</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Member name lookup">edit</a>]</span> <span class="mw-headline" id="Member_name_lookup">Member name lookup</span>
+</h3>
+<p>Unqualified and qualified name lookup rules for class members are detailed in <a href="lookup.html" title="cpp/language/lookup">name lookup</a>.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<ul>
+<li> <a href="virtual.html" title="cpp/language/virtual">virtual functions</a>
+</li>
+<li> <a href="abstract_class.html" title="cpp/language/abstract class">abstract classes</a>
+</li>
+</ul>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1601/1000000
+Preprocessor generated node count: 6816/1000000
+Post‐expand include size: 42074/2097152 bytes
+Template argument size: 8216/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:10177-0!*!0!!en!*!* and timestamp 20150729194700 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/derived_class&amp;oldid=80107</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.094 secs. -->
+	</body>
+<!-- Cached 20150729203042 -->
+</html>

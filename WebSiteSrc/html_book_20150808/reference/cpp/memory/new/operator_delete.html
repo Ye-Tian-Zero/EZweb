@@ -1,0 +1,851 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>operator delete, operator delete[] - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/memory/new/operator_delete","wgTitle":"cpp/memory/new/operator delete","wgCurRevisionId":78527,"wgArticleId":1330,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["unconditionally noexcept"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/memory/new/operator_delete","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_memory_new_operator_delete skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">
+<span style="font-size:0.7em; line-height:130%">operator</span> delete<span style="font-size:0.7em; line-height:130%">, operator</span> delete[]</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../../cpp.html" title="cpp">cpp</a>‎ | <a href="../../memory.html" title="cpp/memory">memory</a>‎ | <a href="../new.1.html" title="cpp/memory/new">new</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../utility.html" title="cpp/utility"> Utilities library</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="../../types.html" title="cpp/types"> Type support</a> (basic types, RTTI, type traits) </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../memory.html" title="cpp/memory"> Dynamic memory management</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../error.html" title="cpp/error"> Error handling</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility/program.html" title="cpp/utility/program"> Program utilities</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility/variadic.html" title="cpp/utility/variadic"> Variadic functions</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../chrono.html" title="cpp/chrono"> Date and time</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../../utility/functional.html" title="cpp/utility/functional"> Function objects</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/initializer_list.html" title="cpp/utility/initializer list"><span class="t-lines"><span>initializer_list</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../utility/bitset.html" title="cpp/utility/bitset"><span class="t-lines"><span>bitset</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/hash.html" title="cpp/utility/hash"><span class="t-lines"><span>hash</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Relational operators</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../utility/rel_ops/operator_cmp.html" title="cpp/utility/rel ops/operator cmp"><span class="t-lines"><span>rel_ops::operator!=</span><span>rel_ops::operator&gt;</span><span>rel_ops::operator&lt;=</span><span>rel_ops::operator&gt;=</span></span></a></div></div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Pairs and tuples</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../utility/pair.html" title="cpp/utility/pair"><span class="t-lines"><span>pair</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/tuple.html" title="cpp/utility/tuple"><span class="t-lines"><span>tuple</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/piecewise_construct_t.html" title="cpp/utility/piecewise construct t"><span class="t-lines"><span>piecewise_construct_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/piecewise_construct.html" title="cpp/utility/piecewise construct"><span class="t-lines"><span>piecewise_construct</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/integer_sequence.html" title="cpp/utility/integer sequence"><span class="t-lines"><span>integer_sequence</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Swap, forward and move</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../../algorithm/swap.html" title="cpp/algorithm/swap"><span class="t-lines"><span>swap</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/exchange.html" title="cpp/utility/exchange"><span class="t-lines"><span>exchange</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx14">(C++14)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/forward.html" title="cpp/utility/forward"><span class="t-lines"><span>forward</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/move.html" title="cpp/utility/move"><span class="t-lines"><span>move</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/move_if_noexcept.html" title="cpp/utility/move if noexcept"><span class="t-lines"><span>move_if_noexcept</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../../utility/declval.html" title="cpp/utility/declval"><span class="t-lines"><span>declval</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../memory.html" title="cpp/memory"> Dynamic memory management</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Smart pointers</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../unique_ptr.html" title="cpp/memory/unique ptr"><span class="t-lines"><span>unique_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../shared_ptr.html" title="cpp/memory/shared ptr"><span class="t-lines"><span>shared_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../weak_ptr.html" title="cpp/memory/weak ptr"><span class="t-lines"><span>weak_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../auto_ptr.html" title="cpp/memory/auto ptr"><span class="t-lines"><span>auto_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-until-cxx17">(until C++17)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../owner_less.html" title="cpp/memory/owner less"><span class="t-lines"><span>owner_less</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../enable_shared_from_this.html" title="cpp/memory/enable shared from this"><span class="t-lines"><span>enable_shared_from_this</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../bad_weak_ptr.html" title="cpp/memory/bad weak ptr"><span class="t-lines"><span>bad_weak_ptr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../default_delete.html" title="cpp/memory/default delete"><span class="t-lines"><span>default_delete</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Allocators</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../allocator.html" title="cpp/memory/allocator"><span class="t-lines"><span>allocator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../allocator_traits.html" title="cpp/memory/allocator traits"><span class="t-lines"><span>allocator_traits</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../allocator_arg_t.html" title="cpp/memory/allocator arg t"><span class="t-lines"><span>allocator_arg_t</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../allocator_arg.html" title="cpp/memory/allocator arg"><span class="t-lines"><span>allocator_arg</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../uses_allocator.html" title="cpp/memory/uses allocator"><span class="t-lines"><span>uses_allocator</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../scoped_allocator_adaptor.html" title="cpp/memory/scoped allocator adaptor"><span class="t-lines"><span>scoped_allocator_adaptor</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Uninitialized storage</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../uninitialized_copy.html" title="cpp/memory/uninitialized copy"><span class="t-lines"><span>uninitialized_copy</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../uninitialized_copy_n.html" title="cpp/memory/uninitialized copy n"><span class="t-lines"><span>uninitialized_copy_n</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../uninitialized_fill.html" title="cpp/memory/uninitialized fill"><span class="t-lines"><span>uninitialized_fill</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../uninitialized_fill_n.html" title="cpp/memory/uninitialized fill n"><span class="t-lines"><span>uninitialized_fill_n</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../raw_storage_iterator.html" title="cpp/memory/raw storage iterator"><span class="t-lines"><span>raw_storage_iterator</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../get_temporary_buffer.html" title="cpp/memory/get temporary buffer"><span class="t-lines"><span>get_temporary_buffer</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../return_temporary_buffer.html" title="cpp/memory/return temporary buffer"><span class="t-lines"><span>return_temporary_buffer</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Garbage collection support</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../gc/declare_reachable.html" title="cpp/memory/gc/declare reachable"><span class="t-lines"><span>declare_reachable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../gc/undeclare_reachable.html" title="cpp/memory/gc/undeclare reachable"><span class="t-lines"><span>undeclare_reachable</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../gc/declare_no_pointers.html" title="cpp/memory/gc/declare no pointers"><span class="t-lines"><span>declare_no_pointers</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../gc/undeclare_no_pointers.html" title="cpp/memory/gc/undeclare no pointers"><span class="t-lines"><span>undeclare_no_pointers</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../gc/pointer_safety.html" title="cpp/memory/gc/pointer safety"><span class="t-lines"><span>pointer_safety</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../gc/get_pointer_safety.html" title="cpp/memory/gc/get pointer safety"><span class="t-lines"><span>get_pointer_safety</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Miscellaneous</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../pointer_traits.html" title="cpp/memory/pointer traits"><span class="t-lines"><span>pointer_traits</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../addressof.html" title="cpp/memory/addressof"><span class="t-lines"><span>addressof</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="../align.html" title="cpp/memory/align"><span class="t-lines"><span>align</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> <a href="../c.html" title="cpp/memory/c">C Library</a>
+</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../c/malloc.html" title="cpp/memory/c/malloc"><span class="t-lines"><span>malloc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../c/calloc.html" title="cpp/memory/c/calloc"><span class="t-lines"><span>calloc</span></span></a></div></div></td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../c/realloc.html" title="cpp/memory/c/realloc"><span class="t-lines"><span>realloc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="../c/free.html" title="cpp/memory/c/free"><span class="t-lines"><span>free</span></span></a></div></div></td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> <a href="../new.1.html" title="cpp/memory/new">Low level memory management</a>
+</td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../new.1.html" title="cpp/memory/new"> Low level memory management</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Functions</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="operator_new.html" title="cpp/memory/new/operator new"><span class="t-lines"><span>operator new</span><span>operator new[]</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><strong class="selflink"><span class="t-lines"><span>operator delete</span><span>operator delete[]</span></span></strong></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="get_new_handler.html" title="cpp/memory/new/get new handler"><span class="t-lines"><span>get_new_handler</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="set_new_handler.html" title="cpp/memory/new/set new handler"><span class="t-lines"><span>set_new_handler</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Classes</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="bad_alloc.html" title="cpp/memory/new/bad alloc"><span class="t-lines"><span>bad_alloc</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="bad_array_new_length.html" title="cpp/memory/new/bad array new length"><span class="t-lines"><span>bad_array_new_length</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="nothrow_t.html" title="cpp/memory/new/nothrow t"><span class="t-lines"><span>nothrow_t</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Types</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="new_handler.html" title="cpp/memory/new/new handler"><span class="t-lines"><span>new_handler</span></span></a></div></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Objects</td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="nothrow.html" title="cpp/memory/new/nothrow"><span class="t-lines"><span>nothrow</span></span></a></div></div></td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<table class="t-dcl-begin"><tbody>
+<tr class="t-dsc-header">
+<td> <div>Defined in header <code><a href="../../header/new.html" title="cpp/header/new">&lt;new&gt;</a></code>
+ </div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl-h">
+<td> <div>replaceable deallocation functions</div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete  <span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (1) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (2) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete  <span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, <span class="kw4">const</span> <a href="nothrow_t.html"><span class="kw563">std::<span class="me2">nothrow_t</span></span></a><span class="sy3">&amp;</span> tag <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (3) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, <span class="kw4">const</span> <a href="nothrow_t.html"><span class="kw563">std::<span class="me2">nothrow_t</span></span></a><span class="sy3">&amp;</span> tag <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (4) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete  <span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (5) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (6) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14 t-until-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete  <span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz,<br>
+                        <span class="kw4">const</span> <a href="nothrow_t.html"><span class="kw563">std::<span class="me2">nothrow_t</span></span></a><span class="sy3">&amp;</span> tag <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (7) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> <br><span class="t-mark-rev t-until-cxx17">(until C++17)</span> </td>
+</tr>
+<tr class="t-dcl t-since-cxx14 t-until-cxx17">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz,<br>
+                        <span class="kw4">const</span> <a href="nothrow_t.html"><span class="kw563">std::<span class="me2">nothrow_t</span></span></a><span class="sy3">&amp;</span> tag <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (8) </td>
+<td> <span class="t-mark-rev t-since-cxx14">(since C++14)</span> <br><span class="t-mark-rev t-until-cxx17">(until C++17)</span> </td>
+</tr>
+<tr class="t-dcl-h">
+<td> <div>placement deallocation functions</div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete  <span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, <span class="kw4">void</span><span class="sy2">*</span> place <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (9) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, <span class="kw4">void</span><span class="sy2">*</span> place <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (10) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete  <span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, user<span class="sy2">-</span>defined<span class="sy2">-</span>args... <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (11) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> operator delete<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, user<span class="sy2">-</span>defined<span class="sy2">-</span>args... <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (12) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-h">
+<td> <div>class-specific deallocation functions</div>
+</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> T<span class="sy4">::</span><span class="me2">operator</span> delete  <span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (13) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> T<span class="sy4">::</span><span class="me2">operator</span> delete<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (14) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> T<span class="sy4">::</span><span class="me2">operator</span> delete  <span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (15) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> T<span class="sy4">::</span><span class="me2">operator</span> delete<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (16) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> T<span class="sy4">::</span><span class="me2">operator</span> delete  <span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, user<span class="sy2">-</span>defined<span class="sy2">-</span>args... <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (17) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl">
+<td> <div><span class="mw-geshi cpp source-cpp"><span class="kw4">void</span> T<span class="sy4">::</span><span class="me2">operator</span> delete<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span> <span class="kw4">void</span><span class="sy2">*</span> ptr, user<span class="sy2">-</span>defined<span class="sy2">-</span>args... <span class="br0">)</span><span class="sy4">;</span></span></div>
+</td>
+<td> (18) </td>
+<td class="t-dcl-nopad">  </td>
+</tr>
+<tr class="t-dcl-sep">
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>Deallocates storage previously allocated by a matching <span class="t-lc"><a href="operator_new.html" title="cpp/memory/new/operator new">operator new</a></span>. These deallocation functions are called by <a href="../../language/delete.html" title="cpp/language/delete">delete-expressions</a> and by  <a href="../../language/new.html" title="cpp/language/new">new-expressions</a> to deallocate memory after destructing (or failing to construct) objects with dynamic storage duration. They may also be called using regular function call syntax.
+</p>
+<div class="t-li1">
+<span class="t-li">1)</span> Called by <a href="../../language/delete.html" title="cpp/language/delete">delete-expressions</a> to deallocate storage previously allocated for a single object. The behavior of the standard library implementation of this function is undefined unless <code>ptr</code> is a null pointer or is a pointer previously obtained from the standard library implementation of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="operator_new.html"><span class="kw556">operator new</span></a><span class="br0">(</span>size_t<span class="br0">)</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="operator_new.html"><span class="kw556">operator new</span></a><span class="br0">(</span>size_t, <a href="nothrow_t.html"><span class="kw563">std::<span class="me2">nothrow_t</span></span></a><span class="br0">)</span></span></span>.</div>
+<div class="t-li1">
+<span class="t-li">2)</span> Called by <a href="../../language/delete.html" title="cpp/language/delete">delete[]-expressions</a> to deallocate storage previously allocated for an array of objects. The behavior of the standard library implementation of this function is undefined unless <code>ptr</code> is a null pointer or is a pointer previously obtained from the standard library implementation of <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="operator_new.html"><span class="kw556">operator new</span></a><span class="br0">[</span><span class="br0">]</span><span class="br0">(</span>size_t<span class="br0">)</span></span></span> or <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="operator_new.html"><span class="kw556">operator new</span></a><span class="br0">[</span><span class="br0">]</span><span class="br0">(</span>size_t, <a href="nothrow_t.html"><span class="kw563">std::<span class="me2">nothrow_t</span></span></a><span class="br0">)</span></span></span>.</div>
+<div class="t-li1">
+<span class="t-li">3)</span> Called by the non-throwing single-object <a href="../../language/new.html" title="cpp/language/new">new-expressions</a> if a constructor of the object throws an exception. The standard library implementation behaves the same as <span class="t-v">(1)</span>
+</div>
+<div class="t-li1">
+<span class="t-li">4)</span> Called by the non-throwing array <a href="../../language/new.html" title="cpp/language/new">new[]-expressions</a> if a constructor of any object throws an exception (after executing the destructors of all objects in the array that were successfully constructed). The standard library implementation behaves the same as <span class="t-v">(2)</span>
+</div>
+<div class="t-li1">
+<span class="t-li">5-8)</span> Called instead of <span class="t-v">(1-4)</span> if a user-defined replacement is provided <span class="t-rev-inl t-since-cxx17"><span>except that it's implementation-defined whether <span class="t-v">(1-4)</span> or <span class="t-v">(5-8)</span> is called when deleting objects of incomplete type and arrays of non-class and trivially-destructible class types</span> <span><span class="t-mark-rev t-since-cxx17">(since C++17)</span></span></span>. The standard library implementations are identical to (1-4).</div>
+<div class="t-li1">
+<span class="t-li">9)</span> Called by the standard single-object <a href="../../language/new.html" title="cpp/language/new">placement new</a> expression if the object's constructor throws an exception. The standard library implementation of this function does nothing.</div>
+<div class="t-li1">
+<span class="t-li">10)</span> Called by the standard array form of the <a href="../../language/new.html" title="cpp/language/new">placement new</a> expression if any of the objects' constructors throws an exception (after executing the destructors of all objects that were constructed successfully). The standard library implementation of this function does nothing. </div>
+<div class="t-li1">
+<span class="t-li">11)</span> If defined, called by the custom single-object <a href="../../language/new.html" title="cpp/language/new">placement new</a> expression with the matching signature if the object's constructor throws an exception. If a class-specific version <span class="t-v">(16)</span> is defined, it is called in preference to <span class="t-v">(11)</span>. If neither <span class="t-v">(16)</span> nor <span class="t-v">(11)</span> is provided by the user, no deallocation function is called.</div>
+<div class="t-li1">
+<span class="t-li">12)</span> If defined, called by the custom array form of <a href="../../language/new.html" title="cpp/language/new">placement new[] </a> expression with the matching signature if any of the objects' constructors throws an exception (after executing the destructors for all objects that were constructed successfully). If a class-specific version <span class="t-v">(17)</span> is defined, it is called in preference to <span class="t-v">(12)</span>. If neither <span class="t-v">(17)</span> nor <span class="t-v">(12)</span> is provided by the user, no deallocation function is called</div>
+<div class="t-li1">
+<span class="t-li">13)</span> If defined, called by the usual single-object <a href="../../language/delete.html" title="cpp/language/delete">delete-expressions</a> if deallocating an object of type T.</div>
+<div class="t-li1">
+<span class="t-li">14)</span> If defined, called by the usual array <a href="../../language/delete.html" title="cpp/language/delete">delete[]-expressions</a> if deallocating an array of objects of type T.</div>
+<div class="t-li1">
+<span class="t-li">15)</span> If defined, and if <span class="t-v">(13)</span> is not defined, called by the usual single-object <a href="../../language/delete.html" title="cpp/language/delete">delete-expressions</a> if deallocating an object of type T.</div>
+<div class="t-li1">
+<span class="t-li">16)</span> If defined, and if <span class="t-v">(14)</span> is not defined, called by the usual array <a href="../../language/delete.html" title="cpp/language/delete">delete[]-expressions</a> if deallocating an array of objects of type T.</div>
+<div class="t-li1">
+<span class="t-li">17)</span> If defined, called by the custom single-object <a href="../../language/new.html" title="cpp/language/new">placement new</a> expression with the matching signature if the object's constructor throws an exception. If this function is not provided, and a matching <span class="t-v">(11)</span> is not provided either, no deallocation function is called.</div>
+<div class="t-li1">
+<span class="t-li">18)</span> If defined, called by the custom array form of <a href="../../language/new.html" title="cpp/language/new">placement new[] </a> expression with the matching signature if any of the objects' constructors throws an exception (after executing the destructors for all objects that were constructed successfully). If this function is not provided, and a matching <span class="t-v">(12)</span> is not provided either, no deallocation function is called.</div>
+<p>In all cases, if <code>ptr</code> is a null pointer, the standard library deallocation functions do nothing. If the pointer passed to the standard library deallocation function was not obtained from the corresponding standard library allocation function, the behavior is undefined.
+</p>
+<p>After the standard library deallocation function returns, all pointers referring to any part of the deallocated storage become invalid.
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx14">
+<td>
+<p>Any use of a pointer that became invalid in this manner, even copying the pointer value into another variable, is undefined behavior.
+</p>
+</td>
+<td><span class="t-mark-rev t-until-cxx14">(until C++14)</span></td>
+</tr>
+<tr class="t-rev t-since-cxx14">
+<td>
+<p>Indirection through a pointer that became invalid in this manner and passing it to a deallocation function (double-delete) is undefined behavior. Any other use is implementation-defined.
+</p>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td>
+</tr>
+</table>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="operator_delete.html#Parameters"><span class="tocnumber">1</span> <span class="toctext">Parameters</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="operator_delete.html#Return_value"><span class="tocnumber">2</span> <span class="toctext">Return value</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="operator_delete.html#Exceptions"><span class="tocnumber">3</span> <span class="toctext">Exceptions</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="operator_delete.html#Global_replacements"><span class="tocnumber">4</span> <span class="toctext">Global replacements</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="operator_delete.html#Class-specific_overloads"><span class="tocnumber">5</span> <span class="toctext">Class-specific overloads</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="operator_delete.html#Notes"><span class="tocnumber">6</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="operator_delete.html#See_also"><span class="tocnumber">7</span> <span class="toctext">See also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Parameters">edit</a>]</span> <span class="mw-headline" id="Parameters">Parameters</span>
+</h3>
+<table class="t-par-begin">
+
+
+<tr class="t-par">
+<td>  ptr
+</td>
+<td> -
+</td>
+<td>  pointer to a memory area to deallocate or a null pointer
+</td>
+</tr>
+<tr class="t-par">
+<td>  sz
+</td>
+<td> -
+</td>
+<td>  the size that was passed to the matching allocation function
+</td>
+</tr>
+<tr class="t-par">
+<td>  place
+</td>
+<td> -
+</td>
+<td>  pointer used as the placement parameter in the matching placement new
+</td>
+</tr>
+<tr class="t-par">
+<td>  tag
+</td>
+<td> -
+</td>
+<td>  overload disambiguation tag matching the tag used by non-throwing operator new
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Return value">edit</a>]</span> <span class="mw-headline" id="Return_value">Return value</span>
+</h3>
+<p>(none)
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Exceptions">edit</a>]</span> <span class="mw-headline" id="Exceptions">Exceptions</span>
+</h3>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx11">
+<td> (none)</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td>
+</tr>
+<tr class="t-rev t-since-cxx11">
+<td> <div class="t-noexcept-inline">
+<a href="../../language/noexcept_spec.html" title="cpp/language/noexcept spec"><tt>noexcept</tt></a> specification:  <div class="t-noexcept-box"><span class="t-cc"><span class="mw-geshi cpp source-cpp"><span class="kw1">noexcept</span></span></span></div>  </div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Global replacements">edit</a>]</span> <span class="mw-headline" id="Global_replacements">Global replacements</span>
+</h3>
+<p>The versions <span class="t-v">(1-8)</span> are implicitly declared in each translation unit even if the <code>&lt;new&gt;</code> header is not included. These functions are <i>replaceable</i>: a user-provided non-member function with the same signature defined anywhere in the program, in any source file, replaces the corresponding implicit version for the entire program. Its declaration does not need to be visible. 
+</p>
+<p>The behavior is undefined if more than one replacement is provided in the program or if a replacement is defined with the <code>inline</code> specifier, the program is ill-formed if a replacement is defined in namespace other than global namespace, or if it is defined as a static non-member function at global scope. 
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+The single-object version <span class="t-v">(1)</span> is called by the standard library implementations of all other versions <span class="t-v">(2-8)</span>, so replacing that one function is sufficient to handle all deallocations.</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;cstdio&gt;</span>
+<span class="co2">#include &lt;cstdlib&gt;</span>
+<span class="co1">// replacement of a minimal set of functions:</span>
+<span class="kw4">void</span><span class="sy2">*</span> <a href="operator_new.html"><span class="kw556">operator new</span></a><span class="br0">(</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz<span class="br0">)</span> <span class="br0">{</span>
+    <a href="../../io/c/printf.html"><span class="kw1531">std::<span class="me2">printf</span></span></a><span class="br0">(</span><span class="st0">"global op new called, size = %zu<span class="es1">\n</span>"</span>,sz<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">return</span> <a href="../c/malloc.html"><span class="kw605">std::<span class="me2">malloc</span></span></a><span class="br0">(</span>sz<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">void</span> operator delete<span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span> ptr<span class="br0">)</span> <span class="kw1">noexcept</span>
+<span class="br0">{</span>
+    <a href="../../io/c/puts.html"><span class="kw1516">std::<span class="me2">puts</span></span></a><span class="br0">(</span><span class="st0">"global op delete called"</span><span class="br0">)</span><span class="sy4">;</span>
+    <a href="../c/free.html"><span class="kw608">std::<span class="me2">free</span></span></a><span class="br0">(</span>ptr<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+     <span class="kw4">int</span><span class="sy2">*</span> p1 <span class="sy1">=</span> new <span class="kw4">int</span><span class="sy4">;</span>
+     delete p1<span class="sy4">;</span>
+ 
+     <span class="kw4">int</span><span class="sy2">*</span> p2 <span class="sy1">=</span> new <span class="kw4">int</span><span class="br0">[</span><span class="nu0">10</span><span class="br0">]</span><span class="sy4">;</span> <span class="co1">// guaranteed to call the replacement in C++11</span>
+     delete<span class="br0">[</span><span class="br0">]</span> p2<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Possible output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">global op new called, size = 4
+global op delete called
+global op new called, size = 40
+global op delete called</pre></div></div> 
+</div>
+<p>Overloads of <code>operator delete</code> and <code>operator delete[]</code> with additional user-defined parameters ("placement forms", <span class="t-v">(11,12)</span>) may be declared at global scope as usual, and are called by the matching placement forms of <i>new-expressions</i> if a constructor of the object that is being allocated throws an exception.
+</p>
+<p>The standard library placement forms of operator delete <span class="t-v">(9,10)</span> cannot be replaced and can only be customized if the placement new-expression did not use the <code>::new</code> syntax, by providing a class-specific placement delete <span class="t-v">(17,18)</span> with matching signature: <code>void T::operator delete(void*, void*)</code> or <code>void T::operator delete[](void*, void*)</code>.
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+All deallocation functions are <code>noexcept(true)</code> unless specified otherwise in the declaration.</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class-specific overloads">edit</a>]</span> <span class="mw-headline" id="Class-specific_overloads">Class-specific overloads</span>
+</h3>
+<p>Deallocation functions <span class="t-v">(13-16)</span> may be defined as static member functions of a class. These deallocation functions, if provided, are called by <a href="../../language/delete.html" title="cpp/language/delete">delete-expressions</a> when deleting objects (versions <span class="t-v">(13)</span> and <span class="t-v">(15)</span>) and arrays (versions <span class="t-v">(14)</span> and <span class="t-v">(17)</span>) of this class, unless the delete expression used the form <code>::delete</code> which bypasses class-scope lookup. The keyword <code>static</code> is optional for these function declarations: whether the keyword is used or not, the deallocation function is always a static member function.
+</p>
+<p>The delete expression looks for appropriate deallocation function's name first in the class scope (array form looks in the scope of the array element class), and after that in the global scope. Note, that as per <a href="../../language/lookup.html" title="cpp/language/lookup">name lookup rules</a>, any deallocation functions declared in class scope hides all global deallocation functions.
+</p>
+<p>If the static type of the object that is being deleted differs from its dynamic type (such as when deleting a <a href="../../language/objects.html" title="cpp/language/object">polymorphic</a> object through a pointer to base), and if the destructor in the static type is virtual, the single object form of delete begins lookup of the deallocation function's name starting from the point of definition of the final overrider of its virtual destructor. Regardless of which deallocation function would be executed at run time, the statically visible version of operator delete must be accessible in order to compile. In other cases, when deleting an array through a pointer to base, or when deleting through pointer to base with non-virtual destructor, the behavior is undefined.
+</p>
+<p>If the single-argument overload <span class="t-v">(13,14)</span> is not provided, but the two-argument overload taking <code>std::size_t</code> as the second parameter <span class="t-v">(15,16)</span> is provided, the two-argument form is called for normal deallocation, and the C++ runtime passes the size of the object to be deallocated as the second argument. If both forms are defined, the single-argument version is called.
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co1">// sized class-specific deallocation functions</span>
+<span class="kw1">struct</span> X <span class="br0">{</span>
+    <span class="kw4">static</span> <span class="kw4">void</span> operator delete<span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz<span class="br0">)</span>
+    <span class="br0">{</span>
+        <a href="../../io/cout.html"><span class="kw1445">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"custom delete for size "</span> <span class="sy1">&lt;&lt;</span> sz <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <span class="sy4">::</span><span class="me2">operator</span> delete<span class="br0">(</span>ptr<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="kw4">static</span> <span class="kw4">void</span> operator delete<span class="br0">[</span><span class="br0">]</span><span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span> ptr, <a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz<span class="br0">)</span>
+    <span class="br0">{</span>
+        <a href="../../io/cout.html"><span class="kw1445">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"custom delete for size "</span> <span class="sy1">&lt;&lt;</span> sz <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <span class="sy4">::</span><span class="me2">operator</span> delete<span class="br0">(</span>ptr<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+     X<span class="sy2">*</span> p1 <span class="sy1">=</span> new X<span class="sy4">;</span>
+     delete p1<span class="sy4">;</span>
+     X<span class="sy2">*</span> p2 <span class="sy1">=</span> new X<span class="br0">[</span><span class="nu0">10</span><span class="br0">]</span><span class="sy4">;</span>
+     delete<span class="br0">[</span><span class="br0">]</span> p2<span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Possible output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">custom delete for size 1
+custom delete for size 18</pre></div></div> 
+</div>
+<p>Overloads of <code>operator delete</code> and <code>operator delete[]</code> with additional user-defined parameters ("placement forms", <span class="t-v">(17,18)</span>) may also be defined as class members. When the placement new expression with the matching signature looks for the corresponding placement delete function to call, it begins at class scope before examining the global scope, and if the class-specific placement delete is provided, it is called.
+</p>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;stdexcept&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="kw1">struct</span> X <span class="br0">{</span>
+    X<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">throw</span> <a href="../../error/runtime_error/runtime_error.html"><span class="kw615">std::<span class="me2">runtime_error</span></span></a><span class="br0">(</span><span class="st0">""</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>
+    <span class="co1">// custom placement new</span>
+    <span class="kw4">static</span> <span class="kw4">void</span><span class="sy2">*</span> <a href="operator_new.html"><span class="kw556">operator new</span></a><span class="br0">(</span><a href="../../types/size_t.html"><span class="kw100">std::<span class="me2">size_t</span></span></a> sz, <span class="kw4">bool</span> b<span class="br0">)</span> <span class="br0">{</span>
+        <a href="../../io/cout.html"><span class="kw1445">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"custom placement new called, b = "</span> <span class="sy1">&lt;&lt;</span> b <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <span class="kw1">return</span> <span class="sy4">::</span><a href="operator_new.html"><span class="kw556">operator new</span></a><span class="br0">(</span>sz<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+    <span class="co1">// custom placement delete</span>
+    <span class="kw4">static</span> <span class="kw4">void</span> operator delete<span class="br0">(</span><span class="kw4">void</span><span class="sy2">*</span> ptr, <span class="kw4">bool</span> b<span class="br0">)</span>
+    <span class="br0">{</span>
+        <a href="../../io/cout.html"><span class="kw1445">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"custom placement delete called, b = "</span> <span class="sy1">&lt;&lt;</span> b <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+        <span class="sy4">::</span><span class="me2">operator</span> delete<span class="br0">(</span>ptr<span class="br0">)</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span>
+   <span class="kw1">try</span> <span class="br0">{</span>
+     X<span class="sy2">*</span> p1 <span class="sy1">=</span> new <span class="br0">(</span><span class="kw2">true</span><span class="br0">)</span> X<span class="sy4">;</span>
+   <span class="br0">}</span> <span class="kw1">catch</span><span class="br0">(</span><span class="kw4">const</span> <a href="../../error/exception.html"><span class="kw609">std::<span class="me2">exception</span></span></a><span class="sy3">&amp;</span><span class="br0">)</span> <span class="br0">{</span> <span class="br0">}</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">custom placement new called, b = 1
+custom placement delete called, b = 1</pre></div></div> 
+</div>
+<p>If class-level <code>operator delete</code> is a template function, it must have the return type of <code>void</code>, the first argument <code>void*</code>, and it must have two or more parameters. In other words, only placement forms can be templates. The specialization of the template operator delete is chosen with <a href="../../language/template_argument_deduction.html" title="cpp/language/template argument deduction">template argument deduction</a>.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span>
+</h3>
+<p>The call to the class-specific <code>T::operator delete</code> on a polymorphic class is the only case where a static member function is called through dynamic dispatch.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See also">edit</a>]</span> <span class="mw-headline" id="See_also">See also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="operator_new.html" title="cpp/memory/new/operator new"> <span class="t-lines"><span>operator new</span><span>operator new[]</span></span></a></div></div>
+</td>
+<td>   allocation functions  <br> <span class="t-mark">(function)</span> 
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../return_temporary_buffer.html" title="cpp/memory/return temporary buffer"> <span class="t-lines"><span>return_temporary_buffer</span></span></a></div></div>
+</td>
+<td>   releases uninitialized storage  <br> <span class="t-mark">(function)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div"><div><a href="../c/free.html" title="cpp/memory/c/free"> <span class="t-lines"><span>free</span></span></a></div></div>
+</td>
+<td>   deallocates memory <br> <span class="t-mark">(function)</span>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 7679/1000000
+Preprocessor generated node count: 10516/1000000
+Post‐expand include size: 169522/2097152 bytes
+Template argument size: 37864/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:1330-0!*!0!!en!*!* and timestamp 20150524150406 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/memory/new/operator_delete&amp;oldid=78527</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/mwiki/index.php" class="new" title="Category:unconditionally noexcept (page does not exist)">unconditionally noexcept</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.085 secs. -->
+	</body>
+<!-- Cached 20150524160638 -->
+</html>

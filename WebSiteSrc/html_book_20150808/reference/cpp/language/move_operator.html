@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Move assignment operator - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/move_operator","wgTitle":"cpp/language/move operator","wgCurRevisionId":78487,"wgArticleId":9134,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/move_operator","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_move_operator skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Move assignment operator</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="classes.html" title="cpp/language/classes"> Classes</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> General </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="classes.html" title="cpp/language/classes"> overview</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class/struct types</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union types</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Members </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html" title="cpp/language/data members">data members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static.html" title="cpp/language/static">static members</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="this.html" title="cpp/language/this">the <code>this</code> pointer</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="nested_classes.html" title="cpp/language/nested classes" class="mw-redirect">nested classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_template.html" title="cpp/language/member template">member templates</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bit_field.html" title="cpp/language/bit field">bit fields</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration">using-declarations</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="member_functions.html" title="cpp/language/member functions">member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="access.html" title="cpp/language/access">member access specifiers</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="constructor.html" title="cpp/language/initializer list">constructors and member initializer lists</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="data_members.html#Member_initialization" title="cpp/language/data members">in-class <i>brace-or-equal</i> initializer</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="friend.html" title="cpp/language/friend"><code>friend</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"><code>explicit</code> specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="converting_constructor.html" title="cpp/language/converting constructor">converting constructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Special member functions </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="default_constructor.html" title="cpp/language/default constructor">default constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="copy_constructor.html" title="cpp/language/copy constructor">copy constructor</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="move_constructor.html" title="cpp/language/move constructor">move constructor</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="as_operator.html" title="cpp/language/as operator">copy assignment operator</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink">move assignment operator</strong><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="destructor.html" title="cpp/language/destructor">destructor</a>
+</td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Inheritance </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="derived_class.html" title="cpp/language/derived class">base and derived classes</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual">virtual member functions</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="override.html" title="cpp/language/override">override</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="final.html" title="cpp/language/final">final</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="abstract_class.html" title="cpp/language/abstract class">pure virtual functions and abstract classes</a>
+</td></tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>A move assignment operator of class <code>T</code> is a non-template non-static member function with the name <span class="t-c"><span class="mw-geshi cpp source-cpp">operator<span class="sy1">=</span></span></span> that takes exactly one parameter of type <span class="t-c"><span class="mw-geshi cpp source-cpp">T<span class="sy3">&amp;&amp;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> T<span class="sy3">&amp;&amp;</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">volatile</span> T<span class="sy3">&amp;&amp;</span></span></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span> <span class="kw4">volatile</span> T<span class="sy3">&amp;&amp;</span></span></span>. A type with a public move assignment operator is <a href="../concept/MoveAssignable.html" title="cpp/concept/MoveAssignable"><code>MoveAssignable</code></a>.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="move_operator.html#Syntax"><span class="tocnumber">1</span> <span class="toctext">Syntax</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="move_operator.html#Explanation"><span class="tocnumber">2</span> <span class="toctext">Explanation</span></a></li>
+<li class="toclevel-1 tocsection-3"><a href="move_operator.html#Implicitly-declared_move_assignment_operator"><span class="tocnumber">3</span> <span class="toctext">Implicitly-declared move assignment operator</span></a></li>
+<li class="toclevel-1 tocsection-4"><a href="move_operator.html#Deleted_implicitly-declared_move_assignment_operator"><span class="tocnumber">4</span> <span class="toctext">Deleted implicitly-declared move assignment operator</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="move_operator.html#Trivial_move_assignment_operator"><span class="tocnumber">5</span> <span class="toctext">Trivial move assignment operator</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="move_operator.html#Implicitly-defined_move_assignment_operator"><span class="tocnumber">6</span> <span class="toctext">Implicitly-defined move assignment operator</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="move_operator.html#Notes"><span class="tocnumber">7</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="move_operator.html#Example"><span class="tocnumber">8</span> <span class="toctext">Example</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Syntax">edit</a>]</span> <span class="mw-headline" id="Syntax">Syntax</span>
+</h3>
+<table class="t-sdsc-begin">
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">class_name</span> <code><b>&amp;</b></code> <span class="t-spar">class_name</span> <code><b>:: operator=</b></code> ( <span class="t-spar">class_name</span> <code>&amp;&amp;</code> )
+</td>
+<td> (1)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+</tr>
+
+ 
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">class_name</span> <code><b>&amp;</b></code> <span class="t-spar">class_name</span> <code><b>:: operator=</b></code> ( <span class="t-spar">class_name</span> <code>&amp;&amp;</code> ) = <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">default</span><span class="sy4">;</span></span></span>
+</td>
+<td> (2)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+<tr class="t-sdsc">
+<td> <span class="t-spar">class_name</span> <code><b>&amp;</b></code> <span class="t-spar">class_name</span> <code><b>:: operator=</b></code> ( <span class="t-spar">class_name</span> <code>&amp;&amp;</code> ) = <span class="t-c"><span class="mw-geshi cpp source-cpp">delete<span class="sy4">;</span></span></span>
+</td>
+<td> (3)
+</td>
+<td> <span class="t-mark-rev t-since-cxx11">(since C++11)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="10" class="t-sdsc-sep">
+</td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+<ol>
+<li> Typical declaration of a move assignment operator
+</li>
+<li> Forcing a move assignment operator to be generated by the compiler
+</li>
+<li> Avoiding implicit move assignment
+</li>
+</ol>
+<p>The move assignment operator is called whenever it is selected by <a href="overload_resolution.html" title="cpp/language/overload resolution">overload resolution</a>, e.g. when an object appears on the left side of an assignment expression, where the right-hand side is an rvalue of the same or implicitly convertible type.
+</p>
+<p>Move assignment operators typically "steal" the resources held by the argument (e.g. pointers to dynamically-allocated objects, file descriptors, TCP sockets, I/O streams, running threads, etc), rather than make copies of them, and leave the argument in some valid but otherwise indeterminate state. For example, move-assigning from a <span class="t-lc"><a href="../string/basic_string.html" title="cpp/string/basic string">std::string</a></span> or from a <span class="t-lc"><a href="../container/vector.html" title="cpp/container/vector">std::vector</a></span> leaves the right-hand side argument empty.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Implicitly-declared move assignment operator">edit</a>]</span> <span class="mw-headline" id="Implicitly-declared_move_assignment_operator">Implicitly-declared move assignment operator</span>
+</h3>
+<p>If no user-defined move assignment operators are provided for a class type (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span></span></span>, <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span></span></span>, or <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">union</span></span></span>), and all of the following is true:
+</p>
+<ul>
+<li> there are no user-declared copy constructors
+</li>
+<li> there are no user-declared move constructors
+</li>
+<li> there are no user-declared copy assignment operators
+</li>
+<li> there are no user-declared destructors
+</li>
+<li> <span class="t-mark-rev t-until-cxx14">(until C++14)</span> the implicitly-declared move assignment operator would not be defined as deleted
+</li>
+</ul>
+<p>then the compiler will declare a move assignment operator as an <code>inline public</code> member of its class with the signature <code>T&amp; T::operator=(T&amp;&amp;)</code>. 
+</p>
+<p>A class can have multiple move assignment operators, e.g. both <span class="t-c"><span class="mw-geshi cpp source-cpp">T<span class="sy3">&amp;</span> T<span class="sy4">::</span><span class="me2">operator</span><span class="sy1">=</span><span class="br0">(</span><span class="kw4">const</span> T<span class="sy3">&amp;&amp;</span><span class="br0">)</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp">T<span class="sy3">&amp;</span> T<span class="sy4">::</span><span class="me2">operator</span><span class="sy1">=</span><span class="br0">(</span>T<span class="sy3">&amp;&amp;</span><span class="br0">)</span></span></span>. If some user-defined move assignment operators are present, the user may still force the generation of the implicitly declared move assignment operator with the keyword <code>default</code>.
+</p>
+<p>Because some assignment operator (move or copy) is always declared for any class, the base class assignment operator is always hidden. If a using-declaration is used to bring in the assignment operator from the base class, and its argument type could be the same as the argument type of the implicit assignment operator of the derived class, the using-declaration is also hidden by the implicit declaration.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Deleted implicitly-declared move assignment operator">edit</a>]</span> <span class="mw-headline" id="Deleted_implicitly-declared_move_assignment_operator">Deleted implicitly-declared move assignment operator</span>
+</h3>
+<p>The implicitly-declared or defaulted move assignment operator for class <code>T</code> is defined as <i>deleted</i> in any of the following is true:
+</p>
+<ul>
+<li> <code>T</code> has a non-static data member that is <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">const</span></span></span>
+</li>
+<li> <code>T</code> has a non-static data member of a reference type.
+</li>
+<li> <code>T</code> has a non-static data member that cannot be move-assigned (has deleted, inaccessible, or ambiguous move assignment operator)
+</li>
+<li> <code>T</code> has direct or virtual base class that cannot be move-assigned (has deleted, inaccessible, or ambiguous move assignment operator)
+</li>
+<li> <span class="t-mark-rev t-until-cxx14">(until C++14)</span> <code>T</code> has a non-static data member or a direct or virtual base without a move assignment operator that is not trivially copyable.
+</li>
+<li> <span class="t-mark-rev t-until-cxx14">(until C++14)</span> <code>T</code> has a direct or indirect virtual base class
+</li>
+</ul>
+<p><span class="t-mark-rev t-since-cxx14">(since C++14)</span> A deleted implicitly-declared move assignment operator is ignored by <a href="overload_resolution.html" title="cpp/language/overload resolution">overload resolution</a>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Trivial move assignment operator">edit</a>]</span> <span class="mw-headline" id="Trivial_move_assignment_operator">Trivial move assignment operator</span>
+</h3>
+<p>The move assignment operator for class <code>T</code> is trivial if all of the following is true:
+</p>
+<ul>
+<li> It is not user-provided (meaning, it is implicitly-defined or defaulted), and if it is defaulted, its signature is the same as implicitly-defined
+</li>
+<li> <code>T</code> has no virtual member functions
+</li>
+<li> <code>T</code> has no virtual base classes
+</li>
+<li> The move assignment operator selected for every direct base of <code>T</code> is trivial
+</li>
+<li> The move assignment operator selected for every non-static class type (or array of class type) member of <code>T</code> is trivial
+</li>
+</ul>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14">
+<td>
+<ul><li> <code>T</code> has no non-static data members of <a href="cv.html" title="cpp/language/cv">volatile</a>-qualified type
+</li></ul>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td>
+</tr>
+</table>
+<p>A trivial move assignment operator performs the same action as the trivial copy assignment operator, that is, makes a copy of the object representation as if by <span class="t-lc"><a href="../string/byte/memmove.html" title="cpp/string/byte/memmove">std::memmove</a></span>. All data types compatible with the C language (POD types) are trivially move-assignable.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Implicitly-defined move assignment operator">edit</a>]</span> <span class="mw-headline" id="Implicitly-defined_move_assignment_operator">Implicitly-defined move assignment operator</span>
+</h3>
+<p>If the implicitly-declared move assignment operator is neither deleted nor trivial, it is defined (that is, a function body is generated and compiled) by the compiler if <a href="definition.html#ODR-use" title="cpp/language/definition">odr-used</a>.
+</p>
+<p>For <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">union</span></span></span> types, the implicitly-defined move assignment operator copies the object representation (as by <span class="t-lc"><a href="../string/byte/memmove.html" title="cpp/string/byte/memmove">std::memmove</a></span>).
+</p>
+<p>For non-union class types (<span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">class</span></span></span> and <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw1">struct</span></span></span>), the move assignment operator performs full member-wise move assignment of the object's direct bases and immediate non-static members, in their declaration order, using built-in assignment for the scalars, memberwise move-assignment for arrays, and move assignment operator for class types (called non-virtually).
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx14">
+<td>
+<p>As with copy assignment, it is unspecified whether virtual base class subobjects that are accessible through more than one path in the inheritance lattice, are assigned more than once by the implicitly-defined move assignment operator:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">struct</span> V <span class="br0">{</span>
+    V<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span>V<span class="sy3">&amp;&amp;</span> other<span class="br0">)</span> <span class="br0">{</span>
+        <span class="co1">// this may be called once or twice. </span>
+        <span class="co1">// if called twice, 'other' is the just-moved-from V subobject</span>
+        <span class="kw1">return</span> <span class="sy2">*</span>this<span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">struct</span> A <span class="sy4">:</span> <span class="kw1">virtual</span> V <span class="br0">{</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// operator= calls V::operator=</span>
+<span class="kw1">struct</span> B <span class="sy4">:</span> <span class="kw1">virtual</span> V <span class="br0">{</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// operator= calls V::operator=</span>
+<span class="kw1">struct</span> C <span class="sy4">:</span> B, A <span class="br0">{</span> <span class="br0">}</span><span class="sy4">;</span> <span class="co1">// operator= calls B::operator=, then A::operator=</span>
+                     <span class="co1">// but they may only called V::operator= once</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+  C c1, c2<span class="sy4">;</span>
+  c2 <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw916">std::<span class="me2">move</span></span></a><span class="br0">(</span>c1<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+</td>
+<td><span class="t-mark-rev t-since-cxx14">(since C++14)</span></td>
+</tr>
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span>
+</h3>
+<p>If both copy and move assignment operators are provided, overload resolution selects the move assignment if the argument is an <a href="value_category.html" title="cpp/language/value category"><i>rvalue</i></a> (either <i>prvalue</i> such as a nameless temporary or <i>xvalue</i> such as the result of <span class="t-lc"><a href="../utility/move.html" title="cpp/utility/move">std::move</a></span>), and selects the copy assignment if the argument is <i>lvalue</i> (named object or a function/operator returning lvalue reference). If only the copy assignment is provided, all argument categories select it (as long as it takes its argument by value or as reference to const, since rvalues can bind to const references), which makes copy assignment the fallback for move assignment, when move is unavailable.
+</p>
+<p>The copy-and-swap assignment operator
+</p>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp">T<span class="sy3">&amp;</span> T<span class="sy4">::</span><span class="me2">operator</span><span class="sy1">=</span><span class="br0">(</span>T arg<span class="br0">)</span> <span class="br0">{</span><br>
+    swap<span class="br0">(</span>arg<span class="br0">)</span><span class="sy4">;</span><br>
+    <span class="kw1">return</span> <span class="sy2">*</span>this<span class="sy4">;</span><br>
+<span class="br0">}</span></span></span>
+</p>
+<p>performs an equivalent of move assignment for rvalue arguments at the cost of one additional call to the move constructor of T, which is often acceptable.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;utility&gt;</span>
+ 
+<span class="kw1">struct</span> A <span class="br0">{</span>
+    <a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a> s<span class="sy4">;</span>
+    A<span class="br0">(</span><span class="br0">)</span> <span class="sy4">:</span> s<span class="br0">(</span><span class="st0">"test"</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+    A<span class="br0">(</span><span class="kw4">const</span> A<span class="sy3">&amp;</span> o<span class="br0">)</span> <span class="sy4">:</span> s<span class="br0">(</span>o.<span class="me1">s</span><span class="br0">)</span> <span class="br0">{</span> <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"move failed!<span class="es1">\n</span>"</span><span class="sy4">;</span><span class="br0">}</span>
+    A<span class="br0">(</span>A<span class="sy3">&amp;&amp;</span> o<span class="br0">)</span> <span class="sy4">:</span> s<span class="br0">(</span><a href="../utility/move.html"><span class="kw916">std::<span class="me2">move</span></span></a><span class="br0">(</span>o.<span class="me1">s</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+    A<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span><span class="kw4">const</span> A<span class="sy3">&amp;</span> other<span class="br0">)</span> <span class="br0">{</span>
+         s <span class="sy1">=</span> other.<span class="me1">s</span><span class="sy4">;</span>
+         <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"copy assigned<span class="es1">\n</span>"</span><span class="sy4">;</span>
+         <span class="kw1">return</span> <span class="sy2">*</span>this<span class="sy4">;</span>
+    <span class="br0">}</span>
+    A<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span>A<span class="sy3">&amp;&amp;</span> other<span class="br0">)</span> <span class="br0">{</span>
+         s <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw916">std::<span class="me2">move</span></span></a><span class="br0">(</span>other.<span class="me1">s</span><span class="br0">)</span><span class="sy4">;</span>
+         <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"move assigned<span class="es1">\n</span>"</span><span class="sy4">;</span>
+         <span class="kw1">return</span> <span class="sy2">*</span>this<span class="sy4">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+A f<span class="br0">(</span>A a<span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> a<span class="sy4">;</span> <span class="br0">}</span>
+ 
+<span class="kw1">struct</span> B <span class="sy4">:</span> A <span class="br0">{</span>
+     <a href="../string/basic_string.html"><span class="kw1043">std::<span class="me2">string</span></span></a> s2<span class="sy4">;</span> 
+     <span class="kw4">int</span> n<span class="sy4">;</span>
+     <span class="co1">// implicit move assignment operator B&amp; B::operator=(B&amp;&amp;)</span>
+     <span class="co1">// calls A's move assignment operator</span>
+     <span class="co1">// calls s2's move assignment operator</span>
+     <span class="co1">// and makes a bitwise copy of n</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">struct</span> C <span class="sy4">:</span> B <span class="br0">{</span>
+    ~C<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// destructor prevents implicit move assignment</span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">struct</span> D <span class="sy4">:</span> B <span class="br0">{</span>
+    D<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span>
+    ~D<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span><span class="br0">}</span> <span class="co1">// destructor would prevent implicit move assignment</span>
+    D<span class="sy3">&amp;</span> operator<span class="sy1">=</span><span class="br0">(</span>D<span class="sy3">&amp;&amp;</span><span class="br0">)</span> <span class="sy1">=</span> <span class="kw1">default</span><span class="sy4">;</span> <span class="co1">// force a move assignment anyway </span>
+<span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    A a1, a2<span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Trying to move-assign A from rvalue temporary<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    a1 <span class="sy1">=</span> f<span class="br0">(</span>A<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span> <span class="co1">// move-assignment from rvalue temporary</span>
+    <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Trying to move-assign A from xvalue<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    a2 <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw916">std::<span class="me2">move</span></span></a><span class="br0">(</span>a1<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// move-assignment from xvalue</span>
+ 
+    <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Trying to move-assign B<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    B b1, b2<span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Before move, b1.s = <span class="es1">\"</span>"</span> <span class="sy1">&lt;&lt;</span> b1.<span class="me1">s</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"<span class="es1">\"</span><span class="es1">\n</span>"</span><span class="sy4">;</span>
+    b2 <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw916">std::<span class="me2">move</span></span></a><span class="br0">(</span>b1<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// calls implicit move assignment</span>
+    <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"After move, b1.s = <span class="es1">\"</span>"</span> <span class="sy1">&lt;&lt;</span> b1.<span class="me1">s</span> <span class="sy1">&lt;&lt;</span> <span class="st0">"<span class="es1">\"</span><span class="es1">\n</span>"</span><span class="sy4">;</span>
+ 
+    <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Trying to move-assign C<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    C c1, c2<span class="sy4">;</span>
+    c2 <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw916">std::<span class="me2">move</span></span></a><span class="br0">(</span>c1<span class="br0">)</span><span class="sy4">;</span> <span class="co1">// calls the copy assignment operator</span>
+ 
+    <a href="../io/cout.html"><span class="kw1447">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Trying to move-assign D<span class="es1">\n</span>"</span><span class="sy4">;</span>
+    D d1, d2<span class="sy4">;</span>
+    d2 <span class="sy1">=</span> <a href="../utility/move.html"><span class="kw916">std::<span class="me2">move</span></span></a><span class="br0">(</span>d1<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Trying to move-assign A from rvalue temporary
+move assigned
+Trying to move-assign A from xvalue
+move assigned
+Trying to move-assign B
+Before move, b1.s = "test"
+move assigned
+After move, b1.s = "" 
+Trying to move-assign C
+copy assigned
+Trying to move-assign D
+move assigned</pre></div></div> 
+</div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 1592/1000000
+Preprocessor generated node count: 4360/1000000
+Post‐expand include size: 42886/2097152 bytes
+Template argument size: 12715/2097152 bytes
+Highest expansion depth: 13/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9134-0!*!0!!en!*!* and timestamp 20150524094306 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/move_operator&amp;oldid=78487</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.081 secs. -->
+	</body>
+<!-- Cached 20150524094307 -->
+</html>

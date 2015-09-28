@@ -1,0 +1,586 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Storage class specifiers - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/language/storage_duration","wgTitle":"cpp/language/storage duration","wgCurRevisionId":79120,"wgArticleId":712,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Todo with reason"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/language/storage_duration","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+.source-text {line-height: normal;}
+.source-text li, .source-text pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for text
+ * CSS class: source-text, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.text.source-text .de1, .text.source-text .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.text.source-text  {font-family:monospace;}
+.text.source-text .imp {font-weight: bold; color: red;}
+.text.source-text li, .text.source-text .li1 {font-weight: normal; vertical-align:top;}
+.text.source-text .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.text.source-text .li2 {font-weight: bold; vertical-align:top;}
+.text.source-text .ln-xtra, .text.source-text li.ln-xtra, .text.source-text div.ln-xtra {background-color: #ffc;}
+.text.source-text span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_language_storage_duration skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">Storage class specifiers</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../language.1.html" title="cpp/language">language</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head"><a href="../language.1.html" title="cpp/language"> C++ language</a></div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="declarations.html" title="cpp/language/declarations"> Declarations</a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Overview </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> declaration syntax</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html#Specifiers" title="cpp/language/declarations"> decl-specifier-seq</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html#Declarators" title="cpp/language/declarations"> declarator</a> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Specifiers </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="typedef.html" title="cpp/language/typedef"><span class="t-lines"><span>typedef</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="inline.html" title="cpp/language/inline"> inline function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="virtual.html" title="cpp/language/virtual"> virtual function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="explicit.html" title="cpp/language/explicit"> explicit function specifier</a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="friend.html" title="cpp/language/friend"><span class="t-lines"><span>friend</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="constexpr.html" title="cpp/language/constexpr"><span class="t-lines"><span>constexpr</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"> storage class specifiers</strong> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class.html" title="cpp/language/class"> class </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="union.html" title="cpp/language/union"> union </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="enum.html" title="cpp/language/enum"> enum </a> </td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="decltype.html" title="cpp/language/decltype"><span class="t-lines"><span>decltype</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="auto.html" title="cpp/language/auto"><span class="t-lines"><span>auto</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table">
+<div><a href="alignas.html" title="cpp/language/alignas"><span class="t-lines"><span>alignas</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div></td></tr>
+<tr class="t-nv"><td colspan="5"><div class="t-nv-ln-table"><div><a href="cv.html" title="cpp/language/cv"><span class="t-lines"><span>const/volatile</span></span></a></div></div></td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="elaborated_type_specifier.html" title="cpp/language/elaborated type specifier"> elaborated type specifier</a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="attributes.html" title="cpp/language/attributes"> attributes </a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Declarators </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="reference.html" title="cpp/language/reference"> reference </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="pointer.html" title="cpp/language/pointer"> pointer </a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="array.html" title="cpp/language/array"> array </a> </td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h2"><td colspan="5"> Block declarations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> simple-declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="type_alias.html" title="cpp/language/type alias"> alias declaration</a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace_alias.html" title="cpp/language/namespace alias"> namespace alias definition </a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="using_declaration.html" title="cpp/language/using declaration"> using-declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace.html#Using-directives" title="cpp/language/namespace"> using-directive</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="static_assert.html" title="cpp/language/static assert"> static_assert declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="asm.html" title="cpp/language/asm"> asm-definition</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="enum.html" title="cpp/language/enum"> opaque enum declaration</a><span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv-h2"><td colspan="5"> Other declarations </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="namespace.html" title="cpp/language/namespace"> namespace definition</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function.html" title="cpp/language/function"> function declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html" title="cpp/language/class template"> class template declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="function_template.html" title="cpp/language/function template"> function template declaration</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="class_template.html#Explicit_instantiation" title="cpp/language/class template"> explicit template instantiation</a><span class="t-mark-rev t-since-cxx11">(C++11)</span>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="template_specialization.html" title="cpp/language/template specialization"> explicit template specialization</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="language_linkage.html" title="cpp/language/language linkage"> linkage specification</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> attribute declaration</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="declarations.html" title="cpp/language/declarations"> empty declaration</a> </td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>The storage class specifiers are a part of the <span class="t-spar">decl-specifier-seq</span> of a <a href="declarations.html" title="cpp/language/declarations">declaration syntax</a>. They control two independent properties of the names introduced by the declaration: their <i>storage duration</i> and their <i>linkage</i>. 
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx11">
+<td>
+<dl><dd>
+<ul><li>
+<code><b>auto</b></code> - <i>automatic</i> storage duration.
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td>
+</tr>
+</table>
+<dl><dd>
+<ul>
+<li>
+<code><b>register</b></code> - <i>automatic</i> storage duration. Also hints to the compiler to place the object in the processor's register. <span class="t-mark">(deprecated)</span>
+</li>
+<li>
+<code><b>static</b></code> - <i>static</i> or <i>thread</i> storage duration and <i>internal</i> linkage
+</li>
+<li>
+<code><b>extern</b></code> - <i>static</i> or <i>thread</i> storage duration and <i>external</i> linkage
+</li>
+</ul>
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<dl><dd>
+<ul><li>
+<code><b>thread_local</b></code> - <i>thread</i> storage duration.
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<p><br>
+Only one storage class specifier may appear in a declaration (except that <code>thread_local</code> may be combined with <code>static</code> or with <code>extern</code>)
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1">
+<a href="storage_duration.html#Explanation"><span class="tocnumber">1</span> <span class="toctext">Explanation</span></a>
+<ul>
+<li class="toclevel-2 tocsection-2"><a href="storage_duration.html#Storage_duration"><span class="tocnumber">1.1</span> <span class="toctext">Storage duration</span></a></li>
+<li class="toclevel-2 tocsection-3"><a href="storage_duration.html#Linkage"><span class="tocnumber">1.2</span> <span class="toctext">Linkage</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-4"><a href="storage_duration.html#Static_local_variables"><span class="tocnumber">2</span> <span class="toctext">Static local variables</span></a></li>
+<li class="toclevel-1 tocsection-5"><a href="storage_duration.html#Notes"><span class="tocnumber">3</span> <span class="toctext">Notes</span></a></li>
+<li class="toclevel-1 tocsection-6"><a href="storage_duration.html#Keywords"><span class="tocnumber">4</span> <span class="toctext">Keywords</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="storage_duration.html#Example"><span class="tocnumber">5</span> <span class="toctext">Example</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="storage_duration.html#See_Also"><span class="tocnumber">6</span> <span class="toctext">See Also</span></a></li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Explanation">edit</a>]</span> <span class="mw-headline" id="Explanation">Explanation</span>
+</h3>
+ <table class="t-rev-begin">
+<tr class="t-rev t-until-cxx11">
+<td>
+<div class="t-li1">
+<span class="t-li">1)</span> The <code>auto</code> specifier was only allowed for objects declared at block scope or in function parameter lists. It indicated automatic storage duration, which is the default for these kinds of declarations. The meaning of this keyword was changed in C++11.
+</div>
+</td>
+<td><span class="t-mark-rev t-until-cxx11">(until C++11)</span></td>
+</tr>
+</table>
+<div class="t-li1">
+<span class="t-li">2)</span> <span class="t-mark">(deprecated)</span> The <code>register</code> specifier is only allowed for objects declared at block scope and in function parameter lists. It indicates automatic storage duration, which is the default for these kinds of declarations. Additionally, the presence of this keyword may be used as a hint for the optimizer to store the value of this variable in a CPU register. This keyword was deprecated in C++11.</div>
+<div class="t-li1">
+<span class="t-li">3)</span> The <code>static</code> specifier is only allowed in the declarations of objects (except in function parameter lists), declarations of functions (except at block scope), and declarations of anonymous unions. When used in a declaration of a class member, it declares a <a href="static.html" title="cpp/language/static">static member</a>. When used in a declaration of an object, it specifies static storage duration (except if accompanied by <code>thread_local</code>). When used in a declaration at namespace scope, it specifies internal linkage.</div>
+<div class="t-li1">
+<span class="t-li">4)</span> The <code>extern</code> specifier is only allowed in the declarations of objects and functions (except class members or function parameters). It specifies external linkage, and does not technically affect storage duration, but it cannot be used in a definition of an automatic storage duration object, so all <code>extern</code> objects have static or thread durations</div>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<div class="t-li1">
+<span class="t-li">5)</span> The <code>thread_local</code> keyword is only allowed for objects declared at namespace scope, objects declared at block scope, and static data members. It indicates that the object has thread storage duration. It can be combined with <code>static</code> or <code>extern</code> to specify internal or external linkage (except for static data members which always have external linkage), respectively, but that additional <code>static</code> doesn't affect the storage duration.
+</div>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Storage duration">edit</a>]</span> <span class="mw-headline" id="Storage_duration">Storage duration</span>
+</h4>
+<p>All objects in a program have one of the following storage durations:
+</p>
+<dl><dd>
+<ul><li>
+<i><b>automatic</b></i> storage duration. The object is allocated at the beginning of the enclosing code block and deallocated at the end. All local objects have this storage duration, except those declared <code>static</code>, <code>extern</code> or <code>thread_local</code>.
+</li></ul>
+</dd></dl>
+<dl><dd>
+<ul><li>
+<i><b>static</b></i> storage duration. The storage for the object is allocated when the program begins and deallocated when the program ends. Only one instance of the object exists. All objects declared at namespace scope (including global namespace) have this storage duration, plus those declared with <code>static</code> or <code>extern</code>.
+</li></ul>
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<dl><dd>
+<ul><li>
+<i><b>thread</b></i> storage duration. The object is allocated when the thread begins and deallocated when the thread ends. Each thread has its own instance of the object. Only objects declared <code>thread_local</code> have this storage duration.  <code>thread_local</code> can appear together with <code>static</code> or <code>extern</code> to adjust linkage.
+</li></ul>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<dl><dd>
+<ul><li>
+<i><b>dynamic</b></i> storage duration. The object is allocated and deallocated per request by using <a href="../memory.html" title="cpp/memory">dynamic memory allocation</a> functions.
+</li></ul>
+</dd></dl>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Linkage">edit</a>]</span> <span class="mw-headline" id="Linkage">Linkage</span>
+</h4>
+<p>A name that denotes object, reference, function, type, template, namespace, or value, may have <i>linkage</i>. If a name has linkage, it refers to the same entity as the same name introduced by a declaration in another scope. If a variable, function, or another entity with the same name is declared in several scopes, but does not have sufficient linkage, then several instances of the entity are generated.
+</p>
+<p>The following linkages are recognized:
+</p>
+<dl><dd>
+<ul><li>
+<i><b>no linkage</b></i>. The name can be referred to only from the scope it is in.
+</li></ul>
+<dl><dd> Any of the following names declared at block scope have no linkage:
+<ul>
+<li> Variables that aren't explicitly declared <code>extern</code> (regardless of the <code>static</code> modifier)
+</li>
+<li> <a href="class.html#Local_classes" title="cpp/language/class">Local classes</a> and their member functions
+</li>
+<li> Other names declared at block scope such as typedefs, enumerations, and enumerators
+</li>
+</ul>
+</dd></dl>
+</dd></dl>
+<dl><dd>
+<ul><li>
+<i><b>internal linkage</b></i>. The name can be referred to from all scopes in the current translation unit.
+</li></ul>
+<dl><dd> Any of the following names declared at namespace scope have internal linkage
+<ul>
+<li> variables, functions, or function templates declared <code>static</code>
+</li>
+<li> non-volatile <a href="cv.html" title="cpp/language/cv">const-qualified</a> variables (including <a href="constexpr.html" title="cpp/language/constexpr">constexpr</a>) that aren't declared <code>extern</code> and aren't previously declared to have external linkage.
+</li>
+<li> data members of <a href="union.html" title="cpp/language/union">anonymous unions</a>
+</li>
+</ul>
+</dd></dl>
+</dd></dl>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<dl><dd>
+<dl><dd> In addition, all names declared in <a href="namespace.html" title="cpp/language/namespace">unnamed namespace</a> or a namespace within an unnamed namespace, even ones explicitly declared <code>extern</code>, have internal linkage.
+</dd></dl>
+</dd></dl>
+</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<dl><dd>
+<ul><li>
+<i><b>external linkage</b></i>. The name can be referred to from the scopes in the other translation units. Variables and functions with external linkage also have <a href="language_linkage.html" title="cpp/language/language linkage">language linkage</a>, which makes it possible to link translation units written in different programming languages.
+</li></ul>
+<dl>
+<dd> Any of the following names declared at namespace scope have external linkage <span class="t-rev-inl t-since-cxx11"><span>unless the namespace is unnamed or is contained within an unnamed namespace</span> <span><span class="t-mark-rev t-since-cxx11">(since C++11)</span></span></span>
+<ul>
+<li> variables and functions not listed above (that is, functions not declared <code>static</code>, namespace-scope non-const variables not declared <code>static</code>, and any variables declared <code>extern</code>)
+</li>
+<li> enumerations and enumerators
+</li>
+<li> names of classes, their member functions, static data members (const or not), nested classes and enumerations, and functions first introduced with <a href="friend.html" title="cpp/language/friend">friend</a> declarations inside class bodies
+</li>
+<li> names of all templates not listed above (that is, not function templates declared <code>static</code>)
+</li>
+</ul>
+</dd>
+<dd> Any of the following names first declared at block scope have external linkage
+<ul>
+<li> names of variables declared <code>extern</code>
+</li>
+<li> names of functions
+</li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Static local variables">edit</a>]</span> <span class="mw-headline" id="Static_local_variables">Static local variables</span>
+</h3>
+<p>Static variables declared at block scope are initialized the first time control passes through their declaration (unless their initialization is <a href="zero_initialization.html" title="cpp/language/zero initialization">zero-</a> or <a href="constant_initialization.html" title="cpp/language/constant initialization">constant-initialization</a>, which can be performed before the block is first entered). On all further calls, the declaration is skipped.
+</p>
+<p>If the initialization <a href="throw.html" title="cpp/language/throw">throws an exception</a>, the variable is not considered to be initialized, and initialization will be attempted again the next time control passes through the declaration.
+</p>
+<p>If the initialization recursively enters the block in which the variable is being initialized, the behavior is undefined.
+</p>
+ <table class="t-rev-begin">
+<tr class="t-rev t-since-cxx11">
+<td>
+<p>If multiple threads attempt to initialize the same static local variable concurrently, the initialization occurs exactly once (similar behavior can be obtained for arbitrary functions with <span class="t-lc"><a href="../thread/call_once.html" title="cpp/thread/call once">std::call_once</a></span>).
+</p>
+Note: usual implementations of this feature use variants of the double-checked locking pattern, which reduces runtime overhead for already-initialized local statics to a single non-atomic boolean comparison.</td>
+<td><span class="t-mark-rev t-since-cxx11">(since C++11)</span></td>
+</tr>
+</table>
+<p>The destructor for a block-scope static variable <a href="../utility/program/exit.html" title="cpp/utility/program/exit">is called at program exit</a>, but only if the initialization took place successfully.
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Notes">edit</a>]</span> <span class="mw-headline" id="Notes">Notes</span>
+</h3>
+<p>Names at the top-level namespace scope (file scope in C) that are <code>const</code> and not <code>extern</code> have external linkage in C, but internal linkage in C++.
+</p>
+<p>In C, the address of a <code>register</code> variable cannot be taken, but in C++, a variable declared <code>register</code> is semantically indistinguishable from a variable declared without any storage class specifiers.
+</p>
+<p>Names of <code>thread_local</code> variables with internal or external linkage referred from different scopes may refer to the same or to different instances depending on whether the code is executing in the same or in different threads.
+</p>
+<p>The <code>extern</code> keyword can also be used to specify <a href="language_linkage.html" title="cpp/language/language linkage">language linkage</a> and <a href="class_template.html" title="cpp/language/class template">explicit template instantiation declarations</a>, but it's not a storage class specifier in those cases (except when a declaration is directly contained in a language linkage specification, in which case the declaration is treated as if it contains the <code>extern</code> specifier).
+</p>
+<p><a href="cv.html" title="cpp/language/cv">The keyword <code>mutable</code></a> is a storage class specifier in the C++ language grammar, although it doesn't affect storage duration or linkage.
+</p>
+<table class="metadata plainlinks ambox mbox-small-left ambox-notice" style=""><tr>
+<td class="mbox-empty-cell"></td>
+<td class="mbox-text" style="">This section is incomplete<br>Reason: the rules about re-declaring names in the same TU </td>
+</tr></table>
+<p>Storage class specifiers, except for <code>thread_local</code>, are not allowed on <a href="template_specialization.html" title="cpp/language/template specialization">explicit specializations</a> and <a href="class_template.html#Explicit_instantiation" title="cpp/language/class template">explicit instantiations</a>:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span> <span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span> <span class="kw1">struct</span> S <span class="br0">{</span>
+    thread_local <span class="kw4">static</span> <span class="kw4">int</span> tlm<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">template</span> <span class="sy1">&lt;&gt;</span> thread_local <span class="kw4">int</span> S<span class="sy1">&lt;</span><span class="kw4">float</span><span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">tlm</span> <span class="sy1">=</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="co1">// "static" does not appear here</span></pre></div></div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Keywords">edit</a>]</span> <span class="mw-headline" id="Keywords">Keywords</span>
+</h3>
+<p><a href="../keyword/auto.html" title="cpp/keyword/auto"><tt>auto</tt></a>,
+<a href="../keyword/register.html" title="cpp/keyword/register"><tt>register</tt></a>,
+<a href="../keyword/static.html" title="cpp/keyword/static"><tt>static</tt></a>,
+<a href="../keyword/extern.html" title="cpp/keyword/extern"><tt>extern</tt></a>,
+<a href="../keyword/thread_local.html" title="cpp/keyword/thread local"><tt>thread_local</tt></a>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Example">edit</a>]</span> <span class="mw-headline" id="Example">Example</span>
+</h3>
+<div class="t-example">
+<div class="t-example-live-link"><div class="coliru-btn coliru-btn-run-init">Run this code</div></div>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;iostream&gt;</span>
+<span class="co2">#include &lt;string&gt;</span>
+<span class="co2">#include &lt;thread&gt;</span>
+<span class="co2">#include &lt;mutex&gt;</span>
+ 
+thread_local <span class="kw4">unsigned</span> <span class="kw4">int</span> rage <span class="sy1">=</span> <span class="nu0">1</span><span class="sy4">;</span> 
+<a href="../thread/mutex.html"><span class="kw1799">std::<span class="me2">mutex</span></span></a> cout_mutex<span class="sy4">;</span>
+ 
+<span class="kw4">void</span> increase_rage<span class="br0">(</span><span class="kw4">const</span> <a href="../string/basic_string.html"><span class="kw1045">std::<span class="me2">string</span></span></a><span class="sy3">&amp;</span> thread_name<span class="br0">)</span>
+<span class="br0">{</span>
+    <span class="sy2">++</span>rage<span class="sy4">;</span>
+    <a href="../thread/lock_guard.html"><span class="kw1811">std::<span class="me2">lock_guard</span></span></a><span class="sy1">&lt;</span><a href="../thread/mutex.html"><span class="kw1799">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span> lock<span class="br0">(</span>cout_mutex<span class="br0">)</span><span class="sy4">;</span>
+    <a href="../io/cout.html"><span class="kw1449">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Rage counter for "</span> <span class="sy1">&lt;&lt;</span> thread_name <span class="sy1">&lt;&lt;</span> <span class="st0">": "</span> <span class="sy1">&lt;&lt;</span> rage <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+<span class="br0">}</span>
+ 
+<span class="kw4">int</span> main<span class="br0">(</span><span class="br0">)</span>
+<span class="br0">{</span>
+    <a href="../thread/thread.html"><span class="kw1793">std::<span class="me2">thread</span></span></a> a<span class="br0">(</span>increase_rage, <span class="st0">"a"</span><span class="br0">)</span>, b<span class="br0">(</span>increase_rage, <span class="st0">"b"</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="br0">{</span>
+        <a href="../thread/lock_guard.html"><span class="kw1811">std::<span class="me2">lock_guard</span></span></a><span class="sy1">&lt;</span><a href="../thread/mutex.html"><span class="kw1799">std::<span class="me2">mutex</span></span></a><span class="sy1">&gt;</span> lock<span class="br0">(</span>cout_mutex<span class="br0">)</span><span class="sy4">;</span>
+        <a href="../io/cout.html"><span class="kw1449">std::<span class="me2">cout</span></span></a> <span class="sy1">&lt;&lt;</span> <span class="st0">"Rage counter for main: "</span> <span class="sy1">&lt;&lt;</span> rage <span class="sy1">&lt;&lt;</span> <span class="st0">'<span class="es1">\n</span>'</span><span class="sy4">;</span>
+    <span class="br0">}</span>
+ 
+    a.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    b.<span class="me1">join</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Possible output:
+</p>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="text source-text"><pre class="de1">Rage counter for a: 2
+Rage counter for main: 1
+Rage counter for b: 2</pre></div></div> 
+</div>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: See Also">edit</a>]</span> <span class="mw-headline" id="See_Also">See Also</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td colspan="2"> <div class="t-dsc-see">
+<span><a href="../../c/language/storage_duration.html" title="c/language/storage duration">C documentation</a></span> for <span class="t-dsc-see-tt"><span>storage_duration</span></span>
+</div>
+</td>
+</tr>
+
+</table>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 2383/1000000
+Preprocessor generated node count: 9194/1000000
+Post‐expand include size: 62139/2097152 bytes
+Template argument size: 12527/2097152 bytes
+Highest expansion depth: 17/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:712-0!*!0!!en!*!* and timestamp 20150624142421 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/language/storage_duration&amp;oldid=79120</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks"><div id="mw-normal-catlinks" class="mw-normal-catlinks">
+<a href="http%3A//en.cppreference.com/w/Special%3ACategories" title="Special:Categories">Category</a>: <ul><li><a href="http%3A//en.cppreference.com/w/Category%3ATodo_with_reason" title="Category:Todo with reason">Todo with reason</a></li></ul>
+</div></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.100 secs. -->
+	</body>
+<!-- Cached 20150624150354 -->
+</html>

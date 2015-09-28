@@ -1,0 +1,1966 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Standard library header &lt;random&gt; - cppreference.com</title>
+<meta charset="UTF-8">
+<meta name="generator" content="MediaWiki 1.21.2">
+
+
+<link rel="shortcut icon" href="../../../favicon.ico">
+
+
+
+<link rel="stylesheet" href="../../../common/ext.css">
+<meta name="ResourceLoaderDynamicStyles" content="">
+<link rel="stylesheet" href="../../../common/site_modules.css">
+<style>a:lang(ar),a:lang(ckb),a:lang(fa),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}#toc{display:none}.editsection{display:none}
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-css:7:472787eddcf4605d11de8c7ef047234f */</style>
+
+<script src="../../../common/startup_scripts.js"></script>
+<script>if(window.mw){
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"cpp/header/random","wgTitle":"cpp/header/random","wgCurRevisionId":79608,"wgArticleId":9771,"wgIsArticle":true,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":[],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"cpp/header/random","wgRestrictionEdit":[],"wgRestrictionMove":[]});
+}</script><script>if(window.mw){
+mw.loader.implement("user.options",function(){mw.user.options.set({"ccmeonemails":0,"cols":80,"date":"default","diffonly":0,"disablemail":0,"disablesuggest":0,"editfont":"default","editondblclick":0,"editsection":0,"editsectiononrightclick":0,"enotifminoredits":0,"enotifrevealaddr":0,"enotifusertalkpages":1,"enotifwatchlistpages":0,"extendwatchlist":0,"externaldiff":0,"externaleditor":0,"fancysig":0,"forceeditsummary":0,"gender":"unknown","hideminor":0,"hidepatrolled":0,"imagesize":2,"justify":0,"math":1,"minordefault":0,"newpageshidepatrolled":0,"nocache":0,"noconvertlink":0,"norollbackdiff":0,"numberheadings":0,"previewonfirst":0,"previewontop":1,"quickbar":5,"rcdays":7,"rclimit":50,"rememberpassword":0,"rows":25,"searchlimit":20,"showhiddencats":0,"showjumplinks":1,"shownumberswatching":1,"showtoc":0,"showtoolbar":1,"skin":"cppreference2","stubthreshold":0,"thumbsize":2,"underline":2,"uselivepreview":0,"usenewrc":0,"watchcreations":0,"watchdefault":0,"watchdeletion":0,
+"watchlistdays":3,"watchlisthideanons":0,"watchlisthidebots":0,"watchlisthideliu":0,"watchlisthideminor":0,"watchlisthideown":0,"watchlisthidepatrolled":0,"watchmoves":0,"wllimit":250,"variant":"en","language":"en","searchNs0":true,"searchNs1":false,"searchNs2":false,"searchNs3":false,"searchNs4":false,"searchNs5":false,"searchNs6":false,"searchNs7":false,"searchNs8":false,"searchNs9":false,"searchNs10":false,"searchNs11":false,"searchNs12":false,"searchNs13":false,"searchNs14":false,"searchNs15":false,"gadget-ColiruCompiler":1});;},{},{});mw.loader.implement("user.tokens",function(){mw.user.tokens.set({"editToken":"+\\","patrolToken":false,"watchToken":false});;},{},{});
+/* cache key: mwiki1-mwiki_en_:resourceloader:filter:minify-js:7:ca03345b1e2c4d90a25d968753a73b92 */
+}</script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","mediawiki.legacy.ajax"]);
+}</script>
+<style type="text/css">/*<![CDATA[*/
+.source-cpp {line-height: normal;}
+.source-cpp li, .source-cpp pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for cpp
+ * CSS class: source-cpp, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.cpp.source-cpp .de1, .cpp.source-cpp .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.cpp.source-cpp  {font-family:monospace;}
+.cpp.source-cpp .imp {font-weight: bold; color: red;}
+.cpp.source-cpp li, .cpp.source-cpp .li1 {font-weight: normal; vertical-align:top;}
+.cpp.source-cpp .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.cpp.source-cpp .li2 {font-weight: bold; vertical-align:top;}
+.cpp.source-cpp .kw1 {color: #0000dd;}
+.cpp.source-cpp .kw2 {color: #0000ff;}
+.cpp.source-cpp .kw3 {color: #0000dd;}
+.cpp.source-cpp .kw4 {color: #0000ff;}
+.cpp.source-cpp .co1 {color: #909090;}
+.cpp.source-cpp .co2 {color: #339900;}
+.cpp.source-cpp .coMULTI {color: #ff0000; font-style: italic;}
+.cpp.source-cpp .es0 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es1 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es2 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es3 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es4 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .es5 {color: #008000; font-weight: bold;}
+.cpp.source-cpp .br0 {color: #008000;}
+.cpp.source-cpp .sy0 {color: #008000;}
+.cpp.source-cpp .sy1 {color: #000080;}
+.cpp.source-cpp .sy2 {color: #000040;}
+.cpp.source-cpp .sy3 {color: #000040;}
+.cpp.source-cpp .sy4 {color: #008080;}
+.cpp.source-cpp .st0 {color: #008000;}
+.cpp.source-cpp .nu0 {color: #000080;}
+.cpp.source-cpp .nu6 {color: #000080;}
+.cpp.source-cpp .nu8 {color: #000080;}
+.cpp.source-cpp .nu12 {color: #000080;}
+.cpp.source-cpp .nu16 {color:#000080;}
+.cpp.source-cpp .nu17 {color:#000080;}
+.cpp.source-cpp .nu18 {color:#000080;}
+.cpp.source-cpp .nu19 {color:#000080;}
+.cpp.source-cpp .ln-xtra, .cpp.source-cpp li.ln-xtra, .cpp.source-cpp div.ln-xtra {background-color: #ffc;}
+.cpp.source-cpp span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/mwiki/skins/cppreference2/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-cpp_header_random skin-cppreference2 action-view cpp-navbar">
+        <!-- header -->
+        
+        <!-- /header -->
+        <!-- content -->
+        <div id="cpp-content-base">
+            <div id="content">
+                <a id="top"></a>
+                <div id="mw-js-message" style="display:none;"></div>
+                                <!-- firstHeading -->
+                <h1 id="firstHeading" class="firstHeading">
+<span style="font-size:0.7em; line-height:130%">Standard library header</span> &lt;random&gt;</h1>
+                <!-- /firstHeading -->
+                <!-- bodyContent -->
+                <div id="bodyContent">
+                                        <!-- tagline -->
+                    <div id="siteSub">From cppreference.com</div>
+                    <!-- /tagline -->
+                                        <!-- subtitle -->
+                    <div id="contentSub"><span class="subpages">&lt; <a href="../../cpp.html" title="cpp">cpp</a>‎ | <a href="../header.html" title="cpp/header">header</a></span></div>
+                    <!-- /subtitle -->
+                                                            <!-- bodycontent -->
+                    <div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr">
+<div class="t-navbar" style="">
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../../cpp.html" title="cpp"> C++</a><div class="t-navbar-menu"><div>
+<div><table class="t-nv-begin" cellpadding="0" style="line-height:1.1em;">
+<tr class="t-nv"><td colspan="5"> <a href="../language.1.html" title="cpp/language"> Language</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../header.html" title="cpp/header"> Standard library headers</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../concept.html" title="cpp/concept"> Concepts</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../utility.html" title="cpp/utility"> Utilities library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../string.html" title="cpp/string"> Strings library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../container.html" title="cpp/container"> Containers library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../algorithm.html" title="cpp/algorithm"> Algorithms library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../iterator.html" title="cpp/iterator"> Iterators library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../numeric.html" title="cpp/numeric"> Numerics library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../io.html" title="cpp/io"> Input/output library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../locale.html" title="cpp/locale"> Localizations library</a> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../regex.html" title="cpp/regex"> Regular expressions library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../atomic.html" title="cpp/atomic"> Atomic operations library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../thread.html" title="cpp/thread"> Thread support library</a> <span class="t-mark-rev t-since-cxx11">(C++11)</span> </td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="../experimental.html" title="cpp/experimental"> Technical Specifications</a> </td></tr>
+</table></div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+<div class="t-navbar-head">
+<a href="../header.html" title="cpp/header"> Standard Library header files </a><div class="t-navbar-menu"><div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Language Support</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cstddef.html" title="cpp/header/cstddef"><tt>&lt;cstddef&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="limits.html" title="cpp/header/limits"><tt>&lt;limits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="climits.html" title="cpp/header/climits"><tt>&lt;climits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cfloat.html" title="cpp/header/cfloat"><tt>&lt;cfloat&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdint.html" title="cpp/header/cstdint"><tt>&lt;cstdint&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="new.html" title="cpp/header/new"><tt>&lt;new&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="typeinfo.html" title="cpp/header/typeinfo"><tt>&lt;typeinfo&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="exception.html" title="cpp/header/exception"><tt>&lt;exception&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ciso646.html" title="cpp/header/ciso646"><tt>&lt;ciso646&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="initializer_list.html" title="cpp/header/initializer list"><tt>&lt;initializer_list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="csignal.html" title="cpp/header/csignal"><tt>&lt;csignal&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="csetjmp.html" title="cpp/header/csetjmp"><tt>&lt;csetjmp&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdalign.html" title="cpp/header/cstdalign"><tt>&lt;cstdalign&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdarg.html" title="cpp/header/cstdarg"><tt>&lt;cstdarg&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdbool.html" title="cpp/header/cstdbool"><tt>&lt;cstdbool&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Diagnostics</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="stdexcept.html" title="cpp/header/stdexcept"><tt>&lt;stdexcept&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cassert.html" title="cpp/header/cassert"><tt>&lt;cassert&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cerrno.html" title="cpp/header/cerrno"><tt>&lt;cerrno&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="system_error.html" title="cpp/header/system error"><tt>&lt;system_error&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> General utilities</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="utility.html" title="cpp/header/utility"><tt>&lt;utility&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="tuple.html" title="cpp/header/tuple"><tt>&lt;tuple&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="bitset.html" title="cpp/header/bitset"><tt>&lt;bitset&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="memory.html" title="cpp/header/memory"><tt>&lt;memory&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="functional.html" title="cpp/header/functional"><tt>&lt;functional&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="type_traits.html" title="cpp/header/type traits"><tt>&lt;type_traits&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ratio.html" title="cpp/header/ratio"><tt>&lt;ratio&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="chrono.html" title="cpp/header/chrono"><tt>&lt;chrono&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ctime.html" title="cpp/header/ctime"><tt>&lt;ctime&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="scoped_allocator.html" title="cpp/header/scoped allocator"><tt>&lt;scoped_allocator&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="typeindex.html" title="cpp/header/typeindex"><tt>&lt;typeindex&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Strings</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="string.html" title="cpp/header/string"><tt>&lt;string&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cctype.html" title="cpp/header/cctype"><tt>&lt;cctype&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cwctype.html" title="cpp/header/cwctype"><tt>&lt;cwctype&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstring.html" title="cpp/header/cstring"><tt>&lt;cstring&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cwchar.html" title="cpp/header/cwchar"><tt>&lt;cwchar&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cuchar.html" title="cpp/header/cuchar"><tt>&lt;cuchar&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Localization</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="locale.html" title="cpp/header/locale"><tt>&lt;locale&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="codecvt.html" title="cpp/header/codecvt"><tt>&lt;codecvt&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="clocale.html" title="cpp/header/clocale"><tt>&lt;clocale&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+</table></div>
+</div>
+<div style="display:inline-block">
+<div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv-h1"><td colspan="5"> Containers</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="array.html" title="cpp/header/array"><tt>&lt;array&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="deque.html" title="cpp/header/deque"><tt>&lt;deque&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="forward_list.html" title="cpp/header/forward list"><tt>&lt;forward_list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="list.html" title="cpp/header/list"><tt>&lt;list&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="vector.html" title="cpp/header/vector"><tt>&lt;vector&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="map.html" title="cpp/header/map"><tt>&lt;map&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="set.html" title="cpp/header/set"><tt>&lt;set&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unordered_map.html" title="cpp/header/unordered map"><tt>&lt;unordered_map&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="unordered_set.html" title="cpp/header/unordered set"><tt>&lt;unordered_set&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="queue.html" title="cpp/header/queue"><tt>&lt;queue&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="stack.html" title="cpp/header/stack"><tt>&lt;stack&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Iterators</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="iterator.html" title="cpp/header/iterator"><tt>&lt;iterator&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Algorithms</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="algorithm.html" title="cpp/header/algorithm"><tt>&lt;algorithm&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Numerics</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="cfenv.html" title="cpp/header/cfenv"><tt>&lt;cfenv&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="complex.html" title="cpp/header/complex"><tt>&lt;complex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <strong class="selflink"><tt>&lt;random&gt;</tt></strong>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="valarray.html" title="cpp/header/valarray"><tt>&lt;valarray&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="numeric.html" title="cpp/header/numeric"><tt>&lt;numeric&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cmath.html" title="cpp/header/cmath"><tt>&lt;cmath&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ctgmath.html" title="cpp/header/ctgmath"><tt>&lt;ctgmath&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdlib.html" title="cpp/header/cstdlib"><tt>&lt;cstdlib&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Input/Output</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="iosfwd.html" title="cpp/header/iosfwd"><tt>&lt;iosfwd&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="iostream.html" title="cpp/header/iostream"><tt>&lt;iostream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ios.html" title="cpp/header/ios"><tt>&lt;ios&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="streambuf.html" title="cpp/header/streambuf"><tt>&lt;streambuf&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="istream.html" title="cpp/header/istream"><tt>&lt;istream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="ostream.html" title="cpp/header/ostream"><tt>&lt;ostream&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="iomanip.html" title="cpp/header/iomanip"><tt>&lt;iomanip&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="sstream.html" title="cpp/header/sstream"><tt>&lt;sstream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="fstream.html" title="cpp/header/fstream"><tt>&lt;fstream&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cstdio.html" title="cpp/header/cstdio"><tt>&lt;cstdio&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="cinttypes.html" title="cpp/header/cinttypes"><tt>&lt;cinttypes&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+<tr class="t-nv-h1"><td colspan="5"> Regular expressions</td></tr>
+<tr class="t-nv-col-table"><td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="regex.html" title="cpp/header/regex"><tt>&lt;regex&gt;</tt></a>
+</td></tr>
+</table></div></td></tr>
+<tr class="t-nv-h1"><td colspan="5"> Thread support</td></tr>
+<tr class="t-nv-col-table">
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="thread.html" title="cpp/header/thread"><tt>&lt;thread&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="mutex.html" title="cpp/header/mutex"><tt>&lt;mutex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="atomic.html" title="cpp/header/atomic"><tt>&lt;atomic&gt;</tt></a>
+</td></tr>
+</table></div></td>
+<td><div><table class="t-nv-begin" cellpadding="0" style="">
+<tr class="t-nv"><td colspan="5"> <a href="shared_mutex.html" title="cpp/header/shared mutex"><tt>&lt;shared_mutex&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="condition_variable.html" title="cpp/header/condition variable"><tt>&lt;condition_variable&gt;</tt></a>
+</td></tr>
+<tr class="t-nv"><td colspan="5"> <a href="future.html" title="cpp/header/future"><tt>&lt;future&gt;</tt></a>
+</td></tr>
+</table></div></td>
+</tr>
+</table></div>
+</div>
+<div></div>
+</div></div>
+</div>
+<div class="t-navbar-sep"> </div>
+</div>
+<p>This header is part of the <a href="../numeric/random.html" title="cpp/numeric/random">pseudo-random number generation</a> library.
+</p>
+<table id="toc" class="toc"><tr><td>
+<div id="toctitle"><h2>Contents</h2></div>
+<ul>
+<li class="toclevel-1 tocsection-1">
+<a href="random.html#Classes"><span class="tocnumber">1</span> <span class="toctext">Classes</span></a>
+<ul>
+<li class="toclevel-2"><a href="random.html#Random_number_engines"><span class="tocnumber">1.1</span> <span class="toctext">Random number engines</span></a></li>
+<li class="toclevel-2"><a href="random.html#Random_number_engine_adaptors"><span class="tocnumber">1.2</span> <span class="toctext">Random number engine adaptors</span></a></li>
+<li class="toclevel-2"><a href="random.html#Predefined_generators"><span class="tocnumber">1.3</span> <span class="toctext">Predefined generators</span></a></li>
+<li class="toclevel-2"><a href="random.html#Uniform_distributions"><span class="tocnumber">1.4</span> <span class="toctext">Uniform distributions</span></a></li>
+<li class="toclevel-2"><a href="random.html#Bernoulli_distributions"><span class="tocnumber">1.5</span> <span class="toctext">Bernoulli distributions</span></a></li>
+<li class="toclevel-2"><a href="random.html#Poisson_distributions"><span class="tocnumber">1.6</span> <span class="toctext">Poisson distributions</span></a></li>
+<li class="toclevel-2"><a href="random.html#Normal_distributions"><span class="tocnumber">1.7</span> <span class="toctext">Normal distributions</span></a></li>
+<li class="toclevel-2"><a href="random.html#Sampling_distributions"><span class="tocnumber">1.8</span> <span class="toctext">Sampling distributions</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-2"><a href="random.html#Functions"><span class="tocnumber">2</span> <span class="toctext">Functions</span></a></li>
+<li class="toclevel-1 tocsection-3">
+<a href="random.html#Synopsis"><span class="tocnumber">3</span> <span class="toctext">Synopsis</span></a>
+<ul>
+<li class="toclevel-2 tocsection-4"><a href="random.html#Class_std%3A%3Alinear_congruential_engine"><span class="tocnumber">3.1</span> <span class="toctext">Class <span>std::linear_congruential_engine</span></span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="random.html#Class_std%3A%3Amersenne_twister_engine"><span class="tocnumber">3.2</span> <span class="toctext">Class <span>std::mersenne_twister_engine</span></span></a></li>
+<li class="toclevel-2 tocsection-6"><a href="random.html#Class_std%3A%3Asubtract_with_carry_engine"><span class="tocnumber">3.3</span> <span class="toctext">Class <span>std::subtract_with_carry_engine</span></span></a></li>
+<li class="toclevel-2 tocsection-7"><a href="random.html#Class_std%3A%3Adiscard_block_engine"><span class="tocnumber">3.4</span> <span class="toctext">Class <span>std::discard_block_engine</span></span></a></li>
+<li class="toclevel-2 tocsection-8"><a href="random.html#Class_std%3A%3Aindependent_bits_engine"><span class="tocnumber">3.5</span> <span class="toctext">Class <span>std::independent_bits_engine</span></span></a></li>
+<li class="toclevel-2 tocsection-9"><a href="random.html#Class_std%3A%3Ashuffle_order_engine"><span class="tocnumber">3.6</span> <span class="toctext">Class <span>std::shuffle_order_engine</span></span></a></li>
+<li class="toclevel-2 tocsection-10"><a href="random.html#Class_std%3A%3Arandom_device"><span class="tocnumber">3.7</span> <span class="toctext">Class <span>std::random_device</span></span></a></li>
+<li class="toclevel-2 tocsection-11"><a href="random.html#Class_std%3A%3Aseed_seq"><span class="tocnumber">3.8</span> <span class="toctext">Class <span>std::seed_seq</span></span></a></li>
+<li class="toclevel-2 tocsection-12"><a href="random.html#Class_std%3A%3Auniform_int_distribution"><span class="tocnumber">3.9</span> <span class="toctext">Class <span>std::uniform_int_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-13"><a href="random.html#Class_std%3A%3Abernoulli_distribution"><span class="tocnumber">3.10</span> <span class="toctext">Class <span>std::bernoulli_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-14"><a href="random.html#Class_std%3A%3Abinomial_distribution"><span class="tocnumber">3.11</span> <span class="toctext">Class <span>std::binomial_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-15"><a href="random.html#Class_std%3A%3Ageometric_distribution"><span class="tocnumber">3.12</span> <span class="toctext">Class <span>std::geometric_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-16"><a href="random.html#Class_std%3A%3Anegative_binomial_distribution"><span class="tocnumber">3.13</span> <span class="toctext">Class <span>std::negative_binomial_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-17"><a href="random.html#Class_std%3A%3Apoisson_distribution"><span class="tocnumber">3.14</span> <span class="toctext">Class <span>std::poisson_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-18"><a href="random.html#Class_std%3A%3Aseed_seq_2"><span class="tocnumber">3.15</span> <span class="toctext">Class <span>std::seed_seq</span></span></a></li>
+<li class="toclevel-2 tocsection-19"><a href="random.html#Class_std%3A%3Agamma_distribution"><span class="tocnumber">3.16</span> <span class="toctext">Class <span>std::gamma_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-20"><a href="random.html#Class_std%3A%3Aweibull_distribution"><span class="tocnumber">3.17</span> <span class="toctext">Class <span>std::weibull_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-21"><a href="random.html#Class_std%3A%3Aextreme_value_distribution"><span class="tocnumber">3.18</span> <span class="toctext">Class <span>std::extreme_value_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-22"><a href="random.html#Class_std%3A%3Anormal_distribution"><span class="tocnumber">3.19</span> <span class="toctext">Class <span>std::normal_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-23"><a href="random.html#Class_std%3A%3Alognormal_distribution"><span class="tocnumber">3.20</span> <span class="toctext">Class <span>std::lognormal_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-24"><a href="random.html#Class_std%3A%3Achi_squared_distribution"><span class="tocnumber">3.21</span> <span class="toctext">Class <span>std::chi_squared_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-25"><a href="random.html#Class_std%3A%3Acauchy_distribution"><span class="tocnumber">3.22</span> <span class="toctext">Class <span>std::cauchy_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-26"><a href="random.html#Class_std%3A%3Afisher_f_distribution"><span class="tocnumber">3.23</span> <span class="toctext">Class <span>std::fisher_f_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-27"><a href="random.html#Class_std%3A%3Astudent_t_distribution"><span class="tocnumber">3.24</span> <span class="toctext">Class <span>std::student_t_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-28"><a href="random.html#Class_std%3A%3Adiscrete_distribution"><span class="tocnumber">3.25</span> <span class="toctext">Class <span>std::discrete_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-29"><a href="random.html#Class_std%3A%3Apiecewise_constant_distribution"><span class="tocnumber">3.26</span> <span class="toctext">Class <span>std::piecewise_constant_distribution</span></span></a></li>
+<li class="toclevel-2 tocsection-30"><a href="random.html#Class_std%3A%3Apiecewise_linear_distribution"><span class="tocnumber">3.27</span> <span class="toctext">Class <span>std::piecewise_linear_distribution</span></span></a></li>
+</ul>
+</li>
+</ul>
+</td></tr></table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Classes">edit</a>]</span> <span class="mw-headline" id="Classes">Classes</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Random_number_engines"> Random number engines </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/linear_congruential_engine.html" title="cpp/numeric/random/linear congruential engine"> <span class="t-lines"><span>linear_congruential_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   implements <a href="http%3A//en.wikipedia.com/wiki/Linear_congruential_generator" class="extiw" title="enwiki:Linear congruential generator"> linear congruential</a> algorithm  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/mersenne_twister_engine.html" title="cpp/numeric/random/mersenne twister engine"> <span class="t-lines"><span>mersenne_twister_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   implements <a href="http%3A//en.wikipedia.com/wiki/Mersenne_twister" class="extiw" title="enwiki:Mersenne twister"> Mersenne twister</a> algorithm  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/subtract_with_carry_engine.html" title="cpp/numeric/random/subtract with carry engine"> <span class="t-lines"><span>subtract_with_carry_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   implements subtract with carry (a <a href="http%3A//en.wikipedia.com/wiki/Lagged_Fibonacci_generator" class="extiw" title="enwiki:Lagged Fibonacci generator"> lagged Fibonacci</a>) algorithm  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Random_number_engine_adaptors"> Random number engine adaptors </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/discard_block_engine.html" title="cpp/numeric/random/discard block engine"> <span class="t-lines"><span>discard_block_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   discards some output of a random number engine  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/independent_bits_engine.html" title="cpp/numeric/random/independent bits engine"> <span class="t-lines"><span>independent_bits_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   packs the output of a random number engine into blocks of specified number of bits  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/shuffle_order_engine.html" title="cpp/numeric/random/shuffle order engine"> <span class="t-lines"><span>shuffle_order_engine</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   delivers the output of a random number engine in different order  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Predefined_generators"> Predefined generators </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/seed_seq.html" title="cpp/numeric/random/seed seq"> <span class="t-lines"><span>seed_seq</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   general-purpose bias-eliminating scrambled seed sequence generator  <br> <span class="t-mark">(class)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <code>minstd_rand0</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric/random/linear_congruential_engine.html"><span class="kw1197">std::<span class="me2">linear_congruential_engine</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a>, <span class="nu0">16807</span>, <span class="nu0">0</span>, <span class="nu0">2147483647</span><span class="sy1">&gt;</span></span></span><br>
+<p>Discovered in 1969 by Lewis, Goodman and Miller, adopted as "Minimal standard" in 1988 by Park and Miller 
+</p>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <code>minstd_rand</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric/random/linear_congruential_engine.html"><span class="kw1197">std::<span class="me2">linear_congruential_engine</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a>, <span class="nu0">48271</span>, <span class="nu0">0</span>, <span class="nu0">2147483647</span><span class="sy1">&gt;</span></span></span><br>
+<p>Newer "Minimum standard", recommended by Park, Miller, and Stockmeyer in 1993
+</p>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <code>mt19937</code>
+</td>
+<td>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric/random/mersenne_twister_engine.html"><span class="kw1198">std::<span class="me2">mersenne_twister_engine</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a>, <span class="nu0">32</span>, <span class="nu0">624</span>, <span class="nu0">397</span>, <span class="nu0">31</span>, <br>
+                             <span class="nu12">0x9908b0df</span>, <span class="nu0">11</span>, <br>
+                             <span class="nu12">0xffffffff</span>, <span class="nu0">7</span>, <br>
+                             <span class="nu12">0x9d2c5680</span>, <span class="nu0">15</span>, <br>
+                             <span class="nu12">0xefc60000</span>, <span class="nu0">18</span>, <span class="nu0">1812433253</span><span class="sy1">&gt;</span></span></span><br>
+32-bit Mersenne Twister by Matsumoto and Nishimura, 1998
+</p>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <code>mt19937_64</code>
+</td>
+<td>
+<p><span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric/random/mersenne_twister_engine.html"><span class="kw1198">std::<span class="me2">mersenne_twister_engine</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a>, <span class="nu0">64</span>, <span class="nu0">312</span>, <span class="nu0">156</span>, <span class="nu0">31</span>,<br>
+                             <span class="nu12">0xb5026f5aa96619e9</span>, <span class="nu0">29</span>,<br>
+                             <span class="nu12">0x5555555555555555</span>, <span class="nu0">17</span>,<br>
+                             <span class="nu12">0x71d67fffeda60000</span>, <span class="nu0">37</span>,<br>
+                             <span class="nu12">0xfff7eee000000000</span>, <span class="nu0">43</span>, <span class="nu0">6364136223846793005</span><span class="sy1">&gt;</span></span></span><br>
+64-bit Mersenne Twister by Matsumoto and Nishimura, 2000
+</p>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <code>ranlux24_base</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric/random/subtract_with_carry_engine.html"><span class="kw1199">std::<span class="me2">subtract_with_carry_engine</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw126">std::<span class="me2">uint_fast32_t</span></span></a>, <span class="nu0">24</span>, <span class="nu0">10</span>, <span class="nu0">24</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <code>ranlux48_base</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric/random/subtract_with_carry_engine.html"><span class="kw1199">std::<span class="me2">subtract_with_carry_engine</span></span></a><span class="sy1">&lt;</span><a href="../types/integer.html"><span class="kw127">std::<span class="me2">uint_fast64_t</span></span></a>, <span class="nu0">48</span>, <span class="nu0">5</span>, <span class="nu0">12</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <code>ranlux24</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric/random/discard_block_engine.html"><span class="kw1200">std::<span class="me2">discard_block_engine</span></span></a><span class="sy1">&lt;</span><a href="../numeric/random/subtract_with_carry_engine.html"><span class="kw1208">std::<span class="me2">ranlux24_base</span></span></a>, <span class="nu0">223</span>, <span class="nu0">23</span><span class="sy1">&gt;</span></span></span><br>
+<p>24-bit RANLUX generator by Martin Lüscher and Fred James, 1994
+</p>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <code>ranlux48</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric/random/discard_block_engine.html"><span class="kw1200">std::<span class="me2">discard_block_engine</span></span></a><span class="sy1">&lt;</span><a href="../numeric/random/subtract_with_carry_engine.html"><span class="kw1209">std::<span class="me2">ranlux48_base</span></span></a>, <span class="nu0">389</span>, <span class="nu0">11</span><span class="sy1">&gt;</span></span></span><br>
+<p>48-bit RANLUX generator by Martin Lüscher and Fred James, 1994
+</p>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <code>knuth_b</code>
+</td>
+<td>  <span class="t-c"><span class="mw-geshi cpp source-cpp"><a href="../numeric/random/shuffle_order_engine.html"><span class="kw1202">std::<span class="me2">shuffle_order_engine</span></span></a><span class="sy1">&lt;</span><a href="../numeric/random/linear_congruential_engine.html"><span class="kw1204">std::<span class="me2">minstd_rand0</span></span></a>, <span class="nu0">256</span><span class="sy1">&gt;</span></span></span>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <code>default_random_engine</code>
+</td>
+<td>  <i>implementation-defined</i>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Uniform_distributions">  Uniform distributions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/uniform_int_distribution.html" title="cpp/numeric/random/uniform int distribution"> <span class="t-lines"><span>uniform_int_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces integer values evenly distributed across a range  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/uniform_real_distribution.html" title="cpp/numeric/random/uniform real distribution"> <span class="t-lines"><span>uniform_real_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values evenly distributed across a range  <br> <span class="t-mark">(class template)</span> 
+</td>
+</tr>
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Bernoulli_distributions">  Bernoulli distributions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/bernoulli_distribution.html" title="cpp/numeric/random/bernoulli distribution"> <span class="t-lines"><span>bernoulli_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces <span class="t-c"><span class="mw-geshi cpp source-cpp"><span class="kw4">bool</span></span></span> values on a <a href="http%3A//en.wikipedia.com/wiki/Bernoulli_distribution" class="extiw" title="enwiki:Bernoulli distribution"> Bernoulli distribution</a>.  <br> <span class="t-mark">(class)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/binomial_distribution.html" title="cpp/numeric/random/binomial distribution"> <span class="t-lines"><span>binomial_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces integer values on a  <a href="http%3A//en.wikipedia.com/wiki/Binomial_distribution" class="extiw" title="enwiki:Binomial distribution"> binomial distribution</a>.   <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/negative_binomial_distribution.html" title="cpp/numeric/random/negative binomial distribution"> <span class="t-lines"><span>negative_binomial_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces integer values on a  <a href="http%3A//en.wikipedia.com/wiki/Negative_binomial_distribution" class="extiw" title="enwiki:Negative binomial distribution"> negative binomial distribution</a>.   <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/geometric_distribution.html" title="cpp/numeric/random/geometric distribution"> <span class="t-lines"><span>geometric_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces integer values on a  <a href="http%3A//en.wikipedia.com/wiki/Geometric_distribution" class="extiw" title="enwiki:Geometric distribution"> geometric distribution</a>.   <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Poisson_distributions">  Poisson distributions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/poisson_distribution.html" title="cpp/numeric/random/poisson distribution"> <span class="t-lines"><span>poisson_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces integer values on a  <a href="http%3A//en.wikipedia.com/wiki/Poisson_distribution" class="extiw" title="enwiki:Poisson distribution"> poisson distribution</a>.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/exponential_distribution.html" title="cpp/numeric/random/exponential distribution"> <span class="t-lines"><span>exponential_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values on an  <a href="http%3A//en.wikipedia.com/wiki/Exponential_distribution" class="extiw" title="enwiki:Exponential distribution"> exponential distribution</a>.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/gamma_distribution.html" title="cpp/numeric/random/gamma distribution"> <span class="t-lines"><span>gamma_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values on an  <a href="http%3A//en.wikipedia.com/wiki/Gamma_distribution" class="extiw" title="enwiki:Gamma distribution"> gamma distribution</a>.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/weibull_distribution.html" title="cpp/numeric/random/weibull distribution"> <span class="t-lines"><span>weibull_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>  produces real values on a  <a href="http%3A//en.wikipedia.com/wiki/Weibull_distribution" class="extiw" title="enwiki:Weibull distribution"> Weibull distribution</a>.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/extreme_value_distribution.html" title="cpp/numeric/random/extreme value distribution"> <span class="t-lines"><span>extreme_value_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values on an  <a href="http%3A//en.wikipedia.com/wiki/Generalized_extreme_value_distribution" class="extiw" title="enwiki:Generalized extreme value distribution"> extreme value distribution</a>.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Normal_distributions">  Normal distributions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/normal_distribution.html" title="cpp/numeric/random/normal distribution"> <span class="t-lines"><span>normal_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values on a  <a href="http%3A//en.wikipedia.com/wiki/Normal_distribution" class="extiw" title="enwiki:Normal distribution"> standard normal (Gaussian) distribution</a>.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/lognormal_distribution.html" title="cpp/numeric/random/lognormal distribution"> <span class="t-lines"><span>lognormal_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values on a  <a href="http%3A//en.wikipedia.com/wiki/Lognormal_distribution" class="extiw" title="enwiki:Lognormal distribution"> lognormal distribution</a>.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/chi_squared_distribution.html" title="cpp/numeric/random/chi squared distribution"> <span class="t-lines"><span>chi_squared_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values on a  <a href="http%3A//en.wikipedia.com/wiki/Chi-squared_distribution" class="extiw" title="enwiki:Chi-squared distribution"> chi-squared distribution</a>.   <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/cauchy_distribution.html" title="cpp/numeric/random/cauchy distribution"> <span class="t-lines"><span>cauchy_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values on a  <a href="http%3A//en.wikipedia.com/wiki/Cauchy_distribution" class="extiw" title="enwiki:Cauchy distribution"> Cauchy distribution</a>.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/fisher_f_distribution.html" title="cpp/numeric/random/fisher f distribution"> <span class="t-lines"><span>fisher_f_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values on a  <a href="http%3A//en.wikipedia.com/wiki/F-distribution" class="extiw" title="enwiki:F-distribution"> Fisher's F-distribution</a>.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/student_t_distribution.html" title="cpp/numeric/random/student t distribution"> <span class="t-lines"><span>student_t_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values on a  <a href="http%3A//en.wikipedia.com/wiki/Student%27s_t-distribution" class="extiw" title="enwiki:Student's t-distribution"> Student's t-distribution</a>.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+
+<tr>
+<td colspan="2"> <h5> <span class="mw-headline" id="Sampling_distributions">  Sampling distributions </span>
+</h5>
+</td>
+</tr>
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/discrete_distribution.html" title="cpp/numeric/random/discrete distribution"> <span class="t-lines"><span>discrete_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces random integers on a discrete distribution.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/piecewise_constant_distribution.html" title="cpp/numeric/random/piecewise constant distribution"> <span class="t-lines"><span>piecewise_constant_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values distributed on constant subintervals. <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/piecewise_linear_distribution.html" title="cpp/numeric/random/piecewise linear distribution"> <span class="t-lines"><span>piecewise_linear_distribution</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   produces real values distributed on defined subintervals.  <br> <span class="t-mark">(class template)</span>
+</td>
+</tr>
+
+
+</table>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Functions">edit</a>]</span> <span class="mw-headline" id="Functions">Functions</span>
+</h3>
+<table class="t-dsc-begin">
+
+<tr class="t-dsc">
+<td>  <div class="t-dsc-member-div">
+<div><a href="../numeric/random/generate_canonical.html" title="cpp/numeric/random/generate canonical"> <span class="t-lines"><span>generate_canonical</span></span></a></div>
+<div><span class="t-lines"><span><span class="t-mark-rev t-since-cxx11">(C++11)</span></span></span></div>
+</div>
+</td>
+<td>   evenly distributes real values of given precision across [0, 1)  <br> <span class="t-mark">(function template)</span> 
+</td>
+</tr>
+</table>
+<p><br>
+</p>
+<h3>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Synopsis">edit</a>]</span> <span class="mw-headline" id="Synopsis">Synopsis</span>
+</h3>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="co2">#include &lt;initializer_list&gt;</span>
+<span class="kw1">namespace</span> std <span class="br0">{</span>
+    <span class="co1">// class template linear_congruential_engine</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UIntType, UIntType a, UIntType c, UIntType m<span class="sy1">&gt;</span>
+        <span class="kw1">class</span> linear_congruential_engine<span class="sy4">;</span>
+ 
+    <span class="co1">// class template mersenne_twister_engine</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UIntType, size_t w, size_t n, size_t m, size_t r,
+             UIntType a, size_t u, UintType d, size_t s,
+             UIntType b, size_t t,
+             UIntType c, size_t l, UintType f<span class="sy1">&gt;</span>
+     <span class="kw1">class</span> mersenne_twister_engine<span class="sy4">;</span>
+ 
+    <span class="co1">// class template subtract_with_carry_engine</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UIntType, size_t w, size_t s, size_t r<span class="sy1">&gt;</span>
+        <span class="kw1">class</span> subtract_with_carry_engine<span class="sy4">;</span>
+ 
+    <span class="co1">// class template discard_block_engine</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Engine, size_t p, size_t r<span class="sy1">&gt;</span>
+        <span class="kw1">class</span> discard_block_engine<span class="sy4">;</span>
+ 
+    <span class="co1">// class template independent_bits_engine</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Engine, size_t w, <span class="kw1">class</span> UIntType<span class="sy1">&gt;</span>
+        <span class="kw1">class</span> independent_bits_engine<span class="sy4">;</span>
+ 
+    <span class="co1">// class template shuffle_order_engine</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Engine, size_t k<span class="sy1">&gt;</span>
+        <span class="kw1">class</span> shuffle_order_engine<span class="sy4">;</span>
+ 
+    <span class="co1">// engines and engine adaptors with predefined parameters</span>
+    <span class="kw1">typedef</span> linear_congruential_engine<span class="sy1">&lt;</span>uint_fast32_t, <span class="nu0">16807</span>, <span class="nu0">0</span>, <span class="nu0">2147483647</span><span class="sy1">&gt;</span>
+        minstd_rand0<span class="sy4">;</span>
+    <span class="kw1">typedef</span>  linear_congruential_engine<span class="sy1">&lt;</span>uint_fast32_t, <span class="nu0">48271</span>, <span class="nu0">0</span>, <span class="nu0">2147483647</span><span class="sy1">&gt;</span>
+        minstd_rand<span class="sy4">;</span>
+    <span class="kw1">typedef</span>  mersenne_twister_engine<span class="sy1">&lt;</span>uint_fast32_t,
+            <span class="nu0">32</span>,<span class="nu0">624</span>,<span class="nu0">397</span>,<span class="nu0">31</span>,<span class="nu12">0x9908b0df</span>,<span class="nu0">11</span>,<span class="nu12">0xffffffff</span>,<span class="nu0">7</span>,<span class="nu12">0x9d2c5680</span>,<span class="nu0">15</span>,
+            <span class="nu12">0xefc60000</span>,<span class="nu0">18</span>,<span class="nu0">1812433253</span><span class="sy1">&gt;</span>
+        mt19937<span class="sy4">;</span>
+    <span class="kw1">typedef</span> mersenne_twister_engine<span class="sy1">&lt;</span>uint_fast64_t,
+                <span class="nu0">64</span>,<span class="nu0">312</span>,<span class="nu0">156</span>,<span class="nu0">31</span>,<span class="nu12">0xb5026f5aa96619e9</span>,<span class="nu0">29</span>,
+                <span class="nu12">0x5555555555555555</span>,<span class="nu0">17</span>,
+                <span class="nu12">0x71d67fffeda60000</span>,<span class="nu0">37</span>,
+                <span class="nu12">0xfff7eee000000000</span>,<span class="nu0">43</span>,
+                <span class="nu0">6364136223846793005</span><span class="sy1">&gt;</span>
+        mt19937_64<span class="sy4">;</span>
+    <span class="kw1">typedef</span> subtract_with_carry_engine<span class="sy1">&lt;</span>uint_fast32_t, <span class="nu0">24</span>, <span class="nu0">10</span>, <span class="nu0">24</span><span class="sy1">&gt;</span>
+        ranlux24_base<span class="sy4">;</span>
+    <span class="kw1">typedef</span> subtract_with_carry_engine<span class="sy1">&lt;</span>uint_fast64_t, <span class="nu0">48</span>, <span class="nu0">5</span>, <span class="nu0">12</span><span class="sy1">&gt;</span>
+        ranlux48_base<span class="sy4">;</span>
+    <span class="kw1">typedef</span>  discard_block_engine<span class="sy1">&lt;</span>ranlux24_base, <span class="nu0">223</span>, <span class="nu0">23</span><span class="sy1">&gt;</span>
+        ranlux24<span class="sy4">;</span>
+    <span class="kw1">typedef</span> discard_block_engine<span class="sy1">&lt;</span>ranlux48_base, <span class="nu0">389</span>, <span class="nu0">11</span><span class="sy1">&gt;</span>
+        ranlux48<span class="sy4">;</span>
+    <span class="kw1">typedef</span>  shuffle_order_engine<span class="sy1">&lt;</span>minstd_rand0,<span class="nu0">256</span><span class="sy1">&gt;</span>
+        knuth_b<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*implementation-defined*/</span> default_random_engine<span class="sy4">;</span>
+ 
+    <span class="co1">// class random_device</span>
+    <span class="kw1">class</span> random_device<span class="sy4">;</span>
+ 
+    <span class="co1">// class seed_seq</span>
+    <span class="kw1">class</span> seed_seq<span class="sy4">;</span>
+ 
+    <span class="co1">// function template generate_canonical</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType, size_t bits, <span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+        RealType generate_canonical<span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// class template uniform_int_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> uniform_int_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template uniform_real_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> uniform_real_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class bernoulli_distribution</span>
+    <span class="kw1">class</span> bernoulli_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template binomial_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> binomial_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template geometric_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> geometric_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template negative_binomial_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> negative_binomial_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template poisson_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> poisson_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template exponential_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> exponential_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template gamma_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> gamma_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template weibull_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> weibull_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template extreme_value_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> extreme_value_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template normal_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+    <span class="kw1">class</span> normal_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template lognormal_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> lognormal_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template chi_squared_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> chi_squared_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template cauchy_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> cauchy_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template fisher_f_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> fisher_f_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template student_t_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> student_t_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template discrete_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> discrete_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template piecewise_constant_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> piecewise_constant_distribution<span class="sy4">;</span>
+ 
+    <span class="co1">// class template piecewise_linear_distribution</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+        <span class="kw1">class</span> piecewise_linear_distribution<span class="sy4">;</span>
+<span class="br0">}</span> <span class="co1">// namespace std</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::linear congruential engine">edit</a>]</span> <span class="mw-headline" id="Class_std::linear_congruential_engine">Class <span class="t-lc"><a href="../numeric/random/linear_congruential_engine.html" title="cpp/numeric/random/linear congruential engine">std::linear_congruential_engine</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UIntType, UIntType a, UIntType c, UIntType m<span class="sy1">&gt;</span>
+<span class="kw1">class</span> linear_congruential_engine
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> UIntType result_type<span class="sy4">;</span>
+ 
+    <span class="co1">// engine characteristics</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type multiplier <span class="sy1">=</span> a<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type increment <span class="sy1">=</span> c<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type modulus <span class="sy1">=</span> m<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type min<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> c <span class="sy1">==</span> 0u <span class="sy4">?</span> 1u<span class="sy4">:</span> 0u <span class="br0">}</span><span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type max<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> m <span class="sy2">-</span> 1u <span class="br0">}</span><span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type default_seed <span class="sy1">=</span> 1u<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and seeding functions</span>
+    <span class="kw1">explicit</span> linear_congruential_engine<span class="br0">(</span>result_type s <span class="sy1">=</span> default_seed<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw1">explicit</span> linear_congruential_engine<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw4">void</span> seed<span class="br0">(</span>result_type s <span class="sy1">=</span> default_seed<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw4">void</span> seed<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> discard<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span> z<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::mersenne twister engine">edit</a>]</span> <span class="mw-headline" id="Class_std::mersenne_twister_engine">Class <span class="t-lc"><a href="../numeric/random/mersenne_twister_engine.html" title="cpp/numeric/random/mersenne twister engine">std::mersenne_twister_engine</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UIntType, size_t w, size_t n, size_t m, size_t r,
+        UIntType a, size_t u, UIntType d, size_t s,
+        UIntType b, size_t t,
+        UIntType c, size_t l, UIntType f<span class="sy1">&gt;</span>
+<span class="kw1">class</span> mersenne_twister_engine
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> UIntType result_type<span class="sy4">;</span>
+ 
+    <span class="co1">// engine characteristics</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t word_size <span class="sy1">=</span> w<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t state_size <span class="sy1">=</span> n<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t shift_size <span class="sy1">=</span> m<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t mask_bits <span class="sy1">=</span> r<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> UIntType xor_mask <span class="sy1">=</span> a<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t tempering_u <span class="sy1">=</span> u<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> UIntType tempering_d <span class="sy1">=</span> d<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t tempering_s <span class="sy1">=</span> s<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> UIntType tempering_b <span class="sy1">=</span> b<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t tempering_t <span class="sy1">=</span> t<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> UIntType tempering_c <span class="sy1">=</span> c<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t tempering_l <span class="sy1">=</span> l<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> UIntType initialization_multiplier <span class="sy1">=</span> f<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type min <span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="br0">}</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type max<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> 2w − <span class="nu0">1</span><span class="sy4">;</span> <span class="br0">}</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type default_seed <span class="sy1">=</span> 5489u<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and seeding functions</span>
+    <span class="kw1">explicit</span> mersenne_twister_engine<span class="br0">(</span>result_type value <span class="sy1">=</span> default_seed<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw1">explicit</span> mersenne_twister_engine<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw4">void</span> seed<span class="br0">(</span>result_type value <span class="sy1">=</span> default_seed<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw4">void</span> seed<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> discard<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span> z<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::subtract with carry engine">edit</a>]</span> <span class="mw-headline" id="Class_std::subtract_with_carry_engine">Class <span class="t-lc"><a href="../numeric/random/subtract_with_carry_engine.html" title="cpp/numeric/random/subtract with carry engine">std::subtract_with_carry_engine</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UIntType, size_t w, size_t s, size_t r<span class="sy1">&gt;</span>
+<span class="kw1">class</span> subtract_with_carry_engine
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> UIntType result_type<span class="sy4">;</span>
+ 
+    <span class="co1">// engine characteristics</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t word_size <span class="sy1">=</span> w<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t short_lag <span class="sy1">=</span> s<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t long_lag <span class="sy1">=</span> r<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type min<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="br0">}</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type max<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> m − <span class="nu0">1</span><span class="sy4">;</span> <span class="br0">}</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type default_seed <span class="sy1">=</span> 19780503u<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and seeding functions</span>
+    <span class="kw1">explicit</span> subtract_with_carry_engine<span class="br0">(</span>result_type value <span class="sy1">=</span> default_seed<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw1">explicit</span> subtract_with_carry_engine<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+        <span class="kw4">void</span> seed<span class="br0">(</span>result_type value <span class="sy1">=</span> default_seed<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw4">void</span> seed<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> discard<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span> z<span class="br0">)</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::discard block engine">edit</a>]</span> <span class="mw-headline" id="Class_std::discard_block_engine">Class <span class="t-lc"><a href="../numeric/random/discard_block_engine.html" title="cpp/numeric/random/discard block engine">std::discard_block_engine</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Engine, size_t p, size_t r<span class="sy1">&gt;</span>
+<span class="kw1">class</span> discard_block_engine
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> <span class="kw1">typename</span> Engine<span class="sy4">::</span><span class="me2">result_type</span> result_type<span class="sy4">;</span>
+ 
+    <span class="co1">// engine characteristics</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t block_size <span class="sy1">=</span> p<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t used_block <span class="sy1">=</span> r<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type min<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> Engine<span class="sy4">::</span><span class="me2">min</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type max<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> Engine<span class="sy4">::</span><span class="me2">max</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>
+ 
+    <span class="co1">// constructors and seeding functions</span>
+    discard_block_engine<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> discard_block_engine<span class="br0">(</span><span class="kw4">const</span> Engine<span class="sy3">&amp;</span> e<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> discard_block_engine<span class="br0">(</span>Engine<span class="sy3">&amp;&amp;</span> e<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> discard_block_engine<span class="br0">(</span>result_type s<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw1">explicit</span> discard_block_engine<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> seed<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> seed<span class="br0">(</span>result_type s<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw4">void</span> seed<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> discard<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span> z<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    <span class="kw4">const</span> Engine<span class="sy3">&amp;</span> base<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span> <span class="br0">{</span> <span class="kw1">return</span> e<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+<span class="kw1">private</span><span class="sy4">:</span>
+    Engine e<span class="sy4">;</span> <span class="co1">// exposition only</span>
+    <span class="kw4">int</span> n<span class="sy4">;</span> <span class="co1">// exposition only</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p><br>
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::independent bits engine">edit</a>]</span> <span class="mw-headline" id="Class_std::independent_bits_engine">Class <span class="t-lc"><a href="../numeric/random/independent_bits_engine.html" title="cpp/numeric/random/independent bits engine">std::independent_bits_engine</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Engine, size_t w, <span class="kw1">class</span> UIntType<span class="sy1">&gt;</span>
+<span class="kw1">class</span> independent_bits_engine
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> UIntType result_type<span class="sy4">;</span>
+ 
+    <span class="co1">// engine characteristics</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type min<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> <span class="nu0">0</span><span class="sy4">;</span> <span class="br0">}</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type max<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> 2w <span class="sy2">-</span> <span class="nu0">1</span><span class="sy4">;</span> <span class="br0">}</span>
+ 
+    <span class="co1">// constructors and seeding functions</span>
+    independent_bits_engine<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> independent_bits_engine<span class="br0">(</span><span class="kw4">const</span> Engine<span class="sy3">&amp;</span> e<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> independent_bits_engine<span class="br0">(</span>Engine<span class="sy3">&amp;&amp;</span> e<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> independent_bits_engine<span class="br0">(</span>result_type s<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw1">explicit</span> independent_bits_engine<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> seed<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> seed<span class="br0">(</span>result_type s<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw4">void</span> seed<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> discard<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span> z<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    <span class="kw4">const</span> Engine<span class="sy3">&amp;</span> base<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span> <span class="br0">{</span> <span class="kw1">return</span> e<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">private</span><span class="sy4">:</span>
+    Engine e<span class="sy4">;</span> <span class="co1">// exposition only</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p><br>
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::shuffle order engine">edit</a>]</span> <span class="mw-headline" id="Class_std::shuffle_order_engine">Class <span class="t-lc"><a href="../numeric/random/shuffle_order_engine.html" title="cpp/numeric/random/shuffle order engine">std::shuffle_order_engine</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Engine, size_t k<span class="sy1">&gt;</span>
+<span class="kw1">class</span> shuffle_order_engine
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> <span class="kw1">typename</span> Engine<span class="sy4">::</span><span class="me2">result_type</span> result_type<span class="sy4">;</span>
+ 
+    <span class="co1">// engine characteristics</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> size_t table_size <span class="sy1">=</span> k<span class="sy4">;</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type min<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> Engine<span class="sy4">::</span><span class="me2">min</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type max<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> Engine<span class="sy4">::</span><span class="me2">max</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>
+ 
+    <span class="co1">// constructors and seeding functions</span>
+    shuffle_order_engine<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> shuffle_order_engine<span class="br0">(</span><span class="kw4">const</span> Engine<span class="sy3">&amp;</span> e<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> shuffle_order_engine<span class="br0">(</span>Engine<span class="sy3">&amp;&amp;</span> e<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> shuffle_order_engine<span class="br0">(</span>result_type s<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw1">explicit</span> shuffle_order_engine<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> seed<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> seed<span class="br0">(</span>result_type s<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> Sseq<span class="sy1">&gt;</span> <span class="kw4">void</span> seed<span class="br0">(</span>Sseq<span class="sy3">&amp;</span> q<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> discard<span class="br0">(</span><span class="kw4">unsigned</span> <span class="kw4">long</span> <span class="kw4">long</span> z<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    <span class="kw4">const</span> Engine<span class="sy3">&amp;</span> base<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span> <span class="br0">{</span> <span class="kw1">return</span> e<span class="sy4">;</span> <span class="br0">}</span><span class="sy4">;</span>
+ 
+<span class="kw1">private</span><span class="sy4">:</span>
+    Engine e<span class="sy4">;</span>           <span class="co1">// exposition only</span>
+    result_type Y<span class="sy4">;</span>      <span class="co1">// exposition only</span>
+    result_type V<span class="br0">[</span>k<span class="br0">]</span><span class="sy4">;</span>   <span class="co1">// exposition only</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::random device">edit</a>]</span> <span class="mw-headline" id="Class_std::random_device">Class <span class="t-lc"><a href="../numeric/random/random_device.html" title="cpp/numeric/random/random device">std::random_device</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> random_device
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> <span class="kw4">unsigned</span> <span class="kw4">int</span> result_type<span class="sy4">;</span>
+ 
+    <span class="co1">// generator characteristics</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type min<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> numeric_limits<span class="sy1">&lt;</span>result_type<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">min</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>
+    <span class="kw4">static</span> <span class="kw4">constexpr</span> result_type max<span class="br0">(</span><span class="br0">)</span> <span class="br0">{</span> <span class="kw1">return</span> numeric_limits<span class="sy1">&lt;</span>result_type<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">max</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span> <span class="br0">}</span>
+ 
+    <span class="co1">// constructors</span>
+    <span class="kw1">explicit</span> random_device<span class="br0">(</span><span class="kw4">const</span> string<span class="sy3">&amp;</span> token <span class="sy1">=</span> implementation<span class="sy2">-</span>defined<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    <span class="kw4">double</span> entropy<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span> <span class="kw1">noexcept</span><span class="sy4">;</span>
+ 
+    <span class="co1">// no copy functions</span>
+    random_device<span class="br0">(</span><span class="kw4">const</span> random_device<span class="sy3">&amp;</span> <span class="br0">)</span> <span class="sy1">=</span> delete<span class="sy4">;</span>
+    <span class="kw4">void</span> operator<span class="sy1">=</span><span class="br0">(</span><span class="kw4">const</span> random_device<span class="sy3">&amp;</span> <span class="br0">)</span> <span class="sy1">=</span> delete<span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::seed seq">edit</a>]</span> <span class="mw-headline" id="Class_std::seed_seq">Class <span class="t-lc"><a href="../numeric/random/seed_seq.html" title="cpp/numeric/random/seed seq">std::seed_seq</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> seed_seq
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> uint_least32_t result_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors</span>
+    seed_seq<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> T<span class="sy1">&gt;</span>
+    seed_seq<span class="br0">(</span>initializer_list<span class="sy1">&lt;</span>T<span class="sy1">&gt;</span> il<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> InputIterator<span class="sy1">&gt;</span>
+    seed_seq<span class="br0">(</span>InputIterator begin, InputIterator end<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RandomAccessIterator<span class="sy1">&gt;</span>
+    <span class="kw4">void</span> generate<span class="br0">(</span>RandomAccessIterator begin, RandomAccessIterator end<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    size_t size<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> OutputIterator<span class="sy1">&gt;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span>OutputIterator dest<span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+ 
+    <span class="co1">// no copy functions</span>
+    seed_seq<span class="br0">(</span><span class="kw4">const</span> seed_seq<span class="sy3">&amp;</span> <span class="br0">)</span> <span class="sy1">=</span> delete<span class="sy4">;</span>
+    <span class="kw4">void</span> operator<span class="sy1">=</span><span class="br0">(</span><span class="kw4">const</span> seed_seq<span class="sy3">&amp;</span> <span class="br0">)</span> <span class="sy1">=</span> delete<span class="sy4">;</span>
+ 
+<span class="kw1">private</span><span class="sy4">:</span>
+    vector<span class="sy1">&lt;</span>result_type<span class="sy1">&gt;</span> v<span class="sy4">;</span> <span class="co1">// exposition only</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::uniform int distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::uniform_int_distribution">Class <span class="t-lc"><a href="../numeric/random/uniform_int_distribution.html" title="cpp/numeric/random/uniform int distribution">std::uniform_int_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> uniform_int_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> IntType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and reset functions</span>
+    <span class="kw1">explicit</span> uniform_int_distribution<span class="br0">(</span>IntType a <span class="sy1">=</span> <span class="nu0">0</span>, IntType b <span class="sy1">=</span> numeric_limits<span class="sy1">&lt;</span>IntType<span class="sy1">&gt;</span><span class="sy4">::</span><span class="me2">max</span><span class="br0">(</span><span class="br0">)</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> uniform_int_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    result_type a<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type b<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::bernoulli distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::bernoulli_distribution">Class <span class="t-lc"><a href="../numeric/random/bernoulli_distribution.html" title="cpp/numeric/random/bernoulli distribution">std::bernoulli_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">class</span> bernoulli_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> <span class="kw4">bool</span> result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and reset functions</span>
+    <span class="kw1">explicit</span> bernoulli_distribution<span class="br0">(</span><span class="kw4">double</span> p <span class="sy1">=</span> <span class="nu16">0.5</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> bernoulli_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    <span class="kw4">double</span> p<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::binomial distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::binomial_distribution">Class <span class="t-lc"><a href="../numeric/random/binomial_distribution.html" title="cpp/numeric/random/binomial distribution">std::binomial_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> binomial_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> IntType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and reset functions</span>
+    <span class="kw1">explicit</span> binomial_distribution<span class="br0">(</span>IntType t <span class="sy1">=</span> <span class="nu0">1</span>, <span class="kw4">double</span> p <span class="sy1">=</span> <span class="nu16">0.5</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> binomial_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    IntType t<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">double</span> p<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::geometric distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::geometric_distribution">Class <span class="t-lc"><a href="../numeric/random/geometric_distribution.html" title="cpp/numeric/random/geometric distribution">std::geometric_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> geometric_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> IntType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and reset functions</span>
+    <span class="kw1">explicit</span> geometric_distribution<span class="br0">(</span><span class="kw4">double</span> p <span class="sy1">=</span> <span class="nu16">0.5</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> geometric_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    <span class="kw4">double</span> p<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::negative binomial distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::negative_binomial_distribution">Class <span class="t-lc"><a href="../numeric/random/negative_binomial_distribution.html" title="cpp/numeric/random/negative binomial distribution">std::negative_binomial_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> negative_binomial_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> IntType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+    <span class="co1">// constructor and reset functions</span>
+    <span class="kw1">explicit</span> negative_binomial_distribution<span class="br0">(</span>IntType k <span class="sy1">=</span> <span class="nu0">1</span>, <span class="kw4">double</span> p <span class="sy1">=</span> <span class="nu16">0.5</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> negative_binomial_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="co1">// property functions</span>
+    IntType k<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">double</span> p<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::poisson distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::poisson_distribution">Class <span class="t-lc"><a href="../numeric/random/poisson_distribution.html" title="cpp/numeric/random/poisson distribution">std::poisson_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> poisson_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> IntType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and reset functions</span>
+    <span class="kw1">explicit</span> poisson_distribution<span class="br0">(</span><span class="kw4">double</span> mean <span class="sy1">=</span> <span class="nu16">1.0</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> poisson_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    <span class="kw4">double</span> mean<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::seed seq">edit</a>]</span> <span class="mw-headline" id="Class_std::seed_seq_2">Class <span class="t-lc"><a href="../numeric/random/seed_seq.html" title="cpp/numeric/random/seed seq">std::seed_seq</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> exponential_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and reset functions</span>
+    <span class="kw1">explicit</span> exponential_distribution<span class="br0">(</span>RealType lambda <span class="sy1">=</span> <span class="nu16">1.0</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> exponential_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    RealType lambda<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::gamma distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::gamma_distribution">Class <span class="t-lc"><a href="../numeric/random/gamma_distribution.html" title="cpp/numeric/random/gamma distribution">std::gamma_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> gamma_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and reset functions</span>
+    <span class="kw1">explicit</span> gamma_distribution<span class="br0">(</span>RealType alpha <span class="sy1">=</span> <span class="nu16">1.0</span>, RealType beta <span class="sy1">=</span> <span class="nu16">1.0</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> gamma_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    RealType alpha<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    RealType beta<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<p><br>
+</p>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::weibull distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::weibull_distribution">Class <span class="t-lc"><a href="../numeric/random/weibull_distribution.html" title="cpp/numeric/random/weibull distribution">std::weibull_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> weibull_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructor and reset functions</span>
+    <span class="kw1">explicit</span> weibull_distribution<span class="br0">(</span>RealType a <span class="sy1">=</span> <span class="nu16">1.0</span>, RealType b <span class="sy1">=</span> <span class="nu16">1.0</span><span class="br0">)</span>
+    <span class="kw1">explicit</span> weibull_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    RealType a<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    RealType b<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::extreme value distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::extreme_value_distribution">Class <span class="t-lc"><a href="../numeric/random/extreme_value_distribution.html" title="cpp/numeric/random/extreme value distribution">std::extreme_value_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> extreme_value_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructor and reset functions</span>
+    <span class="kw1">explicit</span> extreme_value_distribution<span class="br0">(</span>RealType a <span class="sy1">=</span> <span class="nu16">0.0</span>, RealType b <span class="sy1">=</span> <span class="nu16">1.0</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> extreme_value_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    RealType a<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    RealType b<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::normal distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::normal_distribution">Class <span class="t-lc"><a href="../numeric/random/normal_distribution.html" title="cpp/numeric/random/normal distribution">std::normal_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> normal_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructors and reset functions</span>
+    <span class="kw1">explicit</span> normal_distribution<span class="br0">(</span>RealType mean <span class="sy1">=</span> <span class="nu16">0.0</span>, RealType stddev <span class="sy1">=</span> <span class="nu16">1.0</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> normal_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    RealType mean<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    RealType stddev<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::lognormal distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::lognormal_distribution">Class <span class="t-lc"><a href="../numeric/random/lognormal_distribution.html" title="cpp/numeric/random/lognormal distribution">std::lognormal_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> lognormal_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructor and reset functions</span>
+    <span class="kw1">explicit</span> lognormal_distribution<span class="br0">(</span>RealType m <span class="sy1">=</span> <span class="nu16">0.0</span>, RealType s <span class="sy1">=</span> <span class="nu16">1.0</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> lognormal_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    RealType m<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    RealType s<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::chi squared distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::chi_squared_distribution">Class <span class="t-lc"><a href="../numeric/random/chi_squared_distribution.html" title="cpp/numeric/random/chi squared distribution">std::chi_squared_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> chi_squared_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructor and reset functions</span>
+    <span class="kw1">explicit</span> chi_squared_distribution<span class="br0">(</span>RealType n <span class="sy1">=</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> chi_squared_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    RealType n<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::cauchy distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::cauchy_distribution">Class <span class="t-lc"><a href="../numeric/random/cauchy_distribution.html" title="cpp/numeric/random/cauchy distribution">std::cauchy_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> cauchy_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructor and reset functions</span>
+    <span class="kw1">explicit</span> cauchy_distribution<span class="br0">(</span>RealType a <span class="sy1">=</span> <span class="nu16">0.0</span>, RealType b <span class="sy1">=</span> <span class="nu16">1.0</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> cauchy_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    RealType a<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    RealType b<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::fisher f distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::fisher_f_distribution">Class <span class="t-lc"><a href="../numeric/random/fisher_f_distribution.html" title="cpp/numeric/random/fisher f distribution">std::fisher_f_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> fisher_f_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructor and reset functions</span>
+    <span class="kw1">explicit</span> fisher_f_distribution<span class="br0">(</span>RealType m <span class="sy1">=</span> <span class="nu0">1</span>, RealType n <span class="sy1">=</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> fisher_f_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    RealType m<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    RealType n<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::student t distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::student_t_distribution">Class <span class="t-lc"><a href="../numeric/random/student_t_distribution.html" title="cpp/numeric/random/student t distribution">std::student_t_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> student_t_distribution
+<span class="br0">{</span>
+    <span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructor and reset functions</span>
+    <span class="kw1">explicit</span> student_t_distribution<span class="br0">(</span>RealType n <span class="sy1">=</span> <span class="nu0">1</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> student_t_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    RealType n<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::discrete distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::discrete_distribution">Class <span class="t-lc"><a href="../numeric/random/discrete_distribution.html" title="cpp/numeric/random/discrete distribution">std::discrete_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> IntType <span class="sy1">=</span> <span class="kw4">int</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> discrete_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> IntType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructor and reset functions</span>
+    discrete_distribution<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> InputIterator<span class="sy1">&gt;</span>
+    discrete_distribution<span class="br0">(</span>InputIterator firstW, InputIterator lastW<span class="br0">)</span><span class="sy4">;</span>
+    discrete_distribution<span class="br0">(</span>initializer_list<span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span> wl<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UnaryOperation<span class="sy1">&gt;</span>
+    discrete_distribution<span class="br0">(</span>size_t nw, <span class="kw4">double</span> xmin, <span class="kw4">double</span> xmax, UnaryOperation fw<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> discrete_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    vector<span class="sy1">&lt;</span><span class="kw4">double</span><span class="sy1">&gt;</span> probabilities<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::piecewise constant distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::piecewise_constant_distribution">Class <span class="t-lc"><a href="../numeric/random/piecewise_constant_distribution.html" title="cpp/numeric/random/piecewise constant distribution">std::piecewise_constant_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> piecewise_constant_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructor and reset functions</span>
+    piecewise_constant_distribution<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> InputIteratorB, <span class="kw1">class</span> InputIteratorW<span class="sy1">&gt;</span>
+    piecewise_constant_distribution<span class="br0">(</span>InputIteratorB firstB, InputIteratorB lastB,
+    InputIteratorW firstW<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UnaryOperation<span class="sy1">&gt;</span>
+    piecewise_constant_distribution<span class="br0">(</span>initializer_list<span class="sy1">&lt;</span>RealType<span class="sy1">&gt;</span> bl, UnaryOperation fw<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UnaryOperation<span class="sy1">&gt;</span>
+    piecewise_constant_distribution<span class="br0">(</span>size_t nw, RealType xmin, RealType xmax, UnaryOperation fw<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> piecewise_constant_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    vector<span class="sy1">&lt;</span>result_type<span class="sy1">&gt;</span> intervals<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    vector<span class="sy1">&lt;</span>result_type<span class="sy1">&gt;</span> densities<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+<h4>
+<span class="editsection">[<a href="http%3A//en.cppreference.com/mwiki/index.php" title="Edit section: Class std::piecewise linear distribution">edit</a>]</span> <span class="mw-headline" id="Class_std::piecewise_linear_distribution">Class <span class="t-lc"><a href="../numeric/random/piecewise_linear_distribution.html" title="cpp/numeric/random/piecewise linear distribution">std::piecewise_linear_distribution</a></span></span>
+</h4>
+<div dir="ltr" class="mw-geshi" style="text-align: left;"><div class="cpp source-cpp"><pre class="de1"><span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> RealType <span class="sy1">=</span> <span class="kw4">double</span><span class="sy1">&gt;</span>
+<span class="kw1">class</span> piecewise_linear_distribution
+<span class="br0">{</span>
+<span class="kw1">public</span><span class="sy4">:</span>
+ 
+    <span class="co1">// types</span>
+    <span class="kw1">typedef</span> RealType result_type<span class="sy4">;</span>
+    <span class="kw1">typedef</span> <span class="coMULTI">/*unspecified*/</span> param_type<span class="sy4">;</span>
+ 
+    <span class="co1">// constructor and reset functions</span>
+    piecewise_linear_distribution<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> InputIteratorB, <span class="kw1">class</span> InputIteratorW<span class="sy1">&gt;</span>
+    piecewise_linear_distribution<span class="br0">(</span>InputIteratorB firstB, InputIteratorB lastB,
+    InputIteratorW firstW<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UnaryOperation<span class="sy1">&gt;</span>
+    piecewise_linear_distribution<span class="br0">(</span>initializer_list<span class="sy1">&lt;</span>RealType<span class="sy1">&gt;</span> bl, UnaryOperation fw<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> UnaryOperation<span class="sy1">&gt;</span>
+    piecewise_linear_distribution<span class="br0">(</span>size_t nw, RealType xmin, RealType xmax, UnaryOperation fw<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">explicit</span> piecewise_linear_distribution<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw4">void</span> reset<span class="br0">(</span><span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// generating functions</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g<span class="br0">)</span><span class="sy4">;</span>
+    <span class="kw1">template</span><span class="sy1">&lt;</span><span class="kw1">class</span> URNG<span class="sy1">&gt;</span>
+    result_type operator<span class="br0">(</span><span class="br0">)</span><span class="br0">(</span>URNG<span class="sy3">&amp;</span> g, <span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+ 
+    <span class="co1">// property functions</span>
+    vector<span class="sy1">&lt;</span>result_type<span class="sy1">&gt;</span> intervals<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    vector<span class="sy1">&lt;</span>result_type<span class="sy1">&gt;</span> densities<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    param_type param<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    <span class="kw4">void</span> param<span class="br0">(</span><span class="kw4">const</span> param_type<span class="sy3">&amp;</span> parm<span class="br0">)</span><span class="sy4">;</span>
+    result_type min<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+    result_type max<span class="br0">(</span><span class="br0">)</span> <span class="kw4">const</span><span class="sy4">;</span>
+<span class="br0">}</span><span class="sy4">;</span></pre></div></div>
+
+<!-- 
+NewPP limit report
+Preprocessor visited node count: 8763/1000000
+Preprocessor generated node count: 9218/1000000
+Post‐expand include size: 209479/2097152 bytes
+Template argument size: 81128/2097152 bytes
+Highest expansion depth: 20/40
+Expensive parser function count: 0/100
+-->
+
+<!-- Saved in parser cache with key mwiki1-mwiki_en_:pcache:idhash:9771-0!*!0!!en!*!* and timestamp 20150714085535 -->
+</div>                    <!-- /bodycontent -->
+                                        <!-- printfooter -->
+                    <div class="printfooter">
+                    Retrieved from "<a href="http%3A//en.cppreference.com/mwiki/index.php">http://en.cppreference.com/mwiki/index.php?title=cpp/header/random&amp;oldid=79608</a>"                    </div>
+                    <!-- /printfooter -->
+                                                            <!-- catlinks -->
+                    <div id="catlinks" class="catlinks catlinks-allhidden"></div>                    <!-- /catlinks -->
+                                                            <div class="visualClear"></div>
+                    <!-- debughtml -->
+                                        <!-- /debughtml -->
+                </div>
+                <!-- /bodyContent -->
+            </div>
+        </div>
+        <!-- /content -->
+        <!-- footer -->
+        
+        <!-- /footer -->
+        <script>if(window.mw){
+mw.loader.state({"site":"loading","user":"missing","user.groups":"ready"});
+}</script>
+<script src="../../../common/skin_scripts.js"></script>
+<script>if(window.mw){
+mw.loader.load(["mediawiki.action.view.postEdit","mediawiki.user","mediawiki.page.ready","mediawiki.searchSuggest","mediawiki.hidpi","ext.gadget.ColiruCompiler"], null, true);
+}</script>
+<script src="../../../common/site_scripts.js"></script>
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2828341-1']);
+_gaq.push(['_setDomainName', 'cppreference.com']);
+_gaq.push(['_trackPageview']);
+</script><!-- Served in 0.088 secs. -->
+	</body>
+<!-- Cached 20150714085743 -->
+</html>
