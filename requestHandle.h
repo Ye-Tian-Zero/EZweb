@@ -4,21 +4,22 @@
 #include "EZweb.h"
 #include <fstream>
 #include <map>
+#include <climits>
 
 using std::fstream;
 using std::map;
 
 class requestHandle{
 public:
-	requestHandle(string root_dir, string index_page = "index.html"): root(root_dir), connect_fd(-1), index(index_page), file_fd(-1) { }
+	requestHandle(string root_dir, string index_page = "index.html"): root(root_dir), _connect_fd(-1), index(index_page), file_fd(-1) { }
 	
 	inline void setConnFd(int fd)
 	{
-		connect_fd = fd;
+		_connect_fd = fd;
 		sockaddr_in peer_info;
 		socklen_t length = sizeof(peer_info);
 
-		if((getpeername(connect_fd, EZ_R_CAST(&peer_info, SA*), &length)) < 0)
+		if((getpeername(_connect_fd, EZ_R_CAST(&peer_info, SA*), &length)) < 0)
 		{
 			EZ_ERR("setConnFd ERR\n");
 			exit(0);
@@ -33,7 +34,7 @@ public:
 		int cnt;
 		map<string, string> header;
 
-		while((cnt = Readline(connect_fd, cur_text)) > 0)
+		while((cnt = Readline(_connect_fd, cur_text)) > 0)
 		{
 			if(cur_text == "\r\n")
 			{
@@ -56,11 +57,11 @@ public:
 protected:
 	void dispart(string& command, string& content, const string& text);
 
-	virtual void processCmd(const string& command, const string& content);
+	virtual void processCmd(const string& command, const string& content, int connect_fd = INT_MIN, string peer = "");
 
 	string extractFileDir(const string& content);
 
-	int connect_fd;
+	int _connect_fd;
 	int file_fd;
 
 	string root;

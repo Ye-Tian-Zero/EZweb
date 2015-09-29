@@ -1,5 +1,6 @@
 #include "EZweb.h"
 #include "requestHandle.h"
+#include "requestHandleEpoll.h"
 #include <fstream>
 using std::fstream;
 int main(int argc, char* argv[])
@@ -14,11 +15,11 @@ int main(int argc, char* argv[])
 
 	while(1)
 	{
-		getConnectFd() = Accept(getListenFd(), reinterpret_cast<SA*>(&getCliAddr()), &len);
+	//	getConnectFd() = Accept(getListenFd(), reinterpret_cast<SA*>(&getCliAddr()), &len);
 
 		//cout << sock_ntop(reinterpret_cast<SA*>(&getCliAddr()), len) << endl;
 
-		pid_t pid(fork());
+	/*	pid_t pid(fork());
 		
 		if(pid < 0)
 		{
@@ -39,7 +40,12 @@ int main(int argc, char* argv[])
 		{
 			close(getConnectFd());
 		}
+		*/
+
+		requestHandleEpoll ins(getListenFd(), "./WebSiteSrc/html_book_20150808/reference");
+		ins.execute();
 	}	
-	
+
+	return 0;
 }
 

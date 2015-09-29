@@ -33,11 +33,21 @@ requestHandle::dispart(string &command, string& content, const string& text)
 }
 
 void
-requestHandle::processCmd(const string& command, const string& content)
+requestHandle::processCmd(const string& command, const string& content, int connect_fd, string peer)
 {
+	if(connect_fd == INT_MIN)
+	{
+		connect_fd = _connect_fd;
+	}
+
+	if(peer.empty())
+	{
+		peer = EZ_peer;
+	}
+
 	if(command == "GET")
 	{
-		EZ_INFO(EZ_peer + " -> " + command + " " + content);
+		EZ_INFO(peer + " -> " + command + " " + content);
 
 		string dir = extractFileDir(content);
 
@@ -55,6 +65,7 @@ requestHandle::processCmd(const string& command, const string& content)
 			strm << file_info.st_size;
 			content_length += strm.str();
 
+			cout << "write start at " << connect_fd << endl;
 			Writen(connect_fd, header.c_str(), header.size());
 			Writen(connect_fd, content_length.c_str(), content_length.size());
 			Writen(connect_fd, "\r\n\r\n", 4);
@@ -68,13 +79,16 @@ requestHandle::processCmd(const string& command, const string& content)
 
 			}while(cnt);
 
+			cout << "endl" << endl;
 		}
 		else
 		{
 			EZ_WARN("Can't find " + dir + "\n");
-			string header = "HTTP/1.1 404 NotFound\r\n\r\n";
-			Writen(connect_fd, header.c_str(), header.size() + 1);
-			Writen(connect_fd, "404\r\n\r\n", 7);
+			string content_length = "Content-Length: 0\r\n";
+			string header = "HTTP/1.1 404 NotFound\r\n";
+			Writen(connect_fd, header.c_str(), header.size());
+			Writen(connect_fd, content_length.c_str(), content_length.size());
+			Writen(connect_fd, "\r\n", 2);
 
 		}
 	}

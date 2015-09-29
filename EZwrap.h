@@ -20,6 +20,8 @@
 #define SERV_PORT 9898
 #define SA struct sockaddr
 
+#define DEBUG
+
 #define EZ_INFO(s) {	\
 		cout << "\033[34;1m" << s << "\033[0m" << flush;\
 }
@@ -31,6 +33,16 @@
 #define EZ_ERR(s){		\
 		cout << "\033[31;1m" << s << "\033[0m" << flush;\
 }
+
+#ifdef DEBUG
+#define EZ_DBG(s){		\
+		cout << "\033[35;1m" <<"Debug Info: "<< s << "\033[0m" << flush;\
+}
+#else
+#define EZ_DBG(s){		\
+}
+#endif
+
 
 #define EZ_R_CAST(bar, type) reinterpret_cast<type>(bar)
 
