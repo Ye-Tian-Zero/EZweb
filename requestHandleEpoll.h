@@ -101,8 +101,6 @@ public:
 
 					if(cnt <= 0)
 					{
-						EZ_ERR(cnt);
-						EZ_ERR('\n');
 						destory(sock_fd);
 					}
 
