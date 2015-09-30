@@ -47,7 +47,9 @@ requestHandle::processCmd(const string& command, const string& content, int conn
 
 	if(command == "GET")
 	{
+#ifdef DEBUG
 		EZ_INFO(peer + " -> " + command + " " + content);
+#endif
 
 		string dir = extractFileDir(content);
 
@@ -55,9 +57,11 @@ requestHandle::processCmd(const string& command, const string& content, int conn
 
 		file_fd = open(dir.c_str(), O_RDONLY);
 
+		string keepAlive = "Connection: keep-alive\r\n";
+
 		if(file_fd >= 0)
 		{
-			string header = "HTTP/1.1 200 ok\r\n";
+			string status = "HTTP/1.1 200 ok\r\n";
 			struct stat file_info;
 			fstat(file_fd, &file_info);
 			string content_length = "Content-Length: "; //asdkljklasdjkgljakldsgjk
@@ -65,8 +69,8 @@ requestHandle::processCmd(const string& command, const string& content, int conn
 			strm << file_info.st_size;
 			content_length += strm.str();
 
-			cout << "write start at " << connect_fd << endl;
-			Writen(connect_fd, header.c_str(), header.size());
+			Writen(connect_fd, status.c_str(), status.size());
+			Writen(connect_fd, keepAlive.c_str(), keepAlive.size());
 			Writen(connect_fd, content_length.c_str(), content_length.size());
 			Writen(connect_fd, "\r\n\r\n", 4);
 
@@ -79,14 +83,16 @@ requestHandle::processCmd(const string& command, const string& content, int conn
 
 			}while(cnt);
 
-			cout << "endl" << endl;
 		}
 		else
 		{
+#ifdef DEBUG
 			EZ_WARN("Can't find " + dir + "\n");
+#endif
 			string content_length = "Content-Length: 0\r\n";
-			string header = "HTTP/1.1 404 NotFound\r\n";
-			Writen(connect_fd, header.c_str(), header.size());
+			string status = "HTTP/1.1 404 NotFound\r\n";
+			Writen(connect_fd, status.c_str(), status.size());
+			Writen(connect_fd, keepAlive.c_str(), keepAlive.size());
 			Writen(connect_fd, content_length.c_str(), content_length.size());
 			Writen(connect_fd, "\r\n", 2);
 

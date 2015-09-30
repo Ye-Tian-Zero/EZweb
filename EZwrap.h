@@ -20,7 +20,7 @@
 #define SERV_PORT 9898
 #define SA struct sockaddr
 
-#define DEBUG
+//#define DEBUG
 
 #define EZ_INFO(s) {	\
 		cout << "\033[34;1m" << s << "\033[0m" << flush;\

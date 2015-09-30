@@ -31,7 +31,7 @@ public:
 			EZ_DBG("wait Start\n");
 			e_fds = epoll_wait(epoll_fd, &_events[0], _events.size(), -1);
 			EZ_DBG("wait End\n");
-//			cout << "e_fds: " << e_fds << endl;
+
 			for(int i(0); i != e_fds; ++ i)
 			{
 				if(_events[i].data.fd == _listen_fd)
@@ -62,10 +62,11 @@ public:
 					peerName[connfd] = peer;
 
 					epoll_ctl(epoll_fd, EPOLL_CTL_ADD, connfd, &_ev);
-
+#ifdef DEBUG
 					EZ_INFO("ADD A FD");
 					EZ_INFO(connfd);
 					EZ_INFO("\n");
+#endif
 
 				}
 				else if(_events[i].events & EPOLLIN)
@@ -79,7 +80,6 @@ public:
 						continue;
 					}
 
-					cout << "reading fd " << sock_fd << endl;
 					while((cnt = Readline(sock_fd, cur_text)) > 0)//It's not efficient;
 					//each socket file descriptor should have a buffer for unblocked IO;
 					{
@@ -138,10 +138,11 @@ private:
 
 	inline void destory(int sock_fd)
 	{
-
+#ifdef DEBUG
 		EZ_INFO("ERASE A FD");
 		EZ_INFO(sock_fd);
 		EZ_INFO("\n");
+#endif
 		epoll_ctl(epoll_fd, EPOLL_CTL_DEL, sock_fd, NULL);
 		close(sock_fd);
 		fd2cmd.erase(sock_fd);

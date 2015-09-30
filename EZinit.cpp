@@ -15,5 +15,6 @@ void init(int port)
 	Bind(getListenFd(), reinterpret_cast<SA*>(&serv_addr), static_cast<socklen_t>(sizeof(serv_addr)));
 
 	signal(SIGCHLD, SIG_IGN);
+	signal(SIGPIPE, SIG_IGN);
 
 }

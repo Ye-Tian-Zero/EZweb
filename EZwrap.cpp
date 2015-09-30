@@ -114,7 +114,9 @@ ssize_t Writen(int fd, const void *vptr, size_t n)
 				nwritten = 0;
 			else
 			{
-				EZ_ERR("write error");
+#ifdef DEBUG
+				EZ_ERR("write error\n");
+#endif
 				return -1;
 			}	
 		}
