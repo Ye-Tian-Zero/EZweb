@@ -16,5 +16,4 @@ void init(int port)
 
 	signal(SIGCHLD, SIG_IGN);
 	signal(SIGPIPE, SIG_IGN);
-
 }

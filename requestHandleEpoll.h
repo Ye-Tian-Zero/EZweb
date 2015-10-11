@@ -6,6 +6,9 @@
 #include <vector>
 #include <map>
 #include <sstream>
+#include <fcntl.h>
+#include <pthread.h>
+#include "Tpool.h"
 
 using std::vector;
 using std::map;
@@ -14,17 +17,32 @@ using std::stringstream;
 
 class requestHandleEpoll : requestHandle{
 public:
-	requestHandleEpoll(int listen_fd, string root_dir, int events_num = 512, string index_page = "index.html"): requestHandle(root_dir, index_page), _listen_fd(listen_fd), _events(events_num) 
-	{
-		epoll_fd = epoll_create(1024);
-		_ev.data.fd = _listen_fd;
-		_ev.events = EPOLLIN;
+	requestHandleEpoll(int listen_fd, string root_dir, int events_num = 512, string index_page = "index.html"): requestHandle(root_dir, index_page), _events(events_num){
 
-		epoll_ctl(epoll_fd, EPOLL_CTL_ADD, _listen_fd, &_ev);
+		_listen_fd = listen_fd;
+		epoll_fd = epoll_create(1024);
+		pthread_mutex_init(&fd2cmd_lock, NULL);
+		pthread_mutex_init(&headers_lock, NULL);
+		pthread_mutex_init(&_events_lock, NULL);
 	}
 
-	virtual void execute()
+	virtual void execute(int unblock = 0)
 	{
+		if(unblock)
+		{
+			_ev.data.fd = _listen_fd;
+			_ev.events = EPOLLIN|EPOLLET;
+
+			int flags = fcntl(_listen_fd, F_GETFL, 0);
+			fcntl(_listen_fd, F_SETFL, flags | O_NONBLOCK);
+		}
+		else
+		{
+			_ev.data.fd = _listen_fd;
+			_ev.events = EPOLLIN;
+		}
+		epoll_ctl(epoll_fd, EPOLL_CTL_ADD, _listen_fd, &_ev);
+
 		int e_fds = 0;
 		for(;;)
 		{
@@ -38,36 +56,53 @@ public:
 				{
 					auto addr = getCliAddr();
 					socklen_t len = sizeof(addr);
-					int connfd = Accept(_listen_fd, EZ_R_CAST(&getCliAddr(), SA*), &len);
-
-					if(connfd < 0)
+				
+					do 
 					{
-						EZ_ERR("connfd < 0 \n");
-						exit(1);
-					}
+						int connfd;
+						if(!unblock)
+						{
+							connfd = Accept(_listen_fd, EZ_R_CAST(&getCliAddr(), SA*), &len);
+						}
+						else
+						{
+							connfd = accept(_listen_fd, EZ_R_CAST(&getCliAddr(), SA*), &len);
 
-					_ev.data.fd = connfd;
-					_ev.events = EPOLLIN;
+							if(connfd < 0 && errno == EWOULDBLOCK)
+								break;
+							if(errno == EINTR)
+								continue;
+						}
 
-					sockaddr_in peer_info;
-					socklen_t length = sizeof(peer_info);
+						
+						if(connfd < 0)
+						{
+							EZ_ERR("connfd < 0 \n");
+							exit(1);
+						}
 
-					if((getpeername(connfd, EZ_R_CAST(&peer_info, SA*), &length)) < 0)
-					{
-						EZ_ERR("setConnFd ERR\n");
-						exit(1);
-					}
+						_ev.data.fd = connfd;
+						_ev.events = EPOLLIN;
 
-					string peer = sock_ntop(EZ_R_CAST(&peer_info, SA*), length);
-					peerName[connfd] = peer;
+						sockaddr_in peer_info;
+						socklen_t length = sizeof(peer_info);
 
-					epoll_ctl(epoll_fd, EPOLL_CTL_ADD, connfd, &_ev);
+						if((getpeername(connfd, EZ_R_CAST(&peer_info, SA*), &length)) < 0)
+						{
+							EZ_ERR("setConnFd ERR\n");
+							exit(1);
+						}
+
+						string peer = sock_ntop(EZ_R_CAST(&peer_info, SA*), length);
+						peerName[connfd] = peer;
+
+						epoll_ctl(epoll_fd, EPOLL_CTL_ADD, connfd, &_ev);
 #ifdef DEBUG
-					EZ_INFO("ADD A FD");
-					EZ_INFO(connfd);
-					EZ_INFO("\n");
+						EZ_INFO("ADD A FD");
+						EZ_INFO(connfd);
+						EZ_INFO("\n");
 #endif
-
+					}while(unblock);
 				}
 				else if(_events[i].events & EPOLLIN)
 				{
@@ -133,9 +168,7 @@ public:
 			}
 		}
 	}
-
 private:
-
 	inline void destory(int sock_fd)
 	{
 #ifdef DEBUG
@@ -164,12 +197,22 @@ private:
 		return header;
 	}
 
+	void* EZ_thread_recv(void* arg);
+
+	void* EZ_thread_send(void* arg);
+
 	map<int, map<string, string> > fd2cmd;
+	pthread_mutex_t fd2cmd_lock;
+
 	map<int, vector<string> > headers;
+	pthread_mutex_t headers_lock;
+
+	vector<struct epoll_event> _events;
+	pthread_mutex_t _events_lock;
+
 	map<int, string> peerName;
 	int _listen_fd;
 	struct epoll_event _ev;
-	vector<struct epoll_event> _events;
 	int epoll_fd;
 	int sock_fd;
 	string cur_text;
