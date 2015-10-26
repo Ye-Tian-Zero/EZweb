@@ -55,6 +55,13 @@ using std::cout;
 using std::cin;
 using std::flush;
 
+class requestHandleEpoll ;
+struct POD_arg{
+	POD_arg(requestHandleEpoll* p):ptr(p){}
+	int sock_fd;
+	requestHandleEpoll* const ptr;
+};
+
 void (*signal_(int signo, void(*func)(int))) (int);
 
 int dameon_init(const char* pname, int facility);

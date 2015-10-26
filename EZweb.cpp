@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 
 	socklen_t len = sizeof(addr);
 
-	Listen(getListenFd(), 10);
+	Listen(getListenFd(), 100);
 
 	while(1)
 	{
@@ -41,7 +41,6 @@ int main(int argc, char* argv[])
 			close(getConnectFd());
 		}
 		*/
-
 		requestHandleEpoll ins(getListenFd(), "./WebSiteSrc/html_book_20150808/reference");
 		ins.execute(1);
 	}	

@@ -36,6 +36,12 @@ void* thread_ctrl(void* arg)
 
 		J_* todo = pool->jobQueue.front();
 		pool->jobQueue.pop();
+
+		pthread_mutex_lock(&pool->added_fds_lock);
+
+		(pool->added_fds).erase(reinterpret_cast<POD_arg*>(todo->arg) -> sock_fd);
+
+		pthread_mutex_unlock(&pool->added_fds_lock);
 		pthread_mutex_unlock(&(pool->jobQueue_lock));
 
 		(*(todo->process))(todo->arg);
