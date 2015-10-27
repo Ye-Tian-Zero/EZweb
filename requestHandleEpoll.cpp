@@ -11,7 +11,6 @@ void* EZ_thread_handle(void* arg)
 	delete arg_real;
 	arg_real = NULL;
 
-
 	if((rPtr->_events)[index].data.fd == rPtr->_listen_fd)
 	{
 		auto addr = getCliAddr();
@@ -84,7 +83,6 @@ void* EZ_thread_handle(void* arg)
 			string cur_text;
 			int cnt(0);
 
-			cout << "in" << endl;
 			while((cnt = Readline(t_sock_fd, cur_text)) > 0)//It's not efficient;
 			//each socket file descriptor should have a buffer for unblocked IO;
 			{
@@ -119,7 +117,6 @@ void* EZ_thread_handle(void* arg)
 					pthread_mutex_unlock(&rPtr->m_data_lock);
 				}
 			}
-			cout << "out"<< endl;
 
 			if(cnt <= 0)
 			{
@@ -141,16 +138,12 @@ void* EZ_thread_handle(void* arg)
 		else
 		{
 
-			cout << "output_fd: " << sock_fd << endl;
-
 			for(auto cmd : (rPtr->fd2cmd)[sock_fd])				
 			{
 				rPtr->processCmd(cmd.first, cmd.second, sock_fd, (rPtr->peerName)[sock_fd]);
 			}
 			
-			cout << "want lock m_data" << endl;
 			pthread_mutex_lock(&rPtr->m_data_lock);
-			cout << "locked" << endl;
 			rPtr->fd2cmd.erase(sock_fd);
 			pthread_mutex_unlock(&rPtr->m_data_lock);
 

@@ -55,7 +55,8 @@ public:
 			EZ_ERR("wait End\n");
 
 			pthread_mutex_lock(&epoll_cond_lock);
-			for(int i(0); i != e_fds; ++ i)
+			int e_fds_copy(e_fds);
+			for(int i(0); i != e_fds_copy; ++ i)
 			{
 				_thread_arg.sock_fd = i;
 				//cout << "sock_fd: " << _thread_arg.sock_fd << endl;
