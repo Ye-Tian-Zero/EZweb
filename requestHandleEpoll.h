@@ -21,11 +21,11 @@ void* EZ_thread_handle(void* arg);
 class requestHandleEpoll : public requestHandle{
 	friend void* EZ_thread_handle(void* arg);
 public:
-	requestHandleEpoll(int listen_fd, string root_dir, size_t thread_n = 1,int events_num = 512, string index_page = "index.html"): requestHandle(root_dir, index_page), _events(events_num), _thread_pool(thread_n), _thread_arg(this){
+	requestHandleEpoll(int listen_fd, string root_dir, size_t thread_n = 8,int events_num = 1024, string index_page = "index.html"): requestHandle(root_dir, index_page), _events(events_num), _thread_pool(thread_n), _thread_arg(this){
 
 		e_fds = 0;
 		_listen_fd = listen_fd;
-		epoll_fd = epoll_create(1024);
+		epoll_fd = epoll_create(2048);
 
 		pthread_mutex_init(&m_data_lock, NULL);
 		pthread_mutex_init(&epoll_fd_lock, NULL);
@@ -49,10 +49,10 @@ public:
 		for(;;)
 		{
 
-			EZ_ERR("wait Start\n");
+			//EZ_ERR("wait Start\n");
 			e_fds = epoll_wait(epoll_fd, &_events[0], _events.size(), -1);
 		//	cout << "efds: " << e_fds << endl;
-			EZ_ERR("wait End\n");
+			//EZ_ERR("wait End\n");
 
 			pthread_mutex_lock(&epoll_cond_lock);
 			int e_fds_copy(e_fds);

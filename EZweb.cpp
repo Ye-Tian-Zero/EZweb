@@ -11,7 +11,7 @@ int main(int argc, char* argv[])
 
 	socklen_t len = sizeof(addr);
 
-	Listen(getListenFd(), 100);
+	Listen(getListenFd(), 2048);
 
 	while(1)
 	{

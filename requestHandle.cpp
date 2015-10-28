@@ -40,10 +40,10 @@ requestHandle::processCmd(const string& command, const string& content, int conn
 		connect_fd = _connect_fd;
 	}
 
-	if(peer.empty())
+/*	if(peer.empty())
 	{
 		peer = EZ_peer;
-	}
+	}*/
 
 	if(command == "GET")
 	{
@@ -53,9 +53,7 @@ requestHandle::processCmd(const string& command, const string& content, int conn
 
 		string dir = extractFileDir(content);
 
-		close(file_fd);
-
-		file_fd = open(dir.c_str(), O_RDONLY);
+		int file_fd = open(dir.c_str(), O_RDONLY);
 
 		string keepAlive = "Connection: keep-alive\r\n";
 
@@ -83,6 +81,7 @@ requestHandle::processCmd(const string& command, const string& content, int conn
 
 			}while(cnt);
 
+			close(file_fd);
 		}
 		else
 		{
@@ -98,7 +97,7 @@ requestHandle::processCmd(const string& command, const string& content, int conn
 
 		}
 	}
-
+	
 	return;
 }
 

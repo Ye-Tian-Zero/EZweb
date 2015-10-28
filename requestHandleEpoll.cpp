@@ -70,7 +70,9 @@ void* EZ_thread_handle(void* arg)
 
 	else if((rPtr->_events)[index].events & EPOLLIN)
 	{
+#ifdef DEBUG
 		EZ_DBG("EPOLLIN\n");
+#endif
 
 		int t_sock_fd;
 
@@ -86,7 +88,6 @@ void* EZ_thread_handle(void* arg)
 			while((cnt = Readline(t_sock_fd, cur_text)) > 0)//It's not efficient;
 			//each socket file descriptor should have a buffer for unblocked IO;
 			{
-				EZ_WARN("one loop\n");
 				if(cur_text == "\r\n")
 				{
 
@@ -120,7 +121,7 @@ void* EZ_thread_handle(void* arg)
 
 			if(cnt <= 0)
 			{
-				EZ_ERR("Destoryed\n");
+				//EZ_ERR("Destoryed\n");
 				rPtr->destory(t_sock_fd);
 			}
 		}
@@ -128,7 +129,9 @@ void* EZ_thread_handle(void* arg)
 
 	else if((rPtr->_events)[index].events & EPOLLOUT)
 	{
+#ifdef DEBUG
 		EZ_INFO("EPOLLOUT\n");
+#endif
 		int sock_fd;
 
 		if((sock_fd=(rPtr->_events)[index].data.fd) < 0)

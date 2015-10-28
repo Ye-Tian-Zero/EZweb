@@ -5,13 +5,14 @@
 #include <fstream>
 #include <map>
 #include <climits>
+#include <pthread.h>
 
 using std::fstream;
 using std::map;
 
 class requestHandle{
 public:
-	requestHandle(string root_dir, string index_page = "index.html"): root(root_dir), _connect_fd(-1), index(index_page), file_fd(-1) { }
+	requestHandle(string root_dir, string index_page = "index.html"): root(root_dir), _connect_fd(-1), index(index_page) {}
 	
 	inline void setConnFd(int fd)
 	{
@@ -62,8 +63,7 @@ protected:
 	string extractFileDir(const string& content);
 
 	int _connect_fd;
-	int file_fd;
-
+	
 	string root;
 	string index;
 	string cur_text;
