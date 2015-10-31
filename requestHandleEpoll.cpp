@@ -92,10 +92,12 @@ void* EZ_thread_handle(void* arg)
 				{
 
 					pthread_mutex_lock(&rPtr->m_data_lock);
+					pthread_rwlock_wrlock(&rPtr->fd2cmd_rwlock);
 
 					rPtr->fd2cmd[t_sock_fd] = rPtr->extractHeaders(rPtr->headers[t_sock_fd]);
 					rPtr->headers.erase(t_sock_fd);
 
+					pthread_rwlock_unlock(&rPtr->fd2cmd_rwlock);
 					pthread_mutex_unlock(&rPtr->m_data_lock);
 					
 					struct epoll_event l_ev;
@@ -140,15 +142,16 @@ void* EZ_thread_handle(void* arg)
 		}
 		else
 		{
-
-			for(auto cmd : (rPtr->fd2cmd)[sock_fd])				
+			pthread_rwlock_rdlock(&rPtr->fd2cmd_rwlock);
+			for(auto cmd : (rPtr->fd2cmd)[sock_fd])
 			{
 				rPtr->processCmd(cmd.first, cmd.second, sock_fd, (rPtr->peerName)[sock_fd]);
 			}
+			pthread_rwlock_unlock(&rPtr->fd2cmd_rwlock);
 			
-			pthread_mutex_lock(&rPtr->m_data_lock);
+			pthread_rwlock_wrlock(&rPtr->fd2cmd_rwlock);
 			rPtr->fd2cmd.erase(sock_fd);
-			pthread_mutex_unlock(&rPtr->m_data_lock);
+			pthread_rwlock_unlock(&rPtr->fd2cmd_rwlock);
 
 			struct epoll_event l_ev;
 			l_ev.data.fd = sock_fd;

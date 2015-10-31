@@ -12,7 +12,8 @@ using std::map;
 
 class requestHandle{
 public:
-	requestHandle(string root_dir, string index_page = "index.html"): root(root_dir), _connect_fd(-1), index(index_page) {}
+	pthread_mutex_t test_lock;
+	requestHandle(string root_dir, string index_page = "index.html"): root(root_dir), _connect_fd(-1), index(index_page) {pthread_mutex_init(&test_lock, NULL);}
 	
 	inline void setConnFd(int fd)
 	{

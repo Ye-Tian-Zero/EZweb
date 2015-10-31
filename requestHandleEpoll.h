@@ -21,7 +21,7 @@ void* EZ_thread_handle(void* arg);
 class requestHandleEpoll : public requestHandle{
 	friend void* EZ_thread_handle(void* arg);
 public:
-	requestHandleEpoll(int listen_fd, string root_dir, size_t thread_n = 8,int events_num = 1024, string index_page = "index.html"): requestHandle(root_dir, index_page), _events(events_num), _thread_pool(thread_n), _thread_arg(this){
+	requestHandleEpoll(int listen_fd, string root_dir, size_t thread_n = 50,int events_num = 1024, string index_page = "index.html"): requestHandle(root_dir, index_page), _events(events_num), _thread_pool(thread_n), _thread_arg(this){
 
 		e_fds = 0;
 		_listen_fd = listen_fd;
@@ -32,6 +32,7 @@ public:
 		pthread_mutex_init(&e_fds_lock, NULL);
 		pthread_mutex_init(&epoll_cond_lock, NULL);
 		pthread_cond_init(&epoll_cond, NULL);
+		pthread_rwlock_init(&fd2cmd_rwlock, NULL);
 
 		_thread_pool.start();
 	}
@@ -79,6 +80,7 @@ private:
 #endif
 
 		pthread_mutex_lock(&m_data_lock);
+		pthread_rwlock_rdlock(&fd2cmd_rwlock);
 		close(sock_fd);
 		fd2cmd.erase(sock_fd);
 		headers.erase(sock_fd);
@@ -87,6 +89,7 @@ private:
 
 		pthread_mutex_lock(&epoll_fd_lock);
 		epoll_ctl(epoll_fd, EPOLL_CTL_DEL, sock_fd, NULL);
+		pthread_rwlock_unlock(&fd2cmd_rwlock);
 		pthread_mutex_unlock(&epoll_fd_lock);
 	}
 
@@ -122,6 +125,7 @@ private:
 	int sock_fd;
 
 	pthread_mutex_t m_data_lock;
+	pthread_rwlock_t fd2cmd_rwlock;
 	pthread_mutex_t epoll_fd_lock;
 	pthread_mutex_t e_fds_lock;
 
